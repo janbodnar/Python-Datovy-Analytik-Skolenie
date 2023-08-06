@@ -133,4 +133,48 @@ with open('index.html', 'r') as f:
         print(re.sub(pattern, ' ', line))
 ```
 
+## Unwrapping tags
+
+We can remove/unwrap tags with `unwrap` or `unwrap_tags`.  
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    tree.unwrap_tags(['ul', 'h2', 'p'])
+
+    # tags = tree.tags('p')
+    # for e in tags:
+    #     e.unwrap()
+
+    print(tree.root.html)
+
+    print('---------------------')
+```
+
+## The text_contains method
+
+We can select specific text with `text_contains`
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    matches = [node.text().strip() for node in tree.select('p').text_contains("FreeBSD").matches]
+
+    print(matches)
+```
+
 
