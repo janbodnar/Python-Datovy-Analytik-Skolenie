@@ -1,6 +1,7 @@
 # HTML data scraping with selectolax
 
 The `selectolax` is a HTML5 parser using CSS selector syntax.  
+It is an alternative to BeautifulSoup.  
 
 ## Documentation
 
