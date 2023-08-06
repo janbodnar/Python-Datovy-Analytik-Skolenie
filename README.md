@@ -7,6 +7,7 @@
    - VS Code
    - Jupyter
    - PGAdmin a DB Browser
+   - pip manažér
 
 2. Vstupno-výstupné operácie
    - základy IO operácií
