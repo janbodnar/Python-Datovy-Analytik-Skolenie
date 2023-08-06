@@ -3,27 +3,36 @@
 
 ## Osnovy
 
-1. Vstupno-výstupné operácie
+1. Základné nástroje
+   - VS Code
+   - Jupyter
+   - PGAdmin
+
+2. Vstupno-výstupné operácie
    - základy IO operácií
    - pokročilé IO operácie
    - funkcia open, modul Path
 
-2.  Dátove zdroje
+3.  Dátove zdroje
     - CSV, JSON, XML
     - čítanie a zápis 
 
-3.  Excel súbory
+4.  Excel súbory
     - čítanie a zápis do Excel súborov
+    - modul openpyxl
 
-4. Grafy
+5. Grafy
     - tvorba grafov pomocou Matplotlib
   
-5. Web scraping
-   - knižnica BeautifulSoup4
-   - knižnica selectolax  
+6. Web scraping
+   - modul BeautifulSoup4
+   - modul selectolax  
 
-6. Databázy
+7. Databázy
    - práca s SQLite a PostgreSQL
    - základy SQL jazyka
-   - práca s databézou v Pythone
+   - práca s databázou v Pythone
    - sqlite3 a psycopg2 moduly
+  
+8. Pandas
+   
