@@ -2,7 +2,7 @@
 
 ## Cvičný súbor 
 
-```html
+´´´html
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,7 +33,7 @@
 
     </body>
 </html>
-```
+´´´
 
 ## Iterácia potomkov
 
