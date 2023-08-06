@@ -1,8 +1,8 @@
-# Extrakcia HTML dát pomocou selectolax
+# HTML data scraping with selectolax
 
 ## Cvičný súbor 
 
-´´´html
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,11 +33,11 @@
 
     </body>
 </html>
-´´´
+```
 
-## Iterácia potomkov
+## Child iteration
 
-Iterácia potomkov metódou `iter()`
+Iterating children with `iter()`
 
 ```python
 #!/usr/bin/python
