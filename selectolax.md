@@ -1,5 +1,7 @@
 # HTML data scraping with selectolax
 
+The `selectolax` is a HTML5 parser using CSS selector syntax.  
+
 ## Test file
 
 ```html
@@ -79,6 +81,30 @@ html = r.text
 tree = HTMLParser(html)
 title = tree.css_first('title')
 print(title.text())
+```
+
+## Basics
+
+The `html` attribute retunrs HTML code.  The `tag` attribute returns tag name.  
+The `text` method returns the containing text.  
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    node = tree.css_first('ul')
+    print(node.html)
+
+    print('---------------------')
+
+    for e in node.iter():
+        print(f'tag: {e.tag}, text: {e.text()}')
 ```
 
 ## Traversing nodes
