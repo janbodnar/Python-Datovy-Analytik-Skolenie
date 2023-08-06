@@ -103,7 +103,7 @@ with open('index.html', 'r') as f:
 
 ## Child iteration
 
-Iterating children with `iter()`
+Iterating children with `iter`
 
 ```python
 #!/usr/bin/python
@@ -212,6 +212,29 @@ with open('index.html', 'r') as f:
     data = tree.select('body').css('li:nth-child(odd)').matches
 
     print([e.html for e in data])
+```
+
+## Removing tags 
+
+Removing tags with `strip_tags`.  
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+import httpx 
+import re
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    root = tree.root
+    root.strip_tags(['head', 'h2'])
+
+    print(root.html)
 ```
 
 
