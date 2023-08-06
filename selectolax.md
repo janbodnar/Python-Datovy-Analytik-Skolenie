@@ -51,8 +51,6 @@ Get the first match with `css_first`.
 
 from selectolax.parser import HTMLParser
 
-import httpx 
-
 html = '''
 <html>
 <body>
@@ -117,8 +115,9 @@ with open('index.html', 'r') as f:
 Traversing all nodes with `traverse`.  
 
 ```python
-import httpx 
-import re
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
 
@@ -166,7 +165,6 @@ not very flexible.
 
 from selectolax.parser import HTMLParser
 
-import httpx 
 import re
 
 with open('index.html', 'r') as f:
@@ -253,9 +251,6 @@ Removing tags with `strip_tags`.
 #!/usr/bin/python
 
 from selectolax.parser import HTMLParser
-
-import httpx 
-import re
 
 with open('index.html', 'r') as f:
 
