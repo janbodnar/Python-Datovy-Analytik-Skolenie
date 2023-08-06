@@ -6,7 +6,7 @@
 1. Základné nástroje
    - VS Code
    - Jupyter
-   - PGAdmin
+   - PGAdmin a DB Browser
 
 2. Vstupno-výstupné operácie
    - základy IO operácií
