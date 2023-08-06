@@ -110,6 +110,28 @@ with open('index.html', 'r') as f:
         print(f'tag: {e.tag}, text: {e.text()}')
 ```
 
+---
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    ul_tag = tree.css_first('ul')
+
+    print(ul_tag.html)
+    print(ul_tag.tag)
+    print(ul_tag.parent.tag)
+    print(ul_tag.child.text())
+    print(ul_tag.last_child.text())
+    print(ul_tag.attributes)
+```
+
 ## Traversing nodes
 
 Traversing all nodes with `traverse`.  
