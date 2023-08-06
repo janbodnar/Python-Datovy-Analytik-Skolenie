@@ -4,7 +4,7 @@
 ## Osnovy
 
 1.  Datove zdroje
-  - CSV, JSON, XML
-  - čítanie a zápis 
+    - CSV, JSON, XML
+    - čítanie a zápis 
 
 2.  
