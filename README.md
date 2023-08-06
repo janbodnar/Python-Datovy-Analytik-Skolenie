@@ -13,13 +13,15 @@
    - pokročilé IO operácie
    - funkcia open, modul Path
 
-3.  Dátove zdroje
+3. Konzolové aplikácie
+   - tvorba scriptov
+   - parsovanie argumentov pomocou argparse
+   - modul rich
+   
+4.  Dátove zdroje
     - CSV, JSON, XML
-    - čítanie a zápis 
-
-4.  Excel súbory
-    - čítanie a zápis do Excel súborov
-    - modul openpyxl
+    - čítanie a zápis
+    - excel súbory s modulom openpyxl
 
 5. Grafy
     - tvorba grafov pomocou Matplotlib
