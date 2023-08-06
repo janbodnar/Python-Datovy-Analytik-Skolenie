@@ -1,6 +1,6 @@
 # HTML data scraping with selectolax
 
-## Cvičný súbor 
+## Test file
 
 ```html
 <!DOCTYPE html>
@@ -35,6 +35,52 @@
 </html>
 ```
 
+## Load from HTML text
+
+Get the first match with `css_first`.  
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+import httpx 
+
+html = '''
+<html>
+<body>
+<p>an old falcon</p>
+</body>
+</html>
+'''
+
+tree = HTMLParser(html)
+p = tree.css_first('p')
+print(p.text())
+
+body = tree.css_first('body')
+print(repr(body.html))
+```
+
+## Fetch title from webpage
+
+Create HTTP GET request with `httpx` module and fetch the `title` tag. 
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+import httpx 
+
+r = httpx.get('http://webcode.me')
+html = r.text
+
+tree = HTMLParser(html)
+title = tree.css_first('title')
+print(title.text())
+```
+
 ## Child iteration
 
 Iterating children with `iter()`
@@ -57,3 +103,34 @@ with open('index.html', 'r') as f:
     for e in node.iter():
         print(f'tag: {e.tag}, text: {e.text()}')
   ```
+
+## Extract text data 
+
+We get tag text with `text` method. To strip excessive white space, we  
+can use the `strip` parameter or regular expressions. The `strip` parameter is  
+not very flexible.  
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+import httpx 
+import re
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    ps = tree.css('p')
+
+    for tag in ps:
+        # print(tag.text(strip=True))
+        # print(tag.text(strip=True).strip())
+        pattern = re.compile(r' {2,}')
+        line = tag.text()
+        print(re.sub(pattern, ' ', line))
+```
+
+
