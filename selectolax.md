@@ -2,6 +2,10 @@
 
 The `selectolax` is a HTML5 parser using CSS selector syntax.  
 
+## Documentation
+
+https://selectolax.readthedocs.io/en/latest/parser.html
+
 ## Test file
 
 ```html
