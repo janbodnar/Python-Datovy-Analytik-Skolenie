@@ -81,6 +81,26 @@ title = tree.css_first('title')
 print(title.text())
 ```
 
+## Traversing nodes
+
+Traversing all nodes with `traverse`.  
+
+```python
+import httpx 
+import re
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    root = tree.root
+
+    for e in root.traverse():
+        print(e.tag)
+```
+
+
 ## Child iteration
 
 Iterating children with `iter()`
@@ -175,6 +195,23 @@ with open('index.html', 'r') as f:
     matches = [node.text().strip() for node in tree.select('p').text_contains("FreeBSD").matches]
 
     print(matches)
+```
+
+## Chaining method calls
+
+```python
+#!/usr/bin/python
+
+from selectolax.parser import HTMLParser
+
+with open('index.html', 'r') as f:
+
+    html = f.read()
+
+    tree = HTMLParser(html)
+    data = tree.select('body').css('li:nth-child(odd)').matches
+
+    print([e.html for e in data])
 ```
 
 
