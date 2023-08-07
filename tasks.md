@@ -52,6 +52,7 @@ data = []
 book = Workbook()
 sheet = book.active
 
+sheet.append(['Id', 'First name', 'Last name', 'Occupation'])
 read_data(data)
 
 for e in data:
