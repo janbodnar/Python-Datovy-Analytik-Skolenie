@@ -1,6 +1,6 @@
 # Functional data analysis
 
-
+In Python, we can have different names of functions that are common in functional programming.  
 
 ## Element access
 
@@ -57,6 +57,8 @@ else:
 ```
 
 ## Partitioning
+
+Implementing `take`, `takewhile`, `skip`, `skipwhile` functions.  
 
 ```python
 #!/usr/bin/python
