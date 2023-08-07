@@ -60,3 +60,30 @@ for e in data:
 book.save('users.xlsx')
 ```
 
+## Transform CSV data into JSON
+
+Using `csv` and `json` modules.  
+
+```python
+#!/usr/bin/python
+
+from openpyxl import Workbook
+import json, csv
+
+def read_data(data):
+
+    with open('users.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        
+        for row in reader:
+            data.append({'id': row['id'], 'first_name': row['first_name'], 
+                'last_name': row['last_name'], 'occupation': row['occupation']})
+
+data = []
+read_data(data)
+
+with open('users.json', 'w') as f:
+    json.dump(data, f)
+```
+
+
