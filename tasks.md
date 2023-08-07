@@ -163,6 +163,43 @@ The template.
 </html>
 ```
 
+## Load CSV into SQLite database
+
+Proramatically with `sqlite3` module.  
+We can also do it with `sqlite3` tool:  
+`sqlite> .import users.csv users2`  
+
+```python
+#!/usr/bin/python
+
+import sqlite3
+import csv
+
+def read_data(data):
+
+    with open('users.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        
+        for row in reader:
+            data.append((int(row['id']), row['first_name'], 
+                row['last_name'], row['occupation']))
+
+
+data = []
+read_data(data)
+
+con = sqlite3.connect('test.db')
+
+with con:
+
+    cur = con.cursor()
+
+    cur.execute("DROP TABLE IF EXISTS users;")
+    cur.execute("CREATE TABLE users(id INT, first_name TEXT, last_name TEXT, occupation TEXT)")
+    cur.executemany("INSERT INTO users VALUES(?, ?, ?, ?)", data)
+```
+
+
 ## Return JSON data from a web application
 
 Return JSON data from a Flask application.  
