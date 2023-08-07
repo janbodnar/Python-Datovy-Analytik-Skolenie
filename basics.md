@@ -72,8 +72,8 @@ data = get_products()
 n = 15
 
 # take
-firstn = data[:n]
-# print(firstn) 
+res = data[:n]
+print(res) 
 
 # takewhile
 res = takewhile(lambda p: p.UnitsInStock != 0, data)
