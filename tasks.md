@@ -95,7 +95,8 @@ Using `csv` and `jinja2` modules.
 #!/usr/bin/python
 
 from openpyxl import Workbook
-import json, csv
+from jinja2 import Environment, FileSystemLoader
+import csv
 
 def read_data(data):
 
@@ -106,11 +107,20 @@ def read_data(data):
             data.append({'id': row['id'], 'first_name': row['first_name'], 
                 'last_name': row['last_name'], 'occupation': row['occupation']})
 
-data = []
-read_data(data)
+def write2file(data):
+    with open('users.html', 'w') as f:
+        f.write(data)
 
-with open('users.json', 'w') as f:
-    json.dump(data, f)
+users = []
+read_data(users)
+
+file_loader = FileSystemLoader('templates')
+env = Environment(loader=file_loader)
+
+template = env.get_template('users.html')
+
+data = template.render(users=users)
+write2file(data)
 ```
 
 The template.  
