@@ -87,4 +87,34 @@ with open('users.json', 'w') as f:
     json.dump(data, f)
 ```
 
+## Return JSON data from a web application
+
+Return JSON data from a Flask application.  
+
+`flask --app webapp run`  
+
+```python
+#!/usr/bin/python
+
+from flask import Flask, make_response
+
+app = Flask(__name__)
+
+@app.route("/users")
+def get_users():
+
+    users = load_data()
+
+    resp = make_response(users)
+    resp.headers['Content-Type'] = 'application/json; charset=utf-8'
+    return resp
+
+
+def load_data():
+    with open('users.json', 'r') as f:
+        users = f.read()
+        return users
+```
+
+
 
