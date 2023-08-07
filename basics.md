@@ -1,5 +1,33 @@
 # Functional data analysis
 
+
+
+## Element access
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+
+first = data[0]
+last = data[-1]
+
+firstFive = data[0:5]
+lastFive = data[-5:]
+
+print(first)
+print(last)
+
+print(firstFive)
+print(len(firstFive))
+print(lastFive)
+print(len(lastFive))
+```
+
+
+
 ```python
 from dataclasses import dataclass
 
