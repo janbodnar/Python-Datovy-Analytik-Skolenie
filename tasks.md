@@ -1,8 +1,8 @@
 # Tasks
 
-## Generate user data in CSV format
+## Generate test data in CSV format
 
-Using `faker` and `csv` modules.  
+Generating user data with `faker` and `csv` modules.  
 
 ```python
 #!/usr/bin/python
@@ -27,3 +27,36 @@ with open('users.csv', 'w', newline='') as f:
         writer.writerow({'id': _id, 'first_name': fname, 
             'last_name': lname, 'occupation': occupation})
 ```
+
+## Transform CSV data into XLSX format
+
+Using `csv` and `openpyxl` modules.  
+
+```python
+#!/usr/bin/python
+
+from openpyxl import Workbook
+import csv
+
+def read_data(data):
+
+    with open('users.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        
+        for row in reader:
+            data.append((int(row['id']), row['first_name'], 
+                row['last_name'], row['occupation']))
+
+data = []
+
+book = Workbook()
+sheet = book.active
+
+read_data(data)
+
+for e in data:
+    sheet.append(e)
+
+book.save('users.xlsx')
+```
+
