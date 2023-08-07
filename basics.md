@@ -147,7 +147,20 @@ print(res)
 res = [Item(p.ProductName, p.UnitPrice) for p in data]
 print(res)
 ```
+---
 
+The built-in `map` function.  
+
+```python
+#!/usr/bin/python
+
+nums = [1, 2, 3, 4, 5]
+
+nums_squared = map(lambda x: x*x, nums)
+
+for num in nums_squared:
+    print(num)
+```
 
 ## The products module 
 
