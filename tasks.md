@@ -163,7 +163,7 @@ The template.
 </html>
 ```
 
-## Load CSV into SQLite database
+## CSV and SQLite database
 
 Programatically with `sqlite3` module.  
 We can also do it with `sqlite3` tool:  
@@ -180,6 +180,7 @@ sqlite> .output users4.csv
 sqlite> select * from users;
 ```
 
+### Load into database
 
 ```python
 #!/usr/bin/python
@@ -211,6 +212,43 @@ with con:
     cur.executemany("INSERT INTO users VALUES(?, ?, ?, ?)", data)
 ```
 
+### Fetch from database into CSV 
+
+```python
+#!/usr/bin/python
+
+import sqlite3
+import csv
+
+def write_data(data):
+
+    with open('users2.csv', 'w', newline='') as f:
+
+        fnames = ['id', 'first_name', 'last_name', 'occupation']
+        writer = csv.DictWriter(f, fieldnames=fnames)
+        writer.writeheader()
+
+        for row in data:
+            writer.writerow({'id': row['id'], 'first_name': row['first_name'],
+                'last_name': row['last_name'], 'occupation': row['occupation']})
+
+data = []
+
+con = sqlite3.connect('test.db')
+with con:
+
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+
+    cur.execute("SELECT * FROM users")
+    rows = cur.fetchall()
+
+    for row in rows:
+        data.append({'id': row['id'], 'first_name': row['first_name'],
+                'last_name': row['last_name'], 'occupation': row['occupation']})
+
+write_data(data)
+```
 
 ## Return JSON data from a web application
 
