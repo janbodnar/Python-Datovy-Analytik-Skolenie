@@ -192,6 +192,44 @@ def load_data():
         return users
 ```
 
+## Fetch JSON and transform into CSV
+
+Fetch JSON data from a running Flask application and transform the  
+data into CSV format.  
+
+Using `json`, `csv`, and `httpx` modules.  
+
+Generate a HTTP GET request with httpie application.  
+`$ http GET http://localhost:5000/users`
+
+```python
+#!/usr/bin/python
+
+from openpyxl import Workbook
+import json, csv
+import httpx
+
+
+def write_data(data):
+
+    with open('users2.csv', 'w', newline='') as f:
+
+        fnames = ['id', 'first_name', 'last_name', 'occupation']
+        writer = csv.DictWriter(f, fieldnames=fnames)
+        writer.writeheader()
+
+        for row in data:
+            writer.writerow({'id': row['id'], 'first_name': row['first_name'],
+                'last_name': row['last_name'], 'occupation': row['occupation']})
+
+
+r = httpx.get('http://localhost:5000/users')
+json_data = r.text
+
+data = json.loads(json_data)
+write_data(data)
+```
+
 ## Output CSV data in console table 
 
 Using `csv` and `rich` modules.  
