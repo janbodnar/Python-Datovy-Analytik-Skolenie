@@ -165,11 +165,21 @@ The template.
 
 ## Load CSV into SQLite database
 
-Proramatically with `sqlite3` module.  
+Programatically with `sqlite3` module.  
 We can also do it with `sqlite3` tool:  
 
 `CREATE TABLE users2(id INT, first_name TEXT, last_name TEXT, occupation TEXT);`  
 `sqlite> .import users.csv users2`  
+
+Export into CSV from SQLite database: `$ sqlite3 -header -csv test.db "select * from users;" > users3.csv`  
+
+```sql
+sqlite> .headers on
+sqlite> .mode csv
+sqlite> .output users4.csv
+sqlite> select * from users;
+```
+
 
 ```python
 #!/usr/bin/python
