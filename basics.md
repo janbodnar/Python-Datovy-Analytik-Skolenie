@@ -27,6 +27,35 @@ print(len(lastFive))
 ```
 
 
+## Any/all functions 
+
+Are there any empty product stocks?  
+Are all values of a list positive?  
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+
+uis = [p.UnitsInStock == 0 for p in data]
+print(uis)
+
+if any(uis):
+    print(f'There are empty product stocks')
+else:
+    print(f'There are no empty product stocks')
+
+vals = [-1, 2, 5, -4, 0, 55]
+vals2 = [e > 0 for e in vals]
+
+if all(vals):
+    print(f'all values are positive')
+else:
+    print(f'there are negative values present')
+```
+
 
 ```python
 from dataclasses import dataclass
