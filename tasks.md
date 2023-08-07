@@ -173,7 +173,7 @@ We can also do it with `sqlite3` tool:
 
 Export into CSV from SQLite database: `$ sqlite3 -header -csv test.db "select * from users;" > users3.csv`  
 
-```sql
+```
 sqlite> .headers on
 sqlite> .mode csv
 sqlite> .output users4.csv
