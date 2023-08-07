@@ -56,6 +56,38 @@ else:
     print(f'there are negative values present')
 ```
 
+## Partitioning
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+from itertools import takewhile, dropwhile
+
+# partitioning
+# take, takewhile, skip, skipwhile
+
+data = get_products()
+
+n = 15
+
+# take
+firstn = data[:n]
+# print(firstn) 
+
+# takewhile
+res = takewhile(lambda p: p.UnitsInStock != 0, data)
+print(list(res))
+
+# skip
+res = data[n:]
+print(res)
+
+# skipwhile 
+res = dropwhile(lambda p: p.UnitsInStock != 0, data)
+print(list(res))
+```
+
 ## The products module 
 
 ```python
