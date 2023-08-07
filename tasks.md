@@ -167,6 +167,8 @@ The template.
 
 Proramatically with `sqlite3` module.  
 We can also do it with `sqlite3` tool:  
+
+`CREATE TABLE users2(id INT, first_name TEXT, last_name TEXT, occupation TEXT);`  
 `sqlite> .import users.csv users2`  
 
 ```python
