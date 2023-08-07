@@ -90,6 +90,34 @@ res = dropwhile(lambda p: p.UnitsInStock != 0, data)
 print(list(res))
 ```
 
+## Filter
+
+Filtering with `filter` function and list comprehensions.  
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+
+# filter 
+
+res = [p for p in data if p.UnitsInStock == 0]
+print(res)
+
+print('----------------------------------')
+
+res = filter(lambda p: p.Category == 'Beverages', data)
+print(list(res))
+
+print('----------------------------------')
+
+res = filter(lambda p: p.Category == 'Beverages' and p.UnitsInStock > 100, data)
+print(list(res))
+```
+
+
 ## The products module 
 
 ```python
