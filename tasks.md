@@ -192,5 +192,45 @@ def load_data():
         return users
 ```
 
+## Output CSV data in console table 
+
+Using `csv` and `rich` modules.  
+
+```python
+#!/usr/bin/python
+
+import csv
+from rich import box
+from rich.console import Console
+from rich.table import Table
+from datetime import date
+
+now = f'{date.today()}'
+table = Table(title='Users', box=box.MINIMAL, caption=now, caption_justify='left')
+
+table.add_column('Id', style='cyan')
+table.add_column('First name', style='grey69')
+table.add_column('Last name', style='grey69')
+table.add_column('Occupation', style='green')
+
+def read_data(data):
+
+    with open('users.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        
+        for row in reader:
+            data.append({'id': row['id'], 'first_name': row['first_name'], 
+                'last_name': row['last_name'], 'occupation': row['occupation']})
+
+data = []
+read_data(data)
+
+for row in data:
+    table.add_row(row['id'], row['first_name'], row['last_name'], row['occupation'])
+
+console = Console()
+console.print(table, justify='center')
+```
+
 
 
