@@ -117,6 +117,37 @@ res = filter(lambda p: p.Category == 'Beverages' and p.UnitsInStock > 100, data)
 print(list(res))
 ```
 
+Filter multiple sequences.  
+
+```python
+#!/usr/bin/python
+
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class User:
+    Id: int
+    FirstName: str
+    LastName: str
+    Occupation: str
+
+users1 = [
+    User(1, 'John', 'Doe', 'gardener'), 
+    User(2, 'Roger', 'Roe', 'driver'),
+    User(3, 'Jane', 'Doe', 'teacher')
+]
+
+users2 = [
+    User(1, 'Joe', 'Brown', 'programmer'), 
+    User(2, 'Paul', 'Smith', 'optician'),
+    User(3, 'Jane', 'Black', 'shopkeeper'),
+    User(4, 'Alan', 'Parker', 'gardener')
+]
+
+res = [(u1, u2) for u1 in users1 if u1.Occupation == 'gardener' for u2 in users2 if u2.Occupation == 'gardener']
+print(res)
+```
+
 
 ## The products module 
 
