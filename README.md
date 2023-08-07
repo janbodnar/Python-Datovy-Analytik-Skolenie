@@ -37,5 +37,6 @@
    - práca s databázou v Pythone
    - sqlite3 a psycopg2 moduly
   
-8. Pandas
+8. Dataframes
+   - Pandas, datatable, Polars
    
