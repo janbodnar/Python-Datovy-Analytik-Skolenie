@@ -128,8 +128,8 @@ print(list(res))
 ## Ordering 
 
 Using `sort` and `sorted` functions.  
-
 Sort in-place with `sort` by product name.  
+
 ```python
 #!/usr/bin/python
 
@@ -137,6 +137,23 @@ from products import get_products
 
 data = get_products()
 data.sort(key=lambda e: e.ProductName)
+
+for p in data:
+    print(p)
+```
+
+Sort in-place with `sort` by product name in descending order.  
+
+```python
+#!/usr/bin/python
+
+# from dataclasses import dataclass
+# from decimal import Decimal
+from products import get_products
+
+
+data = get_products()
+data.sort(key=lambda e: e.ProductName, reverse=True)
 
 for p in data:
     print(p)
