@@ -202,6 +202,33 @@ for city in sorted_cities:
 
 Sorting by multiple criteria. By Category and UnitPrice.  
 
+Solution I - using a wrapper class.   
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+class negate:
+    def __init__(self, obj):
+        self.obj = obj
+
+    def __eq__(self, other):
+        return other.obj == self.obj
+
+    def __lt__(self, other):
+        return other.obj < self.obj
+
+
+data = get_products()
+data.sort(key=lambda e: (e.Category, negate(e.UnitPrice)))
+
+for p in data: 
+    print(p)
+```
+
+Solution II - sorting data twice. The sorting algorithm is stable.  
+
 ```python
 #!/usr/bin/python
 
