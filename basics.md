@@ -202,6 +202,20 @@ for city in sorted_cities:
 
 Sorting by multiple criteria. By Category and UnitPrice.  
 
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+data.sort(key=lambda e: (e.Category, e.UnitPrice))
+
+for p in data:
+    print(p)
+```
+
+### Sorting by multiple criteria with ascending and descending orders.  
+
 Solution I - using a wrapper class.   
 
 ```python
@@ -228,19 +242,6 @@ for p in data:
 ```
 
 Solution II - sorting data twice. The sorting algorithm is stable.  
-
-```python
-#!/usr/bin/python
-
-from products import get_products
-
-data = get_products()
-data.sort(key=lambda e: (e.Category, e.UnitPrice))
-
-for p in data:
-    print(p)
-```
-Sorting by multiple criteria with ascending and descending orders.  
 
 ```python
 #!/usr/bin/python
