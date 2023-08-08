@@ -117,6 +117,23 @@ res = filter(lambda p: p.Category == 'Beverages' and p.UnitsInStock > 100, data)
 print(list(res))
 ```
 
+## Ordering 
+
+Using `sort` and `sorted` functions.  
+
+Sort in-place with `sort` by product name.  
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+data.sort(key=lambda e: e.ProductName)
+
+for p in data:
+    print(p)
+```
+
 ## Projections
 
 Select/map 
