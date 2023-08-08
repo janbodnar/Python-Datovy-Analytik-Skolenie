@@ -9,7 +9,7 @@ In Python, we can have different names of functions that are common in functiona
 [Filtering](#filtering)  
 [Ordering](#ordering)  
 [Projections](#projections)  
-[Set operations](#set-operations)
+[Set operations](#set-operations)  
 [The products module](#the-products-module)  
 
 ## Element access
