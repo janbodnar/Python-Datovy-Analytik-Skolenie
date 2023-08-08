@@ -3,6 +3,7 @@
 In Python, we can have different names of functions that are common in functional programming.  
 
 [Element access](#element-access)  
+[Aggregates](#aggregates)
 [Any/all functions](#any/all-functions)  
 [Partitioning](#partitioning)  
 [Filtering](#filtering)  
@@ -34,6 +35,38 @@ print(lastFive)
 print(len(lastFive))
 ```
 
+## Aggregates 
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+from operator import attrgetter
+from statistics import median, mean
+
+data = get_products()
+
+n = len(data)
+print(n)
+
+n = min(data, key=attrgetter('unit_price'))
+print(n)
+
+n = max(data, key=attrgetter('unit_price'))
+print(n)
+
+n = sum(p.units_in_stock for p in data)
+print(n)
+
+n = max(data, key=attrgetter('unit_price'))
+print(n)
+
+n = mean(p.unit_price for p in data)
+print(n)
+
+n = median(p.unit_price for p in data)
+print(n)
+```
 
 ## Any/all functions 
 
@@ -47,7 +80,7 @@ from products import get_products
 
 data = get_products()
 
-uis = [p.UnitsInStock == 0 for p in data]
+uis = [p.units_in_stock == 0 for p in data]
 print(uis)
 
 if any(uis):
@@ -86,7 +119,7 @@ res = data[:n]
 print(res) 
 
 # takewhile
-res = takewhile(lambda p: p.UnitsInStock != 0, data)
+res = takewhile(lambda p: p.units_in_stock != 0, data)
 print(list(res))
 
 # skip
@@ -94,7 +127,7 @@ res = data[n:]
 print(res)
 
 # skipwhile 
-res = dropwhile(lambda p: p.UnitsInStock != 0, data)
+res = dropwhile(lambda p: p.units_in_stock != 0, data)
 print(list(res))
 ```
 
@@ -111,17 +144,17 @@ data = get_products()
 
 # filter 
 
-res = [p for p in data if p.UnitsInStock == 0]
+res = [p for p in data if p.units_in_stock == 0]
 print(res)
 
 print('----------------------------------')
 
-res = filter(lambda p: p.Category == 'Beverages', data)
+res = filter(lambda p: p.category == 'Beverages', data)
 print(list(res))
 
 print('----------------------------------')
 
-res = filter(lambda p: p.Category == 'Beverages' and p.UnitsInStock > 100, data)
+res = filter(lambda p: p.category == 'Beverages' and p.units_in_stock > 100, data)
 print(list(res))
 ```
 
@@ -164,7 +197,7 @@ Sort in-place with `sort` by product name.
 from products import get_products
 
 data = get_products()
-data.sort(key=lambda e: e.ProductName)
+data.sort(key=lambda e: e.product_name)
 
 for p in data:
     print(p)
@@ -178,7 +211,7 @@ Sort in-place with `sort` by product name in descending order.
 from products import get_products
 
 data = get_products()
-data.sort(key=lambda e: e.ProductName, reverse=True)
+data.sort(key=lambda e: e.product_name, reverse=True)
 
 for p in data:
     print(p)
@@ -228,7 +261,7 @@ for city in sorted_cities:
 ```
 
 
-Sorting by multiple criteria. By Category and UnitPrice.  
+Sorting by multiple criteria. By category and unit price.  
 
 ```python
 #!/usr/bin/python
@@ -236,7 +269,7 @@ Sorting by multiple criteria. By Category and UnitPrice.
 from products import get_products
 
 data = get_products()
-data.sort(key=lambda e: (e.Category, e.UnitPrice))
+data.sort(key=lambda e: (e.category, e.unit_price))
 
 for p in data:
     print(p)
@@ -263,7 +296,7 @@ class negate:
 
 
 data = get_products()
-data.sort(key=lambda e: (e.Category, negate(e.UnitPrice)))
+data.sort(key=lambda e: (e.category, negate(e.unit_price)))
 
 for p in data: 
     print(p)
@@ -285,7 +318,7 @@ def multisort(xs, specs):
     return xs
 
 data = get_products()
-multisort(data, (('Category', False), ('UnitPrice', True)))
+multisort(data, (('category', False), ('unit_price', True)))
 
 for p in data:
     print(p)
@@ -307,18 +340,18 @@ from products import get_products
 
 @dataclass(frozen=True)
 class Item:
-    Name: str
-    Price: Decimal
+    name: str
+    price: Decimal
 
 data = get_products()
 
-res = [p.Category for p in data]
+res = [p.category for p in data]
 print(res)
 
-res = [(p.ProductName, p.UnitPrice) for p in data]
+res = [(p.product_name, p.unit_price) for p in data]
 print(res)
 
-res = [Item(p.ProductName, p.UnitPrice) for p in data]
+res = [Item(p.product_name, p.unit_price) for p in data]
 print(res)
 ```
 ---
@@ -343,11 +376,11 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Product:
-    ProductID: int
-    ProductName: str
-    Category: str
-    UnitPrice: float
-    UnitsInStock: int
+    pid: int
+    product_name: str
+    category: str
+    unit_price: float
+    units_in_stock: int
 
 
 def get_products():
