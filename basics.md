@@ -1,6 +1,6 @@
 # Functional data analysis
 
-In Python, we can have different names of functions that are common in functional programming.  
+Python has different names of functions that are common in functional programming.  
 
 [Element access](#element-access)  
 [Aggregates](#aggregates)
