@@ -7,7 +7,7 @@ In Python, we can have different names of functions that are common in functiona
 [Partitioning](#partitioning)  
 [Filtering](#filtering)  
 [Ordering](#ordering)  
-[Projectios](#projections)  
+[Projections](#projections)  
 [The products module](#the-products-module)  
 
 ## Element access
