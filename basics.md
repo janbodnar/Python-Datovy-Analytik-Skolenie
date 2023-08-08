@@ -125,6 +125,34 @@ res = filter(lambda p: p.Category == 'Beverages' and p.UnitsInStock > 100, data)
 print(list(res))
 ```
 
+Filter by type with `isinstance`.  
+
+```python
+#!/usr/bin/python
+
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class City:
+    cid: int
+    name: str
+    population: int
+
+@dataclass(frozen=True)
+class User:
+    uid: int
+    first_name: str
+    last_name: str
+    occupation: str
+
+data = [City(1, 'Bratislava', 432000), User(2, 'John', 'Doe', 'gardener'), 12, 
+    'Peter Howgard', City(2, 'Budapest', 1759000), True, City(3, 'Prague', 1280000)]
+
+cities = [e for e in data if isinstance(e, City)]
+print(cities)
+```
+
+
 ## Ordering 
 
 Using `sort` and `sorted` functions.  
