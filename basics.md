@@ -3,7 +3,7 @@
 Python has different names of functions that are common in functional programming.  
 
 [Element access](#element-access)  
-[Aggregates](#aggregates)
+[Aggregates](#aggregates)  
 [Any/all functions](#any/all-functions)  
 [Partitioning](#partitioning)  
 [Filtering](#filtering)  
