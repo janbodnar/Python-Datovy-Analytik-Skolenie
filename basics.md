@@ -147,13 +147,45 @@ Sort in-place with `sort` by product name in descending order.
 ```python
 #!/usr/bin/python
 
-# from dataclasses import dataclass
-# from decimal import Decimal
 from products import get_products
-
 
 data = get_products()
 data.sort(key=lambda e: e.ProductName, reverse=True)
+
+for p in data:
+    print(p)
+```
+
+Sorting by multiple criteria. By Category and UnitPrice.  
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+data.sort(key=lambda e: (e.Category, e.UnitPrice))
+
+for p in data:
+    print(p)
+```
+Sorting by multiple criteria with ascending and descending orders.  
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+from operator import attrgetter
+
+def multisort(xs, specs):
+
+    for key, reverse in reversed(specs):
+        xs.sort(key=attrgetter(key), reverse=reverse)
+
+    return xs
+
+data = get_products()
+multisort(data, (('Category', False), ('UnitPrice', True)))
 
 for p in data:
     print(p)
