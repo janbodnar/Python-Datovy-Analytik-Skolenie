@@ -2,6 +2,10 @@
 
 In Python, we can have different names of functions that are common in functional programming.  
 
+[Element access](#element-access)
+[Any/all functions](#any/all-functions)
+[Partitioning](#partitioning)
+
 ## Element access
 
 ```python
