@@ -2,9 +2,13 @@
 
 In Python, we can have different names of functions that are common in functional programming.  
 
-[Element access](#element-access)
-[Any/all functions](#any/all-functions)
-[Partitioning](#partitioning)
+[Element access](#element-access)  
+[Any/all functions](#any/all-functions)  
+[Partitioning](#partitioning)  
+[Filtering](#filtering)  
+[Ordering](#ordering)  
+[Projectios](#projections)  
+[The products module](#the-products-module)  
 
 ## Element access
 
@@ -94,7 +98,7 @@ res = dropwhile(lambda p: p.UnitsInStock != 0, data)
 print(list(res))
 ```
 
-## Filter
+## Filtering
 
 Filtering with `filter` function and list comprehensions.  
 
