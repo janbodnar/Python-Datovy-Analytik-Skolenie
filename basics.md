@@ -9,6 +9,7 @@ In Python, we can have different names of functions that are common in functiona
 [Filtering](#filtering)  
 [Ordering](#ordering)  
 [Projections](#projections)  
+[Set operations](#set-operations)
 [The products module](#the-products-module)  
 
 ## Element access
@@ -367,6 +368,49 @@ nums_squared = map(lambda x: x*x, nums)
 
 for num in nums_squared:
     print(num)
+```
+
+## Set operations
+
+The union, intersection, difference, and distinct set operations.  
+
+```python
+#!/usr/bin/python
+
+from dataclasses import dataclass
+from products import get_products
+
+@dataclass(frozen=True)
+class User:
+    first_name: str
+    last_name: str
+    occupation: str
+
+
+users1 = {User('John', 'Doe', 'gardener'), User('Roger', 'Roe', 'driver'),
+          User('Peter', 'Howard', 'pilot')}
+
+users2 = {User('John', 'Doe', 'gardener'), User('Jane', 'Doe', 'shopkeeper'),
+          User('Lucy', 'Smith', 'teacher')}
+
+res = users1.union(users2)
+print(res)
+
+print('------------------------------')
+
+res = users1.intersection(users2)
+print(res)
+
+print('------------------------------')
+
+res = users1.difference(users2)
+print(res)
+
+print('------------------------------')
+
+vals = [1, 1, 2, 2, 2, 3, 4, 5, 5, 5, 6, 6, 7]
+vals2 = set(vals)
+print(vals2)
 ```
 
 ## The products module 
