@@ -132,6 +132,8 @@ print(words1 == words2)
 
 --- 
 
+Comparing data objects.  
+
 ```python
 #!/usr/bin/python
 
@@ -165,6 +167,51 @@ print(users1 == users2)
 users2.sort(key=lambda e: e.uid)
 print(users1 == users2)
 ```
+
+---
+
+Using `all` and `zip` functions.  
+
+```python
+#!/usr/bin/python
+
+from dataclasses import dataclass
+from products import get_products
+
+
+@dataclass(frozen=True)
+class User:
+    uid: int
+    first_name: str
+    last_name: str
+    occupation: str
+
+
+users1 = [
+    User(1, 'John', 'Doe', 'gardener'),
+    User(2, 'Roger', 'Roe', 'driver'),
+    User(3, 'Jane', 'Doe', 'teacher'),
+    User(4, 'Sofia', 'Green', 'gardener')
+]
+
+users2 = [
+    User(2, 'Roger', 'Roe', 'driver'),
+    User(4, 'Sofia', 'Green', 'gardener'),
+    User(3, 'Jane', 'Doe', 'teacher'),
+    User(1, 'John', 'Doe', 'gardener')
+]
+
+
+res = all(x == y for x, y in zip(users1, users2))
+print(res)
+
+users2.sort(key=lambda e: e.uid)
+
+res = all(x == y for x, y in zip(users1, users2))
+print(res)
+```
+
+
 
 ## Partitioning
 
