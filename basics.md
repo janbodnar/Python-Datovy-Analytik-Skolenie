@@ -9,6 +9,7 @@ Python has different names of functions that are common in functional programmin
 [Partitioning](#partitioning)  
 [Filtering](#filtering)  
 [Ordering](#ordering)  
+[Grouping](#grouping)
 [Projections](#projections)  
 [Set operations](#set-operations)  
 [The products module](#the-products-module)  
@@ -483,6 +484,25 @@ multisort(data, (('category', False), ('unit_price', True)))
 for p in data:
     print(p)
 ```
+
+## Grouping 
+
+Using `groupby` function from `itertools` module. The data must be sorted.  
+
+```python
+#!/usr/bin/python
+
+from itertools import groupby
+
+vals = [1, 1, 1, 2, 3, 2, 4, 5, 4, 3, 3, 5, 6, 7, 3]
+vals.sort()
+
+res = groupby(vals, key=lambda e: e)
+
+for k, g in res:
+    print(k, list(g))
+```
+
 
 ## Projections
 
