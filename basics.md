@@ -576,13 +576,14 @@ print(vals2)
 
 ```python
 from dataclasses import dataclass
+from decimal import Decimal
 
 @dataclass(frozen=True)
 class Product:
     pid: int
     product_name: str
     category: str
-    unit_price: float
+    unit_price: Decimal
     units_in_stock: int
 
 
