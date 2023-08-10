@@ -331,6 +331,20 @@ cities = [e for e in data if isinstance(e, City)]
 print(cities)
 ```
 
+Filter and count.  
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+
+data = get_products()
+
+res = [p for p in data if p.unit_price > 100]
+print(len(res))
+```
+
 
 ## Ordering 
 
