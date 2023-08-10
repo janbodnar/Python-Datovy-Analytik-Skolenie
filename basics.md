@@ -635,6 +635,50 @@ for k, g in res:
         print(f'  {u.first_name} {u.last_namecl}')
 ```
 
+Group by boolean expression.  
+Group students into two groups by test scores.  
+
+```python
+#!/usr/bin/python
+
+from itertools import groupby
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class User:
+    first_name: str
+    last_name: str
+    score: int
+
+
+users = [
+    User("John", "Doe", 78),
+    User("Roger", "Roe", 89),
+    User("Peter", "Doe", 90),
+    User("Pavol", "Novak", 34),
+    User("Albert", "Novak", 66),
+    User("Peter", "Horvath", 89),
+    User("Lucia", "Horvath", 88),
+    User("Michael", "Novak", 99),
+]
+
+users.sort(key=lambda e: e.score)
+
+res = [(list(g))
+       for k, g in groupby(users, lambda u: u.score > 70)]
+failed = res[0]
+passed = res[1]
+
+print('failed')
+for u in failed:
+    print(u)
+
+print('passed')
+for u in passed:
+    print(u)
+```
+
 
 ## Projections
 
