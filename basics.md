@@ -9,7 +9,7 @@ Python has different names of functions that are common in functional programmin
 [Partitioning](#partitioning)  
 [Filtering](#filtering)  
 [Ordering](#ordering)  
-[Grouping](#grouping)
+[Grouping](#grouping)  
 [Projections](#projections)  
 [Set operations](#set-operations)  
 [The products module](#the-products-module)  
