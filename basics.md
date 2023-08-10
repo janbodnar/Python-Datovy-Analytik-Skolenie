@@ -594,6 +594,8 @@ for k, g in res:
 ```
 
 Grouping by composite key.  
+Group users by last name and occupation.  
+
 
 ```python
 #!/usr/bin/python
