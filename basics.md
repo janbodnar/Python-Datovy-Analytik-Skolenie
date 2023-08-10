@@ -106,7 +106,6 @@ Sorted lists can be compared with `==` operator.
 ```python
 #!/usr/bin/python
 
-# from dataclasses import dataclass
 from products import get_products
 
 vals1 = [-1, 2, 0, 1, 4, 3]
@@ -129,8 +128,6 @@ words2.sort()
 
 print(words1 == words2)
 ```
-
---- 
 
 Comparing data objects.  
 
@@ -167,8 +164,6 @@ print(users1 == users2)
 users2.sort(key=lambda e: e.uid)
 print(users1 == users2)
 ```
-
----
 
 Using `all` and `zip` functions.  
 
@@ -211,6 +206,46 @@ res = all(x == y for x, y in zip(users1, users2))
 print(res)
 ```
 
+Using `reduce` and `map`.  
+
+```python
+#!/usr/bin/python
+
+from dataclasses import dataclass
+from products import get_products
+from functools import reduce
+
+@dataclass(frozen=True)
+class User:
+    uid: int
+    first_name: str
+    last_name: str
+    occupation: str
+
+
+users1 = [
+    User(1, 'John', 'Doe', 'gardener'),
+    User(2, 'Roger', 'Roe', 'driver'),
+    User(3, 'Jane', 'Doe', 'teacher'),
+    User(4, 'Sofia', 'Green', 'gardener')
+]
+
+users2 = [
+    User(2, 'Roger', 'Roe', 'driver'),
+    User(4, 'Sofia', 'Green', 'gardener'),
+    User(3, 'Jane', 'Doe', 'teacher'),
+    User(1, 'John', 'Doe', 'gardener')
+]
+
+
+res = reduce(lambda i, j: i and j, map(lambda m, k: m == k, users1, users2), True)
+print(res)
+
+users2.sort(key=lambda e: e.uid)
+
+res = reduce(lambda i, j: i and j, map(lambda m, k: m == k, users1, users2), True)
+print(res)
+```
 
 
 ## Partitioning
