@@ -106,8 +106,6 @@ Sorted lists can be compared with `==` operator.
 ```python
 #!/usr/bin/python
 
-from products import get_products
-
 vals1 = [-1, 2, 0, 1, 4, 3]
 vals2 = [-1, 3, 2, 1, 4, 0]
 
@@ -135,7 +133,6 @@ Comparing data objects.
 #!/usr/bin/python
 
 from dataclasses import dataclass
-from products import get_products
 
 
 @dataclass(frozen=True)
@@ -171,7 +168,6 @@ Using `all` and `zip` functions.
 #!/usr/bin/python
 
 from dataclasses import dataclass
-from products import get_products
 
 
 @dataclass(frozen=True)
@@ -212,7 +208,6 @@ Using `reduce` and `map`.
 #!/usr/bin/python
 
 from dataclasses import dataclass
-from products import get_products
 from functools import reduce
 
 @dataclass(frozen=True)
