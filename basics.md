@@ -5,7 +5,7 @@ Python has different names of functions that are common in functional programmin
 [Element access](#element-access)  
 [Aggregates](#aggregates)  
 [Any/all functions](#any/all-functions)  
-[Equality](#equality)
+[Equality](#equality)  
 [Partitioning](#partitioning)  
 [Filtering](#filtering)  
 [Ordering](#ordering)  
