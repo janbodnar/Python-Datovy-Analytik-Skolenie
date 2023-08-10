@@ -101,7 +101,7 @@ else:
 
 ## Equality
 
-Lists with integers or strings can be compared with `==` operator.  
+Sorted lists with integers or strings can be compared with `==` operator.  
 
 ```python
 #!/usr/bin/python
