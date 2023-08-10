@@ -521,6 +521,32 @@ for k, g in res:
     print(f'{k}: {g} -> {len(g)}')
 ```
 
+Grouping a list of tuples.  
+
+```python
+#!/usr/bin/python
+
+from itertools import groupby
+
+
+cars = [
+    ("Audi", "red", 52642),
+    ("Mercedes", "blue", 57127),
+    ("Skoda", "black", 9000),
+    ("Volvo", "red", 29000),
+    ("Bentley", "yellow", 350000),
+    ("Citroen", "white", 21000),
+    ("Hummer", "black", 41400),
+    ("Volkswagen", "white", 21600)
+]
+
+cars.sort(key=lambda e: e[1])
+
+res = [(k, list(g)) for k, g in groupby(cars, lambda e: e[1])]
+for k, g in res:
+    print(f'{k}: {g}')
+```
+
 Group products by category.  
 
 ```python
