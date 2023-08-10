@@ -5,6 +5,7 @@ Python has different names of functions that are common in functional programmin
 [Element access](#element-access)  
 [Aggregates](#aggregates)  
 [Any/all functions](#any/all-functions)  
+[Equality](#equality)
 [Partitioning](#partitioning)  
 [Filtering](#filtering)  
 [Ordering](#ordering)  
@@ -96,6 +97,37 @@ if all(vals):
     print(f'all values are positive')
 else:
     print(f'there are negative values present')
+```
+
+## Equality
+
+Lists with integers or strings can be compared with `==` operator.  
+
+```python
+#!/usr/bin/python
+
+# from dataclasses import dataclass
+from products import get_products
+
+vals1 = [-1, 2, 0, 1, 4, 3]
+vals2 = [-1, 3, 2, 1, 4, 0]
+
+print(vals1 == vals2)
+
+vals1.sort()
+vals2.sort()
+
+print(vals1 == vals2)
+
+words1 = ['sky', 'cloud', 'paper', 'small', 'pen', 'rock']
+words2 = ['paper', 'cloud', 'small', 'pen', 'sky', 'rock']
+
+print(words1 == words2)
+
+words1.sort()
+words2.sort()
+
+print(words1 == words2)
 ```
 
 ## Partitioning
