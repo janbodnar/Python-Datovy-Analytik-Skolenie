@@ -593,6 +593,45 @@ for k, g in res:
     print(f'{k}: {rs}')
 ```
 
+Grouping by composite key.  
+
+```python
+#!/usr/bin/python
+
+from itertools import groupby
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class User:
+    first_name: str
+    last_name: str
+    occupation: str
+
+
+users = [
+    User("John", "Doe", "gardener"),
+    User("Jane", "Doe", "teacher"),
+    User("Roger", "Roe", "driver"),
+    User("Peter", "Doe", "teacher"),
+    User("Pavol", "Novak", "programmer"),
+    User("Albert", "Novak", "teacher"),
+    User("Sam", "Novak", "driver"),
+    User("Peter", "Horvath", "accountant"),
+    User("Lucia", "Horvath", "accountant"),
+    User("Michael", "Novak", "programmer"),
+]
+
+users.sort(key=lambda e: (e.last_name, e.occupation))
+
+res = [(k, list(g))
+       for k, g in groupby(users, lambda u: (u.last_name, u.occupation))]
+
+for k, g in res:
+    print(f'{k[0]}, {k[1]}')
+    for u in g:
+        print(f'  {u.first_name} {u.last_namecl}')
+```
 
 
 ## Projections
