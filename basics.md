@@ -566,6 +566,35 @@ for k, g in res:
     print()
 ```
 
+Group & aggregate.  
+Calculate the sum of revenues for each quartal.  
+
+```python
+#!/usr/bin/python
+
+from itertools import groupby
+
+
+revenues = [
+    (1, "Q1", 2340),
+    (2, "Q1", 1200),
+    (3, "Q1", 980),
+    (4, "Q2", 340),
+    (5, "Q2", 780),
+    (6, "Q3", 2010),
+    (7, "Q3", 3370),
+    (8, "Q4", 540),
+]
+
+res = [(k, list(g)) for k, g in groupby(revenues, lambda e: e[1])]
+
+for k, g in res:
+    rs = sum([e[2] for e in g])
+    print(f'{k}: {rs}')
+```
+
+
+
 ## Projections
 
 Select/map 
