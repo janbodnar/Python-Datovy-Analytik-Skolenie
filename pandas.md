@@ -1,5 +1,7 @@
 # Pandas 
 
+Module for practical, real-world data analysis in Python.
+
 ## The head/tail functions
 
 ```python
