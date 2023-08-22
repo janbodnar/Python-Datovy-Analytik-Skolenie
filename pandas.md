@@ -203,6 +203,22 @@ print(df.columns)
 print(df.loc[:, [' Country']].to_string(index=False))
 ```
 
+### The take function 
+
+With `take` function we can select columns by index.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('military_spending.csv')
+df_c = df.take([1, 2, 3], axis=1)
+
+print(df_c.to_string(index=False))
+```
+
 
 ### The iloc function
 
