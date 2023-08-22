@@ -136,6 +136,20 @@ df = pd.DataFrame(data)
 print(df.describe())
 ```
 
+## Random sample
+
+Return a set of random rows or columns.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv("military_spending.csv")
+
+print(df.sample(3, axis=0))
+```
+
 ## Transform to dictionary
 
 ```python
