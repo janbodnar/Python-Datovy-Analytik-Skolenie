@@ -26,7 +26,7 @@ print(df.index)
 print('----------------')
 
 print(df.shape)
-print(df.size
+print(df.size)
 ```
 
 ## Change index
