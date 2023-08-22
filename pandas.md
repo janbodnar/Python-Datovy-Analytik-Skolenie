@@ -26,7 +26,7 @@ print(df.size)
 
 By default, the index starts from zero.  
 
-```pytnon
+```python
 #!/usr/bin/python
 
 import pandas as pd
