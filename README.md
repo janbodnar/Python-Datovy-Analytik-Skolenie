@@ -26,7 +26,8 @@
 
 5. Grafy
     - tvorba grafov pomocou Matplotlib
-  
+    - tvorba grafov pomocou seaborn
+   
 6. Web scraping
    - modul BeautifulSoup4
    - modul selectolax  
@@ -39,4 +40,6 @@
   
 8. Dataframes
    - Pandas, datatable, Polars
+  
+9. Analýza akcií, crypta
    
