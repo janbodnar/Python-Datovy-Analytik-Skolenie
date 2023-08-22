@@ -150,6 +150,19 @@ df = pd.read_csv("military_spending.csv")
 print(df.sample(3, axis=0))
 ```
 
+## Sorting 
+
+Sorting by multiple columns.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[True, False, True]).to_string())
+```
+
 ## Transform to dictionary
 
 ```python
