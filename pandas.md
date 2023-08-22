@@ -8,6 +8,8 @@ table of rows and columns, much like a spreadsheet.
 
 ## The head/tail functions
 
+The functions return the first/last n rows.  
+
 ```python
 #!/usr/bin/python
 
