@@ -5,6 +5,22 @@ Module for practical, real-world data analysis in Python.
 *DataFrame* is a data structure that organizes data into a 2-dimensional  
 table of rows and columns, much like a spreadsheet.  
 
+## Simple example 
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
+df = pd.DataFrame(data, columns=['Name', 'Age'])
+
+print(df)
+
+print(df.columns)
+print(df.shape)
+print(df.size)
+```
 
 ## The head/tail functions
 
