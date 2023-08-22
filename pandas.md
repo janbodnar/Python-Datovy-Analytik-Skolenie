@@ -136,6 +136,43 @@ df = pd.DataFrame(data)
 print(df.describe())
 ```
 
+## Basic stats 
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.arange(0, 1200, 2), columns=['A'])
+
+print(f'mean: {df.values.mean()}')
+print(f'std: {df.values.std()}')
+print(f'min: {df.values.min()}')
+print(f'max: {df.values.max()}')
+print(f'sum: {df.values.sum()}')
+```
+
+---
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+rng = np.random.default_rng()
+sample = rng.integers(low=0, high=12000, size=100) 
+
+df = pd.DataFrame(sample, columns=['A'])
+
+print(f"sum: {sum(df['A'])}")
+print(f"min: {min(df['A'])}")
+print(f"max: {max(df['A'])}")
+print(f"len: {len(df['A'])}")
+```
+
+
 ## Random sample
 
 Return a set of random rows or columns.  
