@@ -190,7 +190,7 @@ print(df[2:12:1].to_string(index=False))
 ```
 
 
-Selecting columns  
+Selecting columns with labels  
 
 ```python
 #!/usr/bin/python
@@ -206,7 +206,7 @@ print(df.loc[:, [' Country']].to_string(index=False))
 
 ### The iloc function
 
-Selecting columns  
+Selecting columns with indexes  
 
 ```python
 #!/usr/bin/python
