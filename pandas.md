@@ -83,10 +83,10 @@ print(df.describe())
 
 import pandas as pd 
 
-# data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
-# df = pd.DataFrame(data, columns=['Name', 'Age'])
+data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
+df = pd.DataFrame(data, columns=['Name', 'Age'])
 
-df = pd.read_csv("military_spending.csv") 
+# df = pd.read_csv("military_spending.csv") 
 
 print('list')
 print(df.to_dict(orient='list'))
