@@ -2,6 +2,10 @@
 
 Module for practical, real-world data analysis in Python.
 
+*DataFrame* is a data structure that organizes data into a 2-dimensional  
+table of rows and columns, much like a spreadsheet.  
+
+
 ## The head/tail functions
 
 ```python
