@@ -76,7 +76,7 @@ df = pd.DataFrame(data)
 print(df.describe())
 ```
 
-## Orientation
+## Transform to dictionary
 
 ```python
 #!/usr/bin/python
