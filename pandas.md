@@ -22,6 +22,21 @@ print(df.shape)
 print(df.size)
 ```
 
+## Change index
+
+By default, the index starts from zero.  
+
+```pytnon
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv("military_spending.csv") 
+df.index = df.index + 1
+
+print(df)
+```
+
 ## The head/tail functions
 
 The functions return the first/last n rows.  
