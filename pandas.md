@@ -172,6 +172,52 @@ print(f"max: {max(df['A'])}")
 print(f"len: {len(df['A'])}")
 ```
 
+## Selections 
+
+### The loc function 
+
+Selecting rows with slicing syntax  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('military_spending.csv')
+
+print(df[2:12:1].to_string(index=False))
+```
+
+
+Selecting columns  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv("military_spending.csv") 
+
+print(df.columns)
+print(df.loc[:, [' Country']].to_string(index=False))
+```
+
+
+### The iloc function
+
+Selecting columns  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv("military_spending.csv") 
+
+print(df.iloc[:, [1, 2, 3]].to_string(index=False))
+```
+
 
 ## Random sample
 
