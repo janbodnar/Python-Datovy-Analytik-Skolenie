@@ -7,6 +7,8 @@ table of rows and columns, much like a spreadsheet.
 
 ## Simple example 
 
+Create a small dataframe and show the columns, values, index, shape and size properties.  
+
 ```python
 #!/usr/bin/python
 
@@ -18,8 +20,13 @@ df = pd.DataFrame(data, columns=['Name', 'Age'])
 print(df)
 
 print(df.columns)
+print(df.values)
+print(df.index)
+
+print('----------------')
+
 print(df.shape)
-print(df.size)
+print(df.size
 ```
 
 ## Change index
