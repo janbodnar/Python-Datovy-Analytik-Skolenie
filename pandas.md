@@ -76,4 +76,49 @@ df = pd.DataFrame(data)
 print(df.describe())
 ```
 
+## Orientation
+
+```python
+#!/usr/bin/python
+
+import pandas as pd 
+
+# data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
+# df = pd.DataFrame(data, columns=['Name', 'Age'])
+
+df = pd.read_csv("military_spending.csv") 
+
+print('list')
+print(df.to_dict(orient='list'))
+
+print('************************************')
+
+print('series')
+print(df.to_dict(orient='series'))
+
+print('************************************')
+
+print('dict')
+print(df.to_dict(orient='dict'))
+
+print('************************************')
+
+print('split')
+print(df.to_dict(orient='split'))
+
+print('************************************')
+
+print('records')
+print(df.to_dict(orient='records'))
+
+print('************************************')
+
+print('index')
+print(df.to_dict(orient='index'))
+
+print('************************************')
+
+print('tight')
+print(df.to_dict(orient='tight'))
+```
 
