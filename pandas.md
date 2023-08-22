@@ -67,6 +67,21 @@ frame.index = ['BR', 'RU', 'IN', 'CH', 'SA']
 print(frame)
 ```
 
+## No header/index 
+
+How to turn off header and index.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd 
+  
+df = pd.read_csv("military_spending.csv") 
+
+# print(df)
+print(df.to_string(header=False, index=False))
+```
+
 ## The head/tail functions
 
 The functions return the first/last n rows.  
