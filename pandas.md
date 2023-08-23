@@ -274,6 +274,21 @@ print(df.iloc[:5, 5:8])
 print('--------------------------------------')
 ```
 
+## The isin function
+
+Check if the a column is equal to one of the given options.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv("employees.csv")
+
+res = df.loc[df['Team'].isin(['Marketing', 'Finance'])]
+print(res.to_string(index=False))
+```
+
 ## Random sample
 
 Return a set of random rows or columns.  
