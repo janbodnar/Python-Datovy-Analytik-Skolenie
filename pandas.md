@@ -203,6 +203,19 @@ print(df.columns)
 print(df.loc[:, [' Country']].to_string(index=False))
 ```
 
+Selecting with conditions  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv("employees.csv")
+
+data = df.loc[(df['Salary'] > 10000) & (df['Salary'] < 50000)]
+print(data.head(15).to_string(index=False))
+```
+
 ### The take function 
 
 With `take` function we can select columns by index.  
