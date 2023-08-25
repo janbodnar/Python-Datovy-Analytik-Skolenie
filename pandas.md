@@ -396,6 +396,47 @@ df = pd.read_csv('products.csv')
 print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[True, False, True]).to_string())
 ```
 
+## Grouping 
+
+We use the `groupby` function to perform grouping.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd 
+  
+df = pd.read_csv('products.csv') 
+print(df['category'].nunique())
+
+g = df.groupby('category')
+print(g.ngroups)
+
+print('----------------------')
+
+print(g.size())
+```
+
+Take the first, last, nth row from each group. 
+
+```python
+#!/usr/bin/python
+
+import pandas as pd 
+
+df = pd.read_csv('products.csv') 
+g = df.groupby('category')
+
+print(g.first())
+print('----------------------')
+
+print(g.last())
+print('----------------------')
+
+print(g.nth(6))
+print('----------------------')
+```
+
+
 ## The to_csv function
 
 The `to_csv` function writes the dataframe to CSV.  
