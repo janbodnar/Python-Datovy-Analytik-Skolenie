@@ -341,6 +341,21 @@ df = pd.read_csv('products.csv')
 print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[True, False, True]).to_string())
 ```
 
+## The to_csv function
+
+The `to_csv` function writes the dataframe to CSV.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+
+res = df[df.index % 2 == 0]
+res.to_csv('products2.csv', index=False)
+```
+
 ## Transform to dictionary
 
 ```python
