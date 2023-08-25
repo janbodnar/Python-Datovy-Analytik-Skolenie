@@ -112,3 +112,29 @@ print('-----------------')
 print(res.min())
 print('-----------------')
 ```
+
+## Aggregate functions from numpy
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('products.csv')
+g = df.groupby('category')
+
+res = g.get_group('Beverages')[['unit_price', 'units_in_stock']]
+
+print(res.agg(np.var))
+print('----------------------------')
+
+print(res.agg(np.std))
+print('----------------------------')
+
+print(res.agg(np.mean))
+print('----------------------------')
+
+print(res.agg(np.median))
+print('----------------------------')
+```
