@@ -15,6 +15,18 @@ df = pd.read_csv('products.csv')
 print(df.to_string(index=False))
 ```
 
+## Show rows with even idx
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+
+res = df[df.index % 2 == 0]
+print(res.to_string(index=True))
+```
 
 ## Basic stats 
 
