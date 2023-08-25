@@ -5,6 +5,18 @@ Module for practical, real-world data analysis in Python.
 *DataFrame* is a data structure that organizes data into a 2-dimensional  
 table of rows and columns, much like a spreadsheet.  
 
+## Show dataframe without the index
+
+```python
+#!/usr/bin/python
+
+import pandas as pd 
+
+df = pd.read_csv('military_spending.csv') 
+print(df.to_string(index=False))
+```
+
+
 ## Basic stats 
 
 ```python
