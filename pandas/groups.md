@@ -1,6 +1,7 @@
 # Groups
 
-We use the `groupby` function to perform grouping.  
+We use the `groupby` function to perform grouping. The returned group  
+object is a Python dictionary.  
 
 ## Counting groups
 
