@@ -72,3 +72,18 @@ res = df[df["category"] == 'Produce']
 print(res.to_string(index=False))
 ```
 
+## The describe function 
+
+The `describe` function gives basic statistics for numerical values.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+g = df.groupby('category')
+
+print(g[['unit_price', 'units_in_stock']].describe())
+```
+
