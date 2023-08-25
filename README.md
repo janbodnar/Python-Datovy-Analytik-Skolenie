@@ -4,7 +4,7 @@
 ## Osnovy
 
 1. Úvod
-   - základné násroje: VS Code, Jupyter, pip, PGAdmin, DB Browser
+   - základné násroje: VS Code, Jupyter, pip, PGAdmin
    - pokročilá práca s funkciami
    - float a Decimal typy
    - náhodné čísla
