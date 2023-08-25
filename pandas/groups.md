@@ -45,3 +45,30 @@ print('----------------------')
 print(g.nth(6))
 print('----------------------')
 ```
+
+## Retrieving specific group 
+
+The `get_group` function constructs a DataFrame from the group with the provided name.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+g = df.groupby('category')
+
+res = g.get_group('Seafood')
+print(res.to_string(index=False))
+
+print(80 * '-')
+
+res = g.get_group('Beverages')
+print(res.to_string(index=False))
+
+print(80 * '-')
+
+res = df[df["category"] == 'Produce']
+print(res.to_string(index=False))
+```
+
