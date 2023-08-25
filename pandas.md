@@ -289,6 +289,28 @@ res = df.loc[df['Team'].isin(['Marketing', 'Finance'])]
 print(res.to_string(index=False))
 ```
 
+---
+
+The OR selection is similar to the `isin` function.  
+
+```python
+#!/usr/bin/env python
+
+import pandas as pd
+
+df = pd.read_csv('employees.csv')
+
+res = df.loc[df['Team'] == 'Finance']
+print(res.head(10))
+
+print('---------------------------------')
+
+res = df[(df['Team'] == 'Finance') | (df['Team'] == 'Legal')]
+print(res.tail(10))
+```
+
+
+
 ## The drop function 
 
 The `drop` function removes the given columns or rows.  
