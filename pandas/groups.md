@@ -87,3 +87,25 @@ g = df.groupby('category')
 print(g[['unit_price', 'units_in_stock']].describe())
 ```
 
+## Aggregate functions
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('products.csv')
+g = df.groupby('category')
+
+res = g.get_group('Beverages')[['unit_price', 'units_in_stock']]
+
+print(res.sum())
+print('-----------------')
+
+print(res.max())
+print('-----------------')
+
+print(res.min())
+print('-----------------')
+```
