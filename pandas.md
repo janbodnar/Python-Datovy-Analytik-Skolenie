@@ -399,6 +399,8 @@ print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[Tr
 ## Grouping 
 
 We use the `groupby` function to perform grouping.  
+Calculate the number of groups and number of rows in each group  
+with `nunique`, `ngroups`, and `size`.   
 
 ```python
 #!/usr/bin/python
