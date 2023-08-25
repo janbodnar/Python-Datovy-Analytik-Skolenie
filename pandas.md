@@ -289,6 +289,31 @@ res = df.loc[df['Team'].isin(['Marketing', 'Finance'])]
 print(res.to_string(index=False))
 ```
 
+## The drop function 
+
+The `drop` function removes the given columns or rows.  
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.arange(16).reshape(4, 4), columns=['A', 'B', 'C', 'D'])
+df.index = df.index + 1
+print(df)
+
+print('----------------------------------------')
+
+df2 = df.drop(['A', 'B'], axis=1)
+print(df2)
+
+print('----------------------------------------')
+
+df3 = df.drop([2, 3], axis=0)
+print(df3)
+```
+
 ## Random sample
 
 Return a set of random rows or columns.  
