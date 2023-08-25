@@ -155,3 +155,26 @@ print('----------------------------')
 print(res.agg(np.median))
 print('----------------------------')
 ```
+
+## Filtering groups 
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+g = df.groupby('category')
+
+res = g.filter(lambda e: e['unit_price'].sum() > 300)
+df2 = res.groupby('category')[['unit_price', 'units_in_stock']].sum()
+df2.columns=['Sum of price', 'sum of units']
+print(df2)
+
+print('---------------------------------')
+
+res = g.filter(lambda e: e['unit_price'].sum() <= 300)
+df2 = res.groupby('category')[['unit_price', 'units_in_stock']].sum()
+df2.columns=['Sum of price', 'sum of units']
+print(df2)
+```
