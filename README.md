@@ -3,11 +3,11 @@
 
 ## Osnovy
 
-1. Základné nástroje
-   - VS Code
-   - Jupyter
-   - PGAdmin a DB Browser
-   - pip manažér
+1. Úvod
+   - základné násroje: VS Code, Jupyter, pip, PGAdmin, DB Browser
+   - pokročilá práca s funkciami
+   - float a Decimal typy
+   - náhodné čísla
 
 2. Vstupno-výstupné operácie
    - základy IO operácií
@@ -40,6 +40,7 @@
   
 8. Dataframes
    - Pandas, datatable, Polars
+   - selekcie, sortovanie, gruping dát
   
 9. Analýza akcií, crypta
    
