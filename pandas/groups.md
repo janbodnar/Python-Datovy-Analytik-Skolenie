@@ -100,6 +100,9 @@ g = df.groupby('category')
 
 res = g.get_group('Beverages')[['unit_price', 'units_in_stock']]
 
+print(res.count())
+print('-----------------')
+
 print(res.sum())
 print('-----------------')
 
