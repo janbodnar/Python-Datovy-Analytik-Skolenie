@@ -8,11 +8,10 @@ table of rows and columns, much like a spreadsheet.
 ## Show dataframe without the index
 
 ```python
-#!/usr/bin/python
 
-import pandas as pd 
+import pandas as pd
 
-df = pd.read_csv('military_spending.csv') 
+df = pd.read_csv('products.csv') 
 print(df.to_string(index=False))
 ```
 
