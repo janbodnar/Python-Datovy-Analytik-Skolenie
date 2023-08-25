@@ -46,6 +46,23 @@ print(g.nth(6))
 print('----------------------')
 ```
 
+## Iterage over groups 
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+g = df.groupby('category')
+
+for e in g:
+    print(80*'-')
+    print(e[0])
+    for f in e[1:]:
+        print(f)
+```
+
 ## Retrieving specific group 
 
 The `get_group` function constructs a DataFrame from the group with the provided name.  
