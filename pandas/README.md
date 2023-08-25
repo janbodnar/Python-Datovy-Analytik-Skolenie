@@ -41,6 +41,36 @@ print(f"max: {max(df['A'])}")
 print(f"len: {len(df['A'])}")
 ```
 
+## Axis 
+
+```python
+#!/usr/bin/python
+
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.arange(12).reshape(3, 4), columns=['A', 'B', 'C', 'D'])
+df.index = df.index + 1
+print(df)
+
+print('----------------------------------------')
+
+print(df.mean(axis=1))
+
+print('----------------------------------------')
+
+print(df.mean(axis=0))
+
+print('----------------------------------------')
+
+print(df['A'].mean())
+
+print('----------------------------------------')
+
+print(df.iloc[2].mean())
+
+print('----------------------------------------')
+```
 
 ## Random sample
 
