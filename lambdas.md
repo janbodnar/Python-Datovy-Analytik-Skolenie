@@ -65,6 +65,21 @@ res = filter(lambda x: x % 2, vals)
 print(list(res))
 ```
 
+---
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+
+res = filter(lambda p: p.category == 'Beverages' and p.units_in_stock > 100, data)
+
+for p in res:
+    print(p)
+```
+
 ## Lambda & sort 
 
 ```python
