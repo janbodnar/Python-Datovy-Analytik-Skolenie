@@ -236,12 +236,31 @@ def fn2(a, b, c, *d):
 def fn3(a, b, c, *d, e, f):
     print(a, b, c, d, e, f)
 
-
-vals = [1, 2, 3, 4, 5, 6]
-
 fn(1, 2, 3, 4, 5, 6)
 fn2(1, 2, 3, 4, 5, 6)
 fn3(1, 2, 3, 4, e=5, f=6)
+```
+--- 
+
+A list can be destructured into elements and passed to the function.  
+
+```python
+#!/usr/bin/python
+
+def fn(a, b, c, d, e, f):
+    print(a, b, c, d, e, f)
+
+def fn2(a, b, c, *d):
+    print(a, b, c, d)
+
+def fn3(a, b, c, *d, e, f):
+    print(a, b, c, d, e, f)
+
+vals = [1, 2, 3, 4, 5, 6]
+
+fn(*vals)
+fn2(*vals)
+fn3(*vals, e=7, f=8)
 ```
 
 
