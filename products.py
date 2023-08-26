@@ -1,0 +1,93 @@
+from dataclasses import dataclass
+from decimal import Decimal
+
+@dataclass(frozen=True)
+class Product:
+    pid: int
+    product_name: str
+    category: str
+    unit_price: Decimal
+    units_in_stock: int
+
+
+def get_products():
+
+    return [  
+        Product(1, "Chai", "Beverages", Decimal('18.00'), 39), 
+        Product(2, "Chang", "Beverages", Decimal('19.00'), 17),
+        Product(3, "Aniseed Syrup", "Condiments",  Decimal('10.00'), 13),
+        Product(4, "Chef Anton's Cajun Seasoning", "Condiments",  Decimal('22.00'), 53),
+        Product(5, "Chef Anton's Gumbo Mix", "Condiments", Decimal('21.35'), 0),
+        Product(6, "Grandma's Boysenberry Spread", "Condiments",  Decimal('25.00'), 120),
+        Product(7, "Uncle Bob's Organic Dried Pears", "Produce",  Decimal('30.00'), 15),
+        Product(8, "Northwoods Cranberry Sauce", "Condiments",  Decimal('40.00'), 6),
+        Product(9, "Mishi Kobe Niku", "Meat/Poultry",  Decimal('97.00'), 29), 
+        Product(10, "Ikura", "Seafood",  Decimal('31.00'), 31),
+        Product(11, "Queso Cabrales", "Dairy Products",  Decimal('21.00'), 22),
+        Product(12, "Queso Manchego La Pastora", "Dairy Products",  Decimal('38.00'), 86),
+        Product(13, "Konbu", "Seafood",  Decimal('6.00'), 24), 
+        Product(14, "Tofu", "Produce",  Decimal('23.25'), 35),
+        Product(15, "Genen Shouyu", "Condiments",  Decimal('15.50'), 39),
+        Product(16, "Pavlova", "Confections",  Decimal('17.45'), 29),
+        Product(17, "Alice Mutton", "Meat/Poultry",  Decimal('39.00'), 0),
+        Product(18, "Carnarvon Tigers", "Seafood",  Decimal('62.5000'), 42),
+        Product(19, "Teatime Chocolate Biscuits", "Confections",  Decimal('9.2000'), 25),
+        Product(20, "Sir Rodney's Marmalade", "Confections",  Decimal('81.00'), 40),
+        Product(21, "Sir Rodney's Scones", "Confections",  Decimal('10.00'), 3),
+        Product(22, "Gustaf's Knäckebröd", "Grains/Cereals",  Decimal('21.00'), 104),
+        Product(23, "Tunnbröd", "Grains/Cereals",  Decimal('9.00'), 61),
+        Product(24, "Guaraná Fantástica", "Beverages",  Decimal('4.50'), 20),
+        Product(25, "NuNuCa Nuß-Nougat-Creme", "Confections",  Decimal('14.00'), 76),
+        Product(26, "Gumbär Gummibärchen", "Confections",  Decimal('31.23'), 15),
+        Product(27, "Schoggi Schokolade", "Confections",  Decimal('43.90'), 49),
+        Product(28, "Rössle Sauerkraut", "Produce",  Decimal('45.60'), 26),
+        Product(29, "Thüringer Rostbratwurst", "Meat/Poultry",  Decimal('123.79'), 0),
+        Product(30, "Nord-Ost Matjeshering", "Seafood",  Decimal('25.89'), 10),
+        Product(31, "Gorgonzola Telino", "Dairy Products",  Decimal('12.50'), 0),
+        Product(32, "Mascarpone Fabioli", "Dairy Products",  Decimal('32.00'), 9),
+        Product(33, "Geitost", "Dairy Products",  Decimal('2.50'), 112),
+        Product(34, "Sasquatch Ale", "Beverages",  Decimal('14.00'), 111),
+        Product(35, "Steeleye Stout", "Beverages",  Decimal('18.00'), 20),
+        Product(36, "Inlagd Sill", "Seafood",  Decimal('19.00'), 112), 
+        Product(37, "Gravad lax", "Seafood",  Decimal('26.00'), 11),
+        Product(38, "Côte de Blaye", "Beverages",  Decimal('263.50'), 17),
+        Product(39, "Chartreuse verte", "Beverages",  Decimal('18.00'), 69),
+        Product(40, "Boston Crab Meat", "Seafood",  Decimal('18.40'), 123),
+        Product(41, "Jack'England Clam Chowder", "Seafood",  Decimal('9.65'), 85),
+        Product(42, "Singaporean Hokkien Fried Mee", "Grains/Cereals",  Decimal('14.00'), 26),
+        Product(43, "Ipoh Coffee", "Beverages",  Decimal('46.00'), 17),
+        Product(44, "Gula Malacca", "Condiments",  Decimal('19.45'), 27), 
+        Product(45, "Rogede sild", "Seafood",  Decimal('9.50'), 5),
+        Product(46, "Spegesild", "Seafood",  Decimal('12.00'), 95), 
+        Product(47, "Zaanse koeken", "Confections",  Decimal('9.50'), 36),
+        Product(48, "Chocolade", "Confections",  Decimal('12.75'), 15),
+        Product(49, "Maxilaku", "Confections",  Decimal('20.00'), 10),
+        Product(50, "Valkoinen suklaa", "Confections",  Decimal('16.25'), 65),
+        Product(51, "Manjimup Dried Apples", "Produce",  Decimal('53.00'), 20),
+        Product(52, "Filo Mix", "Grains/Cereals",  Decimal('7.00'), 38),
+        Product(53, "Perth Pasties", "Meat/Poultry",  Decimal('32.80'), 0),
+        Product(54, "Tourtière", "Meat/Poultry",  Decimal('7.45'), 21),
+        Product(55, "Pâté chinois", "Meat/Poultry",  Decimal('24.00'), 115),
+        Product(56, "Gnocchi di nonna Alice", "Grains/Cereals",  Decimal('38.00'), 21),
+        Product(57, "Ravioli Angelo", "Grains/Cereals",  Decimal('19.50'), 36),
+        Product(58, "Escargots de Bourgogne", "Seafood",  Decimal('13.25'), 62),
+        Product(59, "Raclette Courdavault", "Dairy Products",  Decimal('55.00'), 79),
+        Product(60, "Camembert Pierrot", "Dairy Products",  Decimal('34.00'), 19),
+        Product(61, "Sirop d'érable", "Condiments",  Decimal('28.50'), 113),
+        Product(62, "Tarte au sucre", "Confections",  Decimal('49.30'), 17),
+        Product(63, "Vegie-spread", "Condiments",  Decimal('43.90'), 24),
+        Product(64, "Wimmers gute Semmelknödel", "Grains/Cereals",  Decimal('33.25'), 22),
+        Product(65, "Louisiana Fiery Hot Pepper Sauce", "Condiments",  Decimal('21.05'), 76),
+        Product(66, "Louisiana Hot Spiced Okra", "Condiments",  Decimal('17.00'), 4),
+        Product(67, "Laughing Lumberjack Lager", "Beverages",  Decimal('14.00'), 52),
+        Product(68, "Scottish Longbreads", "Confections",  Decimal('12.50'), 6),
+        Product(69, "Gudbrandsdalsost", "Dairy Products",  Decimal('36.00'), 26),
+        Product(70, "Outback Lager", "Beverages",  Decimal('15.00'), 15),
+        Product(71, "Flotemysost", "Dairy Products",  Decimal('21.50'), 26),
+        Product(72, "Mozzarella di Giovanni", "Dairy Products",  Decimal('34.80'), 14),
+        Product(73, "Röd Kaviar", "Seafood",  Decimal('15.00'), 101), 
+        Product(74, "Longlife Tofu", "Produce",  Decimal('10.00'), 4),
+        Product(75, "Rhönbräu Klosterbier", "Beverages",  Decimal('7.75'), 125),
+        Product(76, "Lakkalikööri", "Beverages",  Decimal('18.00'), 57),
+        Product(77, "Original Frankfurter grüne Soße", "Condiments",  Decimal('13.00'), 32)
+    ]
