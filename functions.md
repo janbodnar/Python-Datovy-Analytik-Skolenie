@@ -18,7 +18,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Function definition](#function-definition)  
 [Kinds of functions](#kinds-of-functions)  
 [Third-party functions](#third-party-functions)  
-[Function definition](#function-definition)  
+[Instance, class, plain, inner functions](#instance-class)    
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
