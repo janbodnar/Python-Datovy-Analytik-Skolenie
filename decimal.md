@@ -249,4 +249,18 @@ val = sum(p.unit_price * Decimal(str(d)) * p.units_in_stock for p in res)
 print(val)
 ```
 
+There is a small error if we use floats.  
+
+```
+$ ./increase.py
+12
+12480.25
+14102.682499999997
+
+$ ./increase.py
+12
+12480.25
+14102.6825
+```
+
 
