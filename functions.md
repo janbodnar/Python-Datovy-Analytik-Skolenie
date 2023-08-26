@@ -196,6 +196,31 @@ print("Outside function", name)
 f()
 ```
 
+## Passing by reference 
+
+In Python, mutable objects are passed by reference as function arguments.  
+A list is passed by reference to the function. Therefore, the original list is  
+modified inside a function.  
+
+```python
+#!/usr/bin/python
+
+n = [1, 2, 3, 4, 5]
+
+print('Original list:', n)
+
+def f(x):
+
+    x.pop()
+    x.pop()
+    x.insert(0, 0)
+    print('Inside f():', x)
+
+f(n)
+
+print('After function call:', n)
+```
+
 ## Global variables 
 
 Global variables are defined in module.  
