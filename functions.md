@@ -95,6 +95,33 @@ f()
 g()
 ```
 
+## Returning values 
+
+The `return` keyword is used to return values from functions.  
+A function returns `None` if no keyword is defined.  
+
+```python
+#!/usr/bin/python
+
+# returning.py
+
+def showMessage(msg):
+
+    print(msg)
+
+
+def cube(x):
+
+    return x * x * x
+
+
+x = cube(3)
+print(x)
+
+showMessage("Computation finished.")
+print(showMessage("Ready."))
+```
+
 ## Nested functions
 
 Nested/inner functions are functions defined inside other functions.  
