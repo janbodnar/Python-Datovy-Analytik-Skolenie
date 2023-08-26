@@ -26,7 +26,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Passing by reference](#passing-by-reference)  
 [Global variables](#global-variables)  
 [The pass keyword](#the-pass-keyword)  
-[Function definition](#function-definition)  
+[Returning values](#returning-values)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
 
