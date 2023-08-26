@@ -53,8 +53,6 @@ print(C2F(30))
 ```python
 #!/usr/bin/python
 
-# three_kinds.py
-
 from math import sqrt
 
 def cube(x):
@@ -157,8 +155,6 @@ In Python, everything is an object.
 ```python
 #!/usr/bin/env python
 
-# object_types.py
-
 import sys
 
 def f():
@@ -182,8 +178,6 @@ called local variables.
 ```python
 #!/usr/bin/python
 
-# fun_scope.py
-
 # a local variable is valid in the 
 # function scope
 
@@ -201,9 +195,6 @@ f()
 
 ```python
 #!/usr/bin/python
-
-# fun_implicit.py
-
 
 def power(x, y=2):
 
@@ -458,8 +449,6 @@ We can return multiple values with tuples.
 ```python
 #!/usr/bin/python
 
-# returning2.py
-
 n = [1, 2, 3, 4, 5]
 
 def stats(x):
@@ -484,9 +473,7 @@ With `*` operator, function can accept arbitrary number of arguments.
 ```python
 #!/usr/bin/python
 
-# arbitrary_args.py
-
-def sum(*args):
+def do_sum(*args):
    '''Function returns the sum 
    of all values'''
    
@@ -498,9 +485,9 @@ def sum(*args):
    return r
 
 
-print(sum.__doc__)
-print(sum(1, 2, 3))
-print(sum(1, 2, 3, 4, 5))
+print(do_sum.__doc__)
+print(do_sum(1, 2, 3))
+print(do_sum(1, 2, 3, 4, 5))
 ```
 
 
@@ -612,8 +599,6 @@ Python is flexible, it allows to store functions in collections.
 
 ```python
 #!/usr/bin/python
-
-# fun_coll.py
 
 def f():
     pass
