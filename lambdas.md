@@ -112,6 +112,24 @@ for p in data:
     print(p)
 ```
 
+## Lambda & groupby
+
+```python
+#!/usr/bin/python
+
+from itertools import groupby
+
+words = ['key', 'water', 'war', 'rock', 'cup', 'cloud', 'matter', 'wood',
+         'forest', 'falcon', 'foam', 'wry', 'wrath', 'up', 'auto', 'roast',
+         'cool', 'computer']
+words.sort()
+
+res = [(k, list(g)) for k, g in groupby(words, key=lambda e: e[0])]
+
+for k, g in res:
+    print(f'{k}: {g} -> {len(g)}')
+```
+
 ## Lambda & Tkinter
 
 ```python
