@@ -199,6 +199,8 @@ f()
 ## Unpacking 
 
 Unpacking is cutting an object (such as a list) into its elements. It is also called destructuring.  
+The _ operator is used to ignore the value. The * operator eagerly takes all elements until the next  
+argument.  
 
 Unpacking function return values
 
