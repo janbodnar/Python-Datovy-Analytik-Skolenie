@@ -19,7 +19,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Kinds of functions](#kinds-of-functions)  
 [Third-party functions](#third-party-functions)  
 [Instance, class, plain, inner functions](#instance-class-plain-inner-functions)    
-[Function definition](#function-definition)  
+[Functions are objects](#functions-are-objects)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
