@@ -16,7 +16,7 @@ The parameter is followed by a colon character. The code next to the colon is
 the expression that is executed when the lambda function is called.  
 The lambda function is assigned to the z variable.
 
-# Lambda & map 
+## Lambda & map 
 
 ```python
 #!/usr/bin/python
@@ -29,7 +29,7 @@ for num in nums_squared:
     print(num)
 ```
 
-# Lambda & min/max
+## Lambda & min/max
 
 ```python
 #!/usr/bin/python
@@ -83,4 +83,60 @@ users.sort(reverse=True, key=lambda e: e['date_of_birth'])
 for user in users:
     print(user)
 ```
+
+## Lambda & Tkinter
+
+```python
+#!/usr/bin/python
+
+from tkinter import Tk, BOTH, messagebox
+from tkinter.ttk import Frame, Button
+
+
+class Example(Frame):
+
+    def __init__(self, parent):
+        Frame.__init__(self, parent)
+
+        self.parent = parent
+
+        self.initUI()
+
+
+    def initUI(self):
+
+        self.parent.title("Buttons")
+
+        self.pack(fill=BOTH, expand=1)
+
+        btn1 = Button(self, text="Button 1",
+            command=lambda: self.onClick("Button 1"))
+        btn1.pack(padx=5, pady=5)
+
+        btn2 = Button(self, text="Button 2",
+            command=lambda: self.onClick("Button 2"))
+        btn2.pack(padx=5, pady=5)
+
+        btn2 = Button(self, text="Button 3",
+            command=lambda: self.onClick("Button 3"))
+        btn2.pack(padx=5, pady=5)
+
+
+    def onClick(self, text):
+
+        messagebox.showinfo("Button label", text);
+
+
+def main():
+
+    root = Tk()
+    root.geometry("250x150+300+300")
+    app = Example(root)
+    root.mainloop()
+
+
+if __name__ == '__main__':
+    main()
+```
+
 
