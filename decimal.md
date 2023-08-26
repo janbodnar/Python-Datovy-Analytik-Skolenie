@@ -10,13 +10,13 @@ By default, Python interprets any number that includes a decimal point
 as a double precision floating point number. The Decimal is a floating  
 decimal point type which more precision and a smaller range than the float.  
 It is appropriate for financial and monetary calculations. It is also  
-closer to the way how humans work with numbers. 
+closer to the way how humans work with numbers.  
 
 Unlike hardware based binary floating point, the decimal module has  
 a user alterable precision which can be as large as needed for  
 a given problem. The default precision is 28 places. 
 
 Some values cannot be exactly represented in a float data type.  
-For instance, storing the 0.1 value in float (which is a binary floating point value) 
+For instance, storing the 0.1 value in float (which is a binary floating point value)  
 variable we get only an approximation of the value. Similarly, the 1/3 value  
 cannot be represented exactly in decimal floating point type. 
