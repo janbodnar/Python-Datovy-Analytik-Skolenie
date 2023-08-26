@@ -15,6 +15,16 @@ Functions in Python are first-class citizens. It means that functions have equal
 status with other objects in Python. Functions can be assigned to variables, stored  
 in collections, or passed as arguments. This brings additional flexibility to the language.  
 
+[Function definition](#function-definition)  
+[Kinds of functions](#kinds-of-functions) 
+[Third-party functions](#third-party-functions) 
+[Function definition](#function-definition) 
+[Function definition](#function-definition) 
+[Function definition](#function-definition) 
+[Function definition](#function-definition) 
+[Function definition](#function-definition) 
+[Function definition](#function-definition) 
+[Function definition](#function-definition) 
 
 ## Function definition
 
