@@ -39,12 +39,12 @@ Functions are defined with the `def` keyword.
 
 # fahrenheit.py
 
-def C2F(c):
+def cel_to_fahr(c):
     return c * 9/5 + 32
 
-print(C2F(100))
-print(C2F(0))
-print(C2F(30))
+print(cel_to_fahr(100))
+print(cel_to_fahr(0))
+print(cel_to_fahr(30))
 ```
 
 ## Kinds of functions
