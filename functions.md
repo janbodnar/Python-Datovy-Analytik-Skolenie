@@ -1,5 +1,20 @@
 # Functions
 
+A function is a mapping of zero or more input parameters to zero or more output parameters.
+
+The advantages of using functions are:
+
+- code organization
+- reducing duplication of code
+- decomposing complex problems into simpler pieces
+- improving clarity of the code
+- reuse of code
+- information hiding
+
+Functions in Python are first-class citizens. It means that functions have equal  
+status with other objects in Python. Functions can be assigned to variables, stored  
+in collections, or passed as arguments. This brings additional flexibility to the language.  
+
 ## Kinds of functions
 
 - built-in readily available
