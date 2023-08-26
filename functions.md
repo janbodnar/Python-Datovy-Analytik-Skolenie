@@ -196,6 +196,30 @@ print("Outside function", name)
 f()
 ```
 
+## Unpacking function return values
+
+```python
+#!/usr/bin/python
+
+def fn():
+    return [1, 2, 3, 4, 5, 6]
+
+a, b, c, d, e, f = fn()
+print(a, b, c, d, e, f)
+
+a, *mid, b = fn()
+print(a, mid, b)
+
+a, b, c, _, _, _ = fn()
+print(a, b, c)
+
+a, b, c, *d = fn()
+print(a, b, c, d)
+
+*a, b, c, d = fn()
+print(a, b, c, d)
+```
+
 ## Passing by reference 
 
 In Python, mutable objects are passed by reference as function arguments.  
