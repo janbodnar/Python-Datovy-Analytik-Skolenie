@@ -31,8 +31,8 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Nested functions](#nested-functions)  
 [Passing functions as parameters](#passing-functions-as-parameters)  
 [Function redefinition](#function-redefinition)  
-[Function definition](#function-definition)  
 [No function hoisting](#no-function-hoisting)  
+[Collection of functions](#collection-of-functions)  
 
 ## Function definition
 
