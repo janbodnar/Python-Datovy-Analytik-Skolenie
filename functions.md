@@ -30,8 +30,9 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Arbitrary number of args](#arbitrary-number-of-args)  
 [Nested functions](#nested-functions)  
 [Passing functions as parameters](#passing-functions-as-parameters)  
+[Function redefinition](#function-redefinition)  
 [Function definition](#function-definition)  
-[Function definition](#function-definition)  
+[No function hoisting](#no-function-hoisting)  
 
 ## Function definition
 
