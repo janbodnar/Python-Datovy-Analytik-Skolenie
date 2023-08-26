@@ -7,6 +7,7 @@
    - základné násroje: VS Code, Jupyter, pip, PGAdmin
    - pokročilá práca s funkciami
    - float a Decimal typy
+   - dataclass
    - náhodné čísla
 
 2. Konzolové aplikácie
