@@ -122,6 +122,33 @@ showMessage("Computation finished.")
 print(showMessage("Ready."))
 ```
 
+---
+
+We can return multiple values with tuples.  
+
+```python
+#!/usr/bin/python
+
+# returning2.py
+
+n = [1, 2, 3, 4, 5]
+
+def stats(x):
+
+    mx = max(x)
+    mn = min(x)
+    ln = len(x)
+    sm = sum(x)
+
+    return mx, mn, ln, sm
+
+mx, mn, ln, sm = stats(n) # deconstruction
+print(stats(n))
+
+print(mx, mn, ln, sm)
+```
+
+
 ## Nested functions
 
 Nested/inner functions are functions defined inside other functions.  
