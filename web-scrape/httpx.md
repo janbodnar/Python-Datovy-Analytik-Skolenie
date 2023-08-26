@@ -30,7 +30,7 @@ r = httpx.head('http://webcode.me')
 print(r.status_code)
 ```
 
-## Get request 
+## GET request 
 
 ```python
 #!/usr/bin/python
@@ -39,6 +39,22 @@ import httpx
 
 r = httpx.get('http://webcode.me')
 print(r.text)
+```
+
+## Async GET request 
+
+```python
+#!/usr/bin/python
+
+import httpx
+import asyncio
+
+async def main():
+    async with httpx.AsyncClient() as client:
+        r = await client.get('http://test.webcode.me')
+        print(r.text)
+
+asyncio.run(main())
 ```
 
 ## Query params 
@@ -52,3 +68,30 @@ payload = {'name': 'John Doe', 'occupation': 'gardener'}
 r = httpx.get('https://httpbin.org/get', params = payload)
 print(r.text)
 ```
+
+## Multiple async requests
+
+```python
+#!/usr/bin/python
+
+import httpx
+import asyncio
+
+async def get_async(url):
+    async with httpx.AsyncClient() as client:
+        return await client.get(url)
+
+urls = ['http://webcode.me', 'https://httpbin.org/get',
+    'https://google.com', 'https://stackoverflow.com',
+    'https://github.com']
+
+async def launch():
+    resps = await asyncio.gather(*map(get_async, urls))
+    data = [resp.status_code for resp in resps]
+
+    for status_code in data:
+        print(status_code)
+
+asyncio.run(launch())
+```
+
