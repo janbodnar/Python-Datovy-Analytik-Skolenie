@@ -15,6 +15,24 @@ Functions in Python are first-class citizens. It means that functions have equal
 status with other objects in Python. Functions can be assigned to variables, stored  
 in collections, or passed as arguments. This brings additional flexibility to the language.  
 
+
+## Function definition
+
+Functions are defined with the `def` keyword.  
+
+```python
+#!/usr/bin/python
+
+# fahrenheit.py
+
+def C2F(c):
+    return c * 9/5 + 32
+
+print(C2F(100))
+print(C2F(0))
+print(C2F(30))
+```
+
 ## Kinds of functions
 
 - built-in readily available
