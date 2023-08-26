@@ -240,6 +240,9 @@ print(a, mid, b)
 a, b, c, _, _, _ = fn()
 print(a, b, c)
 
+a, b, *_ = fn()
+print(a, b)
+
 a, b, c, *d = fn()
 print(a, b, c, d)
 
