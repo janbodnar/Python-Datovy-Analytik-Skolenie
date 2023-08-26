@@ -21,7 +21,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Instance, class, plain, inner functions](#instance-class-plain-inner-functions)    
 [Functions are objects](#functions-are-objects)  
 [Function scope](#function-scope)  
-[Function definition](#function-definition)  
+[Unpacking](#unpacking)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
