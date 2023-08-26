@@ -115,6 +115,10 @@ g()
 
 ## Functions are objects 
 
+Object attributes are accessed with the dot operator.  
+The `object` is the mother of all objects in Python; every Python  
+object implicitly derives from `object`.  
+
 ```python
 #!/usr/bin/python
 
