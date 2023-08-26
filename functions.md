@@ -82,6 +82,9 @@ print(r_vals3)
 
 ## Instance, class, plain, inner functions
 
+Functions defined inside classes are member functions. They are  
+often called methods.  
+
 ```python
 #!/usr/bin/python
 
