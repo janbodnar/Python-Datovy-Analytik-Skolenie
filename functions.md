@@ -95,6 +95,31 @@ f()
 g()
 ```
 
+## The pass keyword 
+
+The `pass` keyword is used to define functions that are not yet implemented.  
+
+```python
+#!/usr/bin/python
+
+def f():
+    pass
+
+def g():
+    pass
+  
+def h():
+    return 'h fun'
+
+print(f())
+print(g())
+print(h())
+
+print(f.__name__)
+print(g.__name__)
+print(h.__name__)
+```
+
 ## Returning values 
 
 The `return` keyword is used to return values from functions.  
