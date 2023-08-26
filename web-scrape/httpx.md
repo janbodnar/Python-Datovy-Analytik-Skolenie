@@ -18,3 +18,37 @@ This may lead to considerable increase of efficiency in our programs.
 
 The Hypertext Transfer Protocol (HTTP) is an application protocol for distributed, collaborative,  
 hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web.
+
+## Status code 
+
+```python
+#!/usr/bin/python
+
+import httpx 
+
+r = httpx.head('http://webcode.me')
+print(r.status_code)
+```
+
+## Get request 
+
+```python
+#!/usr/bin/python
+
+import httpx 
+
+r = httpx.get('http://webcode.me')
+print(r.text)
+```
+
+## Query params 
+
+```python
+#!/usr/bin/python
+
+import httpx 
+
+payload = {'name': 'John Doe', 'occupation': 'gardener'}
+r = httpx.get('https://httpbin.org/get', params = payload)
+print(r.text)
+```
