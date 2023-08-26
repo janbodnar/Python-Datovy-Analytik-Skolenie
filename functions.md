@@ -186,6 +186,44 @@ print("Outside function", name)
 f()
 ```
 
+## Global variables 
+
+Global variables are defined in module.  
+Global variables are automatically valid in functions.  
+```python
+#!/usr/bin/python
+
+name = "Jack"
+
+def f():
+   print("Within function", name)
+
+print("Outside function", name)
+f()
+```
+
+---
+
+ The `global` keyword allows us to modify the variable outside  
+ of the current scope.
+
+```python
+#!/usr/bin/python
+
+name = "Jack"
+
+def f():
+    
+   global name 
+   name = "Robert"
+   print ("Within function", name)
+
+
+print("Outside function", name)
+f()
+print("Outside function", name)
+```
+
 ## The pass keyword 
 
 The `pass` keyword is used to define functions that are not yet implemented.  
