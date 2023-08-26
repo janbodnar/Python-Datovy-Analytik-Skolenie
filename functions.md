@@ -113,6 +113,48 @@ f()
 g()
 ```
 
+## Functions are objects 
+
+```python
+#!/usr/bin/python
+
+# functions in Python are objects
+
+def f():
+    """This function prints a message """
+    print ("Today it is a cloudy day")
+    
+print(isinstance(f, object))
+print(id(f))
+
+print(f.__doc__)
+print(f.__name__)
+```
+
+---
+
+In Python, everything is an object.  
+
+```python
+#!/usr/bin/env python
+
+# object_types.py
+
+import sys
+
+def f():
+    pass
+
+print(type(1))
+print(type(""))
+print(type([]))
+print(type({}))
+print(type(()))
+print(type(object))
+print(type(f))
+print(type(sys))
+```
+
 ## The pass keyword 
 
 The `pass` keyword is used to define functions that are not yet implemented.  
