@@ -160,6 +160,29 @@ print(type(f))
 print(type(sys))
 ```
 
+## Function scope 
+
+Variables defined inside a function have a function scope. They are also  
+called local variables.  
+
+```python
+#!/usr/bin/python
+
+# fun_scope.py
+
+# a local variable is valid in the 
+# function scope
+
+name = "Jack"
+
+def f():
+   name = "Robert"
+   print("Within function", name)
+
+print("Outside function", name)
+f()
+```
+
 ## The pass keyword 
 
 The `pass` keyword is used to define functions that are not yet implemented.  
