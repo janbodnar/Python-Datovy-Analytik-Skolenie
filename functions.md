@@ -26,9 +26,8 @@ print(sqrt(81))
 Third-party functions defined in external modules.  
 For instance, the `numpy` module.  
 
-```
-$ pip install numpy
-```
+    $ pip install numpy
+
 
 ```python
 #!/usr/bin/python
