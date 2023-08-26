@@ -229,7 +229,27 @@ def showMessage(msg):
 showMessage('Processing.')
 ```
 
-## Collection of function
+## No function hoisting 
+
+Functions must be defined before being called. Python does not support  
+function hoisting like JavaScript.  
+
+```python
+#!/usr/bin/python
+
+def f1():
+    print("f1()")
+
+
+f1()
+# f2()
+
+
+def f2():
+    print("f2()")
+```
+
+## Collection of functions
 
 Python is flexible, it allows to store functions in collections.  
 
