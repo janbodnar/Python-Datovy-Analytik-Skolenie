@@ -98,6 +98,19 @@ users.sort(reverse=True, key=lambda e: e['date_of_birth'])
 for user in users:
     print(user)
 ```
+---
+
+```python
+#!/usr/bin/python
+
+from products import get_products
+
+data = get_products()
+data.sort(key=lambda e: e.product_name, reverse=True)
+
+for p in data:
+    print(p)
+```
 
 ## Lambda & Tkinter
 
