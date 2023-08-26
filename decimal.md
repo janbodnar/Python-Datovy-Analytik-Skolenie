@@ -104,12 +104,12 @@ The Decimal type provides several rounding options:
 - ROUND_CEILING - always round upwards towards infinity
 - ROUND_DOWN - always round toward zero
 - ROUND_FLOOR - always round down towards negative infinity
-- ROUND_HALF_DOWN - rounds away from zero if the last significant
+- ROUND_HALF_DOWN - rounds away from zero if the last significant  
   digit is greater than or equal to 5, otherwise toward zero
-- ROUND_HALF_EVEN - like ROUND_HALF_DOWN except that if the value
-  is 5 then the preceding digit is examined; even values cause the
+- ROUND_HALF_EVEN - like ROUND_HALF_DOWN except that if the value  
+  is 5 then the preceding digit is examined; even values cause the  
   result to be rounded down and odd digits cause the result to be rounded up.
-- ROUND_HALF_UP - like ROUND_HALF_DOWN except if the last significant
+- ROUND_HALF_UP - like ROUND_HALF_DOWN except if the last significant  
   digit is 5 the value is rounded away from zero
 - ROUND_UP - round away from zero
 - ROUND_05UP - round away from zero if the last digit is 0 or 5, otherwise towards zero
