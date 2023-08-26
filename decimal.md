@@ -192,3 +192,31 @@ ROUND_HALF_UP        -0.1       -0.14      -0.143     -0.1429
 ROUND_UP             -0.2       -0.15      -0.143     -0.1429
 ROUND_05UP           -0.1       -0.14      -0.142     -0.1428
 ```
+
+## Fractions 
+
+The `fractions` module provides support for rational number arithmetic. 
+
+```python
+#!/usr/bin/python
+
+from decimal import Decimal
+from fractions import Fraction
+
+x = Decimal(1) / Decimal(3)
+y = x * Decimal(3)
+
+print(y == Decimal(1))
+print(x)
+print(y)
+
+print("-----------------------")
+
+u = Fraction(1) / Fraction(3)
+v = u * Fraction(3)
+
+print(v == 1)
+print(u)
+print(v)
+```
+
