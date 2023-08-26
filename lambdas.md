@@ -23,7 +23,7 @@ The lambda function is assigned to the z variable.
 
 nums = [1, 2, 3, 4, 5, 6]
 
-nums_squared = map(lambda x: x * x, nums)
+nums_squared = map(lambda e: e * e, nums)
 
 for num in nums_squared:
     print(num)
@@ -61,7 +61,7 @@ print(n)
 
 vals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-res = filter(lambda x: x % 2, vals)
+res = filter(lambda e: e % 2, vals)
 print(list(res))
 ```
 
