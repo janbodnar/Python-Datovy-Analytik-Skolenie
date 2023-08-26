@@ -113,3 +113,82 @@ The Decimal type provides several rounding options:
   digit is 5 the value is rounded away from zero
 - ROUND_UP - round away from zero
 - ROUND_05UP - round away from zero if the last digit is 0 or 5, otherwise towards zero
+
+
+```python
+#!/usr/bin/python
+
+import decimal
+
+context = decimal.getcontext()
+
+rounding_modes = [
+    'ROUND_CEILING',
+    'ROUND_DOWN',
+    'ROUND_FLOOR',
+    'ROUND_HALF_DOWN',
+    'ROUND_HALF_EVEN',
+    'ROUND_HALF_UP',
+    'ROUND_UP',
+    'ROUND_05UP',
+    ]
+
+col_lines = '-' * 10
+
+print(f"{' ':20} {'1/7 (1)':^10} {'1/7 (2)':^10} {'1/7 (3)':^10} {'1/7 (4)':^10}")
+print(f"{' ':20} {col_lines:^10} {col_lines:^10} {col_lines:^10} {col_lines:^10}")
+
+for mode in rounding_modes:
+
+    print(f'{mode:20}', end=' ')
+
+    for precision in [1, 2, 3, 4]:
+
+        context.prec = precision
+        context.rounding = getattr(decimal, mode)
+        value = decimal.Decimal(1) / decimal.Decimal(7)
+        print(f'{value:<10}', end=' ')
+    print()
+
+print('********************************************************************')
+
+print(f"{' ':20} {'-1/7 (1)':^10} {'-1/7 (2)':^10} {'-1/7 (3)':^10} {'-1/7 (4)':^10}")
+print(f"{' ':20} {col_lines:^10} {col_lines:^10} {col_lines:^10} {col_lines:^10}")
+
+
+for mode in rounding_modes:
+
+    print(f'{mode:20}', end=' ')
+
+    for precision in [1, 2, 3, 4]:
+
+        context.prec = precision
+        context.rounding = getattr(decimal, mode)
+        value = decimal.Decimal(-1) / decimal.Decimal(7)
+        print(f'{value:<10}', end=' ')
+
+    print()
+```
+```
+                      1/7 (1)    1/7 (2)    1/7 (3)    1/7 (4)
+                     ---------- ---------- ---------- ----------
+ROUND_CEILING        0.2        0.15       0.143      0.1429
+ROUND_DOWN           0.1        0.14       0.142      0.1428
+ROUND_FLOOR          0.1        0.14       0.142      0.1428
+ROUND_HALF_DOWN      0.1        0.14       0.143      0.1429
+ROUND_HALF_EVEN      0.1        0.14       0.143      0.1429
+ROUND_HALF_UP        0.1        0.14       0.143      0.1429
+ROUND_UP             0.2        0.15       0.143      0.1429
+ROUND_05UP           0.1        0.14       0.142      0.1428
+********************************************************************
+                      -1/7 (1)   -1/7 (2)   -1/7 (3)   -1/7 (4)
+                     ---------- ---------- ---------- ----------
+ROUND_CEILING        -0.1       -0.14      -0.142     -0.1428
+ROUND_DOWN           -0.1       -0.14      -0.142     -0.1428
+ROUND_FLOOR          -0.2       -0.15      -0.143     -0.1429
+ROUND_HALF_DOWN      -0.1       -0.14      -0.143     -0.1429
+ROUND_HALF_EVEN      -0.1       -0.14      -0.143     -0.1429
+ROUND_HALF_UP        -0.1       -0.14      -0.143     -0.1429
+ROUND_UP             -0.2       -0.15      -0.143     -0.1429
+ROUND_05UP           -0.1       -0.14      -0.142     -0.1428
+```
