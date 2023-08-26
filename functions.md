@@ -16,15 +16,15 @@ status with other objects in Python. Functions can be assigned to variables, sto
 in collections, or passed as arguments. This brings additional flexibility to the language.  
 
 [Function definition](#function-definition)  
-[Kinds of functions](#kinds-of-functions) 
-[Third-party functions](#third-party-functions) 
-[Function definition](#function-definition) 
-[Function definition](#function-definition) 
-[Function definition](#function-definition) 
-[Function definition](#function-definition) 
-[Function definition](#function-definition) 
-[Function definition](#function-definition) 
-[Function definition](#function-definition) 
+[Kinds of functions](#kinds-of-functions)  
+[Third-party functions](#third-party-functions)  
+[Function definition](#function-definition)  
+[Function definition](#function-definition)  
+[Function definition](#function-definition)  
+[Function definition](#function-definition)  
+[Function definition](#function-definition)  
+[Function definition](#function-definition)  
+[Function definition](#function-definition)  
 
 ## Function definition
 
