@@ -220,3 +220,33 @@ print(u)
 print(v)
 ```
 
+## Example
+
+In the example, we increase the price by 13% and calculate the sum of  
+the value of all beverages.  
+
+```python
+#!/usr/bin/python
+
+# from products2 import get_products
+from products import get_products
+from decimal import Decimal
+
+data = get_products()
+
+res = [p for p in data if p.category == 'Beverages']
+print(len(res))
+
+val = sum(p.unit_price * p.units_in_stock for p in res)
+print(val)
+
+# d = 1.13
+# val = sum(p.unit_price * d * p.units_in_stock for p in res)
+# print(val)
+
+d = 1.13
+val = sum(p.unit_price * Decimal(str(d)) * p.units_in_stock for p in res)
+print(val)
+```
+
+
