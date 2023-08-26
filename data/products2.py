@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from decimal import Decimal
 
 # The unit price is float, which is not correct 
 # To demonstrate errors 
