@@ -29,7 +29,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Returning values](#returning-values)  
 [Arbitrary number of args](#arbitrary-number-of-args)  
 [Nested functions](#nested-functions)  
-[Function definition](#function-definition)  
+[Passing functions as parameters](#passing-functions-as-parameters)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
 
