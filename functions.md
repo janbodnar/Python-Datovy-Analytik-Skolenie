@@ -21,6 +21,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Instance, class, plain, inner functions](#instance-class-plain-inner-functions)    
 [Functions are objects](#functions-are-objects)  
 [Function scope](#function-scope)  
+[Implicit arg value](#implicit-arg-value)   
 [Unpacking](#unpacking)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
@@ -194,6 +195,28 @@ def f():
 
 print("Outside function", name)
 f()
+```
+
+## Implicit arg value 
+
+```python
+#!/usr/bin/python
+
+# fun_implicit.py
+
+
+def power(x, y=2):
+
+    r = 1
+
+    for i in range(y):
+        r = r * x
+
+    return r
+
+print(power(3))
+print(power(3, 3))
+print(power(5, 5))
 ```
 
 ## Unpacking 
