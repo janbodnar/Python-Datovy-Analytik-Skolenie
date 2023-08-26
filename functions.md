@@ -122,10 +122,11 @@ g()
 
 def f():
     """This function prints a message """
-    print ("Today it is a cloudy day")
-    
+    return 'f() function'
+
 print(isinstance(f, object))
 print(id(f))
+print(f())
 
 print(f.__doc__)
 print(f.__name__)
