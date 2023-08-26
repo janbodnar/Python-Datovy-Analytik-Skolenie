@@ -20,7 +20,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [Third-party functions](#third-party-functions)  
 [Instance, class, plain, inner functions](#instance-class-plain-inner-functions)    
 [Functions are objects](#functions-are-objects)  
-[Function Function](#function-scope)  
+[Function scope](#function-scope)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
