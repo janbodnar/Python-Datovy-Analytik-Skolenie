@@ -269,6 +269,33 @@ fn2(*vals)
 fn3(*vals, e=7, f=8)
 ```
 
+Unpacking keyworded arguments
+
+The `**kwargs` defines a keyworded, variable-length argument list
+
+```python
+#!/usr/bin/python
+
+def display(**user):
+
+    for k, v in user.items():
+        print(f'{k}: {v}')
+
+display(name='Lary', age=43, sex='M')
+```
+--- 
+
+```python
+#!/usr/bin/python
+
+def show(a, *args, **kwargs):
+    print(a)
+    print(args)
+    print(kwargs)
+
+show(1, 2, 3, 4, 5, 6, name='John Doe', occupation='gardener', age=34)
+```
+
 
 ## Passing by reference 
 
