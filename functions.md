@@ -196,7 +196,11 @@ print("Outside function", name)
 f()
 ```
 
-## Unpacking function return values
+## Unpacking 
+
+Unpacking is cutting an object (such as a list) into its elements. It is also called destructuring.  
+
+Unpacking function return values
 
 ```python
 #!/usr/bin/python
@@ -220,7 +224,7 @@ print(a, b, c, d)
 print(a, b, c, d)
 ```
 
-## Unpacking function arguments
+Unpacking function arguments
 
 After the star operator, only keyword arguments can be used.  
 
