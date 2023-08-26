@@ -298,6 +298,20 @@ def show(a, *args, **kwargs):
 show(1, 2, 3, 4, 5, 6, name='John Doe', occupation='gardener', age=34)
 ```
 
+```python
+#!/usr/bin/python
+
+def display(name, occupation, age):
+
+    print(f'{name}, {occupation}, {age}')
+
+u1 = {'name': 'Lary Jones', 'occupation': 'driver', 'age': 45}
+u2 = {'name': 'Jone Doe', 'occupation': 'gardener', 'age': 35}
+
+display(**u1)
+display(**u2)
+```
+
 
 ## Passing by reference 
 
