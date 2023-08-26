@@ -220,6 +220,31 @@ print(a, b, c, d)
 print(a, b, c, d)
 ```
 
+## Unpacking function arguments
+
+After the star operator, only keyword arguments can be used.  
+
+```python
+#!/usr/bin/python
+
+def fn(a, b, c, d, e, f):
+    print(a, b, c, d, e, f)
+
+def fn2(a, b, c, *d):
+    print(a, b, c, d)
+
+def fn3(a, b, c, *d, e, f):
+    print(a, b, c, d, e, f)
+
+
+vals = [1, 2, 3, 4, 5, 6]
+
+fn(1, 2, 3, 4, 5, 6)
+fn2(1, 2, 3, 4, 5, 6)
+fn3(1, 2, 3, 4, e=5, f=6)
+```
+
+
 ## Passing by reference 
 
 In Python, mutable objects are passed by reference as function arguments.  
