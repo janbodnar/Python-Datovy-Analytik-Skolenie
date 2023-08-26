@@ -28,7 +28,7 @@ in collections, or passed as arguments. This brings additional flexibility to th
 [The pass keyword](#the-pass-keyword)  
 [Returning values](#returning-values)  
 [Arbitrary number of args](#arbitrary-number-of-args)  
-[Function definition](#function-definition)  
+[Nested functions](#nested-functions)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
 [Function definition](#function-definition)  
