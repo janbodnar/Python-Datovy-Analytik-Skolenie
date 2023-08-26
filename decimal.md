@@ -17,6 +17,6 @@ a user alterable precision which can be as large as needed for
 a given problem. The default precision is 28 places. 
 
 Some values cannot be exactly represented in a float data type.  
-For instance, storing the 0.1 value in float (which is a binary floating point value)  
+For instance, storing the 0.1 value in float (which is a binary floating point value)     
 variable we get only an approximation of the value. Similarly, the 1/3 value  
 cannot be represented exactly in decimal floating point type. 
