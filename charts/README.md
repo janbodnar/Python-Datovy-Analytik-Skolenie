@@ -50,6 +50,27 @@ plt.tight_layout()
 plt.savefig('style1.png')
 ```
 
+## Legend 
+
+Displaying legend with expressions.  
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-5, 5, 50)
+y1 = 2**x + 1
+y2 = 2*x + 5
+
+plt.plot(x, y1, label=r'$x^{2} + 1$')
+plt.plot(x, y2, label=r'2x + 5')
+
+plt.title('Lines with legend')
+plt.legend(title='Lines')
+plt.savefig('legends.png')
+```
 
 ## Scatter chart
 
