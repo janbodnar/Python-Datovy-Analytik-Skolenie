@@ -4,6 +4,50 @@
 A line chart is a type of chart which displays information as a series of data points  
 called markers connected by straight line segments.
 
+## Straight line
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+   
+year = [1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010]
+unemployment_rate = [9.8, 12, 8, 7.2, 6.9, 7, 6.5, 6.2, 5.5, 6.3]
+  
+plt.plot(year, unemployment_rate)
+plt.title('Unemployment in US')
+
+plt.xlabel('Year')
+plt.ylabel('Unemployment rate')
+
+plt.savefig('linechart.png')
+```
+
+## Line color and style
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([1, 2, 3, 4])
+y = 2*x + 1
+
+# plt.plot(x, y, 'r-.')
+plt.plot(x, y, '-.', color='#00abc0')
+
+# ax.set_ylim(ymin=0)
+# plt.ylim(ymin=0)
+plt.ylim(bottom=0)
+plt.title('Line chart')
+
+plt.xlabel('x values')
+plt.ylabel('y values')
+
+plt.savefig('linechart3.png')
+```
+
 ## Curved line
 
 ```python
@@ -25,25 +69,7 @@ plt.grid(True)
 plt.savefig('linechart.png')
 ```
 
-## Straight line
-
-```python
-#!/usr/bin/python
-
-import matplotlib.pyplot as plt
-   
-year = [1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010]
-unemployment_rate = [9.8, 12, 8, 7.2, 6.9, 7, 6.5, 6.2, 5.5, 6.3]
-  
-plt.plot(year, unemployment_rate)
-plt.title('Unemployment in US')
-
-plt.xlabel('Year')
-plt.ylabel('Unemployment rate')
-
-plt.savefig('linechart.png')
-```
-
+## Multiple lines 
 
 ```python
 #!/usr/bin/python
