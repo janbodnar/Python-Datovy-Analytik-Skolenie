@@ -207,7 +207,7 @@ plt.savefig('piechart.png')
 
 Subplots are created with `subplot` function.  
 
-```
+```python
 #!/usr/bin/python
 
 import numpy as np
