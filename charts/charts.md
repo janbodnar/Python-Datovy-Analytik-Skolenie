@@ -7,6 +7,25 @@ web application servers, and for GUI toolkits.
     $ sudo pip install matplotlib
 
 
+## Set limits of axes 
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+from math import sin
+
+x = np.linspace(0, 10, 1000)
+
+plt.xlim(-1, 11)
+plt.ylim(-1.5, 1.5);
+plt.plot(x, np.sin(x))
+
+plt.savefig('limits.png')
+```
+
+
 ## Scatter chart
 
 A scatter chart is a type of plot or mathematical diagram using  
