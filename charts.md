@@ -1,8 +1,8 @@
 # Charts 
 
 Matplotlib is a Python library for creating charts. Matplotlib can be used  
-in Python scripts, the Python and IPython shell, the jupyter notebook,  
-web application servers, and four graphical user interface toolkits.  
+in Python scripts, the Python and IPython shell, the Jupyter notebook,  
+web application servers, and for GUI toolkits.  
 
     $ sudo pip install matplotlib
 
