@@ -21,8 +21,9 @@
     - excel súbory s modulom openpyxl
 
 4. Grafy
-    - tvorba grafov pomocou Matplotlib
-    - tvorba grafov pomocou seaborn
+    - tvorba grafov pomocou Matplotlib, seaborn
+    - bodové, čiarové, stĺpcové, koláčové grafy
+    - subgrafy
    
 5. Web scraping
    - modul BeautifulSoup4
