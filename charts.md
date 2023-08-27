@@ -58,7 +58,12 @@ plt.legend()
 plt.savefig('scatter2.png')
 ```
 
-## Vertical barchart
+## Bar charts 
+
+A bar chart presents grouped data with rectangular bars with lengths proportional  
+to the values that they represent. The bars can be plotted vertically or horizontally.
+
+### Vertical barchart
 
 ```python
 #!/usr/bin/python
@@ -86,7 +91,7 @@ ax.set_xticklabels(("USA", "China", "UK", "Russia",
 plt.savefig('barchart.png')
 ```
 
-## Horizontal barchart
+### Horizontal barchart
 
 ```python
 #!/usr/bin/python
