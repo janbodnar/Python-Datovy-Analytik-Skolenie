@@ -3,6 +3,9 @@
 It is possible to place multiple charts in a plot via subplots.  
 Subplots are created with `subplot` or `subplots` functions.   
 
+The `subplots` creates a figure and a grid of subplots with a single call, 
+while providing reasonable control over how the individual plots are created. 
+
 ```python
 #!/usr/bin/python
 
