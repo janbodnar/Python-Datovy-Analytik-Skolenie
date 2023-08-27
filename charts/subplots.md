@@ -33,6 +33,37 @@ plt.savefig('subplots.png')
 
 ---
 
+## Polar subplots 
+
+The `tight_layout` function automatically maintains  
+the proper space between subplots.
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2 * np.pi, 200)
+y = np.sin(x ** 2)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, subplot_kw=dict(projection='polar'))
+
+# fig.tight_layout(pad=2.0)
+fig.tight_layout()
+
+ax1.plot(x, y)
+ax2.plot(x, y ** 2)
+
+plt.savefig('subpolars.png')
+```
+
+
+
+## Creating each subplot separately
+
+We can separately create each subplot with `subplot` function.
+
 ```python
 #!/usr/bin/python
 
