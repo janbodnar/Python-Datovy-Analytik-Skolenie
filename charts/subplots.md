@@ -31,8 +31,6 @@ plt.title('Cosine')
 plt.savefig('subplots.png')
 ```
 
----
-
 ## Polar subplots 
 
 The `tight_layout` function automatically maintains  
@@ -160,3 +158,23 @@ fig.suptitle('Operating systems in lab')
 plt.savefig('subplots.png')
 ```
 
+## Subplots with labels and titles
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axs = plt.subplots(3, 3, figsize=(15, 8), sharex=True, sharey=True)
+
+for i, ax in enumerate(axs.flat):
+    ax.scatter(*np.random.normal(size=(2, 200)))
+    ax.set_title(f'Title {i+1}')
+
+# set labels
+plt.setp(axs[-1, :], xlabel='x axis label')
+plt.setp(axs[:, 0], ylabel='y axis label')
+
+plt.savefig('subplots.png')
+```
