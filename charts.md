@@ -9,6 +9,9 @@ web application servers, and for GUI toolkits.
 
 ## Scatter chart
 
+A scatter chart is a type of plot or mathematical diagram using  
+Cartesian coordinates to display values for typically two variables for a set of data.
+
 ```python
 #!/usr/bin/python
 
