@@ -101,3 +101,58 @@ ax.invert_yaxis()
 plt.tight_layout()
 plt.savefig("chart.png", bbox_inches='tight')
 ```
+
+## Subplots
+
+Subplots are created with `subplot` function.  
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([0, 1, 2, 3])
+y = np.array([6, 8, 2, 11])
+
+plt.subplot(2, 3, 1)
+plt.plot(x, y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([15, 25, 35, 45])
+
+plt.suptitle('Subplots')
+
+plt.subplot(2, 3, 2)
+plt.plot(x, y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([2, 9, 11, 11])
+
+plt.subplot(2, 3, 3)
+plt.plot(x, y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([11, 22, 33, 55])
+
+plt.subplot(2, 3, 4)
+plt.plot(x, y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([13, 18, 11, 10])
+
+plt.subplot(2, 3, 5)
+plt.plot(x, y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 3, 6)
+plt.plot(x, y)
+
+plt.savefig('subplots.png')
+```
+
+
+
+
