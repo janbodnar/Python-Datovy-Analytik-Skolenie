@@ -14,7 +14,6 @@ web application servers, and for GUI toolkits.
 
 import matplotlib.pyplot as plt
 import numpy as np
-from math import sin
 
 x = np.linspace(0, 10, 1000)
 
