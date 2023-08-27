@@ -110,3 +110,53 @@ plt.plot(x, y)
 
 plt.savefig('subplots2.png')
 ```
+
+## Sharing x axis
+
+Setting the `sharex` option the subplots share the x axis. 
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+
+data = {'FreeBSD': 4, 'NetBSD': 1, 'Linux': 12, 'Windows': 6, 'Apple': 2}
+keys = list(data.keys())
+vals = list(data.values())
+
+fig, axs = plt.subplots(3, 1, figsize=(4, 10), sharex=True)
+axs[0].bar(keys, vals)
+axs[1].scatter(keys, vals)
+axs[2].plot(keys, vals)
+
+fig.suptitle('Operating systems in lab')
+plt.savefig('subplots.png')
+```
+
+## Sharing y axis 
+
+With `sharey` we can share the y axis for all subplots.  
+The `set_tick_params` is used to adjust the label size.  
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+
+data = {'FreeBSD': 4, 'NetBSD': 1, 'Linux': 12, 'Windows': 6, 'Apple': 2}
+keys = list(data.keys())
+vals = list(data.values())
+
+fig, axs = plt.subplots(1, 3, figsize=(9, 3), sharey=True)
+axs[0].bar(keys, vals)
+axs[1].scatter(keys, vals)
+axs[2].plot(keys, vals)
+
+axs[0].xaxis.set_tick_params(labelsize=7)
+axs[1].xaxis.set_tick_params(labelsize=7)
+axs[2].xaxis.set_tick_params(labelsize=7)
+
+fig.suptitle('Operating systems in lab')
+plt.savefig('subplots.png')
+```
+
