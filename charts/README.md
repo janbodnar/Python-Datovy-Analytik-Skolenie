@@ -25,6 +25,32 @@ plt.plot(x, np.sin(x))
 plt.savefig('limits.png')
 ```
 
+## Predefined styles
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.arange(0.0, 3.0, 0.01)
+s = np.sin(2.5 * np.pi * t)
+
+# plt.style.use('dark_background')
+# plt.style.use('ggplot')
+plt.style.use('fivethirtyeight')
+
+plt.plot(t, s)
+# print(plt.rcParams['axes.prop_cycle'])
+
+plt.xlabel('time (s)')
+plt.ylabel('voltage (mV)')
+
+plt.title('Sine Wave')
+plt.tight_layout()
+plt.savefig('style1.png')
+```
+
 
 ## Scatter chart
 
