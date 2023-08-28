@@ -38,6 +38,29 @@ a = np.arange(-10, 10, 2)
 print(a)
 ```
 
+## Array creation
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.empty(10)
+print(a)
+
+a = np.zeros(10)
+print(a)
+
+a = np.arange(100)
+print(a)
+
+a = np.random.rand(20)
+print(a)
+
+a = np.random.randint(-100, 100, 100)
+print(a)
+```
+
 ## The dtype 
 
 The `dtype` is the desired data type for the array. The default is int32.  
