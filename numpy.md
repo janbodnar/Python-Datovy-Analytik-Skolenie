@@ -17,3 +17,6 @@ NumPy is much faster than the built-in Python list.
 - facilitates advanced mathematical and other types of operations
   on large numbers of data
 - many Python packages are based on NumPy, such as Pandas or Mathplotlib
+
+
+      $ pip install numpy
