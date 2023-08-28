@@ -81,7 +81,7 @@ a = np.random.rand(3, 3, 3)
 print(a)
 ```
 
-# Summation along axis 
+## Summation along axis 
 
 ```python
 #!/usr/bin/python
@@ -165,6 +165,24 @@ print(b)
 c = np.linspace(1, 100, 200)
 print(c)
 ```
+
+## Indexing 
+
+### Single elements 
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.arange(10)
+
+print(a)
+print(a[0])
+print(a[2])
+print(a[-1])
+```
+
 
 ## Array math
 
