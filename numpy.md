@@ -37,3 +37,25 @@ print(a.shape)
 a = np.arange(-10, 10, 2)
 print(a)
 ```
+
+## The dtype 
+
+The `dtype` is the desired data type for the array. The default is int32.  
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+print(a)
+print(a.shape)
+print(a.dtype)
+
+a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]], dtype=np.int64)
+print(a)
+print(a.shape)
+print(a.dtype)
+```
+
+
