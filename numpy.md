@@ -61,6 +61,26 @@ a = np.random.randint(-100, 100, 100)
 print(a)
 ```
 
+## Matrix
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+print(a)
+
+a = np.zeros((3, 3, 4))
+print(a)
+
+a = np.full((3, 3), 1)
+print(a)
+
+a = np.random.rand(3, 3, 3)
+print(a)
+```
+
 ## The dtype 
 
 The `dtype` is the desired data type for the array. The default is int32.  
