@@ -7,6 +7,8 @@ to operate on these arrays.
 
 NumPy is much faster than the built-in Python list.  
 
+      $ pip install numpy
+
 ## The ndarray 
 
 - defines n-dimensional arrays of homogeneous data types
@@ -19,4 +21,19 @@ NumPy is much faster than the built-in Python list.
 - many Python packages are based on NumPy, such as Pandas or Mathplotlib
 
 
-      $ pip install numpy
+## The arange function 
+
+The `arange` function returns evenly spaced values within a given interval.  
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.arange(6)
+print(a)
+print(a.shape)
+
+a = np.arange(-10, 10, 2)
+print(a)
+```
