@@ -188,3 +188,27 @@ print("----------------------------")
 print(np.sqrt(x))
 ```
 
+## NumPy with mathplotlib
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(1, 15, 15, dtype=np.int32)
+y = np.random.randint(1, 50, 15)
+
+print(x)
+print(y)
+
+plt.scatter(x, y)
+
+plt.xticks(range(1, 16))
+# plt.xlim([0, 20])
+plt.ylim([0, 60])
+plt.savefig('chart.png')
+```
+
+
+
