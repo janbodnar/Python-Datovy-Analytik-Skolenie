@@ -130,6 +130,26 @@ print(nvals + 1)
 print(nvals - 2)
 ```
 
+## The arange vs linspace
+
+    np.arange(start, stop, step)
+    np.linspace(start,stop,number)
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.arange(1, 20, 2)
+print(a)
+
+b = np.linspace(1, 100, 100)
+print(b)
+
+c = np.linspace(1, 100, 200)
+print(c)
+```
+
 ## Array math
 
 ```python
