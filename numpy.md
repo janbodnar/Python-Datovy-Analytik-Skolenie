@@ -166,6 +166,24 @@ c = np.linspace(1, 100, 200)
 print(c)
 ```
 
+## Filtering 
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.array([-3, -2, 0, 1, -4, 2, 5, 7])
+
+f1 = a > 0
+print(a[f1])
+
+f2 = a < 0
+print(a[f2])
+```
+
+
+
 ## Indexing 
 
 Single elements 
