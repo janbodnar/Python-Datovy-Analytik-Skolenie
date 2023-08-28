@@ -101,6 +101,35 @@ print(a.shape)
 print(a.dtype)
 ```
 
+## Array vs list
+
+Some operators (*) work differently, some are not implemented for lists (+, -).   
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+vals = [1, 2, 3, 4, 5]
+nvals = np.array([1, 2, 3, 4, 5])
+
+print(len(vals))
+print(len(nvals))
+
+print(sum(vals))
+print(sum(nvals))
+
+print(vals)
+print(nvals)
+
+print(vals * 2)
+print(nvals * 2)
+
+# print(vals + 1)
+print(nvals + 1)
+print(nvals - 2)
+```
+
 ## Array math
 
 ```python
