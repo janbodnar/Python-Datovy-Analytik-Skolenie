@@ -8,36 +8,35 @@
    - pokročilá práca s funkciami
    - float a Decimal typy
    - dataclass
-   - náhodné čísla
-
-2. Konzolové aplikácie
-   - tvorba scriptov
-   - parsovanie argumentov pomocou argparse
-   - modul rich
+   - moduly argparse a rich
+     
+2. Modul numpy
+   - numpy array
    
-3.  Dátove zdroje
+4.  Dátove zdroje
     - CSV, JSON, XML
     - čítanie a zápis
     - excel súbory s modulom openpyxl
 
-4. Grafy
-    - tvorba grafov pomocou Matplotlib, seaborn
+5. Grafy
+    - tvorba grafov pomocou Matplotlib
     - bodové, čiarové, stĺpcové, koláčové grafy
     - subgrafy
    
-5. Web scraping
-   - modul BeautifulSoup4
+6. Web scraping
+   - modul httpx
    - modul selectolax  
 
-6. Databázy
+7. Databázy
    - práca s SQLite a PostgreSQL
    - základy SQL jazyka
-   - práca s databázou v Pythone
    - sqlite3 a psycopg2 moduly
   
-7. Dataframes
-   - Pandas, datatable, Polars
+8. Pandas
+   - dataframes
    - selekcie, sortovanie, gruping dát
   
-8. Analýza akcií, crypta
+9. Analýza akcií, crypta
+   - modul ccxt
+   - Binance zmenáreň
    
