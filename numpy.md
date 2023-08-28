@@ -168,7 +168,7 @@ print(c)
 
 ## Indexing 
 
-### Single elements 
+Single elements 
 
 ```python
 #!/usr/bin/python
@@ -181,6 +181,34 @@ print(a)
 print(a[0])
 print(a[2])
 print(a[-1])
+```
+
+Two-dimensional array
+
+```python
+#!/usr/bin/python
+
+import numpy as np
+
+a = np.arange(10)
+a.shape = (2, 5) 
+
+# single elements
+print(a)
+print(a[1, 3])
+print(a[1, -1])
+
+print('------------------')
+
+# first and second row
+print(a[0])
+print(a[1])
+
+print('------------------')
+
+# first and second column
+print(a[:,0])
+print(a[:,1])
 ```
 
 
