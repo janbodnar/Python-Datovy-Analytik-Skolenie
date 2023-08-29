@@ -12,7 +12,7 @@
      
 2. Modul numpy
    - numpy array
-   - základné operáci
+   - základné operácie
    
 4.  Dátove zdroje
     - CSV, JSON, XML
