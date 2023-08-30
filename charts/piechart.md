@@ -1,21 +1,43 @@
 # Piechart
 
-A pie chart is a circular chart which is divided into slices to illustrate numerical proportion.
+A pie chart is a circular chart which is divided into slices to illustrate numerical proportion.  
+The default starting angle is 0 and the chart is drawn counterclockwise.  
+
+
+## Simple example
+
+The starting angle is set with `startangle` option.  
 
 ```python
 #!/usr/bin/python
 
 import matplotlib.pyplot as plt
  
-labels = ['Oranges', 'Pears', 'Plums', 'Blueberries']
-quantity = [38, 45, 24, 10]
+labels = ['FreeBSD', 'NetBSD', 'Linux', 'Window', 'Apple']
+quantity = [4, 1, 12, 6, 2]
 
-colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
-
-plt.pie(quantity, labels=labels, colors=colors, autopct='%1.1f%%', 
-    shadow=True, startangle=90)
+colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral', 'orange']
+plt.pie(quantity, labels=labels, colors=colors, startangle=90)
 
 plt.axis('equal')
-
 plt.savefig('piechart.png')
 ```
+
+## Slice values 
+
+The slice values are displayed with `autopct` option. Shadow can be set with `shadow`.  
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+ 
+labels = ['FreeBSD', 'NetBSD', 'Linux', 'Window', 'Apple']
+quantity = [4, 1, 12, 6, 2]
+
+plt.pie(quantity, labels=labels, autopct='%1.1f%%', shadow=True)
+plt.axis('equal')
+
+plt.savefig('piechart2.png')
+```
+
