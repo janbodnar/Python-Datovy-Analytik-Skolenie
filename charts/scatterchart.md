@@ -26,6 +26,29 @@ plt.legend()
 plt.savefig('scatter.png')
 ```
 
+## Markers
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(1, 40, 8)
+y = np.random.randint(-50, 50, 8)
+z = np.random.randint(-50, 50, 8)
+v = np.random.randint(-50, 50, 8)
+w = np.random.randint(-50, 50, 8)
+
+plt.scatter(x, y, marker=',')
+plt.scatter(x, y, marker='+')
+plt.scatter(x, z, marker='p')
+plt.scatter(x, v, marker='*')
+plt.scatter(x, w, marker='X')
+
+plt.title('Markers')
+plt.savefig('markers.png')
+```
 
 ## Random values 
 
