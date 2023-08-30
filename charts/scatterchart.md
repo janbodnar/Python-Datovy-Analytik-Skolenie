@@ -23,7 +23,7 @@ plt.ylabel('Price (dollars)')
 plt.grid(True)
 plt.legend()
 
-plt.show()
+plt.savefig('scatter.png')
 ```
 
 
@@ -41,9 +41,26 @@ y = np.random.randint(-50, 50, 40)
 plt.scatter(x, y)
 
 plt.title('Scatter chart')
-plt.savefig('scatter3.png')
+plt.savefig('scatter.png')
 ```
 
+## Size of markers 
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(1, 40, 40)
+y = np.random.randint(-50, 50, 40)
+s = np.random.randint(2, 85, 40)
+
+plt.scatter(x, y, sizes=s)
+
+plt.title('Scatter chart')
+plt.savefig('scatter.png')
+```
 
 ## Two datasets
 
@@ -69,5 +86,5 @@ plt.ylabel('Price (dollars)')
 plt.grid(True)
 plt.legend()
 
-plt.savefig('scatter2.png')
+plt.savefig('scatter.png')
 ```
