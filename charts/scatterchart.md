@@ -27,6 +27,24 @@ plt.show()
 ```
 
 
+## Random values 
+
+```python
+#!/usr/bin/python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(1, 40, 40)
+y = np.random.randint(-50, 50, 40)
+
+plt.scatter(x, y)
+
+plt.title('Scatter chart')
+plt.savefig('scatter3.png')
+```
+
+
 ## Two datasets
 
 ```python
