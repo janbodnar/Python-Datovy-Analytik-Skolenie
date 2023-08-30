@@ -31,12 +31,14 @@ The slice values are displayed with `autopct` option. Shadow can be set with `sh
 #!/usr/bin/python
 
 import matplotlib.pyplot as plt
- 
+
 labels = ['FreeBSD', 'NetBSD', 'Linux', 'Window', 'Apple']
 quantity = [4, 3, 12, 6, 2]
 
-plt.pie(quantity, labels=labels, autopct='%1.1f%%', shadow=True)
+plt.pie(quantity, labels=labels, autopct='%1.1f%%',
+        textprops={'fontsize': 10}, shadow=True)
 plt.axis('equal')
+plt.legend(title='Operating systems')
 
 plt.savefig('piechart2.png')
 ```
