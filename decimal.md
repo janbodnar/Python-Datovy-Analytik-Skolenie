@@ -21,6 +21,17 @@ For instance, storing the 0.1 value in float (which is a binary floating point v
 variable we get only an approximation of the value. Similarly, the 1/3 value  
 cannot be represented exactly in decimal floating point type. 
 
+## Float imprecision
+
+```python
+#!/usr/bin/python
+
+n1 = 0.6
+n2 = 0.7
+
+print(n1 + n2)
+```
+
 ## Default precision 
 
 The Decimal has a default precision of 28 places, while the float has 18 places. 
