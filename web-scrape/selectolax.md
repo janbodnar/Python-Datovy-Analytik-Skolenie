@@ -88,7 +88,7 @@ print(title.text())
 
 ## Basics
 
-The `html` attribute retunrs HTML code.  The `tag` attribute returns tag name.  
+The `html` attribute returns HTML code.  The `tag` attribute returns tag name.  
 The `text` method returns the containing text.  
 
 ```python
