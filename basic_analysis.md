@@ -278,6 +278,22 @@ res = dropwhile(lambda p: p.units_in_stock != 0, data)
 print(list(res))
 ```
 
+```python
+#!/usr/bin/python
+
+from itertools import batched
+
+signs = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
+symbols = ['♣', '♦', '♥', '♠']
+
+res = [f'{sign}{e}' for e in symbols for sign in signs]
+
+batches = batched(res, 13)
+for e in batches:
+    print(e)
+```
+
+
 ## Filtering
 
 Filtering with `filter` function and list comprehensions.  
