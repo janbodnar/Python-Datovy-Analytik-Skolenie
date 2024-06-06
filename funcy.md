@@ -175,8 +175,8 @@ from funcy import cycle, take, lmap
 suits = ["♠", "♥", "♦", "♣"]
 values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 
-deck = list(zip(take(52, cycle(values)), cycle(suits)))
-print(lmap("".join, deck))
+zdeck = zip(take(52, cycle(values)), cycle(suits))
+print(lmap("".join, zdeck))
 ```
 
 ## group_by
