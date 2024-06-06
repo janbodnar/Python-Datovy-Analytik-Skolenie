@@ -32,9 +32,47 @@ summed_dict = {key: sum([animals1.get(key, 0), animals2.get(key, 0)])
                for key in {*animals1, *animals2}}
 
 print(summed_dict)
+
+animals3 = animals1.copy()
+
+for k, v in animals2.items():
+
+    if animals3.get(k, 0):
+        animals3[k] += v
+
+print(animals3)
 ```
 
+## Counter
 
+```python
+from collections import Counter
+
+vals = [1, 1, 1, 1, 2, 3, 3, 4, 3, 3, 4]
+
+c = Counter(vals)
+print(c)
+
+words = ['sky', 'word', 'sky', 'sky', 'war', 'war', 'atom']
+c = Counter(words)
+print(c)
+```
+
+---
+
+```python
+from collections import Counter
+
+animals1 = {'cats': 4, 'dogs': 8, 'horses': 12, 'donkeys': 2}
+animals2 = {'cats': 1, 'dogs': 2, 'horses': 2}
+
+c1 = Counter(animals1)
+c2 = Counter(animals2)
+
+c = c1 + c2
+print(c)
+print(dict(c))
+```
 
 
 ## namedtuple
