@@ -61,6 +61,32 @@ print(list(evens))
 print(list(odds))
 ```
 
+## split_by
+
+```python
+from collections import namedtuple
+from funcy import split_by
+
+City = namedtuple('City' , 'id, name population')
+
+c1 = City(1, 'Bratislava', 432000)
+c2 = City(2, 'Budapest', 1759000)
+c3 = City(3, 'Prague', 1280000)
+c4 = City(4, 'Warsaw', 1748000)
+c5 = City(5, 'Los Angeles', 3971000)
+c6 = City(6, 'Edinburgh', 464000)
+c7 = City(7, 'Presov', 82930)
+c8 = City(8, 'Kosice', 228000)
+c9 = City(9, 'Zilina', 81220)
+
+cities = [c1, c2, c3, c4, c5, c6, c7, c8, c9]
+cities.sort(key=lambda c: c.population)
+
+low_pop, high_pop = split_by(lambda c: c.population < 1000_000, cities)
+print(list(low_pop))
+print(list(high_pop))
+```
+
 ## select_keys & select_values
 
 ```python
@@ -112,3 +138,39 @@ fchain = compose(square, increment, cube)
 print(fchain(val))
 print(square(increment(cube(val))))
 ```
+
+
+
+## group_by
+
+```python
+
+from funcy import group_by
+
+users = [
+    {'first_name': 'John', 'last_name': 'Doe', 'occupation': 'gardener'},
+    {'first_name': 'Roger', 'last_name': 'Roe', 'occupation': 'driver'},
+    {'first_name': 'Adam', 'last_name': 'Novak', 'occupation': 'teacher'},
+    {'first_name': 'Paul', 'last_name': 'Novak', 'occupation': 'programmer'},
+    {'first_name': 'Roman', 'last_name': 'Meszaros', 'occupation': 'programmer'},
+    {'first_name': 'Tomas', 'last_name': 'Bruzik', 'occupation': 'driver'},
+]
+
+users.sort(key=lambda user: user['occupation'])
+grouped = group_by(lambda user: user['occupation'], users)
+
+for k, v in grouped.items():
+        
+    print('-----------------------------')
+    print(k)
+    print(v)
+```
+
+
+
+
+
+
+
+
+
