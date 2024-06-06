@@ -10,10 +10,10 @@ succinctly and efficiently in pure Python.
 Here are some of the functions provided by the `itertools` module:
 
 - **Infinite iterators**: `count`, `cycle`, `repeat`  
-- **Iterators terminating on the shortest input sequence**: `accumulate`, `batched`,
-  `chain`, `compress`, `dropwhile`, `filterfalse`, `groupby`, `islice`, `pairwise`,
-  `starmap`, `takewhile`, `tee`, `zip_longest`
-- **Combinatoric iterators**: `product`, `permutations`, `combinations`, `combinations_with_replacement`
+- **Iterators terminating on the shortest input sequence**: `accumulate`, `batched`,  
+  `chain`, `compress`, `dropwhile`, `filterfalse`, `groupby`, `islice`, `pairwise`,  
+  `starmap`, `takewhile`, `tee`, `zip_longest`  
+- **Combinatoric iterators**: `product`, `permutations`, `combinations`, `combinations_with_replacement`  
 
 These functions can be used by themselves or in combination to form an "iterator algebra", enabling the  
 construction of specialized tools in Python.
