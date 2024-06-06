@@ -36,6 +36,17 @@ res = lmap(lambda x: x * 2, vals)
 print(res)
 ```
 
+## distinct
+
+```python
+from funcy import distinct
+ 
+ 
+words = ['sky', 'war', 'water', 'war', 'sky', 'cup', 'cup', 'atom']
+
+distilled = distinct(words)
+print(list(distilled))
+```
 
 ## Function composition
 
