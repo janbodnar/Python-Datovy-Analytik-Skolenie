@@ -150,7 +150,7 @@ print(square(increment(cube(val))))
 
 ## nth
 
-```pythnon
+```python
 from funcy import nth, repeatedly
 from argparse import ArgumentParser
 
@@ -170,7 +170,6 @@ with open('words.txt') as f:
 ## group_by
 
 ```python
-
 from funcy import group_by
 
 users = [
