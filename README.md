@@ -9,10 +9,9 @@ analýzy v jazyku Python.
 dohodnúť na rýchlokurze jazyka Python.  
 Dĺžka trvania: 2 x 5 hodín počas dvoch dní  
 Výuka prebieha v priestoroch vašej firmy. 
-Cenu školenia vám oznámim, keď ma kontaktujete. )
+Cenu školenia vám oznámim, keď ma kontaktujete.
+Kontakt na školiteľa: jan.bodnar|at|gmail.com, 0903 102 418)
 
-
-Kontakt na školiteľa: jan.bodnar(@)gmail.com, 0903 102 418
 ## Osnovy
 
 1. Úvod
