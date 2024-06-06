@@ -61,6 +61,29 @@ print(list(evens))
 print(list(odds))
 ```
 
+## select_keys & select_values
+
+```python
+from funcy import select_keys, select_values
+
+animals = {'donkeys': 3, 'horses': 2, 'chickens': 15,
+           'dogs': 2, 'cats': 5, 'elephants': 2}
+
+
+res = select_values(lambda e: e > 2, animals)
+print(res)
+
+res = select_keys(lambda e: e.startswith('do'), animals)
+print(res)
+
+
+res = {k: v for k, v in filter(lambda e: e[1] > 2, animals.items())}
+print(res)
+
+res = {k: v for k, v in filter(
+    lambda e: e[0].startswith('do'), animals.items())}
+print(res)
+```
 
 ## Function composition
 
