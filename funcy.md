@@ -170,13 +170,13 @@ with open('words.txt') as f:
 ## deck of cards
 
 ```python
-from funcy import cycle, take, map
+from funcy import cycle, take, lmap
 
 suits = ["♠", "♥", "♦", "♣"]
 values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 
 deck = list(zip(take(52, cycle(values)), cycle(suits)))
-print(list(map("".join, deck)))
+print(lmap("".join, deck))
 ```
 
 ## group_by
