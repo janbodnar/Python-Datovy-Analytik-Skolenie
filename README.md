@@ -5,15 +5,14 @@
 Firemný kurz je určený pre záujemcov, ktorí sa chcú naučiť základy dátovej 
 analýzy v jazyku Python.
 
-Pre kurz je vhodné mať zvládnuté základy programovania. V prípade potreby sa vieme  
-dohodnúť na rýchlokurze jasyka Python.  
-
+[comment]: <> (Pre kurz je vhodné mať zvládnuté základy programovania. V prípade potreby sa vieme  
+dohodnúť na rýchlokurze jazyka Python.  
 Dĺžka trvania: 2 x 5 hodín počas dvoch dní  
 Výuka prebieha v priestoroch vašej firmy. 
-Cenu školenia vám oznámim, keď ma kontaktujete.  
+Cenu školenia vám oznámim, keď ma kontaktujete. )
+
 
 Kontakt na školiteľa: jan.bodnar(@)gmail.com, 0903 102 418
-
 ## Osnovy
 
 1. Úvod
