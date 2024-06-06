@@ -61,6 +61,15 @@ print(list(evens))
 print(list(odds))
 ```
 
+## flatten 
+
+```python
+from funcy import flatten
+
+nested_list = [[1, 2], [3, 4], [5]]
+flat_list = flatten(nested_list)
+```
+
 ## split_by
 
 ```python
