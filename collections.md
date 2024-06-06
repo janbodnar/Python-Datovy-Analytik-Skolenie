@@ -15,7 +15,7 @@
 | UserString   | A wrapper class around a string object that facilitates subclassing string. |
 
 
-## Python namedtuple
+## namedtuple
 
 Python namedtuple is an immutable container type, whose values can be accessed with  
 indexes and named attributes. It has functionality like tuples with additional features.  
@@ -25,7 +25,7 @@ Named tuples are essentially easy-to-create, immutable, lightweight object types
 can be used to make the code more clean and Pythonic. They are similar to records in other  
 languages (C#, Java).
 
-## Basic example
+### Basic example
 
 The following is a simple example with a namedtuple.
 
