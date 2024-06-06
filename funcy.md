@@ -48,6 +48,20 @@ distilled = distinct(words)
 print(list(distilled))
 ```
 
+## split
+
+```python
+from funcy import split
+
+values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+evens, odds = split(lambda e: e % 2 == 0, values)
+
+print(list(evens))
+print(list(odds))
+```
+
+
 ## Function composition
 
 ```python
