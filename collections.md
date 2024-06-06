@@ -23,6 +23,19 @@ added. In contrast, a regular dictionary does not guarantee any specific order d
 resulting in arbitrary item retrieval.
 
 
+## sum vals of keys
+
+```python
+animals1 = {'cats': 4, 'dogs': 8, 'horses': 12, 'donkeys': 2}
+animals2 = {'cats': 1, 'dogs': 2, 'horses': 2}
+summed_dict = {key: sum([animals1.get(key, 0), animals2.get(key, 0)])
+               for key in {*animals1, *animals2}}
+
+print(summed_dict)
+```
+
+
+
 
 ## namedtuple
 
