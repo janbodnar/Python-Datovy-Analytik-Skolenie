@@ -20,7 +20,7 @@ print(list(filtered))
 
 ## lmap, map 
 
-`lmap` is a convenience for `list(map(...)`  
+`lmap` is a convenience for `list(map(...))`  
 
 ```python
 from funcy import map, lmap
