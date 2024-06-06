@@ -15,14 +15,6 @@
 | UserString   | A wrapper class around a string object that facilitates subclassing string. |
 
 
-## OrderedDict
-
-`OrderedDict` is a subclass of the dictionary that preserves the order of item insertion.  
-When we iterate over an OrderedDict, the items are returned in the same order they were  
-added. In contrast, a regular dictionary does not guarantee any specific order during iteration,  
-resulting in arbitrary item retrieval.
-
-
 ## sum vals of keys
 
 ```python
@@ -412,3 +404,10 @@ with con:
 ```
 
 We read all data from the `cities` table and transform each table row into a `City` namedtuple.
+
+## OrderedDict
+
+`OrderedDict` is a subclass of the dictionary that preserves the order of item insertion.  
+When we iterate over an OrderedDict, the items are returned in the same order they were  
+added. In contrast, a regular dictionary does not guarantee any specific order during iteration,  
+resulting in arbitrary item retrieval.
