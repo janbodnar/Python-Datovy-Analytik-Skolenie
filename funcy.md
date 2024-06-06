@@ -166,6 +166,34 @@ for k, v in grouped.items():
     print(v)
 ```
 
+---
+
+```python
+
+from collections import namedtuple
+
+from funcy import group_by
+User = namedtuple('User', 'first_name last_name occupation')
+
+users = [
+    User('John', 'Doe', 'gardener'),
+    User('Roger', 'Roe', 'driver'),
+    User('Adam', 'Novak', 'teacher'),
+    User('Paul', 'Novak', 'programmer'),
+    User('Roman', 'Meszaros', 'programmer'),
+    User('Tomas', 'Bruzik', 'driver'),
+]
+
+users.sort(key=lambda user: user.occupation)
+grouped = group_by(lambda user: user.occupation, users)
+
+for k, v in grouped.items():
+
+    print('-----------------------------')
+    print(k)
+    for e in v:
+        print(e)
+```
 
 
 
