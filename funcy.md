@@ -167,6 +167,18 @@ with open('words.txt') as f:
     print(line)
 ```
 
+## deck of cards
+
+```python
+from funcy import cycle, take, map
+
+suits = ["♠", "♥", "♦", "♣"]
+values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+
+deck = list(zip(take(52, cycle(values)), cycle(suits)))
+print(list(map("".join, deck)))
+```
+
 ## group_by
 
 ```python
