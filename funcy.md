@@ -148,7 +148,24 @@ print(fchain(val))
 print(square(increment(cube(val))))
 ```
 
+## nth
 
+```pythnon
+from funcy import nth, repeatedly
+from argparse import ArgumentParser
+
+aparser = ArgumentParser()
+
+aparser.add_argument('-n', type=int, required=True)
+args = aparser.parse_args()
+
+n = args.n
+
+with open('words.txt') as f:
+
+    line = nth(n, repeatedly(f.readline))
+    print(line)
+```
 
 ## group_by
 
