@@ -215,6 +215,14 @@ FROM
   countries
 ```
 
+## Calculate age
+
+```SQL
+SELECT id, first_name, last_name, occupation, dob, 
+       EXTRACT(YEAR FROM AGE(CURRENT_DATE, dob::date)) AS age
+FROM users;
+```
+
 ## CASE/WHEN
 
 ```SQL
