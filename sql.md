@@ -27,6 +27,15 @@ ALTER TABLE countries DROP CONSTRAINT country_unique;
 
 Add new column.  
 
-```python
+```SQL
 ALTER TABLE countries ADD capital_city VARCHAR(255);
 ```
+
+## UPDATE statement
+
+```SQL
+UPDATE countries SET capital_city = 'Beijing' WHERE name = 'China';
+UPDATE countries SET capital_city = 'New Delhi' WHERE name = 'India';
+UPDATE countries SET capital_city = 'Washington' WHERE name = 'USA';
+```
+
