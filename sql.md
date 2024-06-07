@@ -19,4 +19,6 @@ INSERT INTO countries(name, population) VALUES('USA', 324666000);
 
 ```SQL
 ALTER TABLE countries RENAME COLUMN name TO country_name;
+ALTER TABLE countries ADD CONSTRAINT country_unique UNIQUE(country_name)
+ALTER TABLE countries DROP CONSTRAINT country_unique;
 ```
