@@ -158,6 +158,12 @@ SELECT COUNT(*) FROM countries;
 SELECT COUNT(id) FROM countries WHERE population < 50_000_000;
 ```
 
+## SUM function
+
+```SQL
+SELECT SUM(population) FROM countries LIMIT 3;
+```
+
 
 ## ORDER BY clause
 
