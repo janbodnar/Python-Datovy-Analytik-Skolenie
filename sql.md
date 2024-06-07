@@ -208,6 +208,7 @@ SELECT AVG(population) FROM countries LIMIT 10;
 SELECT * FROM countries ORDER BY name;
 SELECT * FROM countries ORDER BY name ASC;
 SELECT * FROM countries ORDER BY name DESC;
+SELECT * FROM users ORDER BY occupation, last_name DESC;
 ```
 
 ## COUNT & FILTER 
