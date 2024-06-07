@@ -30,6 +30,29 @@ within the table, although they can be sorted for display purposes.
 These tables are organized into *databases*, and a group of databases managed by a single PostgreSQL server  
 instance forms a *database cluster*.
 
+## Types
+
+List of basic Python types and their PostgreSQL equivalents:
+
+| Python Type | PostgreSQL Equivalent |
+|-------------|-----------------------|
+| `bool`      | `boolean`             |
+| `int`       | `smallint`, `integer`, `bigint`, `numeric` |
+| `float`     | `real`, `double precision` |
+| `Decimal`   | `numeric`, `decimal`  |
+| `str`       | `text`, `varchar`, `char` |
+| `bytes`     | `bytea`               |
+| `datetime.date` | `date`           |
+| `datetime.time` | `time`, `timetz` |
+| `datetime.datetime` | `timestamp`, `timestamptz` |
+| `datetime.timedelta` | `interval`  |
+| `list`, `tuple` | `array`          |
+| `uuid.UUID` | `uuid`               |
+| `dict`      | `json`, `jsonb`      |
+| `None`      | `NULL`               |
+
+
+
 
 ## psycopg2 driver
 
