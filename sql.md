@@ -131,7 +131,6 @@ SELECT current_date; -- date
 SELECT current_time; -- time
 ```
 
-
 ## LIMIT clause
 
 ```SQL
@@ -150,6 +149,15 @@ SELECT name, population FROM countries WHERE population BETWEEN 100_000_000 AND 
 ```SQL
 SELECT * FROM countries WHERE name LIKE 'I%';
 ```
+
+## COUNT function
+
+```SQL
+SELECT COUNT(id) FROM countries;
+SELECT COUNT(*) FROM countries;
+SELECT COUNT(id) FROM countries WHERE population < 50_000_000;
+```
+
 
 ## ORDER BY clause
 
