@@ -109,6 +109,12 @@ SELECT SUBSTRING('an old falcon' from 3);
 SELECT SUBSTRING('an old falcon' from 3 for 4);
 ```
 
+Regex.  
+
+```SQL
+SELECT * FROM countries WHERE name ~ 'ia$';
+```
+
 
 Selecting columns.  
 
