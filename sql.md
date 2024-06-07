@@ -17,8 +17,16 @@ INSERT INTO countries(name, population) VALUES('USA', 324666000);
 
 ## ALTER TABLE
 
+Rename column, add constraint.  
+
 ```SQL
 ALTER TABLE countries RENAME COLUMN name TO country_name;
 ALTER TABLE countries ADD CONSTRAINT country_unique UNIQUE(country_name)
 ALTER TABLE countries DROP CONSTRAINT country_unique;
+```
+
+Add new column.  
+
+```python
+ALTER TABLE countries ADD capital_city VARCHAR(255);
 ```
