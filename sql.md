@@ -158,10 +158,11 @@ SELECT COUNT(*) FROM countries;
 SELECT COUNT(id) FROM countries WHERE population < 50_000_000;
 ```
 
-## SUM function
+## SUM/AVG functions
 
 ```SQL
 SELECT SUM(population) FROM countries LIMIT 3;
+SELECT AVG(population) FROM countries LIMIT 10;
 ```
 
 
