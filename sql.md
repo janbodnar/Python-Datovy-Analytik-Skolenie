@@ -82,6 +82,29 @@ DROP TABLE IF EXISTS countries;
 
 ## SELECT 
 
+Scalar values.  
+
+```SQL
+SELECT VERSION();
+```
+
+Expressions.  
+
+```SQL
+SELECT 3 + 5 as output;
+SELECT (3 + 5) * 3 as output;
+```
+
+Functions.  
+
+```SQL
+SELECT POWER(3, 3), SQRT(81), ABS(-5);
+SELECT TRIM(LEADING '.' FROM '...falcon...');
+SELECT TRIM(TRAILING '.' FROM '...falcon...');
+SELECT TRIM(BOTH '.' FROM '...falcon...');
+```
+
+
 Selecting columns.  
 
 ```SQL
@@ -94,6 +117,15 @@ Rename column in output with `AS`.
 ```SQL
 SELECT id, name as "country name", population FROM countries;
 ```
+
+Date & time. 
+
+```SQL
+SELECT NOW(); -- date and time
+SELECT current_date; -- date
+SELECT current_time; -- time
+```
+
 
 ## LIMIT clause
 
