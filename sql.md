@@ -1,6 +1,7 @@
 # SQL language
 
-
+*SQL (Structured Query Language)* is a domain-specific language used to manage data, especially  
+in a relational database management system (RDBMS). 
 
 
 ## DDL & DML
