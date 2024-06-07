@@ -104,6 +104,11 @@ SELECT TRIM(TRAILING '.' FROM '...falcon...');
 SELECT TRIM(BOTH '.' FROM '...falcon...');
 ```
 
+```SQL
+SELECT SUBSTRING('an old falcon' from 3);
+SELECT SUBSTRING('an old falcon' from 3 for 4);
+```
+
 
 Selecting columns.  
 
