@@ -91,7 +91,13 @@ SELECT name, population FROM countries;
 ## WHERE clause 
 
 ```SQL
+SELECT name, population FROM countries WHERE id = 5;
 SELECT name, population FROM countries WHERE population > 100_000_000;
+SELECT name, population FROM countries WHERE population BETWEEN 100_000_000 AND 300_000_000;
+```
+
+```SQL
+SELECT * FROM countries WHERE name LIKE 'I%';
 ```
 
 
