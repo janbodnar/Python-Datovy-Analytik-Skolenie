@@ -202,6 +202,19 @@ SELECT * FROM countries ORDER BY name ASC;
 SELECT * FROM countries ORDER BY name DESC;
 ```
 
+## COUNT & FILTER 
+
+```SQL
+
+SELECT
+  count(1) AS total_countries,
+  count(1) FILTER (WHERE population > 100_000_000) AS countries_with_pop_gt_100M,
+  count(1) FILTER (WHERE population > 1_000_000_000) AS countries_with_pop_gt_1B,
+  count(1) FILTER (WHERE name LIKE '%an') AS countries_ending_with_an
+FROM 
+  countries
+```
+
 ## CASE/WHEN
 
 ```SQL
