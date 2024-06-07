@@ -14,3 +14,9 @@ INSERT INTO countries(name, population) VALUES('China', 1382050000);
 INSERT INTO countries(name, population) VALUES('India', 1313210000);
 INSERT INTO countries(name, population) VALUES('USA', 324666000);
 ```
+
+## ALTER TABLE
+
+```SQL
+ALTER TABLE countries RENAME COLUMN name TO country_name;
+```
