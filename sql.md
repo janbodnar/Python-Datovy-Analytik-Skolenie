@@ -80,4 +80,18 @@ DROP TABLE countries
 DROP TABLE IF EXISTS countries;
 ```
 
+## SELECT 
+
+Selecting columns.  
+
+```SQL
+SELECT name, population FROM countries;
+```
+
+## WHERE clause 
+
+```SQL
+SELECT name, population FROM countries WHERE population > 100_000_000;
+```
+
 
