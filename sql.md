@@ -76,7 +76,7 @@ UPDATE countries SET capital_city = 'Washington' WHERE name = 'USA';
 ## DROP TABLE
 
 ```SQL
-DROP TABLE countries
+DROP TABLE countries;
 DROP TABLE IF EXISTS countries;
 ```
 
