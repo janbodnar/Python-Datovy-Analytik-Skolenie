@@ -80,6 +80,14 @@ DROP TABLE countries;
 DROP TABLE IF EXISTS countries;
 ```
 
+## delete contents of table
+
+```SQL
+DELETE FROM countries WHERE id = 1;
+DELETE FROM countries;
+TRUNCATE countries;
+```
+
 ## SELECT 
 
 Scalar values.  
@@ -135,6 +143,19 @@ Date & time.
 SELECT NOW(); -- date and time
 SELECT current_date; -- date
 SELECT current_time; -- time
+```
+
+## IN clause
+
+```SQL
+SELECT * FROM countries WHERE id IN (2, 4, 6, 8, 10);
+```
+
+## AND/OR 
+
+```SQL
+SELECT * FROM countries WHERE (id % 2 = 0) AND (id < 20);
+SELECT * FROM countries WHERE name SIMILAR TO '%ia' OR name SIMILAR TO '%an';
 ```
 
 ## LIMIT clause
