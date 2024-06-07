@@ -85,6 +85,7 @@ DROP TABLE IF EXISTS countries;
 Selecting columns.  
 
 ```SQL
+SELECT * from countries;
 SELECT name, population FROM countries;
 ```
 
@@ -111,6 +112,14 @@ SELECT name, population FROM countries WHERE population BETWEEN 100_000_000 AND 
 
 ```SQL
 SELECT * FROM countries WHERE name LIKE 'I%';
+```
+
+## ORDER BY clause
+
+```SQL
+SELECT * FROM countries ORDER BY name;
+SELECT * FROM countries ORDER BY name ASC;
+SELECT * FROM countries ORDER BY name DESC;
 ```
 
 
