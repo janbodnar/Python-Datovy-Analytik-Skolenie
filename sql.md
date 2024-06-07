@@ -236,6 +236,17 @@ FROM
   countries
 ```
 
+```SQL
+SELECT id, first_name, last_name, occupation, dob, 
+       EXTRACT(YEAR FROM AGE(CURRENT_DATE, dob::date)) AS age,
+       CASE 
+           WHEN EXTRACT(YEAR FROM AGE(CURRENT_DATE, dob::date)) < 18 THEN 'minor'
+           WHEN EXTRACT(YEAR FROM AGE(CURRENT_DATE, dob::date)) BETWEEN 18 AND 64 THEN 'adult'
+           ELSE 'senior'
+       END AS age_group
+FROM users;
+```
+
 ## GROUP BY
 
 ```SQL
