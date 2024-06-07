@@ -7,7 +7,7 @@ of California, Berkeley.
 
 It has over 35 years of continuous development on its fundamental platform.  
 
-Download at `https://www.postgresql.org/download/`
+Download at https://www.postgresql.org/download/
 
 ```
 C:\Users\Jano\opt\postgre>bin\pg_ctl.exe -D data start
