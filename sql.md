@@ -7,19 +7,19 @@
 **Data Definition Language (DDL)** and **Data Manipulation Language (DML)** are two types   
 of sublanguages used in SQL for different purposes:  
 
-1. **DDL (Data Definition Language)**: DDL is used to define the structure of the database.
-It deals with database schemas and descriptions of how the data should reside in the database.
-The main DDL commands in SQL include:
+1. **DDL (Data Definition Language)**: DDL is used to define the structure of the database.  
+It deals with database schemas and descriptions of how the data should reside in the database.  
+The main DDL commands in SQL include:  
 
-- `CREATE` - to create a database and its objects like table, index, views, stored procedure,
+- `CREATE` - to create a database and its objects like table, index, views, stored procedure,  
   function, and triggers.  
 - `ALTER` - alters the structure of the existing database.  
 - `DROP` - deletes objects from the database.
 - `TRUNCATE` - removes all records from a table, including all spaces allocated for the records.  
 - `RENAME` - renames an object.
 
-3. **DML (Data Manipulation Language)**: DML is used to manipulate the data itself. It deals with
-   data manipulation and includes most common SQL statements.
+3. **DML (Data Manipulation Language)**: DML is used to manipulate the data itself. It deals with  
+   data manipulation and includes most common SQL statements.  
    The main DML commands in SQL include:
    
 - `SELECT` - retrieves data from one or more tables.
