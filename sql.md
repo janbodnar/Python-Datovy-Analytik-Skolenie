@@ -329,3 +329,16 @@ SELECT
 FROM users
 GROUP BY age_group;
 ```
+
+## HAVING clause
+
+The `HAVING` clause in SQL is used to filter the results of a `GROUP BY` clause, similar to how the   
+`WHERE` clause is used to filter the results of a `SELECT` statement.  
+
+```SQL
+SELECT occupation, COUNT(*) as user_count
+FROM users
+GROUP BY occupation
+HAVING COUNT(*) IN (1, 3);
+```
+
