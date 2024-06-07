@@ -231,6 +231,21 @@ FROM
 ## GROUP BY
 
 ```SQL
+SELECT occupation, COUNT(*) 
+FROM users 
+GROUP BY occupation;
+```
+
+```SQL
+-- SELECT occupation, COUNT(*), array_agg(first_name || ' ' || last_name) as full_name
+SELECT occupation, COUNT(*), string_agg(first_name || ' ' || last_name, ';') as full_name
+
+FROM users 
+GROUP BY occupation;
+```
+
+
+```SQL
 SELECT 
   CASE
     WHEN population >= 1000000000 THEN 'Greater than 1 billion'
