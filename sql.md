@@ -149,6 +149,7 @@ SELECT current_time; -- time
 
 ```SQL
 SELECT * FROM countries WHERE id IN (2, 4, 6, 8, 10);
+SELECT * FROM countries WHERE id NOT IN (2, 4, 6, 8, 10);
 ```
 
 ## AND/OR 
@@ -199,6 +200,19 @@ SELECT AVG(population) FROM countries LIMIT 10;
 SELECT * FROM countries ORDER BY name;
 SELECT * FROM countries ORDER BY name ASC;
 SELECT * FROM countries ORDER BY name DESC;
+```
+
+## CASE/WHEN
+
+```SQL
+SELECT *,
+CASE 
+	WHEN population > 1_000_000_000 THEN 'huge' 
+	WHEN population BETWEEN 100_000_000 AND 500_000_000 THEN 'large' 
+	ELSE 'other'
+	END AS population_size
+FROM 
+  countries
 ```
 
 
