@@ -15,7 +15,7 @@ C:\Users\Jano\opt\postgre>bin\pg_ctl.exe -D data stop
 ```
 
 
-## psycopg driver
+## psycopg2 driver
 
 ```python
 import psycopg2
