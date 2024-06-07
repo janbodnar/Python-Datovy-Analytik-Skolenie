@@ -228,4 +228,22 @@ FROM
   countries
 ```
 
+## GROUP BY
 
+```SQL
+SELECT 
+  CASE
+    WHEN population >= 1000000000 THEN 'Greater than 1 billion'
+    WHEN population >= 100000000 AND population < 1000000000 THEN 'Between 100 million and 1 billion'
+    WHEN population >= 10000000 AND population < 100000000 THEN 'Between 10 million and 100 million'
+    ELSE 'Less than 10 million'
+  END AS population_group,
+  COUNT(name) AS number_of_countries,
+  SUM(population) AS total_population
+FROM 
+  countries
+GROUP BY 
+  population_group
+ORDER BY 
+  total_population DESC;
+```
