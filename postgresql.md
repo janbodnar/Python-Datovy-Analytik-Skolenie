@@ -17,7 +17,7 @@ C:\Users\Jano\opt\postgre>bin\pg_ctl.exe -D data stop
 ## Concepts 
 
 PostgreSQL is a relational database management system (RDBMS), which is responsible for managing data stored in  
-structures called relations, or more commonly, tables. The concept of storing data in table format is widely 
+structures called relations, or more commonly, tables. The concept of storing data in table format is widely  
 accepted today, although there are alternative database organization methods. For instance, Unix-like operating  
 systems use files and directories, representing a hierarchical database, while object-oriented databases represent  
 a more recent innovation.
@@ -27,8 +27,8 @@ shares the same set of named columns, with each column being of a particular dat
 maintains a fixed order of columns, it's crucial to note that SQL does not assure any specific order of the rows  
 within the table, although they can be sorted for display purposes.
 
-These tables are organized into databases, and a group of databases managed by a single PostgreSQL server  
-instance forms a database cluster.
+These tables are organized into *databases*, and a group of databases managed by a single PostgreSQL server  
+instance forms a *database cluster*.
 
 
 ## psycopg2 driver
