@@ -88,6 +88,19 @@ Selecting columns.
 SELECT name, population FROM countries;
 ```
 
+Rename column in output with `AS`. 
+
+```SQL
+SELECT id, name as "country name", population FROM countries;
+```
+
+## LIMIT clause
+
+```SQL
+SELECT * FROM countries LIMIT 10;
+SELECT * FROM countries LIMIT 10 OFFSET 5;
+```
+
 ## WHERE clause 
 
 ```SQL
