@@ -186,6 +186,14 @@ SELECT COUNT(*) FROM countries;
 SELECT COUNT(id) FROM countries WHERE population < 50_000_000;
 ```
 
+## DISTINCT clause
+
+```SQL
+SELECT DISTINCT(occupation) FROM users;
+```
+
+
+
 ## SUM/AVG functions
 
 ```SQL
@@ -254,6 +262,7 @@ SELECT occupation, COUNT(*)
 FROM users 
 GROUP BY occupation;
 ```
+
 
 ```SQL
 -- SELECT occupation, COUNT(*), array_agg(first_name || ' ' || last_name) as full_name
