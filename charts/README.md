@@ -97,7 +97,55 @@ plt.axis([40, 160, 0, 0.03])
 plt.savefig('histogram.png')
 ```
 
+## Polar projection
 
+A `projection` refers to the method by which we transform the representation of data points from a  
+certain coordinate system to another.  
+
+A polar projection maps data that is defined in terms of radius and angle (polar coordinates) onto  
+a two-dimensional plane. This is particularly useful for visualizing data that has a clear relationship  
+with a central point or exhibits radial symmetry.  
+
+A few examples:
+
+1. **Cyclical Data**: Data that repeats in cycles, such as hours in a day, days in a week, or seasons in  
+   a year, can be effectively represented using polar projection. For instance, temperature or weather  
+   patterns over a year can be plotted on a polar graph to show cyclical trends.  
+
+4. **Directional Data**: Data that involves directions or angles, such as wind direction and speed, can be  
+   displayed using polar projection. This is often used in meteorology.  
+
+6. **Radial Symmetry Data**: Data that exhibits radial symmetry, meaning it has properties that are invariant  
+   under rotation about a central point, can be well-represented using polar projection. Examples include  
+   patterns in flowers or snowflakes.  
+
+9. **Acoustic Fields**: In acoustics, polar plots are often used to display the directional response of
+    a microphone or speaker.  
+
+11. **Antenna Radiation Patterns**: In telecommunications, polar plots are used to represent antenna radiation patterns,
+    showing the directionality of the antenna's performance.
+
+ 
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create a new figure
+fig = plt.figure()
+
+# Add a subplot with polar projection
+ax = fig.add_subplot(111, projection='polar')
+
+# Create theta and r for plotting
+theta = np.linspace(0, 2*np.pi, 100)
+r = np.abs(np.sin(5*theta))
+
+# Plot the data
+ax.plot(theta, r)
+
+# Display the plot
+plt.show()
+```
 
 
 
