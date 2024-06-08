@@ -70,7 +70,13 @@ print(statistics.mode(grades))
 
 Correlation is a measure that expresses the extent to which two variables are linearly  
 related, meaning they change together at a constant rate. It's a common tool for describing  
-simple relationships without making a statement about cause and effect.
+simple relationships without making a statement about cause and effect.  
+
+The correlation is quantified by the *correlation coefficient*, often denoted as `r`, which   
+measures the strength of the linear relationship between two variables1. The correlation  
+coefficient ranges from `-1` to `+1`. A correlation coefficient close to `0` indicates a weak linear  
+relationship. Positive `r` values indicate a positive correlation.
+
 
 ```python
 import statistics
