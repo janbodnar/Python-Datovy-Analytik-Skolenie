@@ -1,5 +1,21 @@
 # Finplot
 
+## finplot & yfinance
+
+```python
+import finplot as fplt
+import yfinance
+
+# Download AAPL data
+df = yfinance.download('AAPL',  start="2023-01-01", end="2024-06-07", interval='1d')
+
+print(df.head())
+
+fplt.candlestick_ochl(df[['Open', 'Close', 'High', 'Low']])
+fplt.show()
+```
+
+
 ## Long-term BTC
 
 ```python
