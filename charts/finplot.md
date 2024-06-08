@@ -15,6 +15,22 @@ fplt.candlestick_ochl(df[['Open', 'Close', 'High', 'Low']])
 fplt.show()
 ```
 
+## Load from CSV
+
+```python
+import pandas as pd
+
+import finplot as fplt
+df = pd.read_csv(
+    'https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+
+df['Date'] = pd.to_datetime(df['Date'])
+df.set_index('Date', inplace=True)
+fplt.candlestick_ochl(df[['AAPL.Open', 'AAPL.Close', 'AAPL.High', 'AAPL.Low']])
+
+fplt.show()
+```
+
 ## dark theme
 
 ```python
