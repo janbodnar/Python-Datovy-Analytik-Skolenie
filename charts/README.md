@@ -103,8 +103,8 @@ A `projection` refers to the method by which we transform the representation of 
 certain coordinate system to another.  
 
 A polar projection maps data that is defined in terms of radius and angle (polar coordinates) onto  
-a two-dimensional plane. This is particularly useful for visualizing data that has a clear relationship  
-with a central point or exhibits radial symmetry.  
+a two-dimensional plane. This is particularly useful for visualizing data that has a clear 
+relationship with a central point or exhibits radial symmetry.  
 
 A few examples:
 
@@ -115,16 +115,17 @@ A few examples:
 4. **Directional Data**: Data that involves directions or angles, such as wind direction and speed, can be  
    displayed using polar projection. This is often used in meteorology.  
 
-6. **Radial Symmetry Data**: Data that exhibits radial symmetry, meaning it has properties that are invariant  
-   under rotation about a central point, can be well-represented using polar projection. Examples include  
-   patterns in flowers or snowflakes.  
+6. **Radial Symmetry Data**: Data that exhibits radial symmetry, meaning it has properties that are  
+   invariant under rotation about a central point, can be well-represented using polar projection.  
+   Examples include patterns in flowers or snowflakes.  
 
-9. **Acoustic Fields**: In acoustics, polar plots are often used to display the directional response of
-    a microphone or speaker.  
+9. **Acoustic Fields**: In acoustics, polar plots are often used to display the directional response of  
+   a microphone or speaker.  
 
-11. **Antenna Radiation Patterns**: In telecommunications, polar plots are used to represent antenna radiation patterns,
-    showing the directionality of the antenna's performance.
+11. **Antenna Radiation Patterns**: In telecommunications, polar plots are used to represent antenna  
+   radiation patterns, showing the directionality of the antenna's performance.  
 
+Wind and its direction for a specific timestamp:  
  
 ```python
 import matplotlib.pyplot as plt
@@ -153,7 +154,6 @@ ax.set_xlabel('Wind Speed')
 ax.set_title('Wind Speed vs Direction')
 
 plt.show()
-
 ```
 
 
