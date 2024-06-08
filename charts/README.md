@@ -76,6 +76,21 @@ plt.legend(title='Lines')
 plt.savefig('legends.png')
 ```
 
+## Markers
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Fixing random state for reproducibility
+# np.random.seed(19680801)
+
+fig, ax = plt.subplots()
+ax.plot(np.random.rand(20), '-o', ms=16, lw=2, alpha=0.7, mfc='orange')
+ax.grid()
+
+plt.show()
+```
 
 ## Histogram
 
