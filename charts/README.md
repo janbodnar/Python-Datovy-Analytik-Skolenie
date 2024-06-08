@@ -4,8 +4,12 @@ Matplotlib is a Python library for creating charts. Matplotlib can be used
 in Python scripts, the Python and IPython shell, the Jupyter notebook,  
 web application servers, and for GUI toolkits.  
 
-    $ sudo pip install matplotlib
+`pip install matplotlib`
 
+
+For candlestick charts, we can use `finplot`.
+
+`pip install finplot`
 
 ## Set limits of axes 
 
