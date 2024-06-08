@@ -12,6 +12,25 @@ mean = statistics.mean(scores)
 print(mean)
 ```
 
+## Weighed mean
+
+```python
+import statistics
+
+u1 = {'name': 'Paul', 'scores': {'math': 98, 'biology': 65, 'English': 89, 'chemistry': 71}}
+u2 = {'name': 'John', 'scores': {'math': 88, 'biology': 81, 'English': 88, 'chemistry': 99}}
+u3 = {'name': 'Boris', 'scores': {'math': 90, 'biology': 93, 'English': 70, 'chemistry': 100}}
+
+users = [u1, u2, u3]
+
+class_w = {'math': 0.6, 'biology': 0.1, 'English': 0.3, 'chemistry': 0.1}
+
+for u in users:
+    data = [u['scores'][subject] for subject in class_w.keys()]
+    weights = class_w.values()
+    total_score = statistics.fmean(data, weights=weights)
+    print(total_score)
+```
 
 ## Standard deviation
 
