@@ -12,7 +12,7 @@ mean = statistics.mean(scores)
 print(mean)
 ```
 
-## Weighed mean
+## Weighted mean
 
 ```python
 import statistics
