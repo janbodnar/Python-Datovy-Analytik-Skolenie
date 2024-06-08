@@ -103,7 +103,7 @@ A `projection` refers to the method by which we transform the representation of 
 certain coordinate system to another.  
 
 A polar projection maps data that is defined in terms of radius and angle (polar coordinates) onto  
-a two-dimensional plane. This is particularly useful for visualizing data that has a clear 
+a two-dimensional plane. This is particularly useful for visualizing data that has a clear  
 relationship with a central point or exhibits radial symmetry.  
 
 A few examples:
