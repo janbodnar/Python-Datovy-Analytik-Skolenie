@@ -76,6 +76,33 @@ plt.legend(title='Lines')
 plt.savefig('legends.png')
 ```
 
+---
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+t1 = np.arange(0.0, 2.0, 0.1)
+t2 = np.arange(0.0, 2.0, 0.01)
+
+fig, ax = plt.subplots()
+
+# note that plot returns a list of lines.  The "l1, = plot" usage
+# extracts the first element of the list into l1 using tuple
+# unpacking.  So l1 is a Line2D instance, not a sequence of lines
+l1, = ax.plot(t1, np.exp(t1))
+l2, = ax.plot(t2, np.sin(2 * np.pi * t2))
+
+print(l1)
+print(l2)
+
+ax.legend((l1, l2), ('value 1', 'value 2'), loc='upper right', shadow=True)
+ax.set_xlabel('x values')
+ax.set_ylabel('y values')
+ax.set_title('Legends')
+plt.show()
+```
+
 ## Markers
 
 ```python
