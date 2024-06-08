@@ -15,6 +15,24 @@ fplt.candlestick_ochl(df[['Open', 'Close', 'High', 'Low']])
 fplt.show()
 ```
 
+## dark theme
+
+```python
+import finplot as fplt
+import yfinance
+
+df = yfinance.download('MSFT', start="2023-01-01", end="2024-06-07", interval='1d')
+
+# must set before creating plot
+w = fplt.foreground = '#eef'
+b = fplt.background = fplt.odd_plot_background = '#181a1b'
+fplt.candle_bull_color = fplt.volume_bull_color = fplt.candle_bull_body_color = fplt.volume_bull_body_color = '#352'
+fplt.candle_bear_color = fplt.volume_bear_color = '#810'
+fplt.cross_hair_color = w+'a'
+
+fplt.candlestick_ochl(df[['Open', 'Close', 'High', 'Low']])
+fplt.show()
+```
 
 ## Long-term BTC
 
