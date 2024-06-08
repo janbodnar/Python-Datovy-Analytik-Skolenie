@@ -29,6 +29,8 @@ print(var)
 
 ## Median
 
+Median is the middle value.  
+
 ```python
 import statistics
 
@@ -49,3 +51,18 @@ print(medl)
 
 print(sorted(salaries))
 ```
+
+## Mode 
+
+Mode is the single most common data point from discrete or nominal data.   
+
+```python
+import statistics
+
+grades = [1, 2, 1, 1, 3, 4, 4, 5, 1, 2, 3, 1, 1, 2, 3 ]
+print(statistics.mode(grades))
+
+grades = ['A', 'B', 'B', 'C', 'C', 'B', 'F', 'FX', 'C', 'D']
+print(statistics.mode(grades))
+```
+
