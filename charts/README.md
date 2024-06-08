@@ -130,21 +130,30 @@ A few examples:
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Create a new figure
-fig = plt.figure()
+# Let's assume these are your weather data points
+directions = np.array([0, 45, 90, 135, 180, 225, 270, 315])  # wind directions in degrees
+speeds = np.array([5, 10, 15, 20, 25, 20, 15, 10])  # wind speeds
 
-# Add a subplot with polar projection
-ax = fig.add_subplot(111, projection='polar')
+# Convert degrees to radians
+directions_rad = np.deg2rad(directions)
 
-# Create theta and r for plotting
-theta = np.linspace(0, 2*np.pi, 100)
-r = np.abs(np.sin(5*theta))
+# Create a polar plot
+plt.figure(figsize=(6,6))
+ax = plt.subplot(111, polar=True)
+ax.plot(directions_rad, speeds, 'o-', linewidth=2)
 
-# Plot the data
-ax.plot(theta, r)
+# Set the direction of the zero angle to North
+ax.set_theta_zero_location('N')
 
-# Display the plot
+# Set the clockwise direction
+ax.set_theta_direction(-1)
+
+# Set labels and title
+ax.set_xlabel('Wind Speed')
+ax.set_title('Wind Speed vs Direction')
+
 plt.show()
+
 ```
 
 
