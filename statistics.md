@@ -66,3 +66,19 @@ grades = ['A', 'B', 'B', 'C', 'C', 'B', 'F', 'FX', 'C', 'D']
 print(statistics.mode(grades))
 ```
 
+## Correlation
+
+Correlation is a measure that expresses the extent to which two variables are linearly  
+related, meaning they change together at a constant rate. It's a common tool for describing  
+simple relationships without making a statement about cause and effect.
+
+```python
+import statistics
+
+orbital_period = [88, 225, 365, 687, 4331, 10_756, 30_687, 60_190]    # days
+dist_from_sun = [58, 108, 150, 228, 778, 1_400, 2_900, 4_500] # million km
+
+cor = statistics.correlation(orbital_period, dist_from_sun, method='ranked')
+print(cor)
+```
+
