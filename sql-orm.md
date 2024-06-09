@@ -131,6 +131,70 @@ for car in rs:
     print(car.id, car.name, car.price)
 ```
 
+## One-to-one
+
+```python
+from sqlalchemy import create_engine, ForeignKey
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import sessionmaker, declarative_base, relationship
+
+eng = create_engine('sqlite:///:memory:')
+
+Base = declarative_base()
+
+
+class User(Base):
+    __tablename__ = "users"
+
+    user_id = Column(Integer, primary_key=True)
+    name = Column(String)
+    profile = relationship("UserProfile", uselist=False, back_populates="user")
+
+
+class UserProfile(Base):
+    __tablename__ = "user_profiles"
+
+    profile_id = Column(Integer, primary_key=True)
+    bio = Column(String)
+    user_id = Column(Integer, ForeignKey("users.user_id"))
+
+    user = relationship("User", back_populates="profile")
+
+
+# Create the tables
+Base.metadata.create_all(bind=eng)
+
+Session = sessionmaker(bind=eng)
+ses = Session()
+
+# Insert some data
+user1 = User(name="John Doe")
+user2 = User(name="Jane Doe")
+user3 = User(name="Roger Roe")
+
+profile1 = UserProfile(bio="Loves reading books", user=user1)
+profile2 = UserProfile(bio="Enjoys outdoor activities", user=user2)
+profile3 = UserProfile(bio="Loves animals", user=user3)
+
+ses.add(user1)
+ses.add(user2)
+ses.add(user3)
+ses.add(profile1)
+ses.add(profile2)
+ses.add(profile3)
+
+ses.commit()
+
+# Query the data
+res = ses.query(User).filter(User.name == "John Doe").first()
+print(res.profile.bio)
+
+res = ses.query(UserProfile).filter(UserProfile.bio.contains("books")).first()
+print(res.user.name)
+```
+
+
+
 ## One-to-many
 
 ```python
