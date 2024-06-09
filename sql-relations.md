@@ -17,8 +17,8 @@ Common types of relations in SQL:
 8. **Self-Referencing**: This occurs when only one table is involved, and a foreign key in the table references the  
    primary key of the same table.
 10. **Many-to-One**: This is a special case of a one-to-many relationship, where each record in Table B can be associated  
-    with one record in Table A⁴. For example, an employees table and a departments table, where each employee belongs to  
-    one department, but a department can have many employees⁴.
+    with one record in Table A. For example, an employees table and a departments table, where each employee belongs to  
+    one department, but a department can have many employees.
 
 ## one-to-one
 
