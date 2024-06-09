@@ -1,5 +1,7 @@
 # SQLAlchemy
 
+## Create table
+
 ```python
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
@@ -38,3 +40,36 @@ rs = ses.query(Car).all()
 for car in rs:
     print(car.name, car.price)
 ```
+
+## Add car 
+
+```python
+from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import sessionmaker, declarative_base
+
+eng = create_engine('sqlite:///test.db')
+
+Base = declarative_base()
+ 
+class Car(Base):
+    __tablename__ = "cars"
+ 
+    id = Column(Integer, primary_key=True)
+    name = Column(String)  
+    price = Column(Integer)
+        
+Session = sessionmaker(bind=eng)
+ses = Session()    
+
+c1 = Car(name='Oldsmobile', price=23450)
+ses.add(c1)
+ses.commit()
+
+rs = ses.query(Car).all()
+
+for car in rs:
+    print(car.name, car.price)
+```
+
+
