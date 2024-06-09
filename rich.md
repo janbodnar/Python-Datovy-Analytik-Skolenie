@@ -344,8 +344,8 @@ console.print(table, justify='center')
 
 The table is printed. The whole table is centered.
 
-In the next example, we display BTC OHLCV data in a table. The example uses the 
-`ccxt` module to fetch data from the Binance exchange.
+In the next example, we display BTC OHLCV data in a table. The example uses the   
+`ccxt` module to fetch data from the Binance exchange.  
 
 ```python
 import asyncio
@@ -419,6 +419,7 @@ let msg = match capital with
 
 
 printfn $"{msg}"
+\```
 ```
 
 We have a short markdown example. It contains headers and a F# source code  
