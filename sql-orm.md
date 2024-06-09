@@ -131,6 +131,70 @@ for car in rs:
     print(car.id, car.name, car.price)
 ```
 
+## One-to-many
+
+```python
+from sqlalchemy import create_engine, ForeignKey
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import sessionmaker, declarative_base, relationship
+
+# eng = create_engine('sqlite:///test.db')
+eng = create_engine('sqlite:///:memory:')
+
+Base = declarative_base()
+
+class Customer(Base):
+    __tablename__ = "customers"
+
+    customer_id = Column(Integer, primary_key=True)
+    name = Column(String)
+    orders = relationship("Order", back_populates="customer")
+
+class Order(Base):
+    __tablename__ = "orders"
+
+    order_id = Column(Integer, primary_key=True)
+    item = Column(String)
+    customer_id = Column(Integer, ForeignKey("customers.customer_id"))
+
+    customer = relationship("Customer", back_populates="orders")
+
+# Create the tables
+Base.metadata.create_all(bind=eng)
+
+Session = sessionmaker(bind=eng)
+ses = Session()
+
+# Insert some data
+customer1 = Customer(name="John Doe")
+customer2 = Customer(name="Jane Doe")
+customer3 = Customer(name="Roger Roe")
+
+order1 = Order(item="Book", customer=customer1)
+order2 = Order(item="Laptop", customer=customer1)
+order3 = Order(item="Phone", customer=customer2)
+order4 = Order(item="Cup", customer=customer3)
+
+ses.add(customer1)
+ses.add(customer2)
+ses.add(customer3)
+ses.add(order1)
+ses.add(order2)
+ses.add(order3)
+ses.add(order4)
+
+ses.commit()
+
+# Query the data
+res = ses.query(Customer).filter(Customer.name == "John Doe").first()
+
+for order in res.orders:
+    print(order.item)
+
+res = ses.query(Order).filter(Order.item == "Book").first()
+print(res.customer.name)
+```
+
 
 ## Many-to-Many
 
