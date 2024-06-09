@@ -102,4 +102,31 @@ for car in rs:
     print(car.name, car.price)
 ```
 
+## Query IN
 
+```python
+from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import sessionmaker, declarative_base
+
+eng = create_engine('sqlite:///test.db')
+
+Base = declarative_base()
+
+
+class Car(Base):
+    __tablename__ = "cars"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    price = Column(Integer)
+
+
+Session = sessionmaker(bind=eng)
+ses = Session()
+
+rs = ses.query(Car).filter(Car.id.in_([2, 4, 6, 8]))
+
+for car in rs:
+    print(car.id, car.name, car.price)
+```
