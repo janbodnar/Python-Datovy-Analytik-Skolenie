@@ -107,7 +107,9 @@ cor = statistics.correlation(orbital_period, dist_from_sun, method='ranked')
 print(cor)
 ```
 
-Aga/Income dataset.  
+Age/Income dataset.  
+
+Calculate correlation. 
 
 ```csv
 Name,Age,Income($)
@@ -133,5 +135,62 @@ Nick,43,94000
 Alia,39,80000
 Sid,41,112000
 Abdul,39,58000
+```
+
+Calculate stats from JSON data:
+
+```json
+[
+    {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "salary": 2380
+    },
+    {
+        "name": "Roger Roe",
+        "email": "roger.roe@example.com",
+        "salary": 980
+    },
+    {
+        "name": "Paul Novak",
+        "email": "paul.novak@example.com",
+        "salary": 1050
+    },
+    {
+        "name": "Lucia Williams",
+        "email": "lucia.williams@example.com",
+        "salary": 1970
+    },
+    {
+        "name": "Peter Novotny",
+        "email": "peter.novotny@example.com",
+        "salary": 2230
+    },
+    {
+        "name": "Samuel Green",
+        "email": "samuel.green@example.com",
+        "salary": 890
+    },
+    {
+        "name": "Saul Peterson",
+        "email": "saul.peterson@example.com",
+        "salary": 990
+    },
+    {
+        "name": "Walter Smith",
+        "email": "walter.smith@example.com",
+        "salary": 1180
+    },
+    {
+        "name": "Paul Smith",
+        "email": "paul.smith@example.com",
+        "salary": 2130
+    },
+    {
+        "name": "Martin Meszaros",
+        "email": "martin.meszaros@example.com",
+        "salary": 890
+    }
+]
 ```
 
