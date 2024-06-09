@@ -395,7 +395,7 @@ supports the markdown language.
 
 The `pattern_match.md` file:  
 
-```md
+````md
 # Match expressions
 
 The match expression provides branching control that is based on  
@@ -419,8 +419,8 @@ let msg = match capital with
 
 
 printfn $"{msg}"
-\\\`\\\`\\\`
 ```
+````
 
 We have a short markdown example. It contains headers and a F# source code  
 listing.
