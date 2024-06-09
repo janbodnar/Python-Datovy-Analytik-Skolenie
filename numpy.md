@@ -7,7 +7,7 @@ to operate on these arrays.
 
 NumPy is much faster than the built-in Python list.  
 
-      $ pip install numpy
+`pip install numpy`
 
 ## The ndarray 
 
