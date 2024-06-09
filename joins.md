@@ -62,7 +62,7 @@ LEFT JOIN reservations ON customers.id = reservations.customer_id;
 
 ## RIGHT JOIN
 
-`RIGHT JOIN` (or `RIGHT OUTER JOIN`) returns all the records from the right table, and the matched records 
+`RIGHT JOIN` (or `RIGHT OUTER JOIN`) returns all the records from the right table, and the matched records  
 from the left table. If there is no match, the result is `NULL` on the left side.
 
 ```SQL
