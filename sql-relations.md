@@ -120,6 +120,13 @@ INSERT INTO reservations (reservation_date, customer_id) VALUES
 ('2024-06-07', 2);
 ```
 
+```SQL
+SELECT reservation_date, name, email
+FROM reservations 
+JOIN customers 
+ON reservations.customer_id = customers.id;
+```
+
 
 ## many-to-many
 
