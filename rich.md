@@ -419,7 +419,7 @@ let msg = match capital with
 
 
 printfn $"{msg}"
-\`\`\`
+\` \` \`
 ```
 
 We have a short markdown example. It contains headers and a F# source code  
