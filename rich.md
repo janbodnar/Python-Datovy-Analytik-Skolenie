@@ -7,7 +7,7 @@ syntax.
 Rich works with Jupyter notebooks out of the box. On Windows, the new Windows  
 Terminal supports the more advanced formatting options.  
 
-``pip install rich`
+`pip install rich`
 
 We install the library with pip.
 
