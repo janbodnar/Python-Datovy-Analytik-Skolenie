@@ -50,3 +50,20 @@ finally:
     if con:
         con.close()
 ```
+
+---
+
+```python
+import psycopg2
+
+with psycopg2.connect(database='testdb', user='postgres',
+                      password='s$cret') as con:
+
+    cur = con.cursor()
+    cur.execute('SELECT version()')
+
+    version = cur.fetchone()[0]
+    print(version)
+```
+
+
