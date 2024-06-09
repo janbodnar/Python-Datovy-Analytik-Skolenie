@@ -342,3 +342,10 @@ GROUP BY occupation
 HAVING COUNT(*) IN (1, 3);
 ```
 
+
+
+
+
+
+
+
