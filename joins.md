@@ -1,6 +1,6 @@
 # Joins
 
-A *SQL JOIN* operation combines rows from two or more tables based on a related column between them. 
+A *SQL JOIN* operation combines rows from two or more tables based on a related column between them.  
 It allows us to query data from multiple tables as if they were a single table.   
 
 Common types of SQL JOIN operations:
