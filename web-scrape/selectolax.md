@@ -47,8 +47,6 @@ https://selectolax.readthedocs.io/en/latest/parser.html
 Get the first match with `css_first`.  
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 html = '''
@@ -72,8 +70,6 @@ print(repr(body.html))
 Create HTTP GET request with `httpx` module and fetch the `title` tag. 
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 import httpx 
@@ -92,8 +88,6 @@ The `html` attribute returns HTML code.  The `tag` attribute returns tag name.
 The `text` method returns the containing text.  
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
@@ -113,8 +107,6 @@ with open('index.html', 'r') as f:
 ---
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
@@ -137,8 +129,6 @@ with open('index.html', 'r') as f:
 Traversing all nodes with `traverse`.  
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
@@ -158,8 +148,6 @@ with open('index.html', 'r') as f:
 Iterating children with `iter`
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
@@ -183,8 +171,6 @@ can use the `strip` parameter or regular expressions. The `strip` parameter is
 not very flexible.  
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 import re
@@ -209,8 +195,6 @@ with open('index.html', 'r') as f:
 We can remove/unwrap tags with `unwrap` or `unwrap_tags`.  
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
@@ -234,8 +218,6 @@ with open('index.html', 'r') as f:
 We can select specific text with `text_contains`
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
@@ -251,8 +233,6 @@ with open('index.html', 'r') as f:
 ## Chaining method calls
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
@@ -270,8 +250,6 @@ with open('index.html', 'r') as f:
 Removing tags with `strip_tags`.  
 
 ```python
-#!/usr/bin/python
-
 from selectolax.parser import HTMLParser
 
 with open('index.html', 'r') as f:
