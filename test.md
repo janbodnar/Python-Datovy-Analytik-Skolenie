@@ -102,15 +102,12 @@ print(var)
 median = statistics.median(salaries)
 print(median)
 
-median_low = statistics.median(salaries)
+median_low = statistics.median_low(salaries)
 print(median_low)
 
 median_high = statistics.median_high(salaries)
 print(median_high)
 ```
-
-
-
 
 
 
