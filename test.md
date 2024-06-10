@@ -1,5 +1,124 @@
 # Samples
 
+
+## Basic statistics
+
+```
+[
+    {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "salary": 2380
+    },
+    {
+        "name": "Roger Roe",
+        "email": "roger.roe@example.com",
+        "salary": 980
+    },
+    {
+        "name": "Paul Novak",
+        "email": "paul.novak@example.com",
+        "salary": 1050
+    },
+    {
+        "name": "Lucia Williams",
+        "email": "lucia.williams@example.com",
+        "salary": 1970
+    },
+    {
+        "name": "Peter Novotny",
+        "email": "peter.novotny@example.com",
+        "salary": 2230
+    },
+    {
+        "name": "Samuel Green",
+        "email": "samuel.green@example.com",
+        "salary": 890
+    },
+    {
+        "name": "Saul Peterson",
+        "email": "saul.peterson@example.com",
+        "salary": 990
+    },
+    {
+        "name": "Walter Smith",
+        "email": "walter.smith@example.com",
+        "salary": 1180
+    },
+    {
+        "name": "Paul Smith",
+        "email": "paul.smith@example.com",
+        "salary": 2130
+    },
+    {
+        "name": "Martin Meszaros",
+        "email": "martin.meszaros@example.com",
+        "salary": 890
+    }
+]
+```
+
+
+```python
+import statistics
+import json
+from dataclasses import dataclass
+
+@dataclass
+class User:
+    name: str
+    email: str
+    salary: int
+
+# json.load(file object)
+
+users = []
+fname = 'users.json'
+
+with open(fname) as f:
+
+    rows = json.load(f)
+    
+    for row in rows:
+        users.append(User(**row))
+        # users.append(User(row['name'], row['email'], row['salary']))
+
+
+
+print(users)
+
+salaries = [user.salary for user in users]
+print(salaries)
+
+smean = statistics.mean(salaries)
+print(smean)
+
+stdev = statistics.stdev(salaries)
+print(stdev)
+
+var = statistics.variance(salaries)
+print(var)
+
+median = statistics.median(salaries)
+print(median)
+
+median_low = statistics.median(salaries)
+print(median_low)
+
+median_high = statistics.median_high(salaries)
+print(median_high)
+```
+
+
+
+
+
+
+
+
+
+## Correletion
+
 ```
 Name,Age,Income($)
 Rob,27,60000
