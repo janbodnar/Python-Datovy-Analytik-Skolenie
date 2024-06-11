@@ -1,6 +1,29 @@
 # Samples
 
 
+```python
+import httpx
+
+url = 'https://nrf.com/research-insights/top-retailers/top-100-retailers/top-100-retailers-2019'
+resp = httpx.get(url)
+
+text = resp.text
+
+tree = HTMLParser(text)
+root = tree.root
+table = tree.css_first('table')
+
+print(table)
+
+data = []
+
+for e in table.iter():
+    data.append(e.text())
+
+for e in data:
+    print(e)
+```
+
 
 ## Parse title 
 
