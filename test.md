@@ -1,5 +1,38 @@
 # Samples
 
+
+
+## Parse title 
+
+```python
+from selectolax.parser import HTMLParser
+import httpx 
+import argparse
+
+
+aparser = argparse.ArgumentParser()
+
+aparser.add_argument('-t', type=str)
+aparser.add_argument('--title', type=str)
+args = aparser.parse_args()
+
+url = args.t
+
+if url == None:
+    url = args.title
+
+r = httpx.get(url)
+html = r.text
+
+tree = HTMLParser(html)
+
+title = tree.css_first('title')
+print(title.text())
+```
+
+
+
+
 ```SQL
 WITH top_salaries AS (
     SELECT DISTINCT salary
