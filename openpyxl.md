@@ -327,3 +327,53 @@ We get a reference to a sheet with the get_sheet_by_name method.
 
 print(sheet.title)
 ```
+
+# Openpyxl Charts
+
+The openpyxl library supports creation of various charts, including bar charts,
+line charts, area charts, bubble charts, scatter charts, and pie charts.
+
+According to the documentation, openpyxl supports chart creation within a worksheet only. Charts in existing workbooks will be lost.
+
+```python
+from openpyxl import Workbook
+from openpyxl.chart import (
+    Reference,
+    Series,
+    BarChart
+)
+
+book = Workbook()
+sheet = book.active
+
+rows = [
+    ("USA", 46),
+    ("China", 38),
+    ("UK", 29),
+    ("Russia", 22),
+    ("South Korea", 13),
+    ("Germany", 11)
+]
+
+for row in rows:
+    sheet.append(row)
+
+data = Reference(sheet, min_col=2, min_row=1, max_col=2, max_row=6)
+categs = Reference(sheet, min_col=1, min_row=1, max_row=6)
+
+chart = BarChart()
+chart.add_data(data=data)
+chart.set_categories(categs)
+
+chart.legend = None
+chart.y_axis.majorGridlines = None
+chart.varyColors = True
+chart.title = "Olympic Gold medals in London"
+
+sheet.add_chart(chart, "A8")
+
+book.save("bar_chart.xlsx")
+```
+
+In the example, we create a bar chart to show the number of Olympic gold medals
+per country in London 2012.
