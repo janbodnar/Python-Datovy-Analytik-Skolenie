@@ -2,6 +2,12 @@
 
 ## generate employees.csv
 
+
+```SQL
+CREATE TABLE employees(id SERIAL PRIMARY KEY, first_name VARCHAR(255), 
+	last_name VARCHAR(255), occupation VARCHAR(255), salary INT);
+```
+
 ```python
 import faker
 import random 
