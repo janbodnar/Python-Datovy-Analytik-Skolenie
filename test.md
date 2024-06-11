@@ -7,6 +7,20 @@ WITH top_salaries AS (
     ORDER BY salary DESC
     LIMIT 10
 )
+SELECT e.first_name, e.last_name, e.salary, SUM(e.salary) OVER (PARTITION BY e.salary) as salary_sum
+FROM employees e
+INNER JOIN top_salaries ts
+ON e.salary = ts.salary
+ORDER BY e.salary DESC;
+```
+
+```SQL
+WITH top_salaries AS (
+    SELECT DISTINCT salary
+    FROM employees
+    ORDER BY salary DESC
+    LIMIT 10
+)
 SELECT e.first_name, e.last_name, e.salary
 FROM employees e
 INNER JOIN top_salaries ts
