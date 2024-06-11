@@ -52,8 +52,11 @@ sheet['A1'] = 1
 sheet.cell(row=2, column=2).value = 2
 
 book.save('write2cell.xlsx')
+```
+
 In the example, we write two values to two cells.
 
+```python
 sheet['A1'] = 1
 ```
 
