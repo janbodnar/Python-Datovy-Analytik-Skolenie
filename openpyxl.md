@@ -322,18 +322,30 @@ print(type(active_sheet))
 
 sheet = book.get_sheet_by_name("March")
 print(sheet.title)
+```
+
 The program works with Excel sheets.
 
+```python
 print(book.get_sheet_names())
+```
+
 The get_sheet_names method returns the names of available sheets in a workbook.
 
+```python
 active_sheet = book.active
 print(type(active_sheet))
+```
+
 We get the active sheet and print its type to the terminal.
 
+```python
 sheet = book.get_sheet_by_name("March")
+```
+
 We get a reference to a sheet with the get_sheet_by_name method.
 
+```python
 print(sheet.title)
 ```
 
