@@ -20,6 +20,14 @@ Common types of relations in SQL:
     with one record in Table A. For example, an employees table and a departments table, where each employee belongs to  
     one department, but a department can have many employees.
 
+## database normalization
+
+**Database Normalization** is a process in database design to organize data to reduce redundancy and improve data integrity.  
+It involves dividing a database into two or more tables and defining relationships between the tables to achieve a well-structured   
+design. The main aim of normalization is to add, delete, or modify data without causing data anomalies. It's a systematic  
+approach of decomposing tables to eliminate data redundancy and undesirable characteristics like insertion, update and delete  
+anomalies. It's also a way of ensuring that the data within a relational database is organized properly.  
+
 ## one-to-one
 
 ```SQL
