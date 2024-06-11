@@ -87,8 +87,11 @@ for row in rows:
     sheet.append(row)
 
 book.save('appending.xlsx')
+```
+
 In the example, we append three columns of data into the current sheet.
 
+```python
 rows = (
     (88, 46, 57),
     (89, 38, 12),
@@ -97,8 +100,11 @@ rows = (
     (24, 18, 43),
     (34, 15, 67)
 )
+```
+
 The data is stored in a tuple of tuples.
 
+```python
 for row in rows:
     sheet.append(row)
 ```
