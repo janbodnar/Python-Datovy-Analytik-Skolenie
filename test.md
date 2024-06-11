@@ -1,5 +1,36 @@
 # Samples
 
+## generate employees.csv
+
+```python
+import faker
+import random 
+import csv
+
+n_rows = random.randint(20_000, 50_000)
+
+fname = 'employees.csv'
+faker = faker.Faker()
+
+with open(fname, 'w') as f:
+
+    writer = csv.writer(f, lineterminator='\n')
+
+    writer.writerow(['Id', 'First name', 'Last name', 'Occupation', 'Salary'])
+
+    for i in range(n_rows):
+
+        uid = i 
+        first_name = faker.first_name()
+        last_name = faker.last_name()
+        occupation = faker.job()
+        salary = random.randrange(850, 12_000, 50)
+
+        writer.writerow([uid, first_name, last_name, occupation, salary])
+```
+
+
+
 ## namedtuple
 
 ```python
