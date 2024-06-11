@@ -3,6 +3,7 @@
 
 ```python
 import httpx
+from selectolax.parser import HTMLParser
 
 url = 'https://nrf.com/research-insights/top-retailers/top-100-retailers/top-100-retailers-2019'
 resp = httpx.get(url)
