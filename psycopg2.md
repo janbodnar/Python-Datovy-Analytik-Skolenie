@@ -334,7 +334,7 @@ finally:
         con.close()
 ```
 
-# copy_to
+# copy_from
 
 ```python
 
