@@ -1,7 +1,18 @@
 # Samples
 
-## generate employees.csv
+```SQL
+SELECT AVG(salary) AS median
+FROM (
+  SELECT salary, 
+         ROW_NUMBER() OVER (ORDER BY salary) - 1 AS rn,
+         COUNT(*) OVER () - 1 AS cnt
+  FROM employees
+) t
+WHERE rn IN (FLOOR(cnt / 2), CEILING(cnt / 2));
+```
 
+
+## generate employees.csv
 
 ```SQL
 CREATE TABLE employees(id SERIAL PRIMARY KEY, first_name VARCHAR(255), 
