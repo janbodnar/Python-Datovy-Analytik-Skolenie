@@ -190,6 +190,7 @@ SELECT COUNT(id) FROM countries WHERE population < 50_000_000;
 
 ```SQL
 SELECT DISTINCT(occupation) FROM users;
+SELECT COUNT(DISTINCT name) FROM countries;
 ```
 
 
