@@ -349,7 +349,25 @@ with psycopg.connect(cs) as con:
                     f.write(row)
 ```
 
-# copy_from
+## copy_from
+
+```python
+import psycopg
+
+cs = "dbname='testdb' user='postgres' password='s$cret'"
+with psycopg.connect(cs) as con:
+
+    with con.cursor() as cur:
+
+        with open('cars.csv', 'r') as f:
+
+            with cur.copy("COPY cars2 FROM STDIN WITH CSV HEADER") as copy:
+
+                for line in f:
+                    copy.write(line)
+```
+
+--
 
 ```python
 import psycopg
