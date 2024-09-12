@@ -113,6 +113,13 @@ SELECT TRIM(BOTH '.' FROM '...falcon...');
 ```
 
 ```SQL
+SELECT 
+  TRIM(LEADING '.' FROM '...falcon...') AS trim_leading,
+  TRIM(TRAILING '.' FROM '...falcon...') AS trim_trailing,
+  TRIM(BOTH '.' FROM '...falcon...') AS trim_both;
+```
+
+```SQL
 SELECT SUBSTRING('an old falcon' from 3);
 SELECT SUBSTRING('an old falcon' from 3 for 4);
 ```
