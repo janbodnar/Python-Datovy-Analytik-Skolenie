@@ -20,6 +20,9 @@ Basic terms:
    a database table or a combination of tables using a code known as the query language. This way,  
    the system can understand and process the query accordingly.
 
+## Installation
+
+`pip install "psycopg[binary,pool]"`
 
 ## Scalar value
 
