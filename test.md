@@ -1,5 +1,31 @@
 # Priklady
 
+## NBS kurzovy listok
+
+
+```python
+import csv
+import httpx
+from io import StringIO 
+
+url = 'https://nbs.sk/export/sk/exchange-rate/2024-09-12/csv'
+
+resp = httpx.get(url)
+csv_data = resp.text
+csv_data2 = csv_data.replace('\ufeff', '')
+
+f = StringIO(csv_data2)
+
+reader = csv.DictReader(f, delimiter=';')
+
+for row in reader:
+    print(row['Dátum'])
+    print(f"1 euro is {row['USD']} USD")
+    print(f"1 euro is {row['JPY']} JPY")
+    print(f"1 euro is {row['CZK']} CZK")
+    print(f"1 euro is {row['HUF']} HUF")
+    print(f"1 euro is {row['GBP']} GBP")
+```
 
 ## web scrape & write to PostgreSQL
 
