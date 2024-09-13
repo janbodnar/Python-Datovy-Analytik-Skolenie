@@ -1,5 +1,36 @@
 # Priklady
 
+## CSV to Excel
+
+```python
+import csv
+from openpyxl import Workbook
+
+users = []
+
+fname = 'users.csv'
+
+with open(fname, 'r') as f:
+
+    reader = csv.reader(f)
+
+    for row in reader:
+        users.append(row)
+
+
+book = Workbook()
+sheet = book.active
+
+for row in users:
+    if row[0] == 'first_name':
+        sheet.append(row)
+    else:
+        sheet.append((row[0], row[1], int(row[2])))
+
+book.save('users.xlsx')
+```
+
+
 ## generate data
 
 ```python
