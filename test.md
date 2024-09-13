@@ -1,5 +1,27 @@
 # Priklady
 
+## web scrape
+
+```python
+from selectolax.parser import HTMLParser
+
+import httpx
+
+url = 'https://webcode.me/countries.html'
+r = httpx.get(url)
+
+html = r.text
+
+tree = HTMLParser(html)
+
+trs = tree.css('tr')
+tr = tree.css_first('tbody tr:nth-child(1)')
+
+for td in tr.iter():
+    print(td.text())
+```
+
+
 ## CSV to Excel
 
 ```python
