@@ -2,6 +2,8 @@
 
 ## web scrape
 
+get nth row of the table.  
+
 ```python
 from selectolax.parser import HTMLParser
 
@@ -21,6 +23,34 @@ for td in tr.iter():
     print(td.text())
 ```
 
+Parse all countries into a list  
+
+```python
+from selectolax.parser import HTMLParser
+
+import httpx
+
+url = 'https://webcode.me/countries.html'
+r = httpx.get(url)
+
+html = r.text
+
+tree = HTMLParser(html)
+
+trs = tree.css('tr')
+countries = []
+
+for tr in trs:
+
+    tds = []
+
+    for e in tr.iter():
+        # print(e.text())
+        tds.append(e.text())
+    countries.append(tds)
+
+print(countries)
+```
 
 ## CSV to Excel
 
