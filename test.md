@@ -1,5 +1,54 @@
 # Priklady
 
+
+## web scrape & write to PostgreSQL
+
+```python
+from selectolax.parser import HTMLParser
+import httpx
+import psycopg
+
+def parse_data(url):
+
+    r = httpx.get(url)
+    html = r.text
+
+    tree = HTMLParser(html)
+
+    trs = tree.css('tr')
+    countries = []
+
+    for tr in trs:
+
+        tds = []
+
+        for e in tr.iter():
+            tds.append(e.text())
+        countries.append(tds)
+
+    return countries
+
+
+def save_data_db(countries):
+
+    cs = "dbname='testdb' user='postgres' password='postgres'"
+
+    with psycopg.connect(cs) as con:
+            
+        with con.cursor() as cur:
+
+            cur.execute('DROP TABLE IF EXISTS countries')
+            cur.execute('CREATE TABLE countries(id serial PRIMARY KEY, name VARCHAR(255), population INTEGER)')
+            cur.executemany('INSERT INTO countries(id, name, population) VALUES(%s, %s, %s)', countries[1:])
+                 
+
+url = 'https://webcode.me/countries.html' 
+countries = parse_data(url)
+
+save_data_db(countries)
+```
+
+
 ## web scrape
 
 get nth row of the table.  
