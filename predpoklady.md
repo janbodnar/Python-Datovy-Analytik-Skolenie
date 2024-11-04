@@ -18,6 +18,10 @@ Je dobré už poznať nasledovné oblasti:
 - poznať základy práce s editormi VS Code alebo PyCharm
 - vedieť inštalovať externé moduly pomocou nástroja pip
 
+Preberané učivo (všekty príklady a materiály) nájdete na linku: 
+https://github.com/janbodnar/Python-Skolenie
+
+
 
 ## Ukážky príkladov preberaných Python I-III
 
