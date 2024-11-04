@@ -119,6 +119,14 @@ print(vals_cubed)
 
 ## compute sum of CSV data in file
 
+The `data.csv` file:  
+
+```
+1,2,3,4,5
+6,7,8,9,10
+```
+
+
 ```python
 mysum = 0
 file_name = 'data.csv'
@@ -193,7 +201,7 @@ print(f1, f2, f3)
 ```
 
 
-## keeplines funkcia
+## splitlines funkcia
 
 ```python
 data = """
