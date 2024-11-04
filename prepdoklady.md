@@ -19,9 +19,16 @@ Je dobré už poznať nasledovné oblasti:
 
 ## Ukážky príkladov preberaných Python I-III
 
-# Priklady
 
 ## read and filter words from file
+
+Súbor `thermopylae.txt`:
+
+```
+The Battle of Thermopylae was fought between an alliance of Greek city-states, 
+led by King Leonidas of Sparta, and the Persian Empire of Xerxes I over the 
+course of three days, during the second Persian invasion of Greece.
+```
 
 ```python
 import re
@@ -42,7 +49,7 @@ with open(file_name, 'r') as f:
 
 
 
-## filter function
+## filter funkcia
 
 ```python
 vals = [1, 2, 3, -4, 0, -8, -9, -1, 9]
@@ -69,7 +76,7 @@ print(words_3c)
 
 
 
-## map function
+## map funkcia
 
 ```python
 def twice(e):
@@ -103,7 +110,7 @@ print(words)
 ```
 
 
-## map with lambda
+## map a lambda
 
 ```python
 vals = [1, 2, 3, 4, 5]
@@ -116,8 +123,7 @@ print(vals_cubed)
 ```
 
 
-
-## compute sum of CSV data in file
+## Vypočítaj sumu z CSV dát v súbore
 
 The `data.csv` file:  
 
@@ -144,7 +150,7 @@ print(mysum)
 ```
 
 
-## compute sum from string of CSV vals
+## Vypočítaj sumu z CSV dát v reťazci
 
 ```python
 data = """
@@ -169,7 +175,7 @@ print(mysum)
 ```
 
 
-## implicitne argumenty
+## Implicitné argumenty
 
 ```python
 def power(x, y):
@@ -220,7 +226,7 @@ print(lines)
 ```
 
 
-## Filter empty words
+## Filtrovanie prázdnych slov
 
 ```python
 data = """
@@ -250,7 +256,7 @@ print(words)
 
 
 
-## input from user
+## input od užívateľa
 
 ```python
 x = int(input('enter first integer value: '))
@@ -261,7 +267,7 @@ print(f'multiplication of {x} and {y} is {x * y}')
 ```
 
 
-## nacitanie slov do zoznamu
+## Načítanie slov do zoznamu
 
 ```python
 words = []
@@ -281,25 +287,8 @@ print(words)
 ```
 
 
-## Indexing
-
-```python
-mix = (1, 2, 3, (4, 5, 6, (7, 8, 9, (10, 11, 12))))
-```
 
 
-## tuple/list builtins
-
-```python
-first = [1, 2, 3]
-
-first_n = tuple(first)
-print(first_n, type(first_n))
-
-second = (5, 6, 7)
-second_l = list(second)
-print(second_l, type(second_l))
-```
 
 
 ## Filtering by type
@@ -353,7 +342,7 @@ for i in range(10):
 ```
 
 
-## podmienene vypisovanie slov
+## Podmienečné vypisovanie slov
 
 `words.txt`:
 
