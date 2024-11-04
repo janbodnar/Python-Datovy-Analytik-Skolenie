@@ -270,6 +270,19 @@ print(f'multiplication of {x} and {y} is {x * y}')
 
 ### Načítanie slov do zoznamu
 
+Súbor `words.txt`
+
+```
+sky
+work
+blue
+sky
+cup
+cloud
+pen
+storm
+```
+
 ```python
 words = []
 
