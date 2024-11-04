@@ -19,8 +19,10 @@ Je dobré už poznať nasledovné oblasti:
 
 ## Ukážky príkladov preberaných Python I-III
 
+Nasledujúce ukážky ukazujú typické príklady preberané na začiatočníckych kurzoch.  
 
-### read and filter words from file
+
+### Načítanie slov zo súboru a ich filtrovanie
 
 Súbor `thermopylae.txt`:
 
