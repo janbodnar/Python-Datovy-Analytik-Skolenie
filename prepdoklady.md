@@ -7,8 +7,10 @@ Je potrebné mať znalosti na úrovni mierne pokročilého programátora v jazyk
 Je dobré už poznať nasledovné oblasti:
 
 - poznať zoznamy, n-tice a slovníky
+- dátové typy a operátory
 - list comprehensions
 - dynamická tvorba reťazcov pomocou fstrings
+- moduly
 - základy práce s funkciami
 - lambda funkcie
 - načítanie dát pomocou funkcie open 
