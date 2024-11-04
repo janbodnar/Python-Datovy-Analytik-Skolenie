@@ -20,7 +20,7 @@ Je dobré už poznať nasledovné oblasti:
 ## Ukážky príkladov preberaných Python I-III
 
 
-## read and filter words from file
+### read and filter words from file
 
 Súbor `thermopylae.txt`:
 
@@ -49,7 +49,7 @@ with open(file_name, 'r') as f:
 
 
 
-## filter funkcia
+### filter funkcia
 
 ```python
 vals = [1, 2, 3, -4, 0, -8, -9, -1, 9]
@@ -76,7 +76,7 @@ print(words_3c)
 
 
 
-## map funkcia
+### map funkcia
 
 ```python
 def twice(e):
@@ -110,7 +110,7 @@ print(words)
 ```
 
 
-## map a lambda
+### map a lambda
 
 ```python
 vals = [1, 2, 3, 4, 5]
@@ -123,7 +123,7 @@ print(vals_cubed)
 ```
 
 
-## Vypočítaj sumu z CSV dát v súbore
+### Vypočítaj sumu z CSV dát v súbore
 
 The `data.csv` file:  
 
@@ -150,7 +150,7 @@ print(mysum)
 ```
 
 
-## Vypočítaj sumu z CSV dát v reťazci
+### Vypočítaj sumu z CSV dát v reťazci
 
 ```python
 data = """
@@ -175,7 +175,7 @@ print(mysum)
 ```
 
 
-## Implicitné argumenty
+### Implicitné argumenty
 
 ```python
 def power(x, y):
@@ -192,8 +192,7 @@ print(power(3, 3), end=' ')
 print(power(5, 5), end=' ')
 ```
 
-
-## Celsius to fahrenheit
+### Celsius to fahrenheit
 
 ```python
 def cel_to_fahr(c):
@@ -207,7 +206,7 @@ print(f1, f2, f3)
 ```
 
 
-## splitlines funkcia
+### splitlines funkcia
 
 ```python
 data = """
@@ -226,7 +225,7 @@ print(lines)
 ```
 
 
-## Filtrovanie prázdnych slov
+### Filtrovanie prázdnych slov
 
 ```python
 data = """
@@ -256,7 +255,7 @@ print(words)
 
 
 
-## input od užívateľa
+### input od užívateľa
 
 ```python
 x = int(input('enter first integer value: '))
@@ -267,7 +266,7 @@ print(f'multiplication of {x} and {y} is {x * y}')
 ```
 
 
-## Načítanie slov do zoznamu
+### Načítanie slov do zoznamu
 
 ```python
 words = []
@@ -291,7 +290,7 @@ print(words)
 
 
 
-## Filtering by type
+### Filtering by type
 
 ```python
 words = []
@@ -324,7 +323,7 @@ print(f"The average speed of a sprinter is {speed} km/h")
 ```
 
 
-## Vykonanie operacie x krat
+### Vykonanie operacie x krat
 
 ```python
 msg = 'hello there!'
@@ -342,7 +341,7 @@ for i in range(10):
 ```
 
 
-## Podmienečné vypisovanie slov
+### Podmienečné vypisovanie slov
 
 `words.txt`:
 
@@ -371,7 +370,7 @@ with open(file_name, 'r') as f:
 ```
 
 
-## Opakovanie
+### Opakovanie
 
 ```python
 # vypis hlasku pomocou fstringu
