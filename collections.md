@@ -197,7 +197,7 @@ print(*c2, sep=': ')
 Here we unpack the `c2` namedtuple with the `*` operator into print function arguments, which   
 are joined with the given separator into the final output.
 
-```python
+```
 $ ./unpacking.py 
 Bratislava: 432000
 ----------------------
