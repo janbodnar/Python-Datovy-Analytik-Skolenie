@@ -5,10 +5,10 @@ xlsx/xlsm/xltx/xltm files.
 
 # Excel xlsx
 
-In this article we work with xlsx files. The xlsx is a file extension for an
-open XML spreadsheet file format used by Microsoft Excel. The xlsm files support
-macros. The xls format is a proprietary binary format while xlsx is based on
-Office Open XML format.
+In this article we work with xlsx files. The xlsx is a file extension for an  
+open XML spreadsheet file format used by Microsoft Excel. The xlsm files support  
+macros. The xls format is a proprietary binary format while xlsx is based on  
+Office Open XML format.  
 
 `pip install openpyxl`
 
