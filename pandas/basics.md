@@ -183,8 +183,36 @@ print(f'Number of columns: {len(df.columns)}')
 print(df.shape)
 ```
 
+## Missing values
 
+The `data2.csv` file: 
 
+```
+Name,Age,City
+Alex,10,New York
+Ronald,18,
+Jane,,Los Angeles
+Laura,25,Chicago
+```
+
+```python
+import pandas as pd
+
+# Load the dataset from a CSV file
+df = pd.read_csv('data2.csv')
+print("Original DataFrame:")
+print(df)
+
+# Fill missing values with a specific value
+df_filled = df.fillna({'Age': 0, 'City': 'Unknown'})
+print("\nDataFrame after filling missing values:")
+print(df_filled)
+
+# Drop rows with any missing values
+df_dropped = df.dropna()
+print("\nDataFrame after dropping rows with missing values:")
+print(df_dropped)
+```
 
 ## The describe function
 
