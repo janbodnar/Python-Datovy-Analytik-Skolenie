@@ -90,6 +90,18 @@ df = df_list[0]
 print(df)
 ```
 
+## From Excel
+
+```python
+import pandas as pd
+
+file_name = "users.xlsx"
+
+df = pd.read_excel(file_name)
+print(df)
+```
+
+
 ## From Postgresql
 
 ```python
