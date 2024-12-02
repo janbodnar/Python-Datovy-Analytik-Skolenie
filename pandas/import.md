@@ -72,6 +72,25 @@ df = pd.json_normalize(df_json['users'])
 print(df)
 ```
 
+## From Postgresql
+
+```python
+import psycopg
+import pandas as pd
+
+# Create the connection string 
+cs = 'postgresql://postgres:s$cret@localhost/testdb'
+
+# Connect to the PostgreSQL database
+with psycopg.connect(cs) as con:
+    
+    # Execute a query to fetch data from the 'users' table
+    query = "SELECT * FROM users"
+    df = pd.read_sql_query(query, cs)
+
+print(df)
+```
+
 
 ## Stocks from Yahoo
 
