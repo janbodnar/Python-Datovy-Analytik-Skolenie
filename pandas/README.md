@@ -183,3 +183,26 @@ print('tight')
 print(df.to_dict(orient='tight'))
 ```
 
+## Total sales
+
+```python
+import pandas as pd
+from decimal import Decimal
+
+# Define a function to convert strings to Decimal
+def to_decimal(value):
+    return Decimal(value)
+
+# Load the products dataset with converters for specific columns
+products_df = pd.read_csv('products.csv', converters={
+    'unit_price': to_decimal,
+    'units_in_stock': to_decimal
+})
+
+# Calculate potential total sales for each product
+products_df['total_sales'] = products_df['unit_price'] * products_df['units_in_stock']
+
+# Calculate the total potential sales
+total_potential_sales = products_df['total_sales'].sum()
+print("Total Potential Sales: $", total_potential_sales)
+```
