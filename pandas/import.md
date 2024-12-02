@@ -16,6 +16,45 @@ df = pd.read_xml(url)
 print(df)
 ```
 
+## From JSON
+
+```python
+import pandas as pd
+import requests
+
+# URL of the JSON file
+url = "https://webcode.me/users.json"
+
+# Fetch the JSON data
+response = requests.get(url)
+json_data = response.json()
+
+# Normalize the JSON data into a flat table
+df = pd.json_normalize(json_data['users'])
+
+# Display the DataFrame
+print(df)
+```
+
+---
+
+```python
+import pandas as pd
+
+# URL of the JSON file
+url = "https://webcode.me/users.json"
+
+# Read the JSON data into a DataFrame
+df_json = pd.read_json(url)
+
+# Flatten the DataFrame
+df = pd.json_normalize(df_json['users'])
+
+# Display the DataFrame
+print(df)
+```
+
+
 ## Stocks from Yahoo
 
 ```python
