@@ -60,6 +60,28 @@ print("\n10 Oldest Passengers:")
 print(oldest_passengers[['Name', 'Age']])
 ```
 
+## Top ten oldest that survived/not survived
+
+```python
+import pandas as pd
+
+# Load the Titanic dataset
+titanic_df = pd.read_csv('titanic.csv')
+
+# Drop rows with missing Age values
+titanic_df = titanic_df.dropna(subset=['Age'])
+
+# Get the top 10 oldest passengers who survived
+oldest_survived = titanic_df[titanic_df['Survived'] == 1].sort_values(by='Age', ascending=False).head(10)
+print("10 Oldest Passengers Who Survived:")
+print(oldest_survived[['Name', 'Age']])
+
+# Get the top 10 oldest passengers who did not survive
+oldest_not_survived = titanic_df[titanic_df['Survived'] == 0].sort_values(by='Age', ascending=False).head(10)
+print("\n10 Oldest Passengers Who Did Not Survive:")
+print(oldest_not_survived[['Name', 'Age']])
+```
+
 ## Survival rate by gender
 
 ```python
