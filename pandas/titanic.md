@@ -131,6 +131,22 @@ survival_by_class = titanic_df.groupby('Pclass')['Survived'].mean()
 print(survival_by_class)
 ```
 
+## Survival rate by cabin presence
+
+```python
+import pandas as pd
+
+# Load the Titanic dataset
+titanic_df = pd.read_csv('titanic.csv')
+
+# Check if the passenger had a cabin or not
+titanic_df['HasCabin'] = titanic_df['Cabin'].notnull()
+
+# Calculate survival rate based on cabin presence
+survival_by_cabin_presence = titanic_df.groupby('HasCabin')['Survived'].mean()
+print(survival_by_cabin_presence)
+```
+
 ## Survival rate by age group
 
 The `cut` functio segments and sorts data values into bins. This function is also useful for  
