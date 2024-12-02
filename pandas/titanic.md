@@ -171,3 +171,21 @@ survival_by_age_group = titanic_df.groupby('AgeGroup')['Survived'].mean()
 print(survival_by_age_group)
 ```
 
+## Survival rate by fare range
+
+```python
+import pandas as pd
+
+titanic_df = pd.read_csv('titanic.csv')
+
+# Define fare bins and labels
+fare_bins = [0, 50, 100, 150, 200, 300, 600]
+fare_labels = ['0-50', '51-100', '101-150', '151-200', '201-300', '301+']
+
+# Create fare range column
+titanic_df['FareRange'] = pd.cut(titanic_df['Fare'], bins=fare_bins, labels=fare_labels)
+
+# Calculate survival rate by fare range
+survival_by_fare_range = titanic_df.groupby('FareRange')['Survived'].mean()
+print(survival_by_fare_range)
+```
