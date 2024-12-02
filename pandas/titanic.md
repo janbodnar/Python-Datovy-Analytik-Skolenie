@@ -130,3 +130,28 @@ titanic_df = pd.read_csv('titanic.csv')
 survival_by_class = titanic_df.groupby('Pclass')['Survived'].mean()
 print(survival_by_class)
 ```
+
+## Survival rate by age group
+
+The `cut` functio segments and sorts data values into bins. This function is also useful for  
+going from a continuous variable to a categorical variable. For example, cut could convert  
+ages to groups of age ranges. Supports binning into an equal number of bins, or a pre-specified array of bins.  
+
+```python
+import pandas as pd
+
+# Load the Titanic dataset
+titanic_df = pd.read_csv('titanic.csv')
+
+# Define age bins and labels
+bins = [0, 12, 18, 35, 60, 80]
+labels = ['Child', 'Teenager', 'Adult', 'Middle-aged', 'Senior']
+
+# Create age group column
+titanic_df['AgeGroup'] = pd.cut(titanic_df['Age'], bins=bins, labels=labels)
+
+# Calculate survival rate by age group
+survival_by_age_group = titanic_df.groupby('AgeGroup')['Survived'].mean()
+print(survival_by_age_group)
+```
+
