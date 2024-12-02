@@ -108,6 +108,20 @@ print('*******************************************')
 print(df.tail(4))
 ```
 
+## Add column
+
+```python
+import pandas as pd
+
+data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
+df = pd.DataFrame(data, columns=['Name', 'Age'])
+
+# Add column
+df['Favourite colour'] = ['red', 'blue', 'black']
+
+print(df.head())
+```
+
 ## Add column at the beginning
 
 ```python
