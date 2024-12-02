@@ -8,8 +8,6 @@ The basic operations in Pandas.
 Create a small dataframe and show the columns, values, index, shape and size properties.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
@@ -32,8 +30,6 @@ print(df.size)
 By default, the index starts from zero.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 df = pd.read_csv("military_spending.csv") 
@@ -47,8 +43,6 @@ print(df)
 Create a custom index.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 data = {'country': ['Brazil', 'Russia', 'India', 'China', 'South Africa'],
@@ -70,8 +64,6 @@ print(df)
 How to turn off header and index.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd 
   
 df = pd.read_csv("military_spending.csv") 
@@ -85,8 +77,6 @@ print(df.to_string(header=False, index=False))
 The functions return the first/last n rows.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd 
   
 df = pd.read_csv("military_spending.csv") 
@@ -101,8 +91,6 @@ print(df.tail(4))
 ## Counting
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 df = pd.read_csv("employees.csv")
@@ -122,8 +110,6 @@ dispersion and shape of a dataset's distribution, excluding NaN values.
 
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 s1 = pd.Series([1, 2, 3, 4, 5, 6, 7, 8])
