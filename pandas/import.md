@@ -1,5 +1,21 @@
 # Import data
 
+
+## From XML
+
+```python
+import pandas as pd
+
+# URL of the XML file
+url = "https://webcode.me/users.xml"
+
+# Read the XML data into a DataFrame
+df = pd.read_xml(url)
+
+# Display the DataFrame
+print(df)
+```
+
 ## Stocks from Yahoo
 
 ```python
