@@ -72,6 +72,24 @@ df = pd.json_normalize(df_json['users'])
 print(df)
 ```
 
+## From HTML table
+
+```python
+import pandas as pd
+
+# URL of the HTML page containing the table
+url = "https://webcode.me/users.html"
+
+# Read the HTML table into a DataFrame
+df_list = pd.read_html(url)
+
+# The function returns a list of DataFrames, so we select the first one
+df = df_list[0]
+
+# Display the DataFrame
+print(df)
+```
+
 ## From Postgresql
 
 ```python
