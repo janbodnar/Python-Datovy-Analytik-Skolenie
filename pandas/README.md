@@ -137,6 +137,57 @@ products_df = pd.read_csv('products.csv')
 print(products_df.dtypes)
 ```
 
+## Converters
+
+In pandas, the `converters` parameter in the `pd.read_csv` function allows you to specify  
+a custom function to convert the values of a specific column when reading a CSV file. This is  
+especially useful when you need to apply custom data transformations during the loading process,  
+such as converting strings to Decimal or parsing custom date formats.  
+
+```python
+import pandas as pd
+from decimal import Decimal
+
+products_df = pd.read_csv('products.csv')
+
+def to_decimal(value):
+    return Decimal(value)
+
+# Load the products dataset with converters for specific columns
+products_df = pd.read_csv('products.csv', converters={
+    'unit_price': to_decimal,
+})
+
+print(products_df.dtypes)
+print(products_df['unit_price'].mean())
+```
+
+The `data.csv` file:  
+
+```
+id,name,join_date
+1,John Doe,12-04-2023
+2,Jane Smith,11-03-2023
+3,Bob Johnson,10-02-2023
+```
+
+Using a converter to parse the custom datetime format into datetime object.  
+
+```python
+import pandas as pd
+from datetime import datetime
+
+# Define a function to convert custom date format
+def parse_date(value):
+    return datetime.strptime(value, '%d-%m-%Y')
+
+# Load the dataset with a converter for the 'join_date' column
+df = pd.read_csv('data.csv', converters={'join_date': parse_date})
+
+print(df)
+print(df.dtypes)  # Check the data types to ensure join_date is datetime
+```
+
 ## Transform to dictionary
 
 ```python
