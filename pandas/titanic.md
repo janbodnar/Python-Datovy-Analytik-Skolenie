@@ -25,3 +25,15 @@ titanic_df = pd.read_csv('titanic.csv')
 # Check for missing values
 print(titanic_df.isnull().sum())
 ```
+
+## Survival rate by gender
+
+```python
+import pandas as pd
+
+titanic_df = pd.read_csv('titanic.csv')
+
+# Survival rate by gender
+survival_by_gender = titanic_df.groupby('Sex')['Survived'].mean()
+print(survival_by_gender)
+```
