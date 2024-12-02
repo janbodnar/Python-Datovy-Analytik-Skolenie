@@ -137,6 +137,17 @@ df = pd.concat([ids, df], axis=1)
 print(df.head())
 ```
 
+## Sort by column
+
+```python
+import pandas as pd
+
+df = pd.read_csv('military_spending.csv') 
+
+sorted = df.sort_values(by=' Country', ascending=False)
+print(sorted)
+```
+
 ## Counting
 
 ```python
