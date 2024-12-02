@@ -108,6 +108,17 @@ print('*******************************************')
 print(df.tail(4))
 ```
 
+## Rename column
+
+```python
+import pandas as pd
+
+df = pd.read_csv('products.csv') 
+
+df2 = df.rename(columns={'id': 'product_id'})
+print(df2.head().to_string(index=False))
+```
+
 ## Add column
 
 ```python
