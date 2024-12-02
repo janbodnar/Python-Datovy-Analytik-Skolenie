@@ -82,6 +82,31 @@ print("\n10 Oldest Passengers Who Did Not Survive:")
 print(oldest_not_survived[['Name', 'Age']])
 ```
 
+## Grouping 
+
+The `groupby` function used to split a DataFrame into groups based on some criteria,  
+allowing for efficient and flexible data aggregation and analysis. Essentially, it involves  
+three steps: splitting, applying, and combining.  
+
+```python
+import pandas as pd
+
+titanic_df = pd.read_csv('titanic.csv')
+
+for name, group in titanic_df.groupby('Sex'): 
+    print(f"Group: {name}")
+    print(group.head()) 
+
+print("----------------------------------------------------------")
+
+males = titanic_df.groupby('Sex').get_group('male')
+females = titanic_df.groupby('Sex').get_group('female')
+
+print(males.head())
+print(females.head())
+```
+
+
 ## Survival rate by gender
 
 ```python
