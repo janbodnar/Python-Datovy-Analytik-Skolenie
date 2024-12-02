@@ -108,6 +108,21 @@ print('*******************************************')
 print(df.tail(4))
 ```
 
+## Add column at the beginning
+
+```python
+import pandas as pd
+
+data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
+df = pd.DataFrame(data, columns=['Name', 'Age'])
+
+# Create a Series and convert it to a DataFrame with a proper column name
+ids = pd.Series([1, 2, 3], name='id')
+df = pd.concat([ids, df], axis=1)
+
+print(df.head())
+```
+
 ## Counting
 
 ```python
