@@ -34,6 +34,26 @@ df = pd.read_csv('products.csv')
 print(df.info())
 ```
 
+## The describe function
+
+The  `describe` function generates descriptive statistics.  
+Descriptive statistics include those that summarize the central tendency,  
+dispersion and shape of a dataset's distribution, excluding NaN values. 
+
+
+```python
+import pandas as pd
+
+s1 = pd.Series([1, 2, 3, 4, 5, 6, 7, 8])
+s2 = pd.Series([12, 23, 31, 14, 11, 61, 17, 18])
+
+data = {'Vals 1': s1, 'Vals 2': s2}
+df = pd.DataFrame(data)
+
+print(df.describe())
+```
+
+
 ## Export to CSV
 
 ```python
@@ -214,21 +234,4 @@ print("\nDataFrame after dropping rows with missing values:")
 print(df_dropped)
 ```
 
-## The describe function
 
-The  `describe` function generates descriptive statistics.  
-Descriptive statistics include those that summarize the central tendency,  
-dispersion and shape of a dataset's distribution, excluding NaN values. 
-
-
-```python
-import pandas as pd
-
-s1 = pd.Series([1, 2, 3, 4, 5, 6, 7, 8])
-s2 = pd.Series([12, 23, 31, 14, 11, 61, 17, 18])
-
-data = {'Vals 1': s1, 'Vals 2': s2}
-df = pd.DataFrame(data)
-
-print(df.describe())
-```
