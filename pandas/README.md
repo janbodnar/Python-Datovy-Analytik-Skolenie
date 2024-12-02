@@ -34,6 +34,17 @@ res = df[df.index % 2 == 0]
 print(res.to_string(index=True))
 ```
 
+## Show empty stocks
+
+```python
+import pandas as pd
+
+df = pd.read_csv('products.csv') 
+
+df_empty_stocks = df[df['units_in_stock'] == 0]
+print(df_empty_stocks.head().to_string(index=False))
+```
+
 ## Basic stats 
 
 ```python
