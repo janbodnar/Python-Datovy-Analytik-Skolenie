@@ -8,7 +8,6 @@ table of rows and columns, much like a spreadsheet.
 ## Show dataframe without the index
 
 ```python
-
 import pandas as pd
 
 df = pd.read_csv('products.csv') 
@@ -18,8 +17,6 @@ print(df.to_string(index=False))
 ## Show rows with even idx
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 df = pd.read_csv('products.csv')
@@ -31,8 +28,6 @@ print(res.to_string(index=True))
 ## Basic stats 
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 import numpy as np
 
@@ -67,8 +62,6 @@ print(f"len: {len(df['A'])}")
 ## Axis 
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 import numpy as np
 
@@ -100,8 +93,6 @@ print('----------------------------------------')
 Return a set of random rows or columns.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 df = pd.read_csv("military_spending.csv")
@@ -114,8 +105,6 @@ print(df.sample(3, axis=0))
 Sorting by multiple columns.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 df = pd.read_csv('products.csv')
@@ -127,8 +116,6 @@ print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[Tr
 The `to_csv` function writes the dataframe to CSV.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 df = pd.read_csv('products.csv')
@@ -137,11 +124,24 @@ res = df[df.index % 2 == 0]
 res.to_csv('products2.csv', index=False)
 ```
 
+## Data type inference
+
+Pandas infers the data type for each column in a DataFrame by inspecting the  
+data in that column. It analyzes the values and determines the most appropriate  
+data type based on the content. For example, if a column contains only integers,  
+it will infer the data type as int64. If a column contains text, it will infer the  
+data type as object (which is the pandas equivalent for string data).
+
+```python
+import pandas as pd
+
+products_df = pd.read_csv('products.csv')
+print(products_df.dtypes)
+```
+
 ## Transform to dictionary
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd 
 
 data = [['Alex', 10], ['Ronald', 18], ['Jane', 33]]
