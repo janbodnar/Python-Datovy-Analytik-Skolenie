@@ -14,3 +14,14 @@ import pandas as pd
 titanic_df = pd.read_csv('titanic.csv')
 print(titanic_df.head())
 ```
+
+## Check for missing values 
+
+```python
+import pandas as pd
+
+titanic_df = pd.read_csv('titanic.csv')
+
+# Check for missing values
+print(titanic_df.isnull().sum())
+```
