@@ -43,8 +43,6 @@ print(f'sum: {df.values.sum()}')
 ---
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 import numpy as np
 
