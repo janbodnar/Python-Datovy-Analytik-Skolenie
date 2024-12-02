@@ -254,4 +254,5 @@ products_df['total_sales'] = products_df['unit_price'] * products_df['units_in_s
 # Calculate the total potential sales
 total_potential_sales = products_df['total_sales'].sum()
 print("Total Potential Sales: $", total_potential_sales)
+print(type(total_potential_sales))
 ```
