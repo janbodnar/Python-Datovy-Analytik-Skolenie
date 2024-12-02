@@ -54,6 +54,24 @@ df = pd.json_normalize(df_json['users'])
 print(df)
 ```
 
+---
+
+From a JSON file:
+
+```python
+import pandas as pd
+
+
+file_name = 'users.json'
+df_json = pd.read_json(file_name)
+
+# Flatten the DataFrame
+df = pd.json_normalize(df_json['users'])
+
+# Display the DataFrame
+print(df)
+```
+
 
 ## Stocks from Yahoo
 
