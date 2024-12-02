@@ -37,3 +37,15 @@ titanic_df = pd.read_csv('titanic.csv')
 survival_by_gender = titanic_df.groupby('Sex')['Survived'].mean()
 print(survival_by_gender)
 ```
+
+## Survival rate by class
+
+```python
+import pandas as pd
+
+titanic_df = pd.read_csv('titanic.csv')
+
+# Survival rate by class
+survival_by_class = titanic_df.groupby('Pclass')['Survived'].mean()
+print(survival_by_class)
+```
