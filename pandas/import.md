@@ -91,6 +91,9 @@ with psycopg.connect(cs) as con:
 print(df)
 ```
 
+
+The `.env` file:
+
 ```.env
 DATABASE_URL=postgresql://postgres:s$cret@localhost/testdb
 ```
