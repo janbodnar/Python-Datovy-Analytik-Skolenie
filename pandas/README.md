@@ -59,6 +59,12 @@ print(f"len: {len(df['A'])}")
 
 ## Axis 
 
+The `axis` parameter in pandas specifies the direction along which a function operates  
+on the DataFrame. It can take two values:
+
+- axis=0: Operate along the rows (i.e., apply the function to each column).  
+- axis=1: Operate along the columns (i.e., apply the function to each row).  
+
 ```python
 import pandas as pd
 import numpy as np
