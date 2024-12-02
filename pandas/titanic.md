@@ -26,6 +26,40 @@ titanic_df = pd.read_csv('titanic.csv')
 print(titanic_df.isnull().sum())
 ```
 
+## Drop rows without Age set
+
+```python
+import pandas as pd
+
+titanic_df = pd.read_csv('titanic.csv')
+print(len(titanic_df['Age'].dropna()))
+```
+
+## Top ten oldest/yougest passangers
+
+```python
+import pandas as pd
+
+# Load the Titanic dataset
+titanic_df = pd.read_csv('titanic.csv')
+
+# Drop rows with missing Age values
+titanic_df = titanic_df.dropna(subset=['Age'])
+
+# Sort by Age
+sorted_df = titanic_df.sort_values(by='Age')
+
+# Get the 10 youngest passengers
+youngest_passengers = sorted_df.head(10)
+print("10 Youngest Passengers:")
+print(youngest_passengers[['Name', 'Age']])
+
+# Get the 10 oldest passengers
+oldest_passengers = sorted_df.tail(10)
+print("\n10 Oldest Passengers:")
+print(oldest_passengers[['Name', 'Age']])
+```
+
 ## Survival rate by gender
 
 ```python
