@@ -91,6 +91,29 @@ with psycopg.connect(cs) as con:
 print(df)
 ```
 
+```.env
+DATABASE_URL=postgresql://postgres:s$cret@localhost/testdb
+```
+
+```python
+import pandas as pd
+import psycopg
+from decouple import config
+
+# Load the connection string from the .env file
+cs = config('DATABASE_URL')
+
+# Connect to the PostgreSQL database
+with psycopg.connect(cs) as con:
+    
+    # Execute a query to fetch data from the 'users' table
+    query = "SELECT * FROM users"
+    df = pd.read_sql_query(query, con)
+
+# Display the first 15 rows of the DataFrame
+print(df.head(15).to_string(index=False))
+```
+
 
 ## Stocks from Yahoo
 
