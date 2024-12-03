@@ -130,7 +130,39 @@ plt.show()
 ```
 
 
-## Todo 
+## Horizontal bar chart from HTML table
 
-Create a chart from `https://webcode.me/users.html`  
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+url = 'https://webcode.me/users.html'
+
+# Read the HTML table into a DataFrame
+df = pd.read_html(url)[0]
+print(df.columns)
+df.rename(columns={'Id': 'id', 'First Name': 'first_name', 'Last Name': 'last_name',
+          'Occupation': 'occupation', 'Salary ($)': 'salary'}, inplace=True)
+
+# Create full names using Pandas' vectorized string operations
+df['full_name'] = df['first_name'] + ' ' + df['last_name']
+print(df['full_name'])
+
+# Plot the horizontal bar chart
+plt.figure(figsize=(12, 14))
+plt.barh(df['full_name'], df['salary'], color='skyblue', height=0.9)
+plt.xlabel('Salary ($)', fontsize=14)
+plt.ylabel('Full Name', fontsize=14)  # Update y-label
+plt.title('Salaries', fontsize=16)
+plt.yticks(fontsize=10)
+
+# Add grid lines for better readability
+plt.grid(axis='x', linestyle='--', alpha=0.7)
+plt.tight_layout()
+
+# Save the plot as a PNG file
+plt.savefig('barchart.png')
+# plt.show()
+```
+
 
