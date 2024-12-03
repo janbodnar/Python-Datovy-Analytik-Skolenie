@@ -31,6 +31,24 @@ print('----------------------')
 print(g.size())
 ```
 
+## Groupby and calculate mean
+
+```
+import pandas as pd
+
+# Load the data from the CSV file
+df = pd.read_csv('products.csv')
+
+# Select only numeric columns for the mean calculation
+numeric_columns = ['unit_price', 'units_in_stock']
+
+# Group by 'category' and calculate mean for numeric columns
+grouped = df.groupby('category')[numeric_columns].mean()
+
+print(grouped)
+```
+
+
 
 ## Group by multiple columns
 
@@ -234,6 +252,28 @@ res = g.filter(lambda e: e['unit_price'].sum() <= 300)
 df2 = res.groupby('category')[['unit_price', 'units_in_stock']].sum()
 df2.columns=['Sum of price', 'sum of units']
 print(df2)
+```
+
+## Apply custom function
+
+The custom function is applied to each group using the apply method, which calculates  
+the difference in `unit_price` for each category.
+
+The output will display the difference between the maximum and minimum unit prices within each  
+category, giving you insight into the price range for each category. 
+
+```python
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+
+# Define a custom function to apply to each group
+def custom_function(group):
+    return group['unit_price'].max() - group['unit_price'].min()
+
+# Group by 'category' and apply custom function
+result = df.groupby('category').apply(custom_function)
+print(result)
 ```
 
 
