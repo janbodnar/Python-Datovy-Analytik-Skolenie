@@ -107,6 +107,47 @@ print(a.shape)
 print(a.dtype)
 ```
 
+# NumPy functions make it easy to compute statistical measures.
+
+```python
+import numpy as np
+
+# Sample data
+data = [10, 20, 30, 40, 50]
+
+# Calculate mean, median, and standard deviation
+mean_value = np.mean(data)
+median_value = np.median(data)
+std_deviation = np.std(data)
+
+print("Mean:", mean_value)
+print("Median:", median_value)
+print("Standard Deviation:", std_deviation)
+```
+
+## Creating and Manipulating Arrays
+
+NumPy arrays are powerful for handling large datasets and performing  
+vectorized operations.
+
+```python
+import numpy as np
+
+# Creating an array
+arr = np.array([1, 2, 3, 4, 5])
+
+# Basic array operations
+arr_squared = arr ** 2
+arr_sum = np.sum(arr)
+arr_mean = np.mean(arr)
+
+print("Original array:", arr)
+print("Squared array:", arr_squared)
+print("Sum of array:", arr_sum)
+print("Mean of array:", arr_mean)
+```
+
+
 ## Array vs list
 
 Some operators (*) work differently, some are not implemented for lists (+, -).   
