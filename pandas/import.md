@@ -141,6 +141,28 @@ df = pd.read_sql_query(query, cs)
 print(df.head(15).to_string(index=False))
 ```
 
+## From CSV to SQLite
+
+```python
+import pandas as pd
+import sqlite3
+
+# URL of the CSV file
+url = 'https://webcode.me/users.csv'
+
+# Read the CSV content into a pandas DataFrame
+data = pd.read_csv(url)
+
+# Connect to the SQLite database (or create it if it doesn't exist)
+with sqlite3.connect('test.db') as con:
+
+    # Write the DataFrame to the users2 table in the SQLite database
+    data.to_sql('users2', con, if_exists='replace', index=False)
+
+    print("Data inserted successfully.")
+```
+
+
 
 ## Stocks from Yahoo
 
