@@ -274,8 +274,6 @@ print(list(high_pop))
 Implementing `take`, `takewhile`, `skip`, `skipwhile` functions.  
 
 ```python
-
-
 from products import get_products
 from itertools import takewhile, dropwhile
 
@@ -370,10 +368,7 @@ print(cities)
 Filter and count.  
 
 ```python
-
-
 from products import get_products
-
 
 data = get_products()
 
@@ -416,8 +411,6 @@ for p in data:
 For sorting, we can use the `itemgetter` and `attrgetter` convenience functions.  
 
 ```python
-
-
 from typing import NamedTuple
 from operator import itemgetter, attrgetter
 # from dataclasses import dataclass
@@ -533,8 +526,6 @@ for k, g in res:
 Group by starting letter.  
 
 ```python
-
-
 from itertools import groupby
 
 words = ['key', 'water', 'war', 'rock', 'cup', 'cloud', 'matter', 'wood',
@@ -619,8 +610,6 @@ Group users by last name and occupation.
 
 
 ```python
-
-
 from itertools import groupby
 from dataclasses import dataclass
 
