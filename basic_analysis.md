@@ -627,6 +627,8 @@ revenues = [
     (8, "Q4", 540),
 ]
 
+revenues.sort(key=lambda e: e[1])
+
 res = [(k, list(g)) for k, g in groupby(revenues, lambda e: e[1])]
 
 for k, g in res:
