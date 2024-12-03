@@ -32,7 +32,7 @@ plt.tight_layout()  # Adjust layout to make room for rotated labels
 plt.show()
 ```
 
-## Line chart for unit price trend over product IDs
+## Line chart for unit price trend over product Ids
 
 ```python
 import pandas as pd
@@ -56,4 +56,27 @@ plt.tight_layout()
 plt.show()
 ```
 
+## Barchart for unit price of each product
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+df = pd.read_csv('products.csv')
+
+# Plot a horizontal bar chart for unit price of each product
+plt.figure(figsize=(12, 14))  # Increase the figure size for better readability
+plt.barh(df['product_name'], df['unit_price'], color='skyblue', height=0.9)
+plt.xlabel('Unit Price ($)', fontsize=14)  # Increase font size for axis labels
+plt.ylabel('Product Name', fontsize=14)  # Increase font size for axis labels
+plt.title('Unit Price of Each Product', fontsize=12)  # Increase font size for title
+plt.xticks(fontsize=10)  # Increase font size for x-axis tick labels
+plt.yticks(fontsize=7)  # Increase font size for y-axis tick labels
+plt.grid(axis='x', linestyle='--', alpha=0.7)  # Add grid lines for better readability
+plt.tight_layout()
+
+# plt.show()
+plt.savefig('barchart.png')
+```
 
