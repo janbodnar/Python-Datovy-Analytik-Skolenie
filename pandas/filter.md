@@ -5,7 +5,7 @@ from a DataFrame based on specific criteria. This is a crucial step in data anal
 for cleaning, exploring, and transforming data. Here are some common functions and  
 methods used for filtering data in Pandas, along with brief descriptions:
 
-* `DataFrame.loc[]`
+1. `DataFrame.loc[]`
 - **Description**: Access a group of rows and columns by labels or a boolean array.
   Ideal for label-based indexing.
 - **Example**: `df.loc[df['column_name'] > 50]`
