@@ -98,4 +98,21 @@ filtered_df = df.query("unit_price > 20 and category == 'Seafood'")
 print(filtered_df)
 ```
 
+## Filter rows using a function
+
+```python
+import pandas as pd
+
+# Load the data from the CSV file
+df = pd.read_csv('products.csv')
+
+# Define a function to filter rows
+def price_filter(price):
+    return price > 40
+
+# Apply the function to filter rows
+filtered_df = df[df['unit_price'].apply(price_filter)]
+print(filtered_df)
+```
+
 
