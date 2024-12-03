@@ -5,6 +5,25 @@ from a DataFrame based on specific criteria. This is a crucial step in data anal
 for cleaning, exploring, and transforming data. Here are some common functions and  
 methods used for filtering data in Pandas, along with brief descriptions:
 
+
+Sure! Here's your list turned into a markdown table:
+
+| Method                      | Description |
+|-----------------------------|-------------|
+| `DataFrame.loc[]`           | Access a group of rows and columns by labels or a boolean array. Ideal for label-based indexing.<br>Example: `df.loc[df['column_name'] > 50]` |
+| `DataFrame.iloc[]`          | Access a group of rows and columns by integer positions (integer-based indexing).<br>Example: `df.iloc[0:5]` (first five rows) |
+| `DataFrame.query()`         | Query the columns of a DataFrame with a boolean expression. It's a convenient method to perform filtering with complex conditions.<br>Example: `df.query('column_name > 50')` |
+| `DataFrame[df['column']]`   | Basic filtering using boolean indexing to select rows where a condition is true.<br>Example: `df[df['column_name'] > 50]` |
+| `DataFrame.isin()`          | Filter rows where column values are in a specified list of values.<br>Example: `df[df['column_name'].isin(['value1', 'value2'])]` |
+| `DataFrame.str.contains()`  | Filter rows where column values (usually strings) contain a specified substring.<br>Example: `df[df['column_name'].str.contains('substring')]` |
+| `DataFrame.notnull() / DataFrame.isnull()` | Filter rows where column values are not null (`notnull()`) or are null (`isnull()`).<br>Example: `df[df['column_name'].notnull()]` |
+| `DataFrame.groupby().filter()` | Filter groups of rows based on some condition applied to each group.<br>Example: `df.groupby('group_column').filter(lambda x: len(x) > 10)` |
+| `DataFrame.apply()`         | Apply a function along an axis of the DataFrame. Useful for applying custom filters.<br>Example: `df[df['column_name'].apply(lambda x: x > 50)]` |
+| `DataFrame.dropna()`        | Remove missing values. Can drop rows or columns with null values.<br>Example: `df.dropna()` (drops rows with any null values) |
+
+I hope this helps! If you have any more questions or need further assistance, feel free to ask! 😊
+
+
 1. `DataFrame.loc[]`
     - Acess a group of rows and columns by labels or a boolean array.
       Ideal for label-based indexing.
