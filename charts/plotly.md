@@ -70,3 +70,35 @@ fig = px.line(df, x='Year', y='Sales', title='Sales Over Time')
 fig.show()
 ```
 
+## Average unit price by category - bar chart
+
+```python
+import pandas as pd
+import plotly.express as px
+from decimal import Decimal
+
+df = pd.read_csv('products.csv')
+
+# Convert unit_price to Decimal for accurate calculations
+df['unit_price'] = df['unit_price'].apply(Decimal)
+
+# Calculate average unit price by category
+avg_unit_price_by_category = df.groupby('category')['unit_price'].mean().reset_index()
+
+# Create a bar chart
+fig = px.bar(avg_unit_price_by_category, x='category', y='unit_price',
+             title='Average Unit Price by Category',
+             labels={'unit_price': 'Average Unit Price ($)', 'category': 'Category'},
+             color='unit_price', color_continuous_scale='Viridis')
+
+# Show the plot
+fig.show()
+```
+
+
+
+
+
+
+
+
