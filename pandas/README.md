@@ -163,3 +163,8 @@ total_potential_sales = products_df['total_sales'].sum()
 print("Total Potential Sales: $", total_potential_sales)
 print(type(total_potential_sales))
 ```
+
+## Todo 
+
+Create a chart from `https://webcode.me/users.html`  
+
