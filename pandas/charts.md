@@ -80,3 +80,53 @@ plt.tight_layout()
 plt.savefig('barchart.png')
 ```
 
+## Distributions of units in stock by category
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+from decimal import Decimal
+
+# Read the CSV file
+df = pd.read_csv('products.csv')
+
+# Convert unit_price to Decimal
+df['unit_price'] = df['unit_price'].apply(Decimal)
+
+# Group by category and sum the units in stock
+category_units_in_stock = df.groupby('category')['units_in_stock'].sum()
+
+# Plot a pie chart for the distribution of units in stock by category
+plt.figure(figsize=(8, 8))
+category_units_in_stock.plot(kind='pie', autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
+plt.title('Distribution of Units in Stock by Category')
+plt.ylabel('')  # Hide the y-label for the pie chart
+plt.tight_layout()
+plt.show()
+```
+
+## Potential sales with pie chart
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+df = pd.read_csv('products.csv')
+
+# Calculate potential sales for each product
+df['potential_sales'] = df['unit_price'] * df['units_in_stock']
+
+# Group by category and sum the potential sales
+category_potential_sales = df.groupby('category')['potential_sales'].sum()
+
+# Plot a pie chart for the distribution of potential sales by category
+plt.figure(figsize=(8, 8))
+category_potential_sales.plot(kind='pie', autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
+plt.title('Distribution of Potential Sales by Category')
+plt.ylabel('')  # Hide the y-label for the pie chart
+plt.tight_layout()
+plt.show()
+```
+
+
