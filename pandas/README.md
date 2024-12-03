@@ -2,8 +2,18 @@
 
 Module for practical, real-world data analysis in Python.
 
-*DataFrame* is a data structure that organizes data into a 2-dimensional  
-table of rows and columns, much like a spreadsheet.  
+A Pandas DataFrame is a two-dimensional, size-mutable, and potentially heterogeneous tabular data  
+structure with labeled axes (rows and columns). It is similar to a spreadsheet or SQL table, making it  
+a powerful and flexible data manipulation tool in Python.  
+
+Key Features:
+
+- Columns: Represented as Series, each column can hold data of different types
+  (integers, floats, strings, etc.).
+- Rows: Each row is identified by an index, allowing for easy data retrieval
+   and manipulation.
+- Labeled Axes: Both rows and columns have labels, making it easier to
+  reference and manipulate data.
 
 ## Show df without the index
 
