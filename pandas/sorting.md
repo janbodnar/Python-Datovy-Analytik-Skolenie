@@ -51,6 +51,19 @@ sorted_df = df.sort_values(by='unit_price')
 print(sorted_df)
 ```
 
+
+## Sort in desceding order
+
+```python
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+
+# Sort by 'unit_price' in descending order
+sorted_df = df.sort_values(by='unit_price', ascending=False)
+print(sorted_df)
+```
+
 ## Sort by multiple columns
 
 ```python
@@ -64,17 +77,13 @@ sorted_df = df.sort_values(by=['category', 'unit_price'])
 print(sorted_df)
 ```
 
-## Sort in desceding order
-
 ```python
 import pandas as pd
 
 df = pd.read_csv('products.csv')
-
-# Sort by 'unit_price' in descending order
-sorted_df = df.sort_values(by='unit_price', ascending=False)
-print(sorted_df)
+print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[True, False, True]).to_string())
 ```
+
 
 ## Sort by index
 
