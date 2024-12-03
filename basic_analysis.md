@@ -581,11 +581,40 @@ for k, g in res:
 ```
 
 Group & aggregate.  
+
 Calculate the sum of revenues for each quartal.  
 
 ```python
 from itertools import groupby
+from operator import itemgetter
 
+# List of revenues
+revenues = [
+    (1, "Q1", 2340),
+    (2, "Q1", 1200),
+    (3, "Q1", 980),
+    (4, "Q2", 340),
+    (5, "Q2", 780),
+    (6, "Q3", 2010),
+    (7, "Q3", 3370),
+    (8, "Q4", 540),
+]
+
+# Ensure the list is sorted by the key (second element, which is the quarter)
+revenues.sort(key=itemgetter(1))
+
+# Group by quarter and calculate the sum of revenues for each group
+grouped_revenues = groupby(revenues, key=itemgetter(1))
+
+# Iterate through the groups and calculate the sum
+for quarter, group in grouped_revenues:
+    total_revenue = sum(item[2] for item in group)
+    print(f'{quarter}: {total_revenue}')
+```
+
+
+```python
+from itertools import groupby
 
 revenues = [
     (1, "Q1", 2340),
