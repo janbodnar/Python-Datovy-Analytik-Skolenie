@@ -278,8 +278,8 @@ print('----------------------------')
 - *Percentiles (`np.percentile`)*: Calculates specific percentiles of the data 
   (e.g., 25th and 75th percentiles).
 
-These additional aggregations provide a comprehensive view of the data's
-distribution and central tendency, helping you perform detailed data analysis.
+These additional aggregations provide a comprehensive view of the data's  
+distribution and central tendency, helping you perform detailed data analysis.  
 
 
 ## Group & filter by product count
@@ -331,8 +331,8 @@ The custom function is applied to each group using the apply method, which calcu
 the difference in `unit_price` for each category.
 
 The output will display the difference between the maximum and minimum unit prices within each  
-category, giving you insight into the price range for each category. The result is a `Series` with 
-the category names as the index and the computed differences as values.
+category, giving you insight into the price range for each category. The result is a `Series` with  
+the category names as the index and the computed differences as values.  
 
 ```python
 import pandas as pd
