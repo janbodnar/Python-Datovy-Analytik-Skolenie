@@ -15,34 +15,6 @@ Key Features:
 - Labeled Axes: Both rows and columns have labels, making it easier to
   reference and manipulate data.
 
-## Show df without the index
-
-```python
-import pandas as pd
-
-df = pd.read_csv('products.csv') 
-print(df.to_string(index=False))
-```
-
-## Show df without header
-
-```python
-import pandas as pd
-
-df = pd.read_csv('products.csv') 
-print(df.head().to_string(header=False))
-```
-
-## Show rows with even idx
-
-```python
-import pandas as pd
-
-df = pd.read_csv('products.csv')
-
-res = df[df.index % 2 == 0]
-print(res.to_string(index=True))
-```
 
 ## Show empty stocks
 
@@ -146,84 +118,6 @@ df = pd.read_csv('products.csv')
 print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[True, False, True]).to_string())
 ```
 
-## The to_csv function
-
-The `to_csv` function writes the dataframe to CSV.  
-
-```python
-import pandas as pd
-
-df = pd.read_csv('products.csv')
-
-res = df[df.index % 2 == 0]
-res.to_csv('products2.csv', index=False)
-```
-
-## Data type inference
-
-Pandas infers the data type for each column in a DataFrame by inspecting the  
-data in that column. It analyzes the values and determines the most appropriate  
-data type based on the content. For example, if a column contains only integers,  
-it will infer the data type as int64. If a column contains text, it will infer the  
-data type as object (which is the pandas equivalent for string data).
-
-```python
-import pandas as pd
-
-products_df = pd.read_csv('products.csv')
-print(products_df.dtypes)
-```
-
-## Converters
-
-In pandas, the `converters` parameter in the `pd.read_csv` function allows you to specify  
-a custom function to convert the values of a specific column when reading a CSV file. This is  
-especially useful when you need to apply custom data transformations during the loading process,  
-such as converting strings to Decimal or parsing custom date formats.  
-
-```python
-import pandas as pd
-from decimal import Decimal
-
-products_df = pd.read_csv('products.csv')
-
-def to_decimal(value):
-    return Decimal(value)
-
-# Load the products dataset with converters for specific columns
-products_df = pd.read_csv('products.csv', converters={
-    'unit_price': to_decimal,
-})
-
-print(products_df.dtypes)
-print(products_df['unit_price'].mean())
-```
-
-The `data.csv` file:  
-
-```
-id,name,join_date
-1,John Doe,12-04-2023
-2,Jane Smith,11-03-2023
-3,Bob Johnson,10-02-2023
-```
-
-Using a converter to parse the custom datetime format into datetime object.  
-
-```python
-import pandas as pd
-from datetime import datetime
-
-# Define a function to convert custom date format
-def parse_date(value):
-    return datetime.strptime(value, '%d-%m-%Y')
-
-# Load the dataset with a converter for the 'join_date' column
-df = pd.read_csv('data.csv', converters={'join_date': parse_date})
-
-print(df)
-print(df.dtypes)  # Check the data types to ensure join_date is datetime
-```
 
 ## Transform to dictionary
 
