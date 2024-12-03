@@ -26,8 +26,6 @@ NumPy is much faster than the built-in Python list.
 The `arange` function returns evenly spaced values within a given interval.  
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.arange(6)
@@ -41,8 +39,6 @@ print(a)
 ## Array creation
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.empty(10)
@@ -64,8 +60,6 @@ print(a)
 ## Matrix
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
@@ -84,8 +78,6 @@ print(a)
 ## Summation along axis 
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 x = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
@@ -102,8 +94,6 @@ print(np.sum(x, axis=1))
 The `dtype` is the desired data type for the array. The default is int32.  
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
@@ -122,8 +112,6 @@ print(a.dtype)
 Some operators (*) work differently, some are not implemented for lists (+, -).   
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 vals = [1, 2, 3, 4, 5]
@@ -169,8 +157,6 @@ print(c)
 ## Filtering 
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.array([-3, -2, 0, 1, -4, 2, 5, 7])
@@ -189,8 +175,6 @@ print(a[f2])
 Single elements 
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.arange(10)
@@ -204,8 +188,6 @@ print(a[-1])
 Two-dimensional array
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.arange(10)
@@ -233,8 +215,6 @@ print(a[:,1])
 ## Array math
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 x = np.array([[1, 2, 3], [4, 5, 6]])
@@ -271,8 +251,6 @@ print(np.sqrt(x))
 ## Basic stats 
 
 ```python
-#!/usr/bin/python
-
 import numpy as np
 
 a = np.array([[30,65,70], [80,95,20], [40,90,60]]) 
@@ -305,8 +283,6 @@ print(np.var([1,2,3,4]))
 ## NumPy with mathplotlib
 
 ```python
-#!/usr/bin/python
-
 import matplotlib.pyplot as plt
 import numpy as np
 
