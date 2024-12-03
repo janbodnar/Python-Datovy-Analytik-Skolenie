@@ -260,7 +260,8 @@ The custom function is applied to each group using the apply method, which calcu
 the difference in `unit_price` for each category.
 
 The output will display the difference between the maximum and minimum unit prices within each  
-category, giving you insight into the price range for each category. 
+category, giving you insight into the price range for each category. The result is a `Series` with 
+the category names as the index and the computed differences as values.
 
 ```python
 import pandas as pd
