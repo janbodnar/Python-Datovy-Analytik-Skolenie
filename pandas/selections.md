@@ -76,8 +76,6 @@ print(df.iloc[:, [1, 2, 3]].to_string(index=False))
 ---
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
 df = pd.read_csv("employees.csv")
@@ -105,8 +103,6 @@ print('--------------------------------------')
 Computing the mean for all columns/rows and for a specific column/row
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 import numpy as np
 
@@ -153,8 +149,6 @@ print(res.to_string(index=False))
 The OR selection is similar to the `isin` function.  
 
 ```python
-#!/usr/bin/env python
-
 import pandas as pd
 
 df = pd.read_csv('employees.csv')
@@ -175,8 +169,6 @@ print(res.tail(10))
 The `drop` function removes the given columns or rows.  
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 import numpy as np
 
