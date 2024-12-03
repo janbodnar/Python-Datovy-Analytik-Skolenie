@@ -73,8 +73,6 @@ Are there any empty product stocks?
 Are all values of a list positive?  
 
 ```python
-#!/usr/bin/python
-
 from products import get_products
 
 data = get_products()
@@ -101,8 +99,6 @@ else:
 Sorted lists can be compared with `==` operator.  
 
 ```python
-#!/usr/bin/python
-
 vals1 = [-1, 2, 0, 1, 4, 3]
 vals2 = [-1, 3, 2, 1, 4, 0]
 
@@ -127,8 +123,6 @@ print(words1 == words2)
 Comparing data objects.  
 
 ```python
-#!/usr/bin/python
-
 from dataclasses import dataclass
 
 
@@ -162,8 +156,6 @@ print(users1 == users2)
 Using `all` and `zip` functions.  
 
 ```python
-#!/usr/bin/python
-
 from dataclasses import dataclass
 
 
@@ -202,8 +194,6 @@ print(res)
 Using `reduce` and `map`.  
 
 ```python
-#!/usr/bin/python
-
 from dataclasses import dataclass
 from functools import reduce
 
@@ -284,7 +274,7 @@ print(list(high_pop))
 Implementing `take`, `takewhile`, `skip`, `skipwhile` functions.  
 
 ```python
-#!/usr/bin/python
+
 
 from products import get_products
 from itertools import takewhile, dropwhile
@@ -380,7 +370,7 @@ print(cities)
 Filter and count.  
 
 ```python
-#!/usr/bin/python
+
 
 from products import get_products
 
@@ -398,7 +388,7 @@ Using `sort` and `sorted` functions.
 Sort in-place with `sort` by product name.  
 
 ```python
-#!/usr/bin/python
+
 
 from products import get_products
 
@@ -412,7 +402,7 @@ for p in data:
 Sort in-place with `sort` by product name in descending order.  
 
 ```python
-#!/usr/bin/python
+
 
 from products import get_products
 
@@ -426,7 +416,7 @@ for p in data:
 For sorting, we can use the `itemgetter` and `attrgetter` convenience functions.  
 
 ```python
-#!/usr/bin/python
+
 
 from typing import NamedTuple
 from operator import itemgetter, attrgetter
@@ -470,8 +460,6 @@ for city in sorted_cities:
 Sorting by multiple criteria. By category and unit price.  
 
 ```python
-#!/usr/bin/python
-
 from products import get_products
 
 data = get_products()
@@ -486,8 +474,6 @@ for p in data:
 Solution I - using a wrapper class.   
 
 ```python
-#!/usr/bin/python
-
 from products import get_products
 
 class negate:
@@ -511,8 +497,6 @@ for p in data:
 Solution II - sorting data twice. The sorting algorithm is stable.  
 
 ```python
-#!/usr/bin/python
-
 from products import get_products
 from operator import attrgetter
 
@@ -535,8 +519,6 @@ for p in data:
 Using `groupby` function from `itertools` module. The data must be sorted.  
 
 ```python
-#!/usr/bin/python
-
 from itertools import groupby
 
 vals = [1, 1, 1, 2, 3, 2, 4, 5, 4, 3, 3, 5, 6, 7, 3]
@@ -551,7 +533,7 @@ for k, g in res:
 Group by starting letter.  
 
 ```python
-#!/usr/bin/python
+
 
 from itertools import groupby
 
@@ -569,8 +551,6 @@ for k, g in res:
 Grouping a list of tuples.  
 
 ```python
-#!/usr/bin/python
-
 from itertools import groupby
 
 
@@ -595,8 +575,6 @@ for k, g in res:
 Group products by category.  
 
 ```python
-#!/usr/bin/python
-
 from itertools import groupby
 from products import get_products
 
@@ -641,7 +619,7 @@ Group users by last name and occupation.
 
 
 ```python
-#!/usr/bin/python
+
 
 from itertools import groupby
 from dataclasses import dataclass
