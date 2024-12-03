@@ -33,6 +33,7 @@ df = pd.DataFrame(data)
 
 # Sorting by column 'unit_price'
 sorted_by_value = df.sort_values(by='unit_price')
+```
 
 ## Sort by single column
 
