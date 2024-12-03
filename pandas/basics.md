@@ -25,6 +25,20 @@ print(df.shape)
 print(df.size)
 ```
 
+## Random sample
+
+Return a set of random rows or columns.  
+
+```python
+import pandas as pd
+
+df = pd.read_csv("military_spending.csv")
+
+print(df.sample(3, axis=0)) # random rows
+print(df.sample(3, axis=1)) # random cols
+```
+
+
 ## Basic information
 
 ```python
