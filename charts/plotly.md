@@ -157,6 +157,30 @@ fig = px.treemap(df, path=['category', 'product_name'], values='units_in_stock',
 fig.show()
 ```
 
+## Total units in stock by category - scatter chart 
+
+```python
+import pandas as pd
+import plotly.express as px
+from decimal import Decimal
+
+df = pd.read_csv('products.csv')
+
+# Convert unit_price to Decimal for accurate calculations
+df['unit_price'] = df['unit_price'].apply(Decimal)
+
+# Group by category and sum the units in stock
+category_units = df.groupby('category')['units_in_stock'].sum().reset_index()
+
+# Create a scatter plot
+fig = px.scatter(category_units, x='category', y='units_in_stock',
+                 title='Total Units in Stock by Category',
+                 labels={'units_in_stock': 'Total Units in Stock', 'category': 'Category'},
+                 size='units_in_stock', color='category', hover_name='category')
+
+fig.show()
+```
+
 ## Candlestics for BTC price
 
 ```python
