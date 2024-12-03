@@ -107,6 +107,54 @@ print(a.shape)
 print(a.dtype)
 ```
 
+The `sales.csv` data:
+
+```
+Month,Product_A,Product_B,Product_C
+January,100,150,200
+February,200,250,300
+March,300,350,400
+April,400,450,500
+May,500,550,600
+June,600,650,700
+July,700,750,800
+August,800,850,900
+September,900,950,1000
+October,1000,1050,1100
+November,1100,1150,1200
+December,1200,1250,1300
+```
+
+
+## Matrix calculation
+
+```python
+import pandas as pd
+
+# Read the CSV file
+df = pd.read_csv('sales.csv')
+
+# Display the DataFrame
+print("DataFrame:")
+print(df)
+
+# Calculate the total sales for each product (sum across columns)
+total_sales_per_product = df.iloc[:, 1:].sum(axis=0)
+
+# Calculate the total sales for each month (sum across rows)
+total_sales_per_month = df.iloc[:, 1:].sum(axis=1)
+
+print("\nTotal Sales for each product:")
+for product, total_sales in total_sales_per_product.items():
+    print(f"{product}: {total_sales}")
+
+print("\nTotal Sales for each month:")
+for month, total_sales in zip(df['Month'], total_sales_per_month):
+    print(f"{month}: {total_sales}")
+```
+
+
+
 ## Compute statistical measures
 
 ```python
