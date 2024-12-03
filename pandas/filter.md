@@ -84,4 +84,18 @@ filtered_df = df.loc[[0, 1, 5, 6, 7]]
 print(filtered_df)
 ```
 
+## Filter rows with query 
+
+```python
+import pandas as pd
+
+# Load the data from the CSV file
+df = pd.read_csv('products.csv')
+
+# Filter rows where unit_price is greater than 20 and category is equal 
+# to Seafood using query method
+filtered_df = df.query("unit_price > 20 and category == 'Seafood'")
+print(filtered_df)
+```
+
 
