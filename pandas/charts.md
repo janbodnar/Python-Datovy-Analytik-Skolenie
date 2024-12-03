@@ -31,3 +31,29 @@ plt.xticks(rotation=45)  # Rotate month labels for better readability
 plt.tight_layout()  # Adjust layout to make room for rotated labels
 plt.show()
 ```
+
+## Line chart for unit price trend over product IDs
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+df = pd.read_csv('products.csv')
+
+# Display the DataFrame to verify the data
+print("DataFrame:")
+print(df)
+
+# Plot a line chart for unit price trend over product IDs
+plt.figure(figsize=(10, 5))
+plt.plot(df['id'], df['unit_price'], marker='o', linestyle='-', color='green')
+plt.xlabel('Product ID')
+plt.ylabel('Unit Price ($)')
+plt.title('Unit Price Trend Over Product IDs')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+
