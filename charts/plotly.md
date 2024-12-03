@@ -157,6 +157,60 @@ fig = px.treemap(df, path=['category', 'product_name'], values='units_in_stock',
 fig.show()
 ```
 
+## Candlestics for BTC price
 
+```python
+import pandas as pd
+import plotly.graph_objects as go
+import requests
+
+# Define the Binance API endpoint and parameters
+url = "https://api.binance.com/api/v3/klines"
+params = {
+    'symbol': 'BTCUSDT',
+    'interval': '1d',
+    'limit': 30
+}
+
+# Fetch data from Binance API
+response = requests.get(url, params=params)
+data = response.json()
+
+# Process the data to extract OHLC (open, high, low, close) prices
+df = pd.DataFrame(data, columns=[
+    'timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time',
+    'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume',
+    'taker_buy_quote_asset_volume', 'ignore'
+])
+
+# Convert the 'open', 'high', 'low', and 'close' columns to numeric
+df['open'] = pd.to_numeric(df['open'])
+df['high'] = pd.to_numeric(df['high'])
+df['low'] = pd.to_numeric(df['low'])
+df['close'] = pd.to_numeric(df['close'])
+
+# Convert timestamp to date
+df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+
+# Create a candlestick chart
+fig = go.Figure(data=[go.Candlestick(
+    x=df['timestamp'],
+    open=df['open'],
+    high=df['high'],
+    low=df['low'],
+    close=df['close']
+)])
+
+# Update layout for better readability
+fig.update_layout(
+    title='Bitcoin (BTC) Candlestick Chart Over the Last 30 Days',
+    xaxis_title='Date',
+    yaxis_title='Price (USDT)',
+    xaxis_rangeslider_visible=False
+)
+
+# Show the plot
+fig.show()
+```
 
 
