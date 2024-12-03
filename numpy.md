@@ -133,19 +133,43 @@ December,1200,1250,1300
 import csv
 import numpy as np
 
-# Initialize lists to store product names and sales data
-product_names = []
-months = []
-sales_data = []
 
-# Read the CSV file
-with open('sales.csv', 'r') as file:
-    reader = csv.reader(file)
-    headers = next(reader)  # Read the header row (product names)
-    product_names = headers[1:]  # Exclude the 'Month' header
-    for row in reader:
-        months.append(row[0])
-        sales_data.append([int(x) for x in row[1:]])
+def read_data():
+
+    # Initialize lists to store product names and sales data
+    product_names = []
+    months = []
+    sales_data = []
+
+    file_name = 'sales.csv'
+    with open(file_name, 'r') as f:
+
+        reader = csv.reader(f)
+        headers = next(reader)  # Read the header row (product names)
+        product_names = headers[1:]  # Exclude the 'Month' header
+
+        for row in reader:
+            months.append(row[0])
+            sales_data.append([int(x) for x in row[1:]])
+
+    return product_names, months, sales_data
+
+
+def show_sales_per_product(total_sales_per_product, product_names):
+    print("Total Sales for each product:")
+
+    for product, total_sales in zip(product_names, total_sales_per_product):
+        print(f"{product}: {total_sales}")
+
+
+def show_sales_per_month(total_sales_per_month, months):
+
+    print("\nTotal Sales for each month:")
+    for month, total_sales in zip(months, total_sales_per_month):
+        print(f"{month}: {total_sales}")
+
+
+product_names, months, sales_data = read_data()
 
 # Convert sales data to a NumPy array
 sales_matrix = np.array(sales_data)
@@ -158,16 +182,11 @@ print("\n")
 # Calculate the total sales for each product (sum across columns)
 total_sales_per_product = np.sum(sales_matrix, axis=0)
 
-# Calculate the total sales for each month (sum across rows) 
+# Calculate the total sales for each month (sum across rows)
 total_sales_per_month = np.sum(sales_matrix, axis=1)
 
-print("Total Sales for each product:")
-for product, total_sales in zip(product_names, total_sales_per_product):
-    print(f"{product}: {total_sales}")
-
-print("\nTotal Sales for each month:") 
-for month, total_sales in zip(months, total_sales_per_month): 
-    print(f"{month}: {total_sales}")
+show_sales_per_product(total_sales_per_product, product_names)
+show_sales_per_month(total_sales_per_month, months)
 ```
 
 
