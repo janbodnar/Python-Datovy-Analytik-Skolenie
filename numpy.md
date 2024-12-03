@@ -107,6 +107,10 @@ print(a.shape)
 print(a.dtype)
 ```
 
+
+## Matrix calculation
+
+
 The `sales.csv` data:
 
 ```
@@ -125,31 +129,44 @@ November,1100,1150,1200
 December,1200,1250,1300
 ```
 
-
-## Matrix calculation
-
 ```python
-import pandas as pd
+import csv
+import numpy as np
+
+# Initialize lists to store product names and sales data
+product_names = []
+months = []
+sales_data = []
 
 # Read the CSV file
-df = pd.read_csv('sales.csv')
+with open('sales.csv', 'r') as file:
+    reader = csv.reader(file)
+    headers = next(reader)  # Read the header row (product names)
+    product_names = headers[1:]  # Exclude the 'Month' header
+    for row in reader:
+        months.append(row[0])
+        sales_data.append([int(x) for x in row[1:]])
 
-# Display the DataFrame
-print("DataFrame:")
-print(df)
+# Convert sales data to a NumPy array
+sales_matrix = np.array(sales_data)
+
+print("Product Names:", product_names)
+print("Sales Matrix:\n", sales_matrix)
+
+print("\n")
 
 # Calculate the total sales for each product (sum across columns)
-total_sales_per_product = df.iloc[:, 1:].sum(axis=0)
+total_sales_per_product = np.sum(sales_matrix, axis=0)
 
-# Calculate the total sales for each month (sum across rows)
-total_sales_per_month = df.iloc[:, 1:].sum(axis=1)
+# Calculate the total sales for each month (sum across rows) 
+total_sales_per_month = np.sum(sales_matrix, axis=1)
 
-print("\nTotal Sales for each product:")
-for product, total_sales in total_sales_per_product.items():
+print("Total Sales for each product:")
+for product, total_sales in zip(product_names, total_sales_per_product):
     print(f"{product}: {total_sales}")
 
-print("\nTotal Sales for each month:")
-for month, total_sales in zip(df['Month'], total_sales_per_month):
+print("\nTotal Sales for each month:") 
+for month, total_sales in zip(months, total_sales_per_month): 
     print(f"{month}: {total_sales}")
 ```
 
