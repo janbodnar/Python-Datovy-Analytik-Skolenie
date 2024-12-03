@@ -6,9 +6,9 @@ for cleaning, exploring, and transforming data. Here are some common functions a
 methods used for filtering data in Pandas, along with brief descriptions:
 
 1. `DataFrame.loc[]`
-- **Description**: Access a group of rows and columns by labels or a boolean array.
-  Ideal for label-based indexing.
-- **Example**: `df.loc[df['column_name'] > 50]`
+  - Acess a group of rows and columns by labels or a boolean array.
+    Ideal for label-based indexing.
+  - `df.loc[df['column_name'] > 50]`
 
 ### 2. `DataFrame.iloc[]`
 - **Description**: Access a group of rows and columns by integer positions (integer-based indexing).
