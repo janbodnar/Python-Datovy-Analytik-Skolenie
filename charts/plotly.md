@@ -136,6 +136,26 @@ fig = px.pie(total_units_by_category, values='units_in_stock', names='category',
 fig.show()
 ```
 
+## Products by Category and Units in Stock - treemap
+
+```python
+import pandas as pd
+import plotly.express as px
+from decimal import Decimal
+
+# Read the CSV file
+df = pd.read_csv('products.csv')
+
+# Convert unit_price to Decimal for accurate calculations
+df['unit_price'] = df['unit_price'].apply(Decimal)
+
+# Create a treemap
+fig = px.treemap(df, path=['category', 'product_name'], values='units_in_stock',
+                 title='Hierarchical View of Products by Category and Units in Stock',
+                 color='unit_price', color_continuous_scale='Blues')
+
+fig.show()
+```
 
 
 
