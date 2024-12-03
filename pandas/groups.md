@@ -85,18 +85,19 @@ print('----------------------')
 ## Iterage over groups 
 
 ```python
-#!/usr/bin/python
-
 import pandas as pd
 
+# Sample DataFrame
 df = pd.read_csv('products.csv')
-g = df.groupby('category')
 
-for e in g:
-    print(80*'-')
-    print(e[0])
-    for f in e[1:]:
-        print(f)
+# Group by 'category' and iterate through groups
+grouped = df.groupby('category')
+
+for name, group in grouped:
+    print(f"Category: {name}")
+    print(group)
+
+    print('--------------------------------\n')
 ```
 
 ## Retrieving specific group 
