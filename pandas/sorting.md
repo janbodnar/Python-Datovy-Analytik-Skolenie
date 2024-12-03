@@ -1,6 +1,6 @@
 # Sorting 
 
-Sorting in Pandas is the process of arranging data in a DataFrame in a specific order, 
+Sorting in Pandas is the process of arranging data in a DataFrame in a specific order,  
 either ascending or descending, based on the values in one or more columns or the index.  
 This operation is useful for organizing and analyzing data efficiently.  
 
