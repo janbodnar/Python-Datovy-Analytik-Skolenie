@@ -118,7 +118,7 @@ print("Data inserted successfully.")
 ```
 
 
-## Postgresql to DataFrame
+## PostgreSQL to DataFrame
 
 ```python
 import pandas as pd
