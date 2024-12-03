@@ -166,4 +166,43 @@ filtered_df = df[df['unit_price'].apply(price_filter)]
 print(filtered_df)
 ```
 
+## The filter function
+
+The `filter` function is most useful for filtering rows or columns based on their labels, which means  
+it works best when you have a named index (either row or column labels). 
+
+```python
+import pandas as pd
+
+# Sample DataFrame with named index
+data = {
+    'product_name': ['Chai', 'Chang', 'Aniseed Syrup', 'Chef Anton\'s Cajun Seasoning', 'Chef Anton\'s Gumbo Mix'],
+    'category': ['Beverages', 'Beverages', 'Condiments', 'Condiments', 'Condiments'],
+    'unit_price': [18.0, 19.0, 10.0, 22.0, 21.35],
+    'units_in_stock': [39, 17, 13, 53, 0]
+}
+df = pd.DataFrame(data)
+df.index = ['P001', 'P002', 'P003', 'P004', 'P005']
+
+# Filter rows with named index labels
+filtered_df = df.filter(items=['P001', 'P003', 'P005'], axis=0)
+print(filtered_df)
+```
+
+```python
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'product_name': ['Chai', 'Chang', 'Aniseed Syrup', 'Chef Anton\'s Cajun Seasoning', 'Chef Anton\'s Gumbo Mix'],
+    'category': ['Beverages', 'Beverages', 'Condiments', 'Condiments', 'Condiments'],
+    'unit_price': [18.0, 19.0, 10.0, 22.0, 21.35],
+    'units_in_stock': [39, 17, 13, 53, 0]
+}
+df = pd.DataFrame(data)
+
+# Filter columns by names
+filtered_df = df.filter(items=['product_name', 'unit_price'], axis=1)
+print(filtered_df)
+```
 
