@@ -6,7 +6,7 @@ for cleaning, exploring, and transforming data. Here are some common functions a
 methods used for filtering data in Pandas, along with brief descriptions:
 
 
-Sure! Here's your list turned into a markdown table:
+## List of methods
 
 | Method                      | Description |
 |-----------------------------|-------------|
@@ -20,6 +20,7 @@ Sure! Here's your list turned into a markdown table:
 | `DataFrame.groupby().filter()` | Filter groups of rows based on some condition applied to each group.<br>Example: `df.groupby('group_column').filter(lambda x: len(x) > 10)` |
 | `DataFrame.apply()`         | Apply a function along an axis of the DataFrame. Useful for applying custom filters.<br>Example: `df[df['column_name'].apply(lambda x: x > 50)]` |
 | `DataFrame.dropna()`        | Remove missing values. Can drop rows or columns with null values.<br>Example: `df.dropna()` (drops rows with any null values) |
+| `DataFrame.filter()`        | Subset the rows or columns of a DataFrame according to labels in the index.<br>Example: `df.filter(items=['column1', 'column2'])` |
 
 
 ## Example Usage
