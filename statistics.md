@@ -194,3 +194,98 @@ Calculate stats from JSON data:
 ]
 ```
 
+## What is linear regression
+
+Linear regression is a statistical method used to model the relationship between a dependent  
+variable and one or more independent variables. It assumes a linear relationship between the  
+variables, which can be represented by a straight line. The goal is to find the best-fitting  
+line through the data points that minimizes the difference between the observed values  
+and the predicted values.
+
+## Key Concepts 
+
+1. *Dependent Variable*:
+   - The variable you are trying to predict or explain (also called the response variable).
+   - In our earlier example, this would be `Income`.
+
+2. *Independent Variable(s)*:
+   - The variable(s) you are using to make predictions (also called predictor variables).
+   - In our example, this would be `Age`.
+
+3. *Equation of the Line*:
+   - The linear regression line can be expressed as:
+     \[
+     y = mx + c
+     \]
+     - \( y \) is the dependent variable.
+     - \( x \) is the independent variable.
+     - \( m \) is the slope of the line.
+     - \( c \) is the y-intercept (the value of \( y \) when \( x \) is 0).
+
+4. **Slope (m)**:
+   - Indicates the rate at which the dependent variable changes with respect to the independent variable.
+   - A positive slope means that as the independent variable increases, the dependent variable also increases.
+
+5. *Intercept (c)*:
+   - The value of the dependent variable when the independent variable is zero.
+   - It represents the starting point of the line on the y-axis.
+
+
+Using our dataset with `Age` and `Income`, the linear regression line predicts how `Income` changes with `Age`. 
+
+## Calculation
+
+To calculate the line of best fit, we can use the least squares method, which minimizes the sum of the squared   
+differences between observed and predicted values.
+
+## Visualization
+
+Visualizing linear regression helps to understand how well the line fits the data points and the overall trend.
+
+## Code Example
+
+
+Here's how we can calculate and plot the linear regression for the given `Age` and `Income` data:
+
+```python
+import matplotlib.pyplot as plt
+import statistics
+
+# Sample data
+ages = [25, 28, 30, 32, 35, 38, 40, 42, 45, 48]
+incomes = [30000, 34000, 40000, 45000, 48000, 52000, 60000, 61000, 70000, 72000]
+
+# Calculate linear regression
+slope, intercept = statistics.linear_regression(ages, incomes)
+
+# Function to calculate predicted income based on age
+def predict_income(age):
+    return slope * age + intercept
+
+# Generate predicted values
+predicted_incomes = [predict_income(age) for age in ages]
+
+# Plot the data points
+plt.scatter(ages, incomes, color='blue', label='Actual Incomes')
+
+# Plot the regression line
+plt.plot(ages, predicted_incomes, color='red', label='Regression Line')
+
+# Add labels and title
+plt.xlabel('Age')
+plt.ylabel('Income ($)')
+plt.title('Linear Regression of Age vs. Income')
+plt.legend()
+
+# Show the plot
+plt.show()
+```
+
+This code visualizes the relationship between age and income, showing how well the linear regression 
+line fits the data points and captures the trend. Linear regression is widely used in predictive modeling,  
+trend analysis, and many other applications across various fields.
+
+
+
+
+
