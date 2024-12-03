@@ -281,7 +281,7 @@ plt.legend()
 plt.show()
 ```
 
-This code visualizes the relationship between age and income, showing how well the linear regression 
+This code visualizes the relationship between age and income, showing how well the linear regression  
 line fits the data points and captures the trend. Linear regression is widely used in predictive modeling,  
 trend analysis, and many other applications across various fields.
 
