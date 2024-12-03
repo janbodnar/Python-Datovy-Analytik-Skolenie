@@ -1,7 +1,39 @@
 # Groups
 
+Grouping data is a powerful operation in Pandas, typically used for split-apply-combine analysis. 
+It allows you to split your data into groups based on some criteria, apply a function to each group  
+independently, and then combine the results back into a DataFrame.  
+ 
+
+
 We use the `groupby` function to perform grouping. The returned group  
 object is a Python dictionary.  
+
+## Group by multiple columns
+
+```python
+import pandas as pd
+
+# Sample DataFrame
+df = pd.read_csv('products.csv')
+
+# Group by 'category' and 'product_name' and calculate sum of units_in_stock
+grouped = df.groupby(['category', 'product_name']).sum()
+print(grouped[['units_in_stock']])
+```
+
+## Aggregates with multiple functions
+
+```python
+import pandas as pd
+
+# Sample DataFrame
+df = pd.read_csv('products.csv')
+
+# Group by 'category' and aggregate with multiple functions
+grouped = df.groupby('category').agg({'unit_price': ['mean', 'min', 'max'], 'units_in_stock': 'sum'})
+print(grouped)
+```
 
 ## Counting groups
 
