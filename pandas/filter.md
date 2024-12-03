@@ -30,8 +30,8 @@ print(filtered_df)
 
 ## Filter rows with `isin`
 
-```
-## import pandas as pd
+```python
+import pandas as pd
 
 # Load the data from the CSV file
 df = pd.read_csv('products.csv')
@@ -40,3 +40,20 @@ df = pd.read_csv('products.csv')
 filtered_df = df[df['category'].isin(['Beverages', 'Condiments'])]
 print(filtered_df)
 ```
+
+## Filter rows by negation
+
+Use the `~` operator.
+
+```python
+import pandas as pd
+
+# Load the data from the CSV file
+df = pd.read_csv('products.csv')
+
+# Filter rows where category is not 'Condiments'
+filtered_df = df[~df['category'].isin(['Condiments'])]
+print(filtered_df)
+```
+
+
