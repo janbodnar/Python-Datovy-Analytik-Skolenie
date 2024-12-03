@@ -33,7 +33,7 @@ interactive charts, dashboards, and plots.
      with interactive controls.  
 
 3. *Geographical Plots*:
-   - Creating choropleth maps to visualize geographical data, such as population
+   - Creating choropleth maps to visualize geographical data, such as population  
      density or election results.  
    - Generating scatter plots on maps to show location-based data points.  
 
@@ -103,7 +103,6 @@ import pandas as pd
 import plotly.express as px
 from decimal import Decimal
 
-# Read the CSV file
 df = pd.read_csv('products.csv')
 
 # Convert unit_price to Decimal for accurate calculations
@@ -114,10 +113,28 @@ fig = px.line(df, x='product_name', y='units_in_stock', title='Units in Stock Ov
               labels={'product_name': 'Product Name', 'units_in_stock': 'Units in Stock'},
               markers=True)
 
-# Show the plot
 fig.show()
 ```
 
+## Total units in stock by category - pie chart 
+
+```python
+import pandas as pd
+import plotly.express as px
+from decimal import Decimal
+
+df = pd.read_csv('products.csv')
+
+# Calculate total units in stock by category
+total_units_by_category = df.groupby('category')['units_in_stock'].sum().reset_index()
+
+# Create a pie chart
+fig = px.pie(total_units_by_category, values='units_in_stock', names='category',
+             title='Distribution of Total Units in Stock by Category',
+             color_discrete_sequence=px.colors.sequential.RdBu)
+
+fig.show()
+```
 
 
 
