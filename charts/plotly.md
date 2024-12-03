@@ -96,6 +96,27 @@ fig.show()
 ```
 
 
+## Units in stock - line chart
+
+```python
+import pandas as pd
+import plotly.express as px
+from decimal import Decimal
+
+# Read the CSV file
+df = pd.read_csv('products.csv')
+
+# Convert unit_price to Decimal for accurate calculations
+df['unit_price'] = df['unit_price'].apply(Decimal)
+
+# Create a line chart
+fig = px.line(df, x='product_name', y='units_in_stock', title='Units in Stock Over Products',
+              labels={'product_name': 'Product Name', 'units_in_stock': 'Units in Stock'},
+              markers=True)
+
+# Show the plot
+fig.show()
+```
 
 
 
