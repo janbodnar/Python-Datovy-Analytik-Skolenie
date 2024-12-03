@@ -1,7 +1,7 @@
 # Import data
 
 
-## From XML
+## XML to DataFrame
 
 ```python
 import pandas as pd
@@ -16,7 +16,7 @@ df = pd.read_xml(url)
 print(df)
 ```
 
-## From JSON
+## JSON to DataFrame
 
 ```python
 import pandas as pd
@@ -56,11 +56,10 @@ print(df)
 
 ---
 
-From a JSON file:
+JSON file to DataFrame
 
 ```python
 import pandas as pd
-
 
 file_name = 'users.json'
 df_json = pd.read_json(file_name)
@@ -72,7 +71,7 @@ df = pd.json_normalize(df_json['users'])
 print(df)
 ```
 
-## From HTML table
+## HTML table to DataFrame
 
 ```python
 import pandas as pd
@@ -90,7 +89,7 @@ df = df_list[0]
 print(df)
 ```
 
-## From Excel
+## Excel to DataFrame
 
 ```python
 import pandas as pd
@@ -101,8 +100,25 @@ df = pd.read_excel(file_name)
 print(df)
 ```
 
+## CSV to Excel
 
-## From Postgresql
+```python
+import pandas as pd
+
+# URL of the CSV file
+url = 'https://webcode.me/users.csv'
+
+# Read the CSV content into a pandas DataFrame
+data = pd.read_csv(url)
+
+# Write the DataFrame to Excel
+data.to_excel('users2.xlsx')
+
+print("Data inserted successfully.")
+```
+
+
+## Postgresql to DataFrame
 
 ```python
 import pandas as pd
@@ -141,7 +157,7 @@ df = pd.read_sql_query(query, cs)
 print(df.head(15).to_string(index=False))
 ```
 
-## From CSV to SQLite
+## CSV to SQLite
 
 ```python
 import pandas as pd
