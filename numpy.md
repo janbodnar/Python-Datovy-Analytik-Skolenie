@@ -107,7 +107,7 @@ print(a.shape)
 print(a.dtype)
 ```
 
-# NumPy functions make it easy to compute statistical measures.
+## Compute statistical measures
 
 ```python
 import numpy as np
