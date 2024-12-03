@@ -9,6 +9,29 @@ independently, and then combine the results back into a DataFrame.
 We use the `groupby` function to perform grouping. The returned group  
 object is a Python dictionary.  
 
+
+## Counting groups
+
+Calculate the number of groups and number of rows in each group  
+with `nunique`, `ngroups`, and `size`.   
+
+```python
+#!/usr/bin/python
+
+import pandas as pd 
+  
+df = pd.read_csv('products.csv') 
+print(df['category'].nunique())
+
+g = df.groupby('category')
+print(g.ngroups)
+
+print('----------------------')
+
+print(g.size())
+```
+
+
 ## Group by multiple columns
 
 ```python
@@ -35,26 +58,7 @@ grouped = df.groupby('category').agg({'unit_price': ['mean', 'min', 'max'], 'uni
 print(grouped)
 ```
 
-## Counting groups
 
-Calculate the number of groups and number of rows in each group  
-with `nunique`, `ngroups`, and `size`.   
-
-```python
-#!/usr/bin/python
-
-import pandas as pd 
-  
-df = pd.read_csv('products.csv') 
-print(df['category'].nunique())
-
-g = df.groupby('category')
-print(g.ngroups)
-
-print('----------------------')
-
-print(g.size())
-```
 
 ## First, last, nth
 
@@ -188,7 +192,27 @@ print(res.agg(np.median))
 print('----------------------------')
 ```
 
-## Filtering groups 
+## Group & filter by product count
+
+```python
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+
+# Group by 'category'
+grouped = df.groupby('category')
+
+# Filter groups with more than 11 products and create a new DataFrame
+filtered_groups = grouped.filter(lambda x: len(x) > 11)
+
+# Iterate through each group that meets the filter condition
+for name, group in filtered_groups.groupby('category'):
+    print(f"Category: {name}")
+    print(group)
+    print("\n")
+```
+
+## Group by price and filter the sum
 
 ```python
 #!/usr/bin/python
@@ -210,3 +234,6 @@ df2 = res.groupby('category')[['unit_price', 'units_in_stock']].sum()
 df2.columns=['Sum of price', 'sum of units']
 print(df2)
 ```
+
+
+
