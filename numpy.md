@@ -324,5 +324,32 @@ plt.ylim([0, 60])
 plt.savefig('chart.png')
 ```
 
+## NumPy with Pandas
+
+```python
+import pandas as pd
+import numpy as np
+
+# Sample DataFrame
+data = {
+    'category': ['A', 'A', 'B', 'B', 'C', 'C'],
+    'value': [10, 20, 30, 40, 50, 60]
+}
+df = pd.DataFrame(data)
+
+# Group by 'category' and calculate aggregations using NumPy
+grouped = df.groupby('category')['value']
+
+# Calculating variance, standard deviation, mean, median
+variance = grouped.agg(np.var)
+std_deviation = grouped.agg(np.std)
+mean_value = grouped.agg(np.mean)
+median_value = grouped.agg(np.median)
+
+print("Variance:\n", variance)
+print("Standard Deviation:\n", std_deviation)
+print("Mean:\n", mean_value)
+print("Median:\n", median_value)
+```
 
 
