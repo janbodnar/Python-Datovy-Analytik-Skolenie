@@ -1,6 +1,6 @@
 # Groups
 
-Grouping data is a powerful operation in Pandas, typically used for split-apply-combine analysis. 
+Grouping data is a powerful operation in Pandas, typically used for split-apply-combine analysis.  
 It allows you to split your data into groups based on some criteria, apply a function to each group  
 independently, and then combine the results back into a DataFrame.  
  
