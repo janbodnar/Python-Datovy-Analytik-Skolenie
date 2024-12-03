@@ -94,30 +94,6 @@ print(df.iloc[2].mean())
 print('----------------------------------------')
 ```
 
-## Random sample
-
-Return a set of random rows or columns.  
-
-```python
-import pandas as pd
-
-df = pd.read_csv("military_spending.csv")
-
-print(df.sample(3, axis=0)) # random rows
-print(df.sample(3, axis=1)) # random cols
-```
-
-## Sorting 
-
-Sorting by multiple columns.  
-
-```python
-import pandas as pd
-
-df = pd.read_csv('products.csv')
-print(df.sort_values(['category', 'unit_price', 'units_in_stock'], ascending=[True, False, True]).to_string())
-```
-
 
 ## Transform to dictionary
 
