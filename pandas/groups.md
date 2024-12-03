@@ -4,10 +4,38 @@ Grouping data is a powerful operation in Pandas, typically used for split-apply-
 It allows you to split your data into groups based on some criteria, apply a function to each group  
 independently, and then combine the results back into a DataFrame.  
  
+The `groupby` function in Pandas is a powerful tool used for group-wise operations. It allows you to  
+split your data into groups based on some criteria, apply a function to each group independently, and  
+then combine the results back into a DataFrame or Series. This is often referred to as the  
+*split-apply-combine* paradigm.
+
+Key Components:
+
+- Splitting: Divides the data into groups based on the values in one or more columns.  
+- Applying: Applies a function to each group independently. Functions can be aggregation functions  
+  (e.g., mean, sum, min, max), transformations, or other custom functions.  
+- Combining: Combines the results of the function applications back into a `DataFrame` or `Series`.   
+
+## Aggregate Functions in Pandas
+
+Aggregate functions in Pandas are used to perform various calculations on data grouped by specific  
+criteria. These functions summarize and reduce data, providing insights into the dataset's characteristics.  
+Common aggregate functions include:
+
+- **Mean (`mean`)**: Calculates the average value of the data.
+- **Sum (`sum`)**: Computes the total sum of the data values.
+- **Count (`count` or `size`)**: Counts the number of non-null data points.
+- **Minimum (`min`)**: Finds the smallest value in the data.
+- **Maximum (`max`)**: Finds the largest value in the data.
+- **Median (`median`)**: Determines the middle value in the sorted data.
+- **Standard Deviation (`std`)**: Measures the dispersion of the data points from the mean.
+- **Variance (`var`)**: Measures the spread of data points.
+
+These functions are crucial for data analysis, as they help in understanding the distribution,  
+central tendency, and variability of the data. They can be applied to individual columns or groups  
+of data within a DataFrame.
 
 
-We use the `groupby` function to perform grouping. The returned group  
-object is a Python dictionary.  
 
 
 ## Counting groups
@@ -33,7 +61,7 @@ print(g.size())
 
 ## Groupby and calculate mean
 
-```
+```python
 import pandas as pd
 
 # Load the data from the CSV file
@@ -159,57 +187,100 @@ g = df.groupby('category')
 print(g[['unit_price', 'units_in_stock']].describe())
 ```
 
-## Aggregate functions
-
-```python
-#!/usr/bin/python
-
-import pandas as pd
-import numpy as np
-
-df = pd.read_csv('products.csv')
-g = df.groupby('category')
-
-res = g.get_group('Beverages')[['unit_price', 'units_in_stock']]
-
-print(res.count())
-print('-----------------')
-
-print(res.sum())
-print('-----------------')
-
-print(res.max())
-print('-----------------')
-
-print(res.min())
-print('-----------------')
-```
 
 ## Aggregate functions from numpy
 
-```python
-#!/usr/bin/python
 
+```python
 import pandas as pd
 import numpy as np
 
+# Load the data from the CSV file
 df = pd.read_csv('products.csv')
+
+# Group by 'category'
 g = df.groupby('category')
 
+# Get the group for 'Beverages'
 res = g.get_group('Beverages')[['unit_price', 'units_in_stock']]
 
+# Variance
+print("Variance:")
 print(res.agg(np.var))
 print('----------------------------')
 
+# Standard Deviation
+print("Standard Deviation:")
 print(res.agg(np.std))
 print('----------------------------')
 
+# Mean
+print("Mean:")
 print(res.agg(np.mean))
 print('----------------------------')
 
+# Median
+print("Median:")
 print(res.agg(np.median))
 print('----------------------------')
+
+# Maximum
+print("Maximum:")
+print(res.agg(np.max))
+print('----------------------------')
+
+# Minimum
+print("Minimum:")
+print(res.agg(np.min))
+print('----------------------------')
+
+# Sum
+print("Sum:")
+print(res.agg(np.sum))
+print('----------------------------')
+
+# Count
+print("Count:")
+print(res.agg(np.size))
+print('----------------------------')
+
+# Range (custom function)
+def np_range(x):
+    return np.max(x) - np.min(x)
+
+print("Range:")
+print(res.agg(np_range))
+print('----------------------------')
+
+# Percentiles (25th, 50th, and 75th percentiles)
+print("25th Percentile:")
+print(res.agg(lambda x: np.percentile(x, 25)))
+print('----------------------------')
+
+print("75th Percentile:")
+print(res.agg(lambda x: np.percentile(x, 75)))
+print('----------------------------')
 ```
+
+### Aggregates
+
+- *Variance (`np.var`)*: Measures the dispersion of the data points.
+- *Standard Deviation (`np.std`)*: Measures the average distance of the 
+   data points from the mean.
+- *Mean (`np.mean`)*: Calculates the average value.
+- *Median (`np.median`)*: Finds the middle value in the sorted data.
+- *Maximum (`np.max`)*: Finds the highest value.
+- *Minimum (`np.min`)*: Finds the lowest value.
+- *Sum (`np.sum`)*: Calculates the total sum of the values.
+- *Count (`np.size`)*: Counts the number of data points.
+- *Range (custom function)*: Calculates the difference between the maximum 
+   and minimum values.
+- *Percentiles (`np.percentile`)*: Calculates specific percentiles of the data 
+  (e.g., 25th and 75th percentiles).
+
+These additional aggregations provide a comprehensive view of the data's
+distribution and central tendency, helping you perform detailed data analysis.
+
 
 ## Group & filter by product count
 
