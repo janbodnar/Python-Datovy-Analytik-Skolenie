@@ -17,8 +17,6 @@ Python has different names of functions that are common in functional programmin
 ## Element access
 
 ```python
-#!/usr/bin/python
-
 from products import get_products
 
 data = get_products()
@@ -41,8 +39,6 @@ print(len(lastFive))
 ## Aggregates 
 
 ```python
-#!/usr/bin/python
-
 from products import get_products
 from operator import attrgetter
 from statistics import median, mean
@@ -246,6 +242,45 @@ print(res)
 
 ## Partitioning
 
+## split
+
+```python
+from funcy import split
+
+values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+evens, odds = split(lambda e: e % 2 == 0, values)
+
+print(list(evens))
+print(list(odds))
+```
+
+## split_by
+
+```python
+from collections import namedtuple
+from funcy import split_by
+
+City = namedtuple('City' , 'id, name population')
+
+c1 = City(1, 'Bratislava', 432000)
+c2 = City(2, 'Budapest', 1759000)
+c3 = City(3, 'Prague', 1280000)
+c4 = City(4, 'Warsaw', 1748000)
+c5 = City(5, 'Los Angeles', 3971000)
+c6 = City(6, 'Edinburgh', 464000)
+c7 = City(7, 'Presov', 82930)
+c8 = City(8, 'Kosice', 228000)
+c9 = City(9, 'Zilina', 81220)
+
+cities = [c1, c2, c3, c4, c5, c6, c7, c8, c9]
+cities.sort(key=lambda c: c.population)
+
+low_pop, high_pop = split_by(lambda c: c.population < 1000_000, cities)
+print(list(low_pop))
+print(list(high_pop))
+```
+
 Implementing `take`, `takewhile`, `skip`, `skipwhile` functions.  
 
 ```python
@@ -279,8 +314,6 @@ print(list(res))
 ```
 
 ```python
-#!/usr/bin/python
-
 from itertools import batched
 
 signs = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
@@ -299,8 +332,6 @@ for e in batches:
 Filtering with `filter` function and list comprehensions.  
 
 ```python
-#!/usr/bin/python
-
 from products import get_products
 
 data = get_products()
@@ -324,8 +355,6 @@ print(list(res))
 Filter by type with `isinstance`.  
 
 ```python
-#!/usr/bin/python
-
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -586,8 +615,6 @@ Group & aggregate.
 Calculate the sum of revenues for each quartal.  
 
 ```python
-#!/usr/bin/python
-
 from itertools import groupby
 
 
@@ -655,8 +682,6 @@ Group by boolean expression.
 Group students into two groups by test scores.  
 
 ```python
-#!/usr/bin/python
-
 from itertools import groupby
 from dataclasses import dataclass
 
@@ -704,8 +729,6 @@ The select/map methods project each element of a sequence into a new form. It se
 and transforms elements in a collection.  
 
 ```python
-#!/usr/bin/python
-
 from dataclasses import dataclass
 from decimal import Decimal
 from products import get_products
@@ -731,8 +754,6 @@ print(res)
 The built-in `map` function.  
 
 ```python
-#!/usr/bin/python
-
 nums = [1, 2, 3, 4, 5]
 
 nums_squared = map(lambda x: x*x, nums)
@@ -746,8 +767,6 @@ for num in nums_squared:
 The union, intersection, difference, and distinct set operations.  
 
 ```python
-#!/usr/bin/python
-
 from dataclasses import dataclass
 from products import get_products
 
