@@ -120,6 +120,26 @@ chart_data = pd.DataFrame(
 st.line_chart(chart_data)
 ```
 
+## Upload a file
+
+```python
+import streamlit as st
+import pandas as pd
+
+st.title('Upload CSV file')
+
+# File uploader
+uploaded_file = st.file_uploader('Choose a CSV file', type='csv')
+
+if uploaded_file is not None:
+    # Read the uploaded file
+    df = pd.read_csv(uploaded_file)
+    
+    # Display the DataFrame
+    st.write('Uploaded DataFrame:')
+    st.write(df)
+```
+
 ## Sidebar 
 
 A sidebar is an optional component that provides a dedicated space on the side of  
