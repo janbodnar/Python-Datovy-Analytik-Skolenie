@@ -56,6 +56,9 @@ track progress, and make data-driven decisions.
   resource utilization.  
 
 
+
+
+
 Streamlit appications are run with `streamlit run main.py`  
 
 
@@ -202,6 +205,42 @@ age = st.slider('Select your age:', 0, 100, 25)
 if st.button('Submit'):
     st.write(f'Hello {name}, you are {age} years old!')
 ```
+
+## Streamlit User Input and Reruns
+
+Streamlit is a powerful Python library that allows you to create interactive  
+web apps with minimal coding effort. It achieves this interactivity by continuously  
+monitoring user input and rerunning the script whenever a change is detected.  
+
+Here's a breakdown of how this process works:
+
+1. *Initial Run:*
+   - When you start your Streamlit app, the entire script is executed from top to bottom.  
+   - Widgets are displayed on the web interface.
+
+2. *User Interaction:*
+   - *Widget Changes:* Whenever a user interacts with a widget (e.g., clicks a button,  
+     changes a slider value, or enters text), Streamlit detects the change.  
+   - *Event Trigger:* This change triggers an event, signaling the need for a rerun.  
+
+3. *Rerun Process:*
+   - **Full Rerun:** By default, the entire script is rerun from the beginning. This  
+     ensures that all calculations, data processing, and widget updates are performed  
+     based on the new input.
+   - **Fragment Rerun:** For more efficient updates, Streamlit supports fragment reruns.  
+     You can divide your app into fragments, each with its own set of widgets and logic.  
+     When a widget within a fragment is changed, only that specific fragment is rerun,  
+     optimizing performance.
+
+Key Points:
+
+- *State Preservation:* Streamlit maintains a session state, allowing you to store variables
+  and data between reruns. This enables you to preserve the app's state and avoid
+  unnecessary recalculations.  
+- *Caching:* You can use Streamlit's caching mechanism to store the results of expensive  
+  computations and avoid redundant calculations during reruns.
+- *Event Handlers:* While Streamlit's automatic rerunning is convenient, you can also define
+   custom event handlers using functions like `st.button` or `st.form` to trigger specific actions.  
 
 
 
