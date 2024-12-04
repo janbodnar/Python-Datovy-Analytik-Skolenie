@@ -633,3 +633,61 @@ if 'df' in st.session_state:
 ```
 
 
+## Database example
+
+Inside a `.streamlit` directory in the `secrets.toml` file:
+
+```toml
+[connections.postgresql]
+type="sql"
+dialect = "postgresql"
+host = "localhost"
+port = "5432"
+database = "testdb"
+username = "postgres"
+password = "s$cret"
+```
+
+
+```python
+import streamlit as st
+
+con = st.connection("postgresql")
+df = con.query("select * from cars")
+
+st.dataframe(df)
+---
+
+```python
+import streamlit as st
+import pandas as pd
+
+st.title("Car Data Explorer")
+
+# Connect to the PostgreSQL database
+with st.spinner('Connecting to database...'):
+    try:
+        con = st.connection("postgresql")
+        df = con.query("SELECT * FROM cars")
+        st.success("Database connection successful!")
+    except Exception as e:
+        st.error(f"Error connecting to database: {e}")
+
+# Display the DataFrame
+if 'df' in locals():
+    st.dataframe(df)
+
+    # Add interactive elements for filtering and sorting
+    filter_column = st.selectbox('Filter by Column', df.columns)
+    filter_value = st.text_input('Filter Value')
+
+    if filter_value:
+        filtered_df = df[df[filter_column] == filter_value]
+        st.dataframe(filtered_df)
+
+    # Add a simple line chart with car names on the x-axis
+    st.subheader("Car Price Distribution")
+    st.line_chart(df.set_index('name')['price'])  # Assuming 'car_name' is the column name
+```
+
+
