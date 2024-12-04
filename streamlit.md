@@ -206,6 +206,48 @@ if st.button('Submit'):
     st.write(f'Hello {name}, you are {age} years old!')
 ```
 
+## Session state 
+
+Session state in Streamlit allows you to store and access data across multiple  
+reruns of your app. This is particularly useful for maintaining user preferences,  
+tracking progress, or storing intermediate results.
+
+Key Points:
+
+- Persistence: The counter value is preserved across multiple reruns of the app, even  
+  if the user refreshes the page or navigates to other parts of the app.
+- Flexibility: You can store various data types in session state, including numbers,
+  strings, lists, and dictionaries.
+
+```python
+import streamlit as st
+
+# Initialize a counter in the session state
+if 'counter' not in st.session_state:
+    st.session_state.counter = 0
+
+# Increment the counter and display it
+if st.button('Increment'):
+    st.session_state.counter += 1
+    st.write(f'Counter: {st.session_state.counter}')
+```
+
+## Reruns
+
+In Streamlit, a rerun refers to the process of re-executing the entire script or a  
+specific fragment of it. This happens when a user interacts with a widget, such as   
+clicking a button, changing a slider value, or entering text.  
+
+Why Reruns Happen:
+
+- User Interaction: When a user interacts with a widget, Streamlit detects the  
+  change and triggers a rerun.
+- Session State Updates: If you're using session state to store variables, changes  
+  to these variables can also trigger a rerun.  
+- Explicit Rerun: You can manually trigger a rerun using the `st.rerun()` function.
+
+
+
 ## Streamlit User Input and Reruns
 
 Streamlit is a powerful Python library that allows you to create interactive  
