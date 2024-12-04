@@ -136,7 +136,7 @@ st.markdown('This is **Streamlit**. You can write *markdown* too!')
 st.markdown('Python *source code*')
 
 st.markdown('''
-```python
+~~~python
 import streamlit as st
 import pandas as pd
 
@@ -155,7 +155,7 @@ st.write(df)
 
 # Display some markdown text
 st.markdown('This is **Streamlit**. You can write *markdown* too!')
-\`\`\` ''')
+~~~ ''')
 ```
 
 
