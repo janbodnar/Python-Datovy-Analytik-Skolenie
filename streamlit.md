@@ -101,6 +101,51 @@ if st.button('Submit'):
     st.write(f'Hello {name}, you are {age} years old!')
 ```
 
+## Line chart
+
+```python
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.title('Line chart example')
+
+# Generate random data
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c']
+)
+
+# Display line chart
+st.line_chart(chart_data)
+```
+
+## Sidebar 
+
+A sidebar is an optional component that provides a dedicated space on the side of  
+the app's main content area for placing widgets, text, and other elements. This allows  
+for better organization and easy access to controls and information, without cluttering  
+the main interface. You can add elements to the sidebar using `st.sidebar`, which works  
+similarly to the main st functions.
+
+Using a sidebar helps keep your application clean and intuitive, ensuring a great user experience.  
+
+```python
+import streamlit as st
+
+# Title of the app
+st.title('Sidebar Widgets')
+
+# Sidebar with a slider and text input
+sidebar = st.sidebar
+slider_value = sidebar.slider('Select a value:', 0, 100, 50)
+text_input = sidebar.text_input('Enter a message:')
+
+# Display the slider and text input values
+st.write(f'Slider Value: {slider_value}')
+st.write(f'Message: {text_input}')
+```
+
 ## Two columns
 
 ```python
