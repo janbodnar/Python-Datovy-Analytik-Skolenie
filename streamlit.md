@@ -120,6 +120,134 @@ chart_data = pd.DataFrame(
 st.line_chart(chart_data)
 ```
 
+## Bar chart 
+
+```python
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+# Generate example data
+data = {
+    'Category': ['A', 'B', 'C', 'D'],
+    'Total Sales': [100, 150, 200, 250]
+}
+
+df = pd.DataFrame(data)
+
+# Title of the app
+st.title('Bar Chart Example')
+
+# Display the bar chart
+st.bar_chart(df.set_index('Category'))
+```
+
+## Area chart 
+
+```python
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+# Generate example data
+data = np.random.randn(20, 3)
+df = pd.DataFrame(data, columns=['a', 'b', 'c'])
+
+# Display the area chart
+st.area_chart(df)
+```
+
+## Map chart 
+
+```python
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+# Generate example data
+data = pd.DataFrame({
+    'lat': np.random.uniform(-90, 90, 100),
+    'lon': np.random.uniform(-180, 180, 100)
+})
+
+# Display the map
+st.map(data)
+```
+
+## Histogram with Matplotlib
+
+```python
+import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate example data
+data = np.random.randn(1000)
+
+# Create a Matplotlib figure
+fig, ax = plt.subplots()
+ax.hist(data, bins=30, edgecolor='black')
+ax.set_xlabel('Value')
+ax.set_ylabel('Frequency')
+ax.set_title('Histogram Example')
+
+# Display the chart using Streamlit
+st.title('Histogram Example')
+st.pyplot(fig)
+```
+
+## Scatter plot with Matplotlib
+
+```python
+import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate example data
+x = np.random.rand(100)
+y = np.random.rand(100)
+
+# Create a Matplotlib figure
+fig, ax = plt.subplots()
+ax.scatter(x, y, c='blue', alpha=0.5)
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+ax.set_title('Scatter Plot Example')
+
+# Display the chart using Streamlit
+st.title('Scatter Plot Example')
+st.pyplot(fig)
+```
+
+
+## Pie chart with Plotly
+
+```python
+import streamlit as st
+import plotly.express as px
+import pandas as pd
+import numpy as np
+
+# Generate example data
+data = {
+    'Category': ['A', 'B', 'C', 'D'],
+    'Quantity': [10, 20, 30, 40]
+}
+
+df = pd.DataFrame(data)
+
+# Title of the app
+st.title('Pie Chart Example')
+
+# Create a pie chart
+fig = px.pie(df, values='Quantity', names='Category', title='Quantity by Category')
+
+# Display the pie chart using Streamlit
+st.plotly_chart(fig)
+```
+
+
+
 ## Upload a file
 
 CSV file:  
