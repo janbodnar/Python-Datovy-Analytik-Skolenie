@@ -34,6 +34,7 @@ interact with. Dashboards are used across various fields to monitor metrics,
 track progress, and make data-driven decisions.  
 
 ## Key Features
+
 - *Visual Representation*: Dashboards use charts, graphs, and other visual  
   elements to represent data, making it easier to understand trends and  
   patterns.  
@@ -46,6 +47,7 @@ track progress, and make data-driven decisions.
   KPIs relevant to the user or organization.  
 
 ## Common Uses
+
 - *Business Intelligence*: Monitoring business metrics such as sales  
   performance, customer engagement, and financial health.  
 - *Operations*: Tracking operational metrics like production efficiency,  
@@ -56,7 +58,14 @@ track progress, and make data-driven decisions.
   resource utilization.  
 
 
+## Reactivity
 
+In Streamlit, *reactivity* refers to the application's ability to automatically update  
+and display changes in real time based on user interactions, without the need for manual  
+refreshes or reloading. When a user changes an input, such as entering text, adjusting  
+a slider, or clicking a button, Streamlit immediately processes this change and updates  
+the output dynamically. This feature enhances the interactivity and responsiveness  
+of the application, creating a smooth user experience.
 
 
 Streamlit appications are run with `streamlit run main.py`  
@@ -76,14 +85,6 @@ The example demonstrates the basic use of a text input widget combined with
 conditional content display. Streamlit's reactivity ensures that the app dynamically  
 updates in real time. When you type your name into the text input box, Streamlit immediately  
 reacts to this input and updates the display.
-
-In Streamlit, *reactivity* refers to the application's ability to automatically update  
-and display changes in real time based on user interactions, without the need for manual  
-refreshes or reloading. When a user changes an input, such as entering text, adjusting  
-a slider, or clicking a button, Streamlit immediately processes this change and updates  
-the output dynamically. This feature enhances the interactivity and responsiveness  
-of the application, creating a smooth user experience.
-
 
 ```python
 import streamlit as st
