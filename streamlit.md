@@ -33,7 +33,7 @@ consolidates and organizes data in a way that is easy to read, interpret, and
 interact with. Dashboards are used across various fields to monitor metrics,  
 track progress, and make data-driven decisions.  
 
-# Key Features
+## Key Features
 - *Visual Representation*: Dashboards use charts, graphs, and other visual  
   elements to represent data, making it easier to understand trends and  
   patterns.  
@@ -45,7 +45,7 @@ track progress, and make data-driven decisions.
 - *Customization*: Dashboards can be customized to show specific metrics and  
   KPIs relevant to the user or organization.  
 
-# Common Uses
+## Common Uses
 - *Business Intelligence*: Monitoring business metrics such as sales  
   performance, customer engagement, and financial health.  
 - *Operations*: Tracking operational metrics like production efficiency,  
