@@ -101,6 +101,18 @@ if st.button('Submit'):
     st.write(f'Hello {name}, you are {age} years old!')
 ```
 
+## Select box 
+
+```python
+import streamlit as st
+
+st.write("Sidebar Example")
+sidebar = st.sidebar
+selection = sidebar.selectbox('Choose a number:', [1, 2, 3, 4, 5])
+st.write(f'Selected number: {selection}')
+```
+
+
 ## Line chart
 
 ```python
