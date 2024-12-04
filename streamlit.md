@@ -122,6 +122,8 @@ st.line_chart(chart_data)
 
 ## Upload a file
 
+CSV file:  
+
 ```python
 import streamlit as st
 import pandas as pd
@@ -139,6 +141,28 @@ if uploaded_file is not None:
     st.write('Uploaded DataFrame:')
     st.write(df)
 ```
+
+Excel file:  
+
+```python
+import streamlit as st
+import pandas as pd
+
+# Title of the app
+st.title('Excel File Upload Example')
+
+# File uploader
+uploaded_file = st.file_uploader('Choose an Excel file', type=['xlsx', 'xls'])
+
+if uploaded_file is not None:
+    # Read the uploaded Excel file
+    df = pd.read_excel(uploaded_file)
+    
+    # Display the DataFrame
+    st.write('Uploaded Excel File Data:')
+    st.write(df)
+```
+
 
 ## Sidebar 
 
