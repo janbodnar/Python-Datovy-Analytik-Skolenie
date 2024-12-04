@@ -70,7 +70,7 @@ st.write("My first streamlit application")
 ## Text input 
 
 The example demonstrates the basic use of a text input widget combined with  
-conditional content display. Streamlit's reactivity ensures that the app dynamically 
+conditional content display. Streamlit's reactivity ensures that the app dynamically  
 updates in real time. When you type your name into the text input box, Streamlit immediately  
 reacts to this input and updates the display.
 
