@@ -111,4 +111,53 @@ chart_data = pd.DataFrame(
 right_column.line_chart(chart_data)
 ```
 
+## Markdown
+
+```python
+import streamlit as st
+import pandas as pd
+
+# Title of the app
+st.title('Streamlit markdown')
+
+# Display a simple DataFrame
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Occupation': ['Engineer', 'Doctor', 'Artist']
+})
+
+st.write('Simple DataFrame:')
+st.write(df)
+
+# Display some markdown text
+st.markdown('This is **Streamlit**. You can write *markdown* too!')
+
+st.markdown('Python *source code*')
+
+st.markdown('''
+```python
+import streamlit as st
+import pandas as pd
+
+# Title of the app
+st.title('Streamlit markdown')
+
+# Display a simple DataFrame
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Occupation': ['Engineer', 'Doctor', 'Artist']
+})
+
+st.write('Here is a simple DataFrame:')
+st.write(df)
+
+# Display some markdown text
+st.markdown('This is **Streamlit**. You can write *markdown* too!')
+```
+            ''')
+```
+
+
 
