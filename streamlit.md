@@ -83,6 +83,24 @@ st.write('This is a simple data dashboard using Streamlit.')
 st.table(df.head(15))
 ```
 
+## Text input &  slider
+
+```python
+import streamlit as st
+
+st.title('Text input and slider')
+
+# Text input
+name = st.text_input('Enter your name:')
+
+# Slider
+age = st.slider('Select your age:', 0, 100, 25)
+
+# Button
+if st.button('Submit'):
+    st.write(f'Hello {name}, you are {age} years old!')
+```
+
 ## Two columns
 
 ```python
