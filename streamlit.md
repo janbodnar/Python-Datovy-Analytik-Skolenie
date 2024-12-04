@@ -83,6 +83,39 @@ st.write('This is a simple data dashboard using Streamlit.')
 st.table(df.head(15))
 ```
 
+## Button 
+
+```python
+import streamlit as st
+
+# Title of the app
+st.title('Simple Button Example')
+
+# Create a button
+if st.button('Click Me'):
+    st.write('Button clicked!')
+else:
+    st.write('Button not clicked.')
+```
+
+---
+
+Random numbers 
+
+```python
+import streamlit as st
+import numpy as np
+
+st.title('Generate Random Numbers')
+
+if st.button('Generate Random Numbers'):
+    random_numbers = np.random.randint(0, 100, size=10)
+    st.write('Random Numbers:', random_numbers)
+else:
+    st.write('Click to generate random numbers')
+```
+
+
 ## Select box
 
 ```python
@@ -111,16 +144,6 @@ if st.button('Submit'):
     st.write(f'Hello {name}, you are {age} years old!')
 ```
 
-## Select box 
-
-```python
-import streamlit as st
-
-st.write("Sidebar Example")
-sidebar = st.sidebar
-selection = sidebar.selectbox('Choose a number:', [1, 2, 3, 4, 5])
-st.write(f'Selected number: {selection}')
-```
 
 
 ## Line chart
