@@ -694,4 +694,131 @@ if 'df' in st.session_state:
     st.line_chart(df.set_index('name')['price'])
 ```
 
+## Pages
+
+```python
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+
+def page1():
+    st.title("Page 1: Random Data")
+    df = pd.DataFrame(np.random.randn(10, 5), columns=[
+                      'A', 'B', 'C', 'D', 'E'])
+    st.dataframe(df)
+
+
+def page2():
+    st.title("Page 2: Emojis")
+    st.write("Here are some emojis:")
+    st.write(":smile:", ":heart:", ":joy:", ":heart_eyes:", ":cry:", 
+             ":thumbsup:", ":thumbsdown:", ":raised_hands:", ":tada:",
+             ":birthday:", ":dog:", ":sunglasses:", ":pleading_face:", ":shrug:", 
+             ":sparkles:", ":pizza:", ":star2:", ":books:", ":art:")
+
+
+def page3():
+    st.title("Page 3: Lorem Ipsum")
+    st.write("""
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+""")
+
+
+page_names = ["Random Data", "Emojis", "Lorem Ipsum"]
+selected_page = st.sidebar.selectbox("Select a Page", page_names)
+
+if selected_page == "Random Data":
+    page1()
+elif selected_page == "Emojis":
+    page2()
+else:
+    page3()
+```
+
+
+## Multi page app with configuration
+
+In `.streamlit/config.toml`: 
+
+```toml
+[theme]
+primaryColor = "#cb7a00"
+backgroundColor = "#25282A"
+secondaryBackgroundColor = "#155557"
+textColor = "#ffffff"
+font = "sans serif"
+```
+
+```
+pages\
+  Emojis.py
+  Lorem_Ipsum.py
+  Random_Numbers.py
+app.py
+```
+
+The `app.py` file:  
+
+```python
+import streamlit as st
+
+# Automatically loads pages from the 'pages' directory
+st.title("Multi-Page App")
+```
+
+The `Lorem_Ipsum.py` file:  
+
+```python
+import streamlit as st
+
+st.title("Page 3: Lorem Ipsum")
+st.write("""
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+""")
+```
+
+The `Emojis.py` file:  
+
+```python
+import streamlit as st
+
+st.title("Emojis")
+
+st.write("Here are some emojis:")
+st.write(":smile:", ":heart:", ":joy:", ":heart_eyes:", ":cry:", 
+         ":thumbsup:", ":thumbsdown:", ":raised_hands:", ":tada:",
+         ":birthday:", ":dog:", ":sunglasses:", ":pleading_face:", ":shrug:", 
+         ":sparkles:", ":pizza:", ":star2:", ":books:", ":art:")
+```
+
+
+The `Random_Numbers.py` file:  
+
+```python
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.title("Random numbers")
+
+df = pd.DataFrame(np.random.randn(10, 5), columns=['A', 'B', 'C', 'D', 'E'])
+st.dataframe(df)
+```
+
+
+
+
+
+
 
