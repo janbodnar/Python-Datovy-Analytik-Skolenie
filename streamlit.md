@@ -85,6 +85,9 @@ st.table(df.head(15))
 
 ## Button 
 
+Streamlit reruns the script from the beginning on every user interaction, such as clicking a button.  
+The `st.write` method updates the displayed content based on the script's current state and conditions.  
+
 ```python
 import streamlit as st
 
@@ -115,6 +118,36 @@ else:
     st.write('Click to generate random numbers')
 ```
 
+--- 
+
+Show/hide dataframe
+
+```python
+import streamlit as st
+import pandas as pd
+
+st.title('Button to Display/Hide DataFrame')
+
+# Create two buttons
+show_button = st.button('Show DataFrame')
+hide_button = st.button('Hide DataFrame')
+
+# Sample DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Occupation': ['Engineer', 'Doctor', 'Artist']
+}
+df = pd.DataFrame(data)
+
+# Logic to display or hide DataFrame based on button clicks
+if show_button:
+    st.write(df)
+elif hide_button:
+    st.write('DataFrame hidden.')
+else:
+    st.write('Click  to display/hide the DataFrame.')
+```
 
 ## Select box
 
