@@ -744,6 +744,19 @@ else:
 
 ## Multi page app with configuration
 
+Directory structure:
+
+```
+.streamlit\
+  config.toml
+pages\
+  Emojis.py
+  Lorem_Ipsum.py
+  Random_Numbers.py
+app.py
+```
+
+
 In `.streamlit/config.toml`: 
 
 ```toml
@@ -755,13 +768,7 @@ textColor = "#ffffff"
 font = "sans serif"
 ```
 
-```
-pages\
-  Emojis.py
-  Lorem_Ipsum.py
-  Random_Numbers.py
-app.py
-```
+
 
 The `app.py` file:  
 
