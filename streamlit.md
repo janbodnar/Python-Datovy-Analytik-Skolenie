@@ -83,5 +83,32 @@ st.write('This is a simple data dashboard using Streamlit.')
 st.table(df.head(15))
 ```
 
+## Two columns
+
+```python
+import streamlit as st
+import numpy as np
+import pandas as pd
+
+st.title('Two columns')
+
+# Refresh button
+if st.button('Refresh Data'):
+    st.rerun()
+
+# Create two columns
+left_column, right_column = st.columns(2)
+
+# Generate random data for the left column
+dataframe = np.random.randn(10, 20)
+left_column.dataframe(dataframe)
+
+# Generate random data for the right column
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c']
+)
+right_column.line_chart(chart_data)
+```
 
 
