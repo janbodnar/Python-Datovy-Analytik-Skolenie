@@ -83,6 +83,16 @@ st.write('This is a simple data dashboard using Streamlit.')
 st.table(df.head(15))
 ```
 
+## Select box
+
+```python
+import streamlit as st
+
+st.write("Sidebar Example")
+selection = st.selectbox('Choose a number:', [1, 2, 3, 4, 5])
+st.write(f'Selected number: {selection}')
+```
+
 ## Text input &  slider
 
 ```python
