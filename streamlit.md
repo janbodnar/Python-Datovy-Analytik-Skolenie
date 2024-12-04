@@ -609,23 +609,23 @@ csv_url = st.text_input('Enter the URL of a CSV file:')
 # Create a button to load the data
 if st.button('Load Data'):
     if csv_url:
-        try:
-            # Load the CSV data into a DataFrame
-            df = pd.read_csv(csv_url)
-            # Store the DataFrame in session state
-            st.session_state.df = df
-        except Exception as e:
-            st.write(f'Error loading data: {e}')
+        with st.spinner('Loading data...'):
+            try:
+                df = pd.read_csv(csv_url)
+                st.session_state.df = df
+                st.success('Data loaded successfully!')
+            except Exception as e:
+                st.error(f'Error loading data: {e}')
     else:
-        st.write('Please enter a valid URL.')
+        st.warning('Please enter a valid URL.')
 
 # Check if DataFrame is stored in session state
 if 'df' in st.session_state:
     # Create a slider to control the number of rows displayed
-    num_rows = st.slider('Select number of rows to display', 
-                          min_value=1, 
-                          max_value=len(st.session_state.df), 
-                          value=10, 
+    num_rows = st.slider('Select number of rows to display',
+                          min_value=1,
+                          max_value=len(st.session_state.df),
+                          value=10,
                           key='num_rows_slider')
 
     # Display the DataFrame with the selected number of rows and specified width
