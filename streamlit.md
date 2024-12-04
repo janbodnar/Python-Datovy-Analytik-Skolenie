@@ -656,25 +656,29 @@ con = st.connection("postgresql")
 df = con.query("select * from cars")
 
 st.dataframe(df)
+```
+
 ---
 
 ```python
 import streamlit as st
-import pandas as pd
 
 st.title("Car Data Explorer")
 
-# Connect to the PostgreSQL database
-with st.spinner('Connecting to database...'):
-    try:
-        con = st.connection("postgresql")
-        df = con.query("SELECT * FROM cars")
-        st.success("Database connection successful!")
-    except Exception as e:
-        st.error(f"Error connecting to database: {e}")
+# Connect to the PostgreSQL database and store the DataFrame in session state
+if 'df' not in st.session_state:
+    with st.spinner('Connecting to database...'):
+        try:
+            con = st.connection("postgresql")
+            st.session_state.df = con.query("SELECT * FROM cars")
+            st.success("Database connection successful!")
+        except Exception as e:
+            st.error(f"Error connecting to database: {e}")
 
 # Display the DataFrame
-if 'df' in locals():
+if 'df' in st.session_state:
+    
+    df = st.session_state.df
     st.dataframe(df)
 
     # Add interactive elements for filtering and sorting
@@ -687,7 +691,7 @@ if 'df' in locals():
 
     # Add a simple line chart with car names on the x-axis
     st.subheader("Car Price Distribution")
-    st.line_chart(df.set_index('name')['price'])  # Assuming 'car_name' is the column name
+    st.line_chart(df.set_index('name')['price'])
 ```
 
 
