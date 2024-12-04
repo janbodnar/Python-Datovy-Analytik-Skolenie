@@ -4,7 +4,7 @@ Streamlit is an open-source Python library specifically designed for creating in
 visually appealing web applications for machine learning and data science projects. It simplifies  
 the process of turning data scripts into shareable web applications with minimal effort.
 
-## Key Features:
+## Key Features
 - **Ease of Use**: Streamlit is known for its simplicity and ease of use. You  
   can create web applications with just a few lines of Python code.  
 - **Interactive Widgets**: It provides a variety of widgets (like sliders,  
@@ -15,7 +15,7 @@ the process of turning data scripts into shareable web applications with minimal
   machine learning libraries such as Pandas, NumPy, Matplotlib, and  
   Scikit-learn.
 
-## Common Uses:
+## Common Uses
 - *Data Visualization*: Creating interactive dashboards and visualizations to  
   explore and share data insights.  
 - *Machine Learning*: Developing and sharing machine learning models with  
@@ -33,7 +33,7 @@ consolidates and organizes data in a way that is easy to read, interpret, and
 interact with. Dashboards are used across various fields to monitor metrics,  
 track progress, and make data-driven decisions.  
 
-# Key Features:
+# Key Features
 - *Visual Representation*: Dashboards use charts, graphs, and other visual  
   elements to represent data, making it easier to understand trends and  
   patterns.  
@@ -45,7 +45,7 @@ track progress, and make data-driven decisions.
 - *Customization*: Dashboards can be customized to show specific metrics and  
   KPIs relevant to the user or organization.  
 
-# Common Uses:
+# Common Uses
 - *Business Intelligence*: Monitoring business metrics such as sales  
   performance, customer engagement, and financial health.  
 - *Operations*: Tracking operational metrics like production efficiency,  
@@ -56,6 +56,9 @@ track progress, and make data-driven decisions.
   resource utilization.  
 
 
+Streamlit appications are run with `streamlit run main.py`  
+
+
 ## Message
 
 ```python
@@ -63,5 +66,22 @@ import streamlit as st
 
 st.write("My first streamlit application")
 ```
+
+## Data table 
+
+```python
+import streamlit as st
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+
+# Display title and description
+st.title('Data Dashboard')
+st.write('This is a simple data dashboard using Streamlit.')
+
+# use table to display data
+st.table(df.head(15))
+```
+
 
 
