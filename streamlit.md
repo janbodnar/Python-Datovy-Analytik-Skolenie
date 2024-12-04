@@ -113,6 +113,44 @@ st.write('This is a simple data dashboard using Streamlit.')
 st.table(df.head(15))
 ```
 
+## Text input &  slider
+
+```python
+import streamlit as st
+
+st.title('Text input and slider')
+
+# Text input
+name = st.text_input('Enter your name:')
+
+# Slider
+age = st.slider('Select your age:', 0, 100, 25)
+
+# Button
+if st.button('Submit'):
+    st.write(f'Hello {name}, you are {age} years old!')
+```
+
+## Control number of rows with slider
+
+```python
+import streamlit as st
+import pandas as pd
+
+df = pd.read_csv('products.csv')
+
+st.title('Data Dashboard')
+
+# Set the default number of rows to display
+default_rows = 10
+
+# Create a slider to control the number of rows
+n = st.slider("Number of rows to display", 3, len(df), value=default_rows)
+
+# Display the DataFrame with the selected number of rows
+st.table(df.head(n))
+```
+
 ## Button 
 
 Streamlit reruns the script from the beginning on every user interaction, such as clicking a button.  
@@ -148,19 +186,14 @@ else:
     st.write('Click to generate random numbers')
 ```
 
---- 
 
-Show/hide dataframe
+## Checkbox to show/hide dataframe
 
 ```python
 import streamlit as st
 import pandas as pd
 
 st.title('Button to Display/Hide DataFrame')
-
-# Create two buttons
-show_button = st.button('Show DataFrame')
-hide_button = st.button('Hide DataFrame')
 
 # Sample DataFrame
 data = {
@@ -170,13 +203,12 @@ data = {
 }
 df = pd.DataFrame(data)
 
-# Logic to display or hide DataFrame based on button clicks
-if show_button:
+# Create a toggle button to control visibility
+show_df = st.checkbox('Show DataFrame')
+
+# Display or hide the DataFrame based on the toggle state
+if show_df:
     st.write(df)
-elif hide_button:
-    st.write('DataFrame hidden.')
-else:
-    st.write('Click  to display/hide the DataFrame.')
 ```
 
 ## Select box
@@ -189,23 +221,7 @@ selection = st.selectbox('Choose a number:', [1, 2, 3, 4, 5])
 st.write(f'Selected number: {selection}')
 ```
 
-## Text input &  slider
 
-```python
-import streamlit as st
-
-st.title('Text input and slider')
-
-# Text input
-name = st.text_input('Enter your name:')
-
-# Slider
-age = st.slider('Select your age:', 0, 100, 25)
-
-# Button
-if st.button('Submit'):
-    st.write(f'Hello {name}, you are {age} years old!')
-```
 
 ## Session state 
 
