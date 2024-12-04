@@ -234,12 +234,12 @@ Here's a breakdown of how this process works:
 
 Key Points:
 
-- *State Preservation:* Streamlit maintains a session state, allowing you to store variables
-  and data between reruns. This enables you to preserve the app's state and avoid
+- *State Preservation:* Streamlit maintains a session state, allowing you to store variables  
+  and data between reruns. This enables you to preserve the app's state and avoid  
   unnecessary recalculations.  
 - *Caching:* You can use Streamlit's caching mechanism to store the results of expensive  
-  computations and avoid redundant calculations during reruns.
-- *Event Handlers:* While Streamlit's automatic rerunning is convenient, you can also define
+  computations and avoid redundant calculations during reruns.  
+- *Event Handlers:* While Streamlit's automatic rerunning is convenient, you can also define  
    custom event handlers using functions like `st.button` or `st.form` to trigger specific actions.  
 
 
