@@ -7,6 +7,39 @@ Download and save as JSON and CSV.
 Use Copilot!
 
 
+
+## Most common values
+
+```python
+from collections import Counter
+
+grades_numeric = [1, 2, 1, 1, 3, 4, 4, 5, 1, 2, 3, 1, 1, 2, 3]
+grades_alpha = ['A', 'B', 'B', 'C', 'C', 'B', 'F', 'FX', 'C', 'D']
+
+# Find the most common elements
+counter_numeric = Counter(grades_numeric)
+counter_alpha = Counter(grades_alpha)
+
+# Get the most common elements and their counts
+most_common_numeric = counter_numeric.most_common()
+most_common_alpha = counter_alpha.most_common()
+
+# Extract the second and third most common values
+second_most_common_numeric = most_common_numeric[1][0]
+third_most_common_numeric = most_common_numeric[2][0]
+
+second_most_common_alpha = most_common_alpha[1][0]
+third_most_common_alpha = most_common_alpha[2][0]
+
+print(f"Second most common numeric grade: {second_most_common_numeric}")
+print(f"Third most common numeric grade: {third_most_common_numeric}")
+
+print(f"Second most common alphabetic grade: {second_most_common_alpha}")
+print(f"Third most common alphabetic grade: {third_most_common_alpha}")
+```
+
+
+
 ## Partitioning
 
 ```python
