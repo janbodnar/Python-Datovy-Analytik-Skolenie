@@ -6,16 +6,18 @@
 
 Dataset: `countries.csv`
 
-Easier  
 - list all countries in Europe
+- print total world population
 - extract 3 cols (name, capital, population) and 50 rows into `countries_3c_50r.csv`
 - print all continents
-- calculate all population in Europe  
-
-More difficult  
-- show the smallest country by area
-- show the three smallest countries by area
-
+- calculate all population in Europe
+- list countries with population > 300 mil
+- list countries with population < 10 mil
+- list top 10 European countries with largest populations
+- list the smallest country by area
+- list the three smallest countries by area
+- list the country with largest population
+- sum populations of all continents
 
 
 ## Write chart to Excel 
