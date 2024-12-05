@@ -327,3 +327,17 @@ df.drop(columns=['continent'], inplace=True)
 print(df.head(10).to_string(index=False))
 ```
 
+```python
+import pandas as pd
+
+file_name = 'countries.csv'
+
+# Read the CSV file into a DataFrame
+df = pd.read_csv(file_name)
+
+# Group by continent and sum the population
+population_by_continent = df.groupby('continent')['population'].sum()
+
+# Print the result
+print(population_by_continent)
+```
