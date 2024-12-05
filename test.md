@@ -6,6 +6,21 @@ Download and save as JSON and CSV.
 
 Use Copilot!
 
+Filter males in Legal & Finance
+
+```python
+import pandas as pd
+
+# Read data from the CSV file
+employees_df = pd.read_csv('employees.csv')
+
+# Filter for males in the Legal and Finance teams
+filtered_df = employees_df[(employees_df['Gender'] == 'Male') &
+                           (employees_df['Team'].isin(['Legal', 'Finance']))]
+
+print(filtered_df)
+```
+
 
 ## Converters
 
