@@ -6,12 +6,15 @@
 
 Dataset: `countries.csv`
 
+Easier  
 - list all countries in Europe
+- extract 3 cols (name, capital, population) and 50 rows into `countries_3c_50r.csv`
+- print all continents
+- calculate all population in Europe  
+
+More difficult  
 - show the smallest country by area
 - show the three smallest countries by area
-- extract 3 cols (name, capital, population) and 50 rows into `countries_3c_50r.csv`
-  
-
 
 
 
