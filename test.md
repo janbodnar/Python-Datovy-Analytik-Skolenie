@@ -8,6 +8,23 @@ Use Copilot!
 
 
 
+## Sort by multiple columns 
+
+```python
+import pandas as pd
+
+# Read data from the CSV file
+df = pd.read_csv('products.csv')
+
+# Sort the DataFrame by category and units_in_stock
+df_sorted = df.sort_values(by=['category', 'units_in_stock'], ascending=[True, False])
+
+# Display the sorted DataFrame
+print(df_sorted)
+```
+
+
+
 ## Most common values
 
 ```python
