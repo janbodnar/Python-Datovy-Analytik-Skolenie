@@ -142,6 +142,30 @@ print('*******************************************')
 print(df.tail(4))
 ```
 
+## The inplace attribute
+
+The `inplace` attribute is used in various functions to determine whether the operation   
+should modify the original DataFrame or return a new DataFrame with the changes applied. 
+ 
+`inplace=True`: Modifies the original DataFrame directly. No new DataFrame is returned1.
+`inplace=False` (default): Returns a new DataFrame with the changes applied, leaving the  
+  original DataFrame unchanged
+
+```python
+import pandas as pd
+
+file_name = 'countries.csv'
+
+df = pd.read_csv(file_name)
+
+df2 = df.query("continent == 'Europe'")
+print(df2)
+
+# df.query("continent == 'Europe'", inplace=True)
+# print(df)
+```
+
+
 ## Rename column
 
 ```python
