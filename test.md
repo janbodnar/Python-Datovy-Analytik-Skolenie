@@ -7,6 +7,7 @@
 Dataset: `countries.csv`
 
 - list all countries in Europe
+- show the smallest country by area
 - show the three smallest countries by area
 - extract 3 cols (name, capital, population) and 50 rows into `countries_3c_50r.csv`
   
