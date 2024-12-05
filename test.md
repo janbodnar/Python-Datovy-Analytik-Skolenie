@@ -7,6 +7,32 @@ Download and save as JSON and CSV.
 Use Copilot!
 
 
+## Converters
+
+Float to Decimal
+
+```python
+import pandas as pd
+from decimal import Decimal
+
+# Define the conversion function
+def to_decimal(value):
+    return Decimal(value)
+
+# Load the products dataset with converters for specific columns
+products_df = pd.read_csv('products.csv', converters={
+    'unit_price': to_decimal,
+})
+
+# Calculate the mean using the Decimal type
+mean_val = sum(products_df['unit_price']) / len(products_df)
+
+print(products_df.dtypes)
+print(type(mean_val))
+print("Mean unit price:", mean_val)
+```
+
+
 
 ## Sort by multiple columns 
 
