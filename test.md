@@ -2,6 +2,16 @@
 
 
 
+## Opakovanie
+
+Dataset: `countries.csv`
+
+- extract 3 cols (name, capital, population) and 50 rows into `countries_3s_50r.csv`
+
+
+
+
+
 ## Write chart to Excel 
 
 ```python
