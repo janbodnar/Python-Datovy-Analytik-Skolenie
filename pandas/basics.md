@@ -144,11 +144,11 @@ print(df.tail(4))
 
 ## The inplace attribute
 
-The `inplace` attribute is used in various functions to determine whether the operation   
-should modify the original DataFrame or return a new DataFrame with the changes applied. 
+The `inplace` attribute is used in various functions to determine whether the operation    
+should modify the original DataFrame or return a new DataFrame with the changes applied.   
  
-`inplace=True`: Modifies the original DataFrame directly. No new DataFrame is returned1.
-`inplace=False` (default): Returns a new DataFrame with the changes applied, leaving the  
+`inplace=True`: Modifies the original DataFrame directly. No new DataFrame is returned1.   
+`inplace=False` (default): Returns a new DataFrame with the changes applied, leaving the   
   original DataFrame unchanged
 
 ```python
