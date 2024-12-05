@@ -279,7 +279,7 @@ if ts:
 
 Riesenia:  
 
-```
+```python
 import pandas as pd
 
 file_name = 'countries.csv'
@@ -300,4 +300,30 @@ print(top_three_smallest_areas)
 ```
 
 
+Calculate Europe's population
+
+```python
+df.query('continent == "Europe"', inplace=True)
+print(df['population'].sum())
+```
+
+Print all continents
+
+```python
+df = pd.read_csv(file_name)
+print(set(df['continent']))
+```
+
+```python
+print(df[df['population'] > 300_000_000])
+print(df.query('population < 1_000_000'))
+```
+
+```python
+df.query('continent == "Europe"', inplace=True)
+df.sort_values(by=['population'], ascending=False, inplace=True)
+df.drop(columns=['continent'], inplace=True)
+
+print(df.head(10).to_string(index=False))
+```
 
