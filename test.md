@@ -7,6 +7,20 @@ Download and save as JSON and CSV.
 Use Copilot!
 
 
+## Partitioning
+
+```python
+from funcy import split
+
+values = [1, 2, -3, 4, 5, -6, 7, -8, 9, 10]
+
+neg, pos = split(lambda e: e < 0, values)
+
+print(list(neg))
+print(list(pos))
+```
+
+
 
 ## Riesenie s std kniznicami
 
