@@ -1,6 +1,6 @@
 # SQL 
 
-## Selecting All Data
+## Selecting all data
 
 ```sql
 SELECT * FROM countries;
@@ -14,6 +14,28 @@ SELECT name, capital FROM countries;
 ```
 This query retrieves only the `name` and `capital` columns from the `countries` table.
 
+## Select with regex
+
+```sql
+SELECT * FROM countries WHERE name ~ 'ia$';
+```
+
+
+## DROP TABLE
+
+```sql
+DROP TABLE countries;
+DROP TABLE IF EXISTS countries;
+```
+
+## Delete contents
+
+```sql
+DELETE FROM countries WHERE id = 1;
+DELETE FROM countries;
+TRUNCATE countries;
+```
+
 ## Filtering Data with `WHERE`
 
 ```sql
@@ -26,7 +48,15 @@ This query retrieves all rows where the `continent` is 'Europe'.
 ```sql
 SELECT * FROM countries ORDER BY population DESC;
 ```
+
 This query retrieves all rows sorted by the `population` column in descending order.
+
+```sql
+SELECT * FROM countries ORDER BY name;
+SELECT * FROM countries ORDER BY name ASC;
+SELECT * FROM countries ORDER BY name DESC;
+SELECT * FROM countries ORDER BY continent ASC, population DESC;
+```
 
 ## Counting Rows
 
@@ -41,6 +71,35 @@ This query counts the number of rows where the `continent` is 'Africa'.
 SELECT SUM(population) AS total_population FROM countries WHERE continent = 'Asia';
 ```
 This query sums the `population` of all rows where the `continent` is 'Asia'.
+
+## SUM/AVG functions
+
+```sql
+SELECT SUM(population) FROM countries LIMIT 3;
+SELECT AVG(population) FROM countries LIMIT 10;
+```
+
+## Distinct clause 
+
+```sql
+SELECT DISTINCT(continent) FROM countries;
+SELECT COUNT(DISTINCT continent) FROM countries;
+```
+
+## IN clause
+
+```sql
+SELECT * FROM countries WHERE id IN (2, 4, 6, 8, 10);
+SELECT * FROM countries WHERE id NOT IN (2, 4, 6, 8, 10);
+```
+
+## AND/OR
+
+```sql
+SELECT * FROM countries WHERE (id % 2 = 0) AND (id < 20);
+SELECT * FROM countries WHERE name SIMILAR TO '%ia' OR name SIMILAR TO '%an';
+```
+
 
 ## Grouping Data with `GROUP BY`
 
