@@ -20,6 +20,32 @@ This query retrieves only the `name` and `capital` columns from the `countries` 
 SELECT * FROM countries WHERE name ~ 'ia$';
 ```
 
+## Limiting output
+
+```sql
+SELECT * FROM countries LIMIT 10;
+SELECT * FROM countries LIMIT 10 OFFSET 5;
+```
+
+```sql
+SELECT * FROM countries FETCH FIRST 10 ROWS ONLY;
+```
+
+```sql
+SELECT * FROM countries
+OFFSET 5 ROWS
+FETCH NEXT 10 ROWS ONLY;
+```
+
+```sql
+SELECT * FROM countries
+ORDER BY population DESC
+FETCH FIRST 10 ROWS WITH TIES;
+```
+
+This query retrieves the first 10 rows but includes additional rows if they have  
+the same population as the 10th row.
+
 
 ## DROP TABLE
 
