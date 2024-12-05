@@ -277,6 +277,27 @@ if ts:
     print(sorted_users[:ts])
 ```
 
+Riesenia:  
+
+```
+import pandas as pd
+
+file_name = 'countries.csv'
+
+df = pd.read_csv(file_name)
+
+smallest_area_country = df.loc[df['area'].idxmin()]
+print(smallest_area_country)
+
+
+min_area = df['area'].min()
+smallest_area_country = df.query('`area` == @min_area')
+print(smallest_area_country)
+
+top_three_smallest_areas = df.nsmallest(3, 'area') 
+print("Top three countries with the smallest area:") 
+print(top_three_smallest_areas)
+```
 
 
 
