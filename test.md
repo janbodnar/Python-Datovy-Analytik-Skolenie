@@ -1,10 +1,53 @@
 # Priklady
 
-From URL  https://webcode.me/users.json 
 
-Download and save as JSON and CSV. 
 
-Use Copilot!
+## Write chart to Excel 
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+# Generate random data
+x = np.random.randint(100, size=(100))
+y = np.random.randint(100, size=(100))
+colors = np.random.randint(100, size=(100))
+sizes = 10 * np.random.randint(100, size=(100))
+
+# Create scatter plot
+plt.scatter(x, y, c=colors, s=sizes, alpha=0.5, cmap='nipy_spectral')
+plt.colorbar()
+
+# Save the chart as an image
+plt.savefig('scatter_plot.png')
+
+# Show the plot
+plt.show()
+
+# Create a Pandas DataFrame
+df = pd.DataFrame({
+    'x': x,
+    'y': y,
+    'colors': colors,
+    'sizes': sizes
+})
+
+# Write the DataFrame to an Excel file with the image
+with pd.ExcelWriter('chart_with_data.xlsx', engine='xlsxwriter') as writer:
+    df.to_excel(writer, sheet_name='Data', index=False)
+
+    # Access the XlsxWriter workbook and worksheet objects
+    workbook = writer.book
+    worksheet = writer.sheets['Data']
+
+    # Insert the image into the worksheet
+    worksheet.insert_image('E2', 'scatter_plot.png')
+```
+
+
+
+
 
 Filter males in Legal & Finance
 
