@@ -58,6 +58,18 @@ SELECT continent, COUNT(*) AS num_countries FROM countries GROUP BY continent HA
 This query counts the number of countries per continent and only returns  
 continents with more than 10 countries.  
 
+## Group and list countries
+
+The `STRING_AGG` function to concatenate the country names into a single string for 
+each continent, separated by a comma and a space.
+
+```sql
+SELECT continent, STRING_AGG(name, ', ') AS countries
+FROM countries
+GROUP BY continent
+ORDER BY continent;
+```
+
 ## Updating Data
 
 ```sql
@@ -99,6 +111,20 @@ FROM countries;
 
 This query categorizes countries based on their population size.
 
+```sql
+SELECT name, area,
+    CASE
+        WHEN area >= 1000000 THEN 'Very Large'
+        WHEN area >= 500000 AND area < 1000000 THEN 'Large'
+        WHEN area >= 100000 AND area < 500000 THEN 'Medium'
+        WHEN area >= 50000 AND area < 100000 THEN 'Small'
+        ELSE 'Very Small'
+    END AS size_category
+FROM countries;
+```
+
+This query classifies countries based on their area size.
+
 ## Window Functions
 
 ```sql
@@ -116,6 +142,24 @@ SELECT
     name AS country,
     population,
     RANK() OVER (ORDER BY population DESC) AS population_rank
+FROM
+    countries;
+```
+
+## Partition by
+
+This SQL query selects the continent, name (aliased as country), and population columns from the countries  
+table. It also uses the `ROW_NUMBER` window function to assign a unique rank to each country within its respective  
+continent based on population size, ordering from largest to smallest. The `PARTITION BY` clause ensures that the  
+ranking is calculated separately for each continent. The final result will include each country along with its  
+population and its rank within its continent based on population.  
+
+```sql
+SELECT
+    continent,
+    name AS country,
+    population,
+    ROW_NUMBER() OVER (PARTITION BY continent ORDER BY population DESC) AS population_rank
 FROM
     countries;
 ```
