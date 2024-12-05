@@ -119,6 +119,26 @@ SELECT * FROM countries WHERE id IN (2, 4, 6, 8, 10);
 SELECT * FROM countries WHERE id NOT IN (2, 4, 6, 8, 10);
 ```
 
+## BETWEEN clause 
+
+```sql
+SELECT * FROM countries WHERE population BETWEEN 1000000 AND 10000000;
+```
+
+Basic numeric range.  
+
+```sql
+SELECT * FROM countries
+WHERE population NOT BETWEEN 5000000 AND 20000000;
+```
+
+Using NOT. 
+
+```sql
+SELECT * FROM countries WHERE name BETWEEN 'E' AND 'K';
+```
+
+
 ## AND/OR
 
 ```sql
@@ -145,7 +165,7 @@ continents with more than 10 countries.
 
 ## Group and list countries
 
-The `STRING_AGG` function to concatenate the country names into a single string for 
+The `STRING_AGG` function to concatenate the country names into a single string for  
 each continent, separated by a comma and a space.
 
 ```sql
@@ -178,8 +198,15 @@ FROM countries
 WHERE population > (SELECT AVG(population) FROM countries);
 ```
 
-This query retrieves the names and populations of countries with a population
-greater than the average population of all countries.
+This query retrieves the names and populations of countries with a population  
+greater than the average population of all countries.  
+
+```sql
+SELECT name, capital
+FROM countries
+WHERE population BETWEEN (SELECT AVG(population) - 10000000 FROM countries)
+                      AND (SELECT AVG(population) + 10000000 FROM countries);
+```
 
 
 ## Using `CASE` Statements
