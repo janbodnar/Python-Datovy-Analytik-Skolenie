@@ -18,6 +18,7 @@ Dataset: `countries.csv`
 - list the three smallest countries by area
 - list the country with largest population
 - sum populations of all continents
+- count countries by continent
 
 
 ## Write chart to Excel 
