@@ -44,6 +44,52 @@ Dataset: `countries.csv`
 | Apply function | `df['column_name'].apply(lambda x: x*2)` | Applies a function to double the values in 'column_name'. |
 
 
+## Riesenia
+
+```python
+import pandas as pd
+
+
+file_name = 'countries.csv'
+df = pd.read_csv(file_name)
+
+# Group by continent and sum the population
+population_by_continent = df.groupby('continent')['population'].sum()
+
+# Print the result
+print(population_by_continent)
+
+
+# file_name = 'countries.csv'
+# df = pd.read_csv(file_name)
+
+# df.drop(columns=['area', 'continent'], inplace=True)
+# df.iloc[50:101].to_csv('countries_3c_50r.csv', index=False)
+
+# smallest_area_country = df.loc[df['area'].idxmin()]
+# print(smallest_area_country)
+
+# min_area = df['area'].min()
+# smallest_area_country = df.query('`area` == @min_area')
+# print(smallest_area_country)
+
+# smallest_area = df.nsmallest(1, 'area') 
+# print(smallest_area)
+
+# top_three_smallest_areas = df.nsmallest(3, 'area') 
+# print("Top three countries with the smallest area:") 
+# print(top_three_smallest_areas)
+
+# print(set(df['continent']))
+# print(df['continent'].unique())
+
+# total_world_population = df['population'].sum()
+# print(f'{total_world_population:,}')
+
+# df.query("continent == 'Europe'", inplace=True)
+# print(df)
+```
+
 
 
 ## Write chart to Excel 
