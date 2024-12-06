@@ -21,6 +21,33 @@ Dataset: `countries.csv`
 - count countries by continent
 
 
+
+## Common operations
+
+| Operation | Example | Description |
+|-----------|---------|-------------|
+| Display first `n` rows | `df.head(5)` | Shows the first 5 rows of the DataFrame. |
+| Display last `n` rows | `df.tail(5)` | Shows the last 5 rows of the DataFrame. |
+| Summary of DataFrame | `df.info()` | Provides a concise summary of the DataFrame, including data types and non-null counts. |
+| Descriptive statistics | `df.describe()` | Generates descriptive statistics for numerical columns. |
+| Access by labels | `df.loc[0:5, ['column_name1', 'column_name2']]` | Accesses rows 0 to 5 for specified columns. |
+| Access by positions | `df.iloc[0:5, 0:2]` | Accesses rows 0 to 5 for the first two columns. |
+| Query with boolean expression | `df[df['column_name'] > 50]` | Filters rows where 'column_name' is greater than 50. |
+| Drop columns | `df.drop(columns=['column_name'])` | Drops the specified column(s) from the DataFrame. |
+| Detect missing values | `df.isna()` | Detects missing values, returning a DataFrame of booleans. |
+| Fill missing values | `df.fillna(0)` | Fills missing values with 0. |
+| Group by column | `df.groupby('column_name').mean()` | Groups the DataFrame by 'column_name' and calculates the mean. |
+| Merge DataFrames | `df.merge(df2, on='column_name')` | Merges two DataFrames on 'column_name'. |
+| Sort by column | `df.sort_values(by='column_name')` | Sorts the DataFrame by 'column_name'. |
+| Pivot table | `df.pivot_table(values='value', index='idx', columns='cols')` | Creates a pivot table based on 'value', 'idx', and 'cols'. |
+| Apply function | `df['column_name'].apply(lambda x: x*2)` | Applies a function to double the values in 'column_name'. |
+
+Hope this makes things clearer! If you have any other requests, I'm here to help. 📊
+
+
+
+
+
 ## Write chart to Excel 
 
 ```python
