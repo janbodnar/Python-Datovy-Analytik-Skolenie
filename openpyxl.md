@@ -349,6 +349,25 @@ We get a reference to a sheet with the get_sheet_by_name method.
 print(sheet.title)
 ```
 
+Update:  
+
+```
+import openpyxl
+
+book = openpyxl.load_workbook('sheets.xlsx')
+
+# print(book.get_sheet_names())
+print(book.sheetnames)
+
+active_sheet = book.active
+# print(type(active_sheet))
+
+# sheet = book.sheetnames("March")
+# sheet = book.get_sheet_by_name("March")
+sheet = book["March"]
+print(sheet.title)
+```
+
 # Openpyxl Charts
 
 The openpyxl library supports creation of various charts, including bar charts,
