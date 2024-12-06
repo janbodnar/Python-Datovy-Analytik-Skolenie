@@ -351,7 +351,7 @@ print(sheet.title)
 
 Update:  
 
-```
+```python
 import openpyxl
 
 book = openpyxl.load_workbook('sheets.xlsx')
