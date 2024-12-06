@@ -475,12 +475,15 @@ if uploaded_file is not None:
 ---
 
 ```python
-
-import  streamlit as st
+import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
 
 st.title("CSV File Loader and Exporter to Local PostgreSQL")
+
+# Refresh button
+if st.button("Refresh Dashboard"):
+    st.experimental_rerun()
 
 # Function to upload CSV file
 uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
@@ -493,13 +496,14 @@ if uploaded_file is not None:
     st.write("File uploaded successfully!")
     st.write(df)
 
-    # Database connection parameters for local PostgreSQL
-    host = "localhost"
-    database = "testdb"
-    user = "postgres"
-    password = "postgres"
-    table_name = "military_spending"
-    
+    # Request database connection parameters
+    st.sidebar.subheader("Database Connection Parameters")
+    host = st.sidebar.text_input("Host", "localhost")
+    database = st.sidebar.text_input("Database", "testdb")
+    user = st.sidebar.text_input("User", "postgres")
+    password = st.sidebar.text_input("Password", type="password")
+    table_name = st.sidebar.text_input("Table Name", "Test")
+
     # Function to export DataFrame to PostgreSQL
     def export_to_postgresql(df, host, database, user, password, table_name):
         # Create the connection string
