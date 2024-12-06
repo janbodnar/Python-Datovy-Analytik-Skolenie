@@ -27,6 +27,20 @@ df_empty_stocks = df[df['units_in_stock'] == 0]
 print(df_empty_stocks.head().to_string(index=False))
 ```
 
+## Extract 
+
+```python
+import pandas as pd
+
+file_name = 'countries.csv'
+
+# Read the CSV file into a DataFrame
+df = pd.read_csv(file_name)
+
+df.drop(columns=['area', 'continent'], inplace=True)
+df.iloc[:50].to_csv('countries_3c_50r.csv', index=False)
+```
+
 ## Basic stats 
 
 ```python
