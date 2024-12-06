@@ -481,10 +481,6 @@ from sqlalchemy import create_engine
 
 st.title("CSV File Loader and Exporter to Local PostgreSQL")
 
-# Refresh button
-if st.button("Refresh Dashboard"):
-    st.experimental_rerun()
-
 # Function to upload CSV file
 uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 
