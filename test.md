@@ -34,6 +34,9 @@ Dataset: `countries.csv`
 | Drop columns | `df.drop(columns=['column_name'])` | Drops the specified column(s) from the DataFrame. |
 | Detect missing values | `df.isna()` | Detects missing values, returning a DataFrame of booleans. |
 | Fill missing values | `df.fillna(0)` | Fills missing values with 0. |
+| Find smallest countries by area |	df.nsmallest(5, 'area')	| Selects the 5 smallest countries by the 'area' column. |
+| Count countries by continent | df['continent'].value_counts()	| Counts the number of countries in each continent. |
+| Sum a column	| df['population'].sum() | Sums up the values in the 'population' column. |
 | Group by column | `df.groupby('column_name').mean()` | Groups the DataFrame by 'column_name' and calculates the mean. |
 | Merge DataFrames | `df.merge(df2, on='column_name')` | Merges two DataFrames on 'column_name'. |
 | Sort by column | `df.sort_values(by='column_name')` | Sorts the DataFrame by 'column_name'. |
