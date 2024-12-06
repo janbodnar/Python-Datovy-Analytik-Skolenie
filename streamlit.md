@@ -472,6 +472,52 @@ if uploaded_file is not None:
     st.write(df)
 ```
 
+---
+
+```python
+
+import  streamlit as st
+import pandas as pd
+from sqlalchemy import create_engine
+
+st.title("CSV File Loader and Exporter to Local PostgreSQL")
+
+# Function to upload CSV file
+uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
+
+if uploaded_file is not None:
+    # Read the CSV file
+    df = pd.read_csv(uploaded_file)
+
+    # Display the DataFrame
+    st.write("File uploaded successfully!")
+    st.write(df)
+
+    # Database connection parameters for local PostgreSQL
+    host = "localhost"
+    database = "testdb"
+    user = "postgres"
+    password = "postgres"
+    table_name = "military_spending"
+    
+    # Function to export DataFrame to PostgreSQL
+    def export_to_postgresql(df, host, database, user, password, table_name):
+        # Create the connection string
+        engine = create_engine(f'postgresql://{user}:{password}@{host}/{database}')
+        # Export DataFrame to PostgreSQL
+        df.to_sql(table_name, engine, if_exists='replace', index=False)
+
+    # Export the DataFrame to PostgreSQL
+    if st.button("Export to PostgreSQL"):
+        export_to_postgresql(df, host, database, user, password, table_name)
+        st.write("Data exported to PostgreSQL successfully!")
+
+else:
+    st.write("No file uploaded.")
+```
+
+
+
 Excel file:  
 
 ```python
