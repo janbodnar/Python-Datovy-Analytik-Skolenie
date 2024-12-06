@@ -1,7 +1,6 @@
 # Priklady
 
 
-
 ## Opakovanie
 
 Dataset: `countries.csv`
@@ -19,7 +18,6 @@ Dataset: `countries.csv`
 - list the country with largest population
 - sum populations of all continents
 - count countries by continent
-
 
 
 ## Common operations
@@ -41,9 +39,6 @@ Dataset: `countries.csv`
 | Sort by column | `df.sort_values(by='column_name')` | Sorts the DataFrame by 'column_name'. |
 | Pivot table | `df.pivot_table(values='value', index='idx', columns='cols')` | Creates a pivot table based on 'value', 'idx', and 'cols'. |
 | Apply function | `df['column_name'].apply(lambda x: x*2)` | Applies a function to double the values in 'column_name'. |
-
-Hope this makes things clearer! If you have any other requests, I'm here to help. 📊
-
 
 
 
