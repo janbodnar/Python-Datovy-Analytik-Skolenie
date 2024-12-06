@@ -165,4 +165,46 @@ plt.savefig('barchart.png')
 # plt.show()
 ```
 
+## Horizontal bar with values 
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+url = 'https://webcode.me/users.html'
+
+# Read the HTML table into a DataFrame
+df = pd.read_html(url)[0]
+print(df.columns)
+
+# Rename the columns for easier access
+df.rename(columns={'Id': 'id', 'First Name': 'first_name', 'Last Name': 'last_name',
+                   'Occupation': 'occupation', 'Salary ($)': 'salary'}, inplace=True)
+
+# Create full names using Pandas' vectorized string operations
+df['full_name'] = df['first_name'] + ' ' + df['last_name']
+print(df['full_name'])
+
+# Plot the horizontal bar chart
+plt.figure(figsize=(12, 14))
+bars = plt.barh(df['full_name'], df['salary'], color='skyblue', height=0.9)
+plt.xlabel('Salary ($)', fontsize=14)
+plt.ylabel('Full Name', fontsize=14)
+plt.title('Salaries', fontsize=16)
+plt.yticks(fontsize=10)
+
+# Add numbers to each bar
+plt.bar_label(bars, fmt='%d', fontsize=10, label_type='edge')
+
+# Add grid lines for better readability
+plt.grid(axis='x', linestyle='--', alpha=0.7)
+plt.tight_layout()
+
+# Save the plot as a PNG file (optional)
+# plt.savefig('barchart.png')
+
+# Show the plot
+plt.show()
+```
+
 
