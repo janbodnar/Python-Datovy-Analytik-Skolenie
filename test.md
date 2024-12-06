@@ -1,6 +1,11 @@
 # Priklady
 
 
+```sql
+CREATE TABLE countries(id serial PRIMARY KEY, name VARCHAR(255), capital VARCHAR(255), population INT, area DECIMAL(10, 2), continent VARCHAR(255));
+```
+
+
 ## Opakovanie
 
 Dataset: `countries.csv`
