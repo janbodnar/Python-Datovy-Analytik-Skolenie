@@ -96,6 +96,8 @@ for model in response.models:
 
 ## Ollama via OpenAI API
 
+Connect to the Ollama local models via OpenAI API, which became industry standard.  
+
 ```python
 import openai
 
