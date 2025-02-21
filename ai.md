@@ -36,6 +36,24 @@ revolutionizing the way we interact with technology.
 | **LaMDA**        | May 2021           | USA               | Conversational LLM      |
 
 
+## Simple chat 
+
+```python
+from ollama import chat
+
+# Define the input message
+message = {
+    "model": "phi4",
+    "messages": [{"role": "user", "content": "Is pluto a planet?"}]
+}
+
+# Use the Ollama chat function
+response = chat(model=message["model"], messages=message["messages"])
+
+# Print the response
+print(response["message"]["content"])
+```
+
 
 
 ## Ollama vision
