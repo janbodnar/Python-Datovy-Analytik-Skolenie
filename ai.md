@@ -62,3 +62,14 @@ print("Response:")
 print(response.choices[0].message.content)
 ```
 
+## Streaming example
+
+```python
+from ollama import chat
+
+prompt = "When was Alien movie released?"
+for chunk in chat(model="deepseek-r1", messages=[{"role": "user", "content": prompt}], stream=True):
+    print(chunk['message']['content'], end='', flush=True)
+```
+
+
