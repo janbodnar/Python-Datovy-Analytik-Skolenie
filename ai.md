@@ -3,33 +3,23 @@
 ## Models
 
 
-| **Name**       | **Date of Publishing** | **Country of Origin** | **Company Name**       | **Model Category**      |
-|----------------|------------------------|-----------------------|------------------------|-------------------------|
-| ChatGPT        | November 30, 2022      | USA                   | OpenAI                 | Conversational AI (Text)|
-| DeepSeek       | January 20, 2025       | USA                   | Microsoft              | Reasoning Model (Text)  |
-| Mistral        | September 27, 2023     | France                | Mistral AI             | Open-Source (Text)      |
-| Phi            | April 23, 2024         | USA                   | Anthropic              | Both (Text)             |
-| GPT-4o         | May 13, 2024           | USA                   | OpenAI                 | Multimodal (Text & Vision)|
-| Claude 3.5     | June 20, 2024          | USA                   | Anthropic              | Conversational AI (Text)|
-| Grok-1         | November 4, 2023       | USA                   | Stability AI           | Open-Source (Text)      |
-| PaLM 2         | May 10, 2023           | USA                   | Google                 | Open-Source (Text)      |
-| Falcon 180B    | September 6, 2023      | UAE                   | Technology Innovation Institute | Open-Source (Text)      |
-| Stable LM 2    | January 19, 2024       | USA                   | Stability AI           | Open-Source (Text)      |
-| Gemini 1.5     | February 2, 2024       | USA                   | Google                 | API (Text)              |
-| Llama 3.1      | June 23, 2024          | USA                   | Meta                   | Open-Source (Text)      |
-| Mixtral 8x22B  | April 10, 2024         | France                | Mistral AI             | Open-Source (Text)      |
-| Inflection-2.5 | March 10, 2024         | USA                   | Inflection AI          | Proprietary (Text)      |
-| Jamba          | March 29, 2024         | Israel                | AI21 Labs              | Open-Source (Text)      |
-| Command R      | March 11, 2024         | Canada                | Cohere                 | Both (Text & Vision)    |
-| Gemma          | February 21, 2024      | USA                   | EleutherAI             | Open-Source (Text)      |
-| XGen-7B        | July 3, 2023           | USA                   | Salesforce             | Open-Source (Text)      |
-| DBRX           | March 27, 2024         | USA                   | n/a                    | Open-Source (Text)      |
-| Pythia         | February 13, 2023      | USA                   | EleutherAI             | Open-Source (Text)      |
-| Sora           | February 15, 2024      | USA                   | Amazon                 | API (Text)              |
-| Alpaca 7B      | March 13, 2023         | USA                   | Stanford University    | Open-Source (Text)      |
-| Nemotron-4     | June 14, 2024          | USA                   | n/a                    | Open-Source (Text)      |
-
-I hope this provides all the information you need! If you have any more questions or need further details, feel free to ask. 😊
+| Name             | Date of Publishing | Country of Origin | Model Category          |
+|------------------|--------------------|-------------------|-------------------------|
+| **ChatGPT**      | November 2022      | USA               | General-purpose LLM     |
+| **GPT-4**        | March 2023         | USA               | Advanced multi-modal LLM|
+| **DeepSeek R1**  | January 2025       | China             | General-purpose LLM     |
+| **Mistral 7B**   | September 2023     | France            | Open-weight LLM         |
+| **Claude 3.5**   | June 2024          | USA               | Safety-focused LLM      |
+| **Grok-1**       | November 2023      | USA               | Open-source LLM         |
+| **PaLM 2**       | May 2023           | USA               | Multilingual LLM        |
+| **Falcon 180B**  | September 2023     | UAE               | Open-weight LLM         |
+| **Gemini 1.5**   | February 2024      | USA               | Multimodal LLM          |
+| **Llama 2**      | July 2023          | USA               | Open-source LLM         |
+| **Command R**    | 2024               | Canada            | Retrieval-augmented LLM |
+| **Phi-2**        | December 2023      | USA               | Small-scale LLM         |
+| **GPT-Neo**      | March 2021         | USA               | Open-source LLM         |
+| **BERT**         | October 2018       | USA               | Bidirectional Encoder    |
+| **LaMDA**        | May 2021           | USA               | Conversational LLM      |
 
 
 
