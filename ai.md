@@ -156,7 +156,7 @@ MODEL = f"cardiffnlp/twitter-roberta-base-sentiment-latest"
 tokenizer = AutoTokenizer.from_pretrained(MODEL)
 config = AutoConfig.from_pretrained(MODEL)
 # PT
-model = AutoModelForSequenceClassification.from_pretrained(MODEL)a
+model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 # model.save_pretrained(MODEL)
 # text = "Covid cases are increasing fast!"
 text = "That was a trash movie."
