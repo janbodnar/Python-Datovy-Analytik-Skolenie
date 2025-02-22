@@ -40,10 +40,11 @@ revolutionizing the way we interact with technology.
 
 - `https://chatgpt.com` - recent leader in AI  
 - `https://venice.ai` - focus on privacy
+- `https://playground.allenai.org/` - open source, academic LLM
 - `https://openrouter.ai` - connecting multiple LLM services, including free ones
 - `https://www.perplexity.ai` - deep research and instant answers
 - `https://abacus.ai` - one superasistant
-- `https://console.groq.com/` - generous, free access to top LLMs
+- `https://console.groq.com` - generous, free access to top LLMs
 - `https://chat.deepseek.com` - excellent Chinese model
 - `https://github.com/cheahjs/free-llm-api-resources` - free API resources
 
