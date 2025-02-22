@@ -36,6 +36,18 @@ revolutionizing the way we interact with technology.
 | **LaMDA**        | May 2021           | USA               | Conversational LLM      |
 
 
+## Web interfaces 
+
+- `https://chatgpt.com` - recent leader in AI  
+- `https://venice.ai` - focus on privacy
+- `https://openrouter.ai` - connecting multiple LLM services, including free ones
+- `https://www.perplexity.ai` - deep research and instant answers
+- `https://abacus.ai` - one superasistant
+- `https://console.groq.com/` - generous, free access to top LLMs
+- `https://chat.deepseek.com` - excellent Chinese model
+- `https://github.com/cheahjs/free-llm-api-resources` - free API resources
+
+
 ## Simple chat 
 
 ```python
