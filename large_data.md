@@ -101,6 +101,20 @@ print(final_result)
 
 ## Optimization
 
+Optimizing data types in Pandas is crucial for improving performance and reducing memory usage, 
+especially when working with large datasets. By default, Pandas infers data types, but sometimes  
+it uses more memory than necessary. By explicitly specifying data types, you can save memory and 
+speed up operations.
+
+Explanation:
+
+ - Integer Columns: Use smaller integer types (e.g., int8, int16, int32, int64) based on the
+   range of values in the column.
+ - Floating-Point Columns: Use smaller floating-point types (e.g., float32 instead of float64)
+   if precision is not critical.
+ - Categorical Columns: Convert columns with a limited number of unique values to the
+   category data type.
+
 ```python
 import pandas as pd
 import numpy as np
@@ -137,4 +151,9 @@ memory_optimized = df_optimized.memory_usage(deep=True).sum()
 print(f"Memory usage with optimized data types: {memory_optimized / 1024 ** 2:.2f} MB")
 ```
 
-
+```
+py main.py
+sample_data.csv has been generated successfully!
+Memory usage with default data types: 59.13 MB
+Memory usage with optimized data types: 8.58 MB
+```
