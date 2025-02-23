@@ -13,9 +13,9 @@ efficiently than traditional CSV files.
     datasets without loading the entire dataset into memory.
 
 * Data Processing Techniques:
-Chunking: Processing data in smaller chunks can help manage memory usage effectively.  
-Vectorization: Leveraging vectorized operations with libraries like NumPy can significantly  
-speed up data processing.
+  - Chunking: Processing data in smaller chunks can help manage memory usage effectively.  
+  - Vectorization: Leveraging vectorized operations with libraries like NumPy can significantly  
+    speed up data processing.
 
 * Leveraging Databases:
 SQL Databases: Storing large datasets in databases and querying only the necessary data can   
