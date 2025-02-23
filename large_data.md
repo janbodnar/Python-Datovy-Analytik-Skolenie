@@ -7,10 +7,10 @@ Parquet and HDF5: These formats are optimized for performance and can handle lar
 efficiently than traditional CSV files.  
 
 * Utilizing Efficient Libraries:
- - `Dask`: This library extends pandas and NumPy functionalities to support parallel computing, enabling  
-   operations on datasets that don't fit into memory. 
- - `Vaex`: Vaex is optimized for memory-mapped data, enabling out-of-core operations on large
-   datasets without loading the entire dataset into memory.
+  - `Dask`: This library extends pandas and NumPy functionalities to support parallel computing, enabling  
+    operations on datasets that don't fit into memory. 
+  - `Vaex`: Vaex is optimized for memory-mapped data, enabling out-of-core operations on large
+    datasets without loading the entire dataset into memory.
 
 * Data Processing Techniques:
 Chunking: Processing data in smaller chunks can help manage memory usage effectively.  
