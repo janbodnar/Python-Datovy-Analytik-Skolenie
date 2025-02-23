@@ -46,6 +46,7 @@ revolutionizing the way we interact with technology.
 - `https://abacus.ai` - one superasistant
 - `https://console.groq.com` - generous, free access to top LLMs
 - `https://chat.deepseek.com` - excellent Chinese model
+- `https://chat.qwenlm.ai/` - Chinese model from Alibaba
 - `https://github.com/cheahjs/free-llm-api-resources` - free API resources
 
 
