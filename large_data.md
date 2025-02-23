@@ -204,7 +204,7 @@ def lazy_calculate_squares(numbers):
         yield n * n
 
 def main():
-    numbers = range(1, 1000000)
+    numbers = range(1, 3_000_000)
     squares = lazy_calculate_squares(numbers)
     # Simulate doing something with the squares
     total = sum(squares)
@@ -219,6 +219,77 @@ if __name__ == "__main__":
     stats.print_stats()
 ```
 
+## yield 
 
+The `yield` keyword in Python is used to create a generator. Generators are special functions   
+that return an iterator, which can be iterated over one value at a time. Unlike a standard   
+function that returns a single value and exits, a generator can yield multiple values, pausing   
+its state between each yield and resuming where it left off when the next value is requested.
+
+Here's a simple example to illustrate the use of `yield`:
+
+```python
+def simple_generator():
+    yield 1
+    yield 2
+    yield 3
+
+# Create a generator object
+gen = simple_generator()
+
+# Iterate through the generator
+for value in gen:
+    print(value)
+```
+
+In this example, the generator function `simple_generator` yields values 1, 2, and 3 one by one.   
+When we create the generator object `gen` and iterate through it, the function is paused at each  
+`yield` statement, and the yielded value is returned. When the next value is requested, the function  
+resumes execution from where it left off.
+
+### Advantages of Using `yield`
+* **Memory Efficiency**: Generators only produce one item at a time, on-the-fly, instead of generating  
+   and storing an entire list in memory. This can be a significant advantage when dealing with large datasets.  
+* **Improved Performance**: Since values are generated as needed, the initial computation can be faster,  
+  and you avoid the overhead of creating and storing an entire list.  
+* **Lazy Evaluation**: Values are computed only when they are needed, allowing for more efficient use of resources.  
+  This can lead to performance improvements, especially in scenarios where not all values are needed or  
+  if the computation is expensive.  
+
+To put it into context with our previous example:
+
+### Without Lazy Evaluation
+
+```python
+def calculate_squares(numbers):
+    result = []
+    for n in numbers:
+        result.append(n * n)
+    return result
+```
+
+In this case, all the squares are computed and stored in memory at once. For large datasets,  
+this can be inefficient both in terms of time and memory usage.  
+
+### With Lazy Evaluation
+```python
+def lazy_calculate_squares(numbers):
+    for n in numbers:
+        yield n * n
+```
+
+Here, the squares are generated one by one as they are needed. This approach is more  
+memory-efficient and can lead to better performance, particularly when working with large datasets.
+
+### Why It Is More Effective
+- **Reduced Memory Usage**: Since values are generated on-the-fly, there's no need to  
+  allocate memory for the entire list of values.
+- **Better Performance**: By avoiding unnecessary computations and memory allocations,  
+ generators can improve the overall performance of your program.
+- **Scalability**: Generators can handle large datasets more gracefully since they do  
+  not require the entire dataset to be loaded into memory at once.
+
+In summary, using `yield` and generators can lead to more efficient and scalable code,   
+particularly when dealing with large datasets or computations.
 
 
