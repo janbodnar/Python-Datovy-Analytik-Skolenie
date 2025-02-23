@@ -2,8 +2,8 @@
 
 
 
-* Efficient Data Storage Formats:
-Parquet and HDF5: These formats are optimized for performance and can handle  
+* Efficient Data Storage Formats
+Parquet and HDF5: These formats are optimized for performance and can handle   
 large datasets more efficiently than traditional CSV files.  
 
 * Utilizing Efficient Libraries:
