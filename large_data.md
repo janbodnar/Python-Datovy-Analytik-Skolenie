@@ -101,18 +101,18 @@ print(final_result)
 
 ## Optimization
 
-Optimizing data types in Pandas is crucial for improving performance and reducing memory usage, 
-especially when working with large datasets. By default, Pandas infers data types, but sometimes  
-it uses more memory than necessary. By explicitly specifying data types, you can save memory and 
+Optimizing data types in Pandas is crucial for improving performance and reducing memory usage,  
+especially when working with large datasets. By default, Pandas infers data types, but sometimes   
+it uses more memory than necessary. By explicitly specifying data types, you can save memory and  
 speed up operations.
 
 Explanation:
 
- - Integer Columns: Use smaller integer types (e.g., int8, int16, int32, int64) based on the
+ - Integer Columns: Use smaller integer types (e.g., int8, int16, int32, int64) based on the 
    range of values in the column.
- - Floating-Point Columns: Use smaller floating-point types (e.g., float32 instead of float64)
+ - Floating-Point Columns: Use smaller floating-point types (e.g., float32 instead of float64)  
    if precision is not critical.
- - Categorical Columns: Convert columns with a limited number of unique values to the
+ - Categorical Columns: Convert columns with a limited number of unique values to the  
    category data type.
 
 ```python
@@ -157,3 +157,68 @@ sample_data.csv has been generated successfully!
 Memory usage with default data types: 59.13 MB
 Memory usage with optimized data types: 8.58 MB
 ```
+
+## Lazy evaluation
+
+Lazy evaluation allows computations to be delayed until their results are needed, which can   
+save time and memory in certain situations. I'll create two Python examples: one with lazy   
+evaluation and one without. We will then use the cProfile module to compare the performance.  
+
+No lazy:
+
+```python
+import cProfile
+import pstats
+
+def calculate_squares(numbers):
+    result = []
+    for n in numbers:
+        result.append(n * n)
+    return result
+
+def main():
+    numbers = range(1, 3_000_000)
+    squares = calculate_squares(numbers)
+    # Simulate doing something with the squares
+    total = sum(squares)
+    print(total)
+
+if __name__ == "__main__":
+    profiler = cProfile.Profile()
+    profiler.enable()
+    main()
+    profiler.disable()
+    stats = pstats.Stats(profiler).sort_stats('cumulative')
+    stats.print_stats()
+```
+
+
+Lazy:  
+
+```python
+import cProfile
+import pstats
+
+def lazy_calculate_squares(numbers):
+    for n in numbers:
+        yield n * n
+
+def main():
+    numbers = range(1, 1000000)
+    squares = lazy_calculate_squares(numbers)
+    # Simulate doing something with the squares
+    total = sum(squares)
+    print(total)
+
+if __name__ == "__main__":
+    profiler = cProfile.Profile()
+    profiler.enable()
+    main()
+    profiler.disable()
+    stats = pstats.Stats(profiler).sort_stats('cumulative')
+    stats.print_stats()
+```
+
+
+
+
