@@ -3,6 +3,12 @@
 
 ## Multiple data sources
 
+We have data in three data sources:
+
+- `https://webcode.me/byty.csv`
+- `byty.xlsx` file
+- `byty` table in `test.db`
+
 
 the `create_excel_file.py`:
 
