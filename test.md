@@ -1,6 +1,151 @@
 # Priklady
 
 
+## Multiple data sources
+
+
+the `create_excel_file.py`:
+
+```python
+import openpyxl
+
+# Create a new workbook and select the active worksheet
+workbook = openpyxl.Workbook()
+worksheet = workbook.active
+
+# Set the headers
+headers = ["id", "typ", "mesto", "cena"]
+worksheet.append(headers)
+
+# Add the data
+data = [
+    [1, "1i", "Košice", 69000],
+    [2, "2i", "Michalovce", 74500],
+    [3, "1i", "Prešov", 87000],
+    [4, "3i", "Košice", 120000],
+    [5, "4i", "Košice", 140000],
+    [6, "2i", "Bardejov", 87000]
+]
+
+for row in data:
+    worksheet.append(row)
+
+# Save the workbook
+workbook.save("byty.xlsx")
+print("Excel file 'byty.xlsx' created successfully!")
+```
+
+the `create_db_table.py`:
+
+```python
+import sqlite3
+
+con = sqlite3.connect('test.db')
+
+with con:
+    
+    cur = con.cursor()    
+    cur.execute("CREATE TABLE byty(id INTEGER PRIMARY KEY, typ TEXT, mesto TEXT, cena INT)")
+    cur.execute("INSERT INTO byty(typ, mesto, cena) VALUES('1i', 'Bratislava', 99800)")
+    cur.execute("INSERT INTO byty(typ, mesto, cena) VALUES('2i', 'Bratislava', 124000)")
+    cur.execute("INSERT INTO byty(typ, mesto, cena) VALUES('3i', 'Bratislava', 230000)")
+    cur.execute("INSERT INTO byty(typ, mesto, cena) VALUES('1i', 'Bratislava', 119000)")
+    cur.execute("INSERT INTO byty(typ, mesto, cena) VALUES('2i', 'Bratislava', 250800)")
+    cur.execute("INSERT INTO byty(typ, mesto, cena) VALUES('1i', 'Bratislava', 90800)")
+```
+
+
+
+```python
+import sqlite3
+import openpyxl
+import requests
+import csv
+import uuid
+from collections import namedtuple
+from itertools import groupby
+
+
+Byt = namedtuple('Byt', 'id typ mesto cena')
+
+byty = []
+
+
+def read_db():
+    with sqlite3.connect('test.db') as con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM byty")
+        rows = cur.fetchall()
+        for row in rows:
+            byty.append(row)
+
+
+def read_excel():
+
+    workbook = openpyxl.load_workbook('byty.xlsx')
+    worksheet = workbook.active
+
+    for row in worksheet.iter_rows(min_row=2, values_only=True):
+        byty.append(row)
+
+
+def fetch_csv():
+
+    url = 'https://webcode.me/byty.csv'
+    resp = requests.get(url)
+
+    resp.raise_for_status()
+
+    data = resp.text
+
+    reader = csv.DictReader(data.splitlines())
+    byty_csv = [(row['id'], row['typ'], row['mesto'], int(row['cena']))
+                for row in reader]
+
+    byty.extend(byty_csv)
+
+
+read_db()
+read_excel()
+fetch_csv()
+
+
+byty_cleaned = [Byt(uuid.uuid4(), e[1], e[2], e[3]) for e in byty]
+
+sorted_cena = sorted(byty_cleaned, key=lambda x: x.cena)
+
+print('sorted by cena')
+
+for e in sorted_cena:
+    print(e)
+
+print('---------------------------------')
+
+print('grouped by mesto')
+
+sorted_mesto = sorted(byty_cleaned, key=lambda x: x.mesto)
+grouped_mesto = groupby(sorted_mesto, key=lambda x: x.mesto)
+
+for mesto, group in grouped_mesto:
+    print(mesto)
+    for e in group:
+        print(e)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```sql
 CREATE TABLE countries(id serial PRIMARY KEY, name VARCHAR(255), capital VARCHAR(255), population INT, area DECIMAL(10, 2), continent VARCHAR(255));
 ```
