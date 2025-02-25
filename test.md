@@ -135,15 +135,7 @@ for mesto, group in grouped_mesto:
 
 
 
-
-
-
-
-
-
-
-
-
+## The countries DDL
 
 
 ```sql
