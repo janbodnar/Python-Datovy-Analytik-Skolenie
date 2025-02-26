@@ -15,6 +15,21 @@ titanic_df = pd.read_csv('titanic.csv')
 print(titanic_df.head())
 ```
 
+## Show all rows
+
+```python
+import pandas as pd
+
+# Load your dataset
+titanic_df = pd.read_csv('titanic.csv')
+
+# Set the option to display all rows
+pd.set_option('display.max_rows', None)
+
+# Display the dataframe
+print(titanic_df)
+```
+
 ## Check for missing values 
 
 ```python
