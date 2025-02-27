@@ -1,5 +1,24 @@
 # Priklady
 
+## Get SHMU data
+
+```python
+import pandas
+
+# pip install pandas lxml 
+
+url = "https://www.shmu.sk/sk/?page=1&id=hydro_vod_all&station_id=5127"
+
+df_list = pandas.read_html(url)
+
+df = df_list[1]
+
+# Display the DataFrame
+df.to_csv('shmu.csv', index=False)
+```
+
+
+
 
 ## Generate users CSV
 
