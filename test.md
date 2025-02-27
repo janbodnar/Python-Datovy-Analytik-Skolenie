@@ -76,6 +76,27 @@ df['entries'] = df['entries'].fillna(0)
 df.to_csv('mock_data.csv', index=False)
 ```
 
+```python
+import pandas as pd
+
+df = pd.read_csv('mock_data.csv')
+
+# Drop columns with all blank values
+df = df.drop(columns=['blank1', 'blank2'])
+
+# Replace None with 0 in 'subcr' and 'entries' columns
+df['subcr'] = df['subcr'].fillna(0)
+df['entries'] = df['entries'].fillna(0)
+
+# print(df)
+
+# df.to_csv('mock_data2.csv', index=False)
+
+from sqlalchemy import create_engine
+engine = create_engine('postgresql://postgres:postgres@localhost:5432/testdb')
+df.to_sql('mock_data', engine)
+```
+
 
 
 
