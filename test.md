@@ -1,5 +1,37 @@
 # Priklady
 
+## Correlation
+
+```python
+import statistics
+import csv
+
+# orbital_period = [88, 225, 365, 687, 4331, 10_756, 30_687, 60_190]    # days
+# dist_from_sun = [58, 108, 150, 228, 778, 1_400, 2_900, 4_500] # million km
+
+user_age = []
+user_income = []
+
+filename = 'data.csv'
+
+with open(filename, 'r') as fd:
+
+    reader = csv.DictReader(fd)
+
+    for row in reader:
+        age = int(row['Age'])
+        income = int(row['Income($)'])
+
+        user_age.append(age)
+        user_income.append(income)
+
+print(user_age)
+print(user_income)
+
+cor = statistics.correlation(user_age, user_income, method='ranked')
+print(cor)
+```
+
 
 ## Multiple data sources
 
