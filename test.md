@@ -1,5 +1,41 @@
 # Priklady
 
+```python
+import csv
+import psycopg
+
+
+file_name = 'mock_data.csv'
+users = []
+
+
+with open(file_name, 'r') as fd:
+
+    reader = csv.DictReader(fd)
+
+    for line in reader:
+
+        row = int(line['id']), line['first_name'], line['last_name'], line['active'], line['entries'], line['DoB']
+
+        users.append(row)
+
+
+cs = "dbname='testdb' user='postgres' password='postgres'"
+
+with psycopg.connect(cs) as con:
+        
+    with con.cursor() as cur:
+
+        cur.execute("DROP TABLE IF EXISTS users_mock")
+        cur.execute(
+            "CREATE TABLE users_mock(id SERIAL PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), active VARCHAR(10), entries VARCHAR(10), DoB VARCHAR(10))")
+
+        query = "INSERT INTO users_mock (id, first_name, last_name, active, entries, dob) VALUES (%s, %s, %s, %s, %s, %s)"
+        cur.executemany(query, users)
+```
+
+
+
 ## Get SHMU data
 
 ```python
