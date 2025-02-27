@@ -102,7 +102,7 @@ df['entries'] = df['entries'].fillna(0)
 
 # print(df)
 
-df.to_csv('mock_data.csv', index=False)
+df.to_csv('mock_data2.csv', index=False)
 ```
 
 ```python
