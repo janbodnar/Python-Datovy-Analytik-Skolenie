@@ -29,6 +29,29 @@ with open(file_name, 'w') as fd:
     print('file successfully created')
 ```
 
+## Copy users.csv into database table
+
+```python
+import psycopg
+
+cs = "dbname='testdb' user='postgres' password='postgres'"
+with psycopg.connect(cs) as con:
+
+    with con.cursor() as cur:
+
+        cur.execute('DROP TABLE IF EXISTS users')
+        cur.execute('CREATE TABLE users(id SERIAL PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), email VARCHAR(255))')
+
+        with open('users.csv', 'r') as f:
+
+            with cur.copy("COPY users FROM STDIN WITH CSV HEADER") as copy:
+
+                for line in f:
+                    copy.write(line)
+```
+
+
+
 
 
 ## Copy function
