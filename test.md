@@ -1,5 +1,30 @@
 # Priklady
 
+## get username/password from env variables
+
+```python
+import os
+import psycopg
+
+
+username = os.environ.get('DB_USERNAME')
+password = os.environ.get('DB_PASSWORD')
+
+cs = f"dbname='testdb' user={username} password={password}"
+
+with psycopg.connect(cs) as con:
+        
+        with con.cursor() as cur:
+    
+            cur.execute("SELECT * FROM cars")
+            rows = cur.fetchall()
+
+            for row in rows:
+                print(f"{row[0]} {row[1]} {row[2]}")
+```
+
+
+
 ```python
 import csv
 import psycopg
