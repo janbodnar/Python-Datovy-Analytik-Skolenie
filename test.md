@@ -1,6 +1,36 @@
 # Priklady
 
 
+## Generate users CSV
+
+```python
+import faker
+
+
+file_name = 'users.csv'
+
+faker = faker.Faker()
+
+i = 1
+
+with open(file_name, 'w') as fd:
+
+    fd.write(f'id,first_namne,last_name,email\n')
+
+    for _ in range(150_000):
+        first_name = faker.first_name()
+        last_name = faker.last_name()
+        email = faker.email()
+
+        fd.write(f'{i},{first_name},{last_name},{email}\n')
+        
+        i += 1
+
+    print('file successfully created')
+```
+
+
+
 ## Copy function
 
 
