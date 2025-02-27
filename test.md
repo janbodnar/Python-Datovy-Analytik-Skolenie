@@ -60,6 +60,35 @@ with psycopg.connect(cs) as con:
 ```
 
 ```python
+import csv
+
+file_name = 'mock_data.csv'
+users = []
+
+with open(file_name, 'r') as fd:
+    reader = csv.DictReader(fd)
+    
+    for line in reader:
+        # Drop columns with all blank values
+        cleaned_line = {k: v for k, v in line.items() if v is not None}
+        
+        # Replace None with 0 in 'subcr' and 'entries' columns
+        if cleaned_line['subcr'] == '':
+            cleaned_line['subcr'] = '0'
+        if cleaned_line['entries'] == '':
+            cleaned_line['entries'] = '0'
+        
+        row = (int(cleaned_line['id']), cleaned_line['first_name'], cleaned_line['last_name'], cleaned_line['active'], cleaned_line['subcr'], cleaned_line['entries'], cleaned_line['DoB'])
+        
+        users.append(row)
+
+# Print the cleaned data
+for user in users:
+    print(user)
+```
+
+
+```python
 import pandas as pd
 
 df = pd.read_csv('mock_data.csv')
