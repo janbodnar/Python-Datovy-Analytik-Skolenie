@@ -196,9 +196,7 @@ with psycopg.connect(cs) as con:
         
         with con.cursor() as cur:
     
-            cur = con.cursor()
             cur.execute("SELECT * FROM cars")
-
             rows = cur.fetchall()
 
             for row in rows:
