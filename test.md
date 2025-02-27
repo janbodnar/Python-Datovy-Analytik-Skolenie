@@ -59,6 +59,24 @@ with psycopg.connect(cs) as con:
         cur.executemany(query, users)
 ```
 
+```python
+import pandas as pd
+
+df = pd.read_csv('mock_data.csv')
+
+# Drop columns with all blank values
+df = df.drop(columns=['blank1', 'blank2'])
+
+# Replace None with 0 in 'subcr' and 'entries' columns
+df['subcr'] = df['subcr'].fillna(0)
+df['entries'] = df['entries'].fillna(0)
+
+# print(df)
+
+df.to_csv('mock_data.csv', index=False)
+```
+
+
 
 
 ## Get SHMU data
