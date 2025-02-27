@@ -1,5 +1,30 @@
 # Priklady
 
+
+## Copy function
+
+
+```python
+import psycopg
+
+cs = "dbname='testdb' user='postgres' password='postgres'"
+with psycopg.connect(cs) as con:
+
+    with con.cursor() as cur:
+
+        cur.execute('DROP TABLE IF EXISTS cars2')
+        cur.execute('CREATE TABLE cars2(id SERIAL PRIMARY KEY, name VARCHAR(255), price INTEGER)')
+
+        with open('cars.csv', 'r') as f:
+
+            with cur.copy("COPY cars2 FROM STDIN WITH CSV HEADER") as copy:
+
+                for line in f:
+                    copy.write(line)
+```
+
+
+
 ## Correlation
 
 ```python
