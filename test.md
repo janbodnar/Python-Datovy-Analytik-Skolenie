@@ -1,29 +1,26 @@
 # Priklady
 
 
-Below are 10 SQL tasks designed for your students based on the products dataset in PostgreSQL.  
-These tasks range from basic to intermediate difficulty, focusing on querying, filtering, aggregation, and  
-joining (with a hypothetical second table). Each task includes a description and an expected outcome to guide 
-students. I’ll assume the products table has been created as per the previous SQL code.
 
 ## Tasks 
 
 ### Task 1: Retrieve All Products
-Description: Write a query to retrieve all columns for all products in the products table, ordered by id.
+Description: Write a query to retrieve all columns for all products in the products table, ordered by id.  
 Expected Outcome: A result set with 77 rows, showing id, product_name, category, unit_price, and units_in_stock,  
-sorted by id ascending.
+sorted by id ascending.  
 Hint: Use SELECT * and ORDER BY.
 
 ### Task 2: Find Expensive Products
 Description: Write a query to find all products with a unit_price greater than $50, displaying only product_name  
 and unit_price, ordered by unit_price descending.  
 Expected Outcome: 10 rows, including products like "Côte de Blaye" ($263.50), "Thüringer Rostbratwurst" ($123.79), etc.  
-Hint: Use WHERE with a condition and ORDER BY.
+Hint: Use WHERE with a condition and ORDER BY.  
 
-### Task 3: Count Products by Category
-Description: Write a query to count the number of products in each category, displaying the category and the count, ordered alphabetically by category.
-Expected Outcome: 8 rows, e.g., Beverages: 12, Condiments: 17, Confections: 16, etc.
-Hint: Use GROUP BY and COUNT.
+### Task 3: Count Products by Category  
+Description: Write a query to count the number of products in each category, displaying the category and the count,  
+ordered alphabetically by category.  
+Expected Outcome: 8 rows, e.g., Beverages: 12, Condiments: 17, Confections: 16, etc.  
+Hint: Use GROUP BY and COUNT. 
 
 ### Task 4: Low Stock Alert
 
