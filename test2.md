@@ -351,9 +351,9 @@ print(cor)
 ## Task 1
 ```sql
 SELECT * FROM products ORDER BY id;
-Task 2
 ```
 
+## Task 2
 ```sql
 SELECT product_name, unit_price
 FROM products
