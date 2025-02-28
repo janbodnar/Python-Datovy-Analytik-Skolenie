@@ -1,5 +1,84 @@
 # Priklady
 
+
+Below are 10 SQL tasks designed for your students based on the products dataset in PostgreSQL.  
+These tasks range from basic to intermediate difficulty, focusing on querying, filtering, aggregation, and  
+joining (with a hypothetical second table). Each task includes a description and an expected outcome to guide 
+students. I’ll assume the products table has been created as per the previous SQL code.
+
+## Tasks 
+
+### Task 1: Retrieve All Products
+Description: Write a query to retrieve all columns for all products in the products table, ordered by id.
+Expected Outcome: A result set with 77 rows, showing id, product_name, category, unit_price, and units_in_stock,  
+sorted by id ascending.
+Hint: Use SELECT * and ORDER BY.
+
+### Task 2: Find Expensive Products
+Description: Write a query to find all products with a unit_price greater than $50, displaying only product_name  
+and unit_price, ordered by unit_price descending.  
+Expected Outcome: 10 rows, including products like "Côte de Blaye" ($263.50), "Thüringer Rostbratwurst" ($123.79), etc.  
+Hint: Use WHERE with a condition and ORDER BY.
+
+### Task 3: Count Products by Category
+Description: Write a query to count the number of products in each category, displaying the category and the count, ordered alphabetically by category.
+Expected Outcome: 8 rows, e.g., Beverages: 12, Condiments: 17, Confections: 16, etc.
+Hint: Use GROUP BY and COUNT.
+
+### Task 4: Low Stock Alert
+
+Description: Write a query to find products with fewer than 10 units in stock (units_in_stock < 10), showing product_name,   
+category, and units_in_stock, ordered by units_in_stock ascending.   
+Expected Outcome: 12 rows, e.g., "Chef Anton's Gumbo Mix" (0), "Alice Mutton" (0), "Sir Rodney's Scones" (3), etc.  
+Hint: Use WHERE and ORDER BY.  
+
+### Task 5: Total Value of Inventory
+
+Description: Write a query to calculate the total value of inventory (sum of unit_price * units_in_stock) for each category,  
+displaying category and the total value, ordered by total value descending. Round the result to 2 decimal places.  
+Expected Outcome: 8 rows, e.g., Dairy Products: 6141.30, Seafood: 4292.35, etc.
+Hint: Use GROUP BY, SUM, and ROUND.
+
+### Task 6: Average Price by Category
+Description: Write a query to calculate the average unit_price for each category, displaying category and the  
+average price, rounded to 2 decimal places, ordered by average price descending. Only include categories with more than 5 products.  
+Expected Outcome: 6 rows, e.g., Meat/Poultry: 47.51, Seafood: 22.11, etc.
+Hint: Use GROUP BY, AVG, HAVING, and ROUND.
+
+###  Task 7: Products Starting with 'C'
+Description: Write a query to find all products whose product_name starts with 'C', displaying product_name    
+and category, ordered alphabetically by product_name.
+Expected Outcome: 7 rows, e.g., "Camembert Pierrot" (Dairy Products), "Carnarvon Tigers" (Seafood), etc.  
+Hint: Use WHERE with LIKE.  
+
+### Task 8: Out-of-Stock Products
+Description: Write a query to list all products where units_in_stock is 0, showing product_name and category,   
+ordered by category and then product_name.  
+Expected Outcome: 7 rows, e.g., "Alice Mutton" (Meat/Poultry), "Perth Pasties" (Meat/Poultry),  
+"Chef Anton's Gumbo Mix" (Condiments), etc.  
+Hint: Use WHERE with equality and ORDER BY with multiple columns.  
+
+### Task 9: Top 5 Most Expensive Products
+Description: Write a query to find the 5 most expensive products based on unit_price, displaying product_name,  
+category, and unit_price, ordered by unit_price descending.
+Expected Outcome: 5 rows: "Côte de Blaye" ($263.50), "Thüringer Rostbratwurst" ($123.79), "Mishi Kobe Niku" ($97.00),  
+"Sir Rodney's Marmalade" ($81.00), "Carnarvon Tigers" ($62.50).  
+Hint: Use ORDER BY and LIMIT. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## get username/password from env variables
 
 ```python
