@@ -67,6 +67,21 @@ df = pd.DataFrame(data)
 print(df.describe())
 ```
 
+for a specific column:
+
+```python
+import pandas as pd
+
+filename = 'mock_data2.csv'
+df = pd.read_csv(filename)
+
+print('basic stats for Entries')
+summary_entries = df['entries'].describe()
+
+print(summary_entries)
+```
+
+
 
 ## Export to CSV
 
