@@ -1,6 +1,134 @@
 # Priklady
 
 
+```python
+import csv
+import psycopg
+
+
+file_name = 'mock_data.csv'
+users = []
+
+
+with open(file_name, 'r') as fd:
+
+    reader = csv.DictReader(fd)
+
+    for line in reader:
+
+        row = int(line['id']), line['first_name'], line['last_name'], line['active'], line['entries'], line['DoB']
+
+        users.append(row)
+
+
+cs = "dbname='testdb' user='postgres' password='postgres'"
+
+with psycopg.connect(cs) as con:
+        
+    with con.cursor() as cur:
+
+        cur.execute("DROP TABLE IF EXISTS users_mock")
+        cur.execute(
+            "CREATE TABLE users_mock(id SERIAL PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), active VARCHAR(10), entries VARCHAR(10), DoB VARCHAR(10))")
+
+        query = "INSERT INTO users_mock (id, first_name, last_name, active, entries, dob) VALUES (%s, %s, %s, %s, %s, %s)"
+        cur.executemany(query, users)
+```
+
+```python
+import csv
+from datetime import datetime
+
+file_name = 'mock_data.csv'
+users = []
+
+def parse_date(date_str):
+    return datetime.strptime(date_str, '%m/%d/%Y').strftime('%Y-%m-%d')
+
+with open(file_name, 'r') as fd:
+    reader = csv.DictReader(fd)
+    
+    for line in reader:
+        # Drop columns with all blank values
+        cleaned_line = {k: v for k, v in line.items() if v is not None}
+        
+        # Replace None with 0 in 'subcr' and 'entries' columns
+        if cleaned_line['subcr'] == '':
+            cleaned_line['subcr'] = '0'
+        if cleaned_line['entries'] == '':
+            cleaned_line['entries'] = '0'
+        
+        # Parse 'DoB' column to ISO format
+        if 'DoB' in cleaned_line and cleaned_line['DoB']:
+            cleaned_line['DoB'] = parse_date(cleaned_line['DoB'])
+        
+        row = (int(cleaned_line['id']), cleaned_line['first_name'], cleaned_line['last_name'], cleaned_line['active'],
+            cleaned_line['subcr'], cleaned_line['entries'], cleaned_line['DoB'])
+        
+        users.append(row)
+
+# Print the cleaned data
+for user in users:
+    print(user)
+```
+
+
+```python
+import pandas as pd
+
+df = pd.read_csv('mock_data.csv')
+
+# Drop columns with all blank values
+df = df.drop(columns=['blank1', 'blank2'])
+
+# Replace None with 0 in 'subcr' and 'entries' columns
+df['subcr'] = df['subcr'].fillna(0)
+df['entries'] = df['entries'].fillna(0)
+
+# print(df)
+
+df.to_csv('mock_data2.csv', index=False)
+```
+
+```python
+import pandas as pd
+from sqlalchemy import create_engine
+
+df = pd.read_csv('mock_data.csv')
+
+# Drop columns with all blank values
+df = df.drop(columns=['blank1', 'blank2'])
+
+# Replace None with 0 in 'subcr' and 'entries' columns
+df['subcr'] = df['subcr'].fillna(0)
+df['entries'] = df['entries'].fillna(0)
+
+# Parse 'DoB' column to ISO format
+df['DoB'] = pd.to_datetime(df['DoB'], format='%m/%d/%Y').dt.strftime('%Y-%m-%d')
+
+# Print the DataFrame to verify
+print(df)
+
+# Save to a new CSV file
+df.to_csv('mock_data2.csv', index=False)
+
+# Load the DataFrame to a PostgreSQL table
+engine = create_engine('postgresql://postgres:postgres@localhost:5432/testdb')
+df.to_sql('mock_data', engine, if_exists='replace')
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Tasks 
 
@@ -101,121 +229,7 @@ with psycopg.connect(cs) as con:
 
 
 
-```python
-import csv
-import psycopg
 
-
-file_name = 'mock_data.csv'
-users = []
-
-
-with open(file_name, 'r') as fd:
-
-    reader = csv.DictReader(fd)
-
-    for line in reader:
-
-        row = int(line['id']), line['first_name'], line['last_name'], line['active'], line['entries'], line['DoB']
-
-        users.append(row)
-
-
-cs = "dbname='testdb' user='postgres' password='postgres'"
-
-with psycopg.connect(cs) as con:
-        
-    with con.cursor() as cur:
-
-        cur.execute("DROP TABLE IF EXISTS users_mock")
-        cur.execute(
-            "CREATE TABLE users_mock(id SERIAL PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), active VARCHAR(10), entries VARCHAR(10), DoB VARCHAR(10))")
-
-        query = "INSERT INTO users_mock (id, first_name, last_name, active, entries, dob) VALUES (%s, %s, %s, %s, %s, %s)"
-        cur.executemany(query, users)
-```
-
-```python
-import csv
-from datetime import datetime
-
-file_name = 'mock_data.csv'
-users = []
-
-def parse_date(date_str):
-    return datetime.strptime(date_str, '%m/%d/%Y').strftime('%Y-%m-%d')
-
-with open(file_name, 'r') as fd:
-    reader = csv.DictReader(fd)
-    
-    for line in reader:
-        # Drop columns with all blank values
-        cleaned_line = {k: v for k, v in line.items() if v is not None}
-        
-        # Replace None with 0 in 'subcr' and 'entries' columns
-        if cleaned_line['subcr'] == '':
-            cleaned_line['subcr'] = '0'
-        if cleaned_line['entries'] == '':
-            cleaned_line['entries'] = '0'
-        
-        # Parse 'DoB' column to ISO format
-        if 'DoB' in cleaned_line and cleaned_line['DoB']:
-            cleaned_line['DoB'] = parse_date(cleaned_line['DoB'])
-        
-        row = (int(cleaned_line['id']), cleaned_line['first_name'], cleaned_line['last_name'], cleaned_line['active'], cleaned_line['subcr'], cleaned_line['entries'], cleaned_line['DoB'])
-        
-        users.append(row)
-
-# Print the cleaned data
-for user in users:
-    print(user)
-```
-
-
-```python
-import pandas as pd
-
-df = pd.read_csv('mock_data.csv')
-
-# Drop columns with all blank values
-df = df.drop(columns=['blank1', 'blank2'])
-
-# Replace None with 0 in 'subcr' and 'entries' columns
-df['subcr'] = df['subcr'].fillna(0)
-df['entries'] = df['entries'].fillna(0)
-
-# print(df)
-
-df.to_csv('mock_data2.csv', index=False)
-```
-
-```python
-import pandas as pd
-from sqlalchemy import create_engine
-
-df = pd.read_csv('mock_data.csv')
-
-# Drop columns with all blank values
-df = df.drop(columns=['blank1', 'blank2'])
-
-# Replace None with 0 in 'subcr' and 'entries' columns
-df['subcr'] = df['subcr'].fillna(0)
-df['entries'] = df['entries'].fillna(0)
-
-# Parse 'DoB' column to ISO format
-df['DoB'] = pd.to_datetime(df['DoB'], format='%m/%d/%Y').dt.strftime('%Y-%m-%d')
-
-# Print the DataFrame to verify
-print(df)
-
-# Save to a new CSV file
-df.to_csv('mock_data2.csv', index=False)
-
-# Load the DataFrame to a PostgreSQL table
-engine = create_engine('postgresql://postgres:postgres@localhost:5432/testdb')
-df.to_sql('mock_data', engine, if_exists='replace')
-
-```
 
 
 
