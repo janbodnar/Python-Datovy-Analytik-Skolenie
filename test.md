@@ -1,3 +1,40 @@
+```python
+import pandas as pd
+import ssl
+from urllib import request
+
+# URL of the HTML page containing the table
+url = "https://webcode.me/users.html"
+
+# Create an unverified SSL context
+ssl._create_default_https_context = ssl._create_unverified_context
+
+# Read the HTML table into a DataFrame
+df = pd.read_html(url)[0]
+
+print(df.head())
+```
+
+```python
+import pandas as pd
+import requests
+
+# URL of the HTML page containing the table
+url = "https://example.com/data.html"
+
+# Fetch the HTML content with SSL verification disabled
+response = requests.get(url, verify=False)
+html = response.text
+
+# Read the HTML table into a DataFrame
+df = pd.read_html(html)[0]
+
+print(df.head())
+```
+
+
+
+
 # Priklady
 
 
