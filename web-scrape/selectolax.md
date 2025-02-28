@@ -3,6 +3,9 @@
 The `selectolax` is a HTML5 parser using CSS selector syntax.  
 It is an alternative to BeautifulSoup.  
 
+
+https://zetcode.com/python/beautifulsoup/
+
 ## Documentation
 
 https://selectolax.readthedocs.io/en/latest/parser.html
