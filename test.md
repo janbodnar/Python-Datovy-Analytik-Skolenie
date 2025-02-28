@@ -1,3 +1,62 @@
+Here's a table listing some of the most common Streamlit functions along with their descriptions:
+
+| **Function**          | **Description**                                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| `st.title()`          | Displays a title.                                                               |
+| `st.header()`         | Displays a header.                                                              |
+| `st.subheader()`      | Displays a subheader.                                                           |
+| `st.text()`           | Displays fixed-width text.                                                      |
+| `st.markdown()`       | Displays text formatted as Markdown.                                            |
+| `st.latex()`          | Displays mathematical expressions formatted as LaTeX.                           |
+| `st.write()`          | Writes arguments to the app (text, data, plots, etc.).                          |
+| `st.code()`           | Displays code with syntax highlighting.                                         |
+| `st.error()`          | Displays an error message.                                                      |
+| `st.warning()`        | Displays a warning message.                                                     |
+| `st.success()`        | Displays a success message.                                                     |
+| `st.info()`           | Displays an informational message.                                              |
+| `st.button()`         | Displays a button.                                                              |
+| `st.checkbox()`       | Displays a checkbox.                                                            |
+| `st.radio()`          | Displays a radio button group.                                                  |
+| `st.selectbox()`      | Displays a dropdown menu.                                                       |
+| `st.multiselect()`    | Displays a multiselect dropdown menu.                                           |
+| `st.slider()`         | Displays a slider.                                                              |
+| `st.text_input()`     | Displays a single-line text input widget.                                       |
+| `st.number_input()`   | Displays a numeric input widget.                                                |
+| `st.text_area()`      | Displays a multi-line text input widget.                                        |
+| `st.date_input()`     | Displays a date input widget.                                                   |
+| `st.time_input()`     | Displays a time input widget.                                                   |
+| `st.file_uploader()`  | Displays a file uploader widget.                                                |
+| `st.image()`          | Displays an image.                                                              |
+| `st.audio()`          | Displays an audio player.                                                       |
+| `st.video()`          | Displays a video player.                                                        |
+| `st.pyplot()`         | Displays a Matplotlib plot.                                                     |
+| `st.altair_chart()`   | Displays an Altair chart.                                                       |
+| `st.bokeh_chart()`    | Displays a Bokeh chart.                                                         |
+| `st.plotly_chart()`   | Displays a Plotly chart.                                                        |
+| `st.map()`            | Displays a map.                                                                 |
+| `st.dataframe()`      | Displays a Pandas DataFrame as an interactive table.                            |
+| `st.table()`          | Displays a static table.                                                        |
+| `st.sidebar()`        | Creates a sidebar for additional widgets.                                       |
+| `st.columns()`        | Creates columns for layout purposes.                                            |
+| `st.expander()`       | Creates an expandable container to hide and show content.                       |
+| `st.tabs()`           | Creates tabs to separate content into different sections.                       |
+| `st.stop()`           | Stops the execution of the app.                                                 |
+| `st.rerun()`          | Reruns the app from the beginning.                                              |
+| `st.switch_page()`    | Navigates to another page in a multipage app.                                   |
+
+These functions cover a wide range of functionalities, from displaying text and media to handling user input and managing layout¹(https://docs.streamlit.io/develop/quick-reference/cheat-sheet)²(https://cheatsheetindex.com/streamlit-cheat-sheet/)³(https://dt-cheatsheet.streamlit.app/). Let me know if you need more details on any specific function!
+
+
+
+
+
+
+
+
+
+
+
+
 ```python
 import pandas as pd
 import ssl
