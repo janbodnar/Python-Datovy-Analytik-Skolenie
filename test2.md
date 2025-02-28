@@ -345,91 +345,124 @@ cor = statistics.correlation(ages, incomes)
 print(cor)
 ```
 
-Sample Solutions
-Here are solutions for each task to help you guide your students (you can share these after they attempt the tasks):
-Task 1
-sql
+## Sample Solutions
+
+
+## Task 1
+```sql
 SELECT * FROM products ORDER BY id;
 Task 2
-sql
+```
+
+```sql
 SELECT product_name, unit_price
 FROM products
 WHERE unit_price > 50
 ORDER BY unit_price DESC;
-Task 3
-sql
+```
+
+## Task 3
+```sql
 SELECT category, COUNT(*) AS product_count
 FROM products
 GROUP BY category
 ORDER BY category;
-Task 4
-sql
+```
+
+## Task 4
+```sql
 SELECT product_name, category, units_in_stock
 FROM products
 WHERE units_in_stock < 10
 ORDER BY units_in_stock ASC;
-Task 5
-sql
+```
+
+## Task 5
+```sql
 SELECT category, ROUND(SUM(unit_price * units_in_stock), 2) AS total_value
 FROM products
 GROUP BY category
 ORDER BY total_value DESC;
-Task 6
-sql
+```
+
+## Task 6
+``` sql
 SELECT category, ROUND(AVG(unit_price), 2) AS avg_price
 FROM products
 GROUP BY category
 HAVING COUNT(*) > 5
 ORDER BY avg_price DESC;
-Task 7
-sql
+```
+
+## Task 7
+
+```sql
 SELECT product_name, category
 FROM products
 WHERE product_name LIKE 'C%'
 ORDER BY product_name;
-Task 8
-sql
+```
+
+## Task 8
+
+```sql
 SELECT product_name, category
 FROM products
 WHERE units_in_stock = 0
 ORDER BY category, product_name;
-Task 9
-sql
+```
+
+## Task 9
+```sql
 SELECT product_name, category, unit_price
 FROM products
 ORDER BY unit_price DESC
 LIMIT 5;
-Task 10 (with Setup)
-sql
+```
+
+## Task 10 (with Setup)
+
+```sql
 -- Add supplier_id column to products
 ALTER TABLE products ADD COLUMN supplier_id INTEGER;
+```
 
+```sql
 -- Create suppliers table
 CREATE TABLE suppliers (
     supplier_id INTEGER PRIMARY KEY,
     supplier_name VARCHAR(50) NOT NULL,
     country VARCHAR(50) NOT NULL
 );
+```
 
+```sql
 -- Insert sample suppliers
 INSERT INTO suppliers (supplier_id, supplier_name, country) VALUES
 (1, 'Tokyo Traders', 'Japan'),
 (2, 'Nordic Imports', 'Norway'),
 (3, 'Southern Foods', 'USA');
+```
 
+```sql
 -- Assign some supplier_ids to products (example)
 UPDATE products SET supplier_id = 1 WHERE id IN (9, 10, 13); -- Japanese products
 UPDATE products SET supplier_id = 2 WHERE id IN (36, 37);
 UPDATE products SET supplier_id = 3 WHERE id IN (40, 41);
+```
 
--- Query
+```sql
 SELECT p.product_name, p.unit_price, s.supplier_name
 FROM products p
 JOIN suppliers s ON p.supplier_id = s.supplier_id
 WHERE s.country = 'Japan'
 ORDER BY p.unit_price DESC;
+```
+
 Teaching Tips
-Difficulty Progression: Start with Tasks 1-4 (basic SELECT and WHERE), move to 5-6 (aggregation), then 7-9 (pattern matching and limits), and finish with 10 (joins).
-Encourage Exploration: Ask students to modify queries (e.g., change thresholds or sort order) to see how results change.
-Bonus Challenge: After Task 10, ask them to find the total inventory value for Japanese suppliers.
-These tasks should help your students build confidence with SQL while working with a practical dataset! Let me know if you’d like adjustments or more tasks.
+Difficulty Progression: Start with Tasks 1-4 (basic SELECT and WHERE), move to 5-6 (aggregation),  
+then 7-9 (pattern matching and limits), and finish with 10 (joins).  
+Encourage Exploration: Ask students to modify queries (e.g., change thresholds or sort order)    
+to see how results change.  
+Bonus Challenge: After Task 10, ask them to find the total inventory value for Japanese suppliers.  
+
