@@ -144,7 +144,7 @@ DATABASE_URL=postgresql://postgres:s$cret@localhost/testdb
 import pandas as pd
 from decouple import config
 
-# pip install decouple
+# pip install python-decouple
 
 # Load the connection string from the .env file
 cs = config('DATABASE_URL')
