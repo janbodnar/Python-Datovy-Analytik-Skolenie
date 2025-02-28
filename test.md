@@ -28,17 +28,21 @@ with open(file_name, 'r') as fd:
     for line in reader:
 
         row = (int(line['id']), line['first_name'], line['last_name'], line['active'], 
-            clean_col(line['subcr']), clean_col(line['entries']), transform_datetime(line['DoB']))
+            int(clean_col(line['subcr'])), int(clean_col(line['entries'])), transform_datetime(line['DoB']))
 
         users.append(row)
 
 
-print(users)
+for user in users[:20]:
+    print(user)
+
+# print(users)
+
 
 cs = "dbname='testdb' user='postgres' password='postgres'"
 
 query = """
-CREATE TABLE users_mock(id SERIAL PRIMARY KEY, first_name VARCHAR(255),     
+CREATE TABLE mock_data(id SERIAL PRIMARY KEY, first_name VARCHAR(255),     
                         last_name VARCHAR(255), active VARCHAR(10), subcr INTEGER,
                         entries INTEGER, DoB VARCHAR(10))
 """
@@ -48,10 +52,10 @@ with psycopg.connect(cs) as con:
         
     with con.cursor() as cur:
 
-        cur.execute("DROP TABLE IF EXISTS users_mock")
+        cur.execute("DROP TABLE IF EXISTS mock_data")
         cur.execute(query)
 
-        query = "INSERT INTO users_mock (id, first_name, last_name, active, subcr, entries, dob) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO mock_data (id, first_name, last_name, active, subcr, entries, dob) VALUES (%s, %s, %s, %s, %s, %s, %s)"
         cur.executemany(query, users)
 ```
 
