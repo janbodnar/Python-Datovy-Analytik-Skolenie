@@ -138,8 +138,7 @@ df.to_csv('mock_data2.csv', index=False)
 
 # Load the DataFrame to a PostgreSQL table
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/testdb')
-df.to_sql('mock_data', engine, if_exists='replace')
-
+df.to_sql('mock_data2', engine, if_exists='replace')
 ```
 
 
