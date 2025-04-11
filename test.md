@@ -3,15 +3,16 @@
 ## Opakovanie
 
 
-## calculate sum
-
 ```python
 # calculate sum
 data = ['1;', '2', '3 ', '4?', '5', '6\n', ' 7', '8', '9', '10']
 ```
 
-
-## find solutions
+```python
+# filter words that contain 'r'
+words = ['word', 'sky', 'tomorrow', 'cat', 'dog', 'apple', 'orange', 'banana', 
+         'small', 'terrific', 'alternative', 'book', 'dictionary', 'word']
+```
 
 ```python
 from collections import namedtuple
