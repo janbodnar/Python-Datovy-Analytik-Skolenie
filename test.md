@@ -2,6 +2,20 @@
 
 ## Opakovanie
 
+The `thermopylae.txt` file:
+
+```
+The Battle of Thermopylae was fought between an alliance of Greek city-states, 
+led by King Leonidas of Sparta, and the Persian Empire of Xerxes I over the 
+course of three days, during the second Persian invasion of Greece.
+```
+
+```python
+
+# read file
+# count the number of words
+# count the number of unique words
+```
 
 ```python
 # calculate sum
