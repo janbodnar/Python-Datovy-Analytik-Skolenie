@@ -1,3 +1,62 @@
+
+
+## Opakovanie
+
+
+```python
+from collections import namedtuple
+
+City = namedtuple('City', 'id name population')
+
+c1 = City(1, 'Bratislava', 432000)
+c2 = City(2, 'Budapest', 1759000)
+c3 = City(3, 'Prague', 1280000)
+c4 = City(4, 'Warsaw', 1748000)
+c5 = City(5, 'Los Angeles', 3971000)
+c6 = City(6, 'Edinburgh', 464000)
+c7 = City(7, 'Berlin', 3671000)
+c8 = City(8, 'Tokyo', 14000000)
+c9 = City(9, 'New York', 8419600)
+c10 = City(10, 'Sydney', 5312163)
+c11 = City(11, 'Mumbai', 20411000)
+c12 = City(12, 'Cairo', 10220000)
+c13 = City(13, 'Seoul', 9733509)
+c14 = City(14, 'London', 8982000)
+c15 = City(15, 'Moscow', 11920000)
+c16 = City(16, 'Bangkok', 10539000)
+c17 = City(17, 'Toronto', 2930000)
+
+cities = [c1, c2, c3, c4, c5, c6, c7, c8, c9,
+          c10, c11, c12, c13, c14, c15, c16, c17]
+
+# print first 5 cities
+# print last 5 cities
+# find city with max population
+# find city with min population
+# filter cities having population below 1mil
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Here's a table listing some of the most common Streamlit functions along with their descriptions:
 
 | **Function**          | **Description**                                                                 |
