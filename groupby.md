@@ -14,10 +14,10 @@ as determined by a key function. It returns an iterator of tuples, where each tu
 the key and an iterator of items associated with that key.
 
 **Important Notes**:
-- The input iterable **must be sorted** on the key for meaningful grouping, as `groupby`
-  only groups consecutive elements.
-- The output iterators for each group must be consumed before moving to the next group,
-  as they are generated lazily.
+- The input iterable **must be sorted** on the key for meaningful grouping, as `groupby`  
+  only groups consecutive elements.  
+- The output iterators for each group must be consumed before moving to the next group,  
+  as they are generated lazily.  
 
 ---
 
