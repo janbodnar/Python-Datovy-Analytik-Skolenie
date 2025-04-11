@@ -283,32 +283,3 @@ Age: 30, People: ['Bob', 'Dave']
   result = [(key, len(list(group))) for key, group in groupby(data)]
   print(result)  # Output: [('a', 3), ('b', 2), ('c', 4)]
   ```
-
----
-
-## Exercises
-
-1. **Group Words by Length**:
-   - Given a list of words `["cat", "dog", "rat", "bat"]`, group them by their length.
-   - Hint: Sort by length and use `len` as the key function.
-
-2. **Count Consecutive Runs**:
-   - For a list `[1, 1, 2, 2, 2, 3]`, count the length of each consecutive run.
-   - Hint: Use `groupby` and compute the length of each group.
-
-3. **Group by First Letter**:
-   - Group a list of names by their first letter, e.g., `["Alice", "Bob", "Beth", "Charlie"]`.
-   - Hint: Sort by the first letter and use a key function.
-
-4. **Group Namedtuples by a Field**:
-   - Create a `namedtuple` for products with fields `name`, `category`, and `price`.
-   - Group a list of products by `category`.
-
----
-
-## Conclusion
-
-The `itertools.groupby` function is a versatile tool for grouping consecutive elements in an iterable. 
-By sorting the input and defining an appropriate key function, you can efficiently group data—whether 
-simple types, dictionaries, or `namedtuple` objects—for analysis, compression, or transformation. 
-Always sort the iterable first and handle group iterators carefully to avoid pitfalls.
