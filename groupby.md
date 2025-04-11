@@ -43,12 +43,16 @@ from itertools import groupby
 # Note: The list must be sorted by category for meaningful grouping
 shopping_list = [
     ('Fruits', 'Apple'),
-    ('Fruits', 'Banana'),
     ('Fruits', 'Orange'),
     ('Vegetables', 'Carrot'),
-    ('Vegetables', 'Spinach'),
     ('Dairy', 'Milk'),
-    ('Dairy', 'Cheese')
+    ('Fruits', 'Banana'),
+    ('Vegetables', 'Spinach'),
+    ('Dairy', 'Cheese'),
+    ('Vegetables', 'Broccoli'),
+    ('Fruits', 'Pineapple'),
+    ('Vegetables', 'Beetroot'),
+    ('Dairy', 'Butter'),
 ]
 
 # Ensure the data is sorted by category
