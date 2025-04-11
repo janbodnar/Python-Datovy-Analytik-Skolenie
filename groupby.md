@@ -31,52 +31,38 @@ itertools.groupby(iterable, key=None)
 - **`key`**: A function that computes the key for grouping. If `None`, the elements themselves are used as keys.
 - **Returns**: An iterator yielding tuples of `(key, group)`, where `group` is an iterator of elements sharing the same key.
 
----
 
-## Prerequisites
+## Basic Grouping
 
-To use `groupby`, import the `itertools` module:
-
-```python
-from itertools import groupby
-```
-
----
-
-## Examples
-
-### Example 1: Basic Grouping
-
-Group a sorted string by its characters.
+We group items in a shopping list by their category:
 
 ```python
 from itertools import groupby
 
-# Input string (must be sorted for meaningful grouping)
-data = sorted("aabbcc")
-print("Sorted data:", data)
+# Sample shopping list with items categorized
+# Note: The list must be sorted by category for meaningful grouping
+shopping_list = [
+    ('Fruits', 'Apple'),
+    ('Fruits', 'Banana'),
+    ('Fruits', 'Orange'),
+    ('Vegetables', 'Carrot'),
+    ('Vegetables', 'Spinach'),
+    ('Dairy', 'Milk'),
+    ('Dairy', 'Cheese')
+]
 
-# Group by character
-for key, group in groupby(data):
-    print(f"Key: {key}, Group: {list(group)}")
+# Ensure the data is sorted by category
+shopping_list.sort(key=lambda x: x[0])
+
+# Group items by category
+for category, items in groupby(shopping_list, key=lambda x: x[0]):
+    print(f"Category: {category}")
+    for _, item in items:
+        print(f"  - {item}")
 ```
 
-**Output**:
-```
-Sorted data: ['a', 'a', 'b', 'b', 'c', 'c']
-Key: a, Group: ['a', 'a']
-Key: b, Group: ['b', 'b']
-Key: c, Group: ['c', 'c']
-```
 
-**Explanation**:
-- The string `"aabbcc"` is sorted to `['a', 'a', 'b', 'b', 'c', 'c']`.
-- `groupby` groups consecutive identical characters.
-- Each `group` is an iterator, converted to a list for display.
-
----
-
-### Example 2: Grouping with a Key Function
+## Grouping with a Key Function
 
 Group numbers by whether they are even or odd.
 
@@ -94,13 +80,6 @@ for key, group in groupby(numbers, key=lambda x: x % 2):
     print(f"Key: {'even' if key == 0 else 'odd'}, Group: {list(group)}")
 ```
 
-**Output**:
-```
-Sorted numbers: [2, 4, 6, 1, 3, 5]
-Key: even, Group: [2, 4, 6]
-Key: odd, Group: [1, 3, 5]
-```
-
 **Explanation**:
 - The key function `lambda x: x % 2` returns `0` for even numbers and `1` for odd numbers.
 - The list is sorted by this key to ensure consecutive grouping.
@@ -108,7 +87,7 @@ Key: odd, Group: [1, 3, 5]
 
 ---
 
-### Example 3: Grouping Dictionaries by a Field
+##Grouping Dictionaries by a Field
 
 Group a list of dictionaries by a specific field, like occupation.
 
@@ -134,26 +113,12 @@ for key, group in groupby(users, key=lambda user: user['occupation']):
     print(list(group))
 ```
 
-**Output**:
-```
-drivers:
-[{'first_name': 'Roger', 'last_name': 'Roe', 'occupation': 'driver'}, {'first_name': 'Tomas', 'last_name': 'Bruzik', 'occupation': 'driver'}]
-gardeners:
-[{'first_name': 'John', 'last_name': 'Doe', 'occupation': 'gardener'}]
-programmers:
-[{'first_name': 'Paul', 'last_name': 'Novak', 'occupation': 'programmer'}, {'first_name': 'Roman', 'last_name': 'Meszaros', 'occupation': 'programmer'}]
-teachers:
-[{'first_name': 'Adam', 'last_name': 'Novak', 'occupation': 'teacher'}]
-```
-
 **Explanation**:
 - The list is sorted by the `"occupation"` field.
 - The key function `lambda user: user['occupation']` groups users by their occupation.
 - Each group contains dictionaries of users with the same occupation.
 
----
-
-### Example 4: Grouping Namedtuples by a Field
+## Grouping Namedtuples by a Field
 
 Group a list of `namedtuple` objects by a field, like occupation, as an alternative to dictionaries.
 
@@ -183,17 +148,6 @@ for key, group in groupby(users, key=lambda user: user.occupation):
     print(list(group))
 ```
 
-**Output**:
-```
-drivers:
-[Person(first_name='Roger', last_name='Roe', occupation='driver'), Person(first_name='Tomas', last_name='Bruzik', occupation='driver')]
-gardeners:
-[Person(first_name='John', last_name='Doe', occupation='gardener')]
-programmers:
-[Person(first_name='Paul', last_name='Novak', occupation='programmer'), Person(first_name='Roman', last_name='Meszaros', occupation='programmer')]
-teachers:
-[Person(first_name='Adam', last_name='Novak', occupation='teacher')]
-```
 
 **Explanation**:
 - A `namedtuple` called `Person` is defined with fields `first_name`, `last_name`, and `occupation`.
@@ -201,9 +155,8 @@ teachers:
 - The key function groups users by their occupation, similar to the dictionary example.
 - Each group contains `Person` namedtuples with the same occupation.
 
----
 
-### Example 5: Grouping Dictionaries by Age
+## Grouping Dictionaries by Age
 
 Group a list of dictionaries by a numeric field, like age.
 
