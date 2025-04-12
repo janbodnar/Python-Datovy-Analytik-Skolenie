@@ -108,7 +108,25 @@ cities = [
 
 
 
+## Riesenia
 
+```python
+data = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+data2 = []
+
+for val in data:
+    data2.append(int(val))
+
+print(data2)
+print(sum(data2))
+
+data3 = list(map(int, data))
+print(data3)
+
+data4 = [int(val) for val in data]
+print(data4)
+```
 
 
 
