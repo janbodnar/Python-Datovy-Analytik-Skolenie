@@ -149,6 +149,27 @@ print(sum(data4))
 ```
 
 ```python
+data = (1, 2, 3, (4, 5, 6), (7, 8, 9), (10))
+
+# create flattened tuple
+flattened = []
+for item in data:
+    if type(item) == tuple:
+        flattened.extend(item)  # extend the list with the items of the tuple
+    else:
+        flattened.append(item)
+
+flattened = tuple(flattened)
+print(flattened)  
+
+import funcy
+
+# Using funcy to flatten the tuple
+flattened_funcy = funcy.flatten(data)
+print(tuple(flattened_funcy))  # convert to tuple for display
+```
+
+```python
 filename = "thermopylae.txt"
 with open(filename, "r") as fd:
     content = fd.read()
