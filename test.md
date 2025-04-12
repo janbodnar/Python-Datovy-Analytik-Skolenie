@@ -128,7 +128,25 @@ data4 = [int(val) for val in data]
 print(data4)
 ```
 
+```python
+# calculate sum
+data = [1, True, 2, 'hello', 3, 4, 5, 'water', 6, 7, 8, 9, 10]
 
+data2 = []
+for val in data:
+    if type(val) == int:
+        data2.append(val)
+
+print(data2)
+print(sum(data2))
+
+data3 = [val for val in data if type(val) == int]
+print(data3)
+
+data4 = list(filter(lambda x: type(x) == int, data))
+print(data4)
+print(sum(data4))
+```
 
 
 
