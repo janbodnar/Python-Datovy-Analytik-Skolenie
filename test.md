@@ -235,6 +235,43 @@ print(min(cities, key=lambda city: city.population))
 print(max(cities, key=lambda city: city.population))
 ```
 
+```python
+cities = [
+    {"id": 1, "name": "Bratislava", "population": 432000},
+    {"id": 2, "name": "Budapest", "population": 1759000},
+    {"id": 3, "name": "Prague", "population": 1280000},
+    {"id": 4, "name": "Warsaw", "population": 1748000},
+    {"id": 5, "name": "Los Angeles", "population": 3971000},
+    {"id": 6, "name": "Edinburgh", "population": 464000},
+    {"id": 7, "name": "Berlin", "population": 3671000},
+    {"id": 8, "name": "Tokyo", "population": 14000000},
+    {"id": 9, "name": "New York", "population": 8419600},
+    {"id": 10, "name": "Sydney", "population": 5312163},
+    {"id": 11, "name": "Mumbai", "population": 20411000},
+    {"id": 12, "name": "Cairo", "population": 10220000},
+    {"id": 13, "name": "Seoul", "population": 9733509},
+    {"id": 14, "name": "London", "population": 8982000},
+    {"id": 15, "name": "Moscow", "population": 11920000},
+    {"id": 16, "name": "Bangkok", "population": 10539000},
+    {"id": 17, "name": "Toronto", "population": 2930000}
+]
+
+
+# find city with max population
+
+max_population = max(cities, key=lambda x: x["population"])
+print(f"City with max population: {max_population['name']} with population {max_population['population']}")
+
+min_population = min(cities, key=lambda x: x["population"])
+print(f"City with min population: {min_population['name']} with population {min_population['population']}")
+
+below_1mil = [city for city in cities if city["population"] < 1000000]
+print("Cities with population below 1 million:")
+for city in below_1mil:
+    print(f"{city['name']} with population {city['population']}")
+
+```
+
 
 
 
