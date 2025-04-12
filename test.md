@@ -148,7 +148,22 @@ print(data4)
 print(sum(data4))
 ```
 
+```python
+filename = "thermopylae.txt"
+with open(filename, "r") as fd:
+    content = fd.read()
+    
+    content2 = content.replace(",", "").replace(".", "")
 
+    words = content2.split()
+    print(words)
+
+    word_count = len(words)
+    print(f"Word count: {word_count}")
+
+    word_count = len(set(words))
+    print(f"Unique word count: {word_count}")
+```
 
 
 
