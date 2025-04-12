@@ -166,7 +166,18 @@ with open(filename, "r") as fd:
 ```
 
 
+```python
+import re
 
+# calculate sum
+data = ['1;', '2', '3 ', '4?', '5', '6\n', ' 7', '8', '9', '10']
+
+cleaned_data = list(map(lambda e: re.sub(r'[;?\s]', '', e), data))
+print(cleaned_data)
+
+total = sum(map(int, cleaned_data))
+print(total)
+```
 
 
 
