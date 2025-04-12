@@ -179,7 +179,18 @@ total = sum(map(int, cleaned_data))
 print(total)
 ```
 
+```python
+# filter words that contain 'r'
+words = ['word', 'sky', 'tomorrow', 'cat', 'dog', 'apple', 'orange', 'banana', 
+         'small', 'terrific', 'alternative', 'book', 'dictionary', 'word']
 
+
+filtered_words = [word for word in words if 'r' in word]
+print(filtered_words)
+
+filtered_words = [word for word in words if set('r').intersection(word)]
+print(filtered_words)
+```
 
 
 
