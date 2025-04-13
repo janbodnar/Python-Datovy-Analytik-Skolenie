@@ -2,6 +2,54 @@
 
 ## Opakovanie
 
+
+```python
+import csv
+from collections import namedtuple
+
+User = namedtuple('User', 'id first_name last_name occupation salary')
+
+users = []
+
+filename = 'data.csv'
+with open(filename, 'r') as file:
+    reader = csv.reader(file)
+    headers = next(reader)  # Skip the header row
+    for row in reader:
+        user = User(*row)
+        users.append(user)
+
+
+# print number of users
+# print users with id 2, 6, 8, 10, 15, 20
+# print users with id not in 2, 6, 8, 10, 15, 20
+# print the first 5 users
+# print last 5 users
+# print a random user
+# print random 3 users
+# print users with last_name starting with 'B' or "W"
+# print users with salary > 5000
+# print all drivers and teachers
+# print min, max, avg salary
+# order users by salary descending
+# order users by last name ascending
+
+# import this data into a database table 
+# and repeat the above operations using SQL queries
+```
+
+
+
+
+
+
+
+
+
+
+
+---
+
 ```python
 # calculate sum
 data = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
