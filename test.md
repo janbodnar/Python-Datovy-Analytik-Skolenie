@@ -182,6 +182,11 @@ ORDER BY random()
 LIMIT 3;
 ```
 
+```sql
+SELECT * FROM users WHERE last_name ~ '^[WB]';
+```
+
+
 ---
 
 ```python
