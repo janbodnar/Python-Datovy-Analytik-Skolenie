@@ -144,6 +144,9 @@ print(users_B_W)
 
 users_salary_gt_5000 = [user for user in users if user.salary > 5000]
 print(users_salary_gt_5000)
+
+users_drivers_teachers = [user for user in users if user.occupation in ('driver', 'teacher')]
+print(users_drivers_teachers)
 ```
 
 
