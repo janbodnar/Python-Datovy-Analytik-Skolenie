@@ -147,6 +147,13 @@ print(users_salary_gt_5000)
 
 users_drivers_teachers = [user for user in users if user.occupation in ('driver', 'teacher')]
 print(users_drivers_teachers)
+
+salaries = [user.salary for user in users]
+print(salaries)
+print(f"Min salary: {min(salaries)}")
+print(f"Max salary: {max(salaries)}") 
+print(f"Avg salary: {sum(salaries) / len(salaries)}")
+
 ```
 
 
