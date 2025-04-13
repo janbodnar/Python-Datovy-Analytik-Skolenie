@@ -95,7 +95,7 @@ with open(filename, 'r') as file:
     reader = csv.reader(file)
     headers = next(reader)  # Skip the header row
     for row in reader:
-        user = User(*row)
+        user = User(int(row[0]), row[1], row[2], row[3], int(row[4]))
         users.append(user)
 
 
