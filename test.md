@@ -138,6 +138,12 @@ print(random_user)
 
 random_users = random.sample(users, 3)
 print(random_users)
+
+users_B_W = [user for user in users if user.last_name.startswith(('B', 'W'))]
+print(users_B_W)
+
+users_salary_gt_5000 = [user for user in users if user.salary > 5000]
+print(users_salary_gt_5000)
 ```
 
 
