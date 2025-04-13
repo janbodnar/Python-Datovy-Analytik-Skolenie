@@ -118,7 +118,20 @@ with open(filename, 'r') as file:
 ```
 
 
+## Riesenia
 
+```python
+print(len(users))
+
+users_2 = [user for user in users if user.id in [2, 6, 8, 10, 15, 20]]
+print(users_2)
+
+users_3 = [user for user in users if user.id not in [2, 6, 8, 10, 15, 20]]
+print(users_3)
+
+print(users[:5])  # First 5 users
+print(users[-5:])  # Last 5 users
+```
 
 
 
