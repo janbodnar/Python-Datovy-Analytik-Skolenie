@@ -1,4 +1,13 @@
 
+```python
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+salary_stats = df['salary'].describe()
+print(salary_stats)
+```
+
+
 
 ## Opakovanie
 
