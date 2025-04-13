@@ -185,6 +185,7 @@ LIMIT 3;
 ```sql
 SELECT * FROM users WHERE last_name ~ '^[WB]';
 SELECT * FROM users WHERE salary > 5000;
+SELECT MIN(salary), MAX(salary), AVG(salary) FROM users;
 ```
 
 
