@@ -186,6 +186,8 @@ LIMIT 3;
 SELECT * FROM users WHERE last_name ~ '^[WB]';
 SELECT * FROM users WHERE salary > 5000;
 SELECT MIN(salary), MAX(salary), AVG(salary) FROM users;
+SELECT * FROM users ORDER BY salary DESC;
+SELECT * FROM users ORDER BY last_name ASC;
 ```
 
 
