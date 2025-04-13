@@ -154,6 +154,11 @@ print(f"Min salary: {min(salaries)}")
 print(f"Max salary: {max(salaries)}") 
 print(f"Avg salary: {sum(salaries) / len(salaries)}")
 
+sorted_users_salary = sorted(users, key=lambda x: x.salary, reverse=True)
+print(sorted_users_salary)
+
+sorted_users_last_name = sorted(users, key=lambda x: x.last_name)
+print(sorted_users_last_name)
 ```
 
 
