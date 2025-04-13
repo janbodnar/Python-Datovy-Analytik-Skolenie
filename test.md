@@ -162,7 +162,9 @@ print(sorted_users_last_name)
 ```
 
 
-
+```sql
+CREATE TABLE users(id serial PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), occupation VARCHAR(255), salary INT);
+```
 
 
 
