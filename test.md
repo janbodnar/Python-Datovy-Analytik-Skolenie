@@ -168,7 +168,8 @@ CREATE TABLE users(id serial PRIMARY KEY, first_name VARCHAR(255), last_name VAR
 select COUNT(*) from users;
 select * from users WHERE id IN (2, 6, 8, 10, 15, 20);
 select * from users WHERE id NOT IN (2, 6, 8, 10, 15, 20);
-
+select * from users LIMIT 5;
+select * from users ORDER BY id DESC LIMIT 5;
 ```
 
 
