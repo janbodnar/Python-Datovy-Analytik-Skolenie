@@ -29,8 +29,6 @@ id,first_name,last_name,occupation,salary
 20,Rose,Roberts,technician,3900
 21,Sam,Turner,salesperson,3600
 22,Tina,Phillips,accountant,3800
-21,Sam,Turner,salesperson,3600
-22,Tina,Phillips,accountant,3800
 23,Oliver,James,teacher,3100
 24,Sophia,Green,doctor,5100
 25,Liam,Harris,nurse,2750
