@@ -131,6 +131,13 @@ print(users_3)
 
 print(users[:5])  # First 5 users
 print(users[-5:])  # Last 5 users
+
+import random
+random_user = random.choice(users)
+print(random_user)
+
+random_users = random.sample(users, 3)
+print(random_users)
 ```
 
 
