@@ -172,6 +172,15 @@ select * from users LIMIT 5;
 select * from users ORDER BY id DESC LIMIT 5;
 ```
 
+```sql
+SELECT * FROM users
+ORDER BY random()
+LIMIT 1;
+
+SELECT * FROM users
+ORDER BY random()
+LIMIT 3;
+```
 
 ---
 
