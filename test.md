@@ -159,6 +159,13 @@ print(users_salary_5000)
 
 users_drivers_teachers = [user for user in users if user.occupation in ('driver', 'teacher')]
 print(users_drivers_teachers)
+
+import statistics
+
+print(salaries)
+print(min(salaries))
+print(max(salaries))
+print(statistics.mean(salaries))
 ```
 
 
