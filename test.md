@@ -166,6 +166,14 @@ print(salaries)
 print(min(salaries))
 print(max(salaries))
 print(statistics.mean(salaries))
+
+salaries = [user.salary for user in users]
+
+sorted_users_salaries_desc = sorted(users, key=lambda user: user.salary, reverse=True)
+print(sorted_users_salaries_desc)
+
+sorted_users_last_name_asc = sorted(users, key=lambda user: user.last_name)
+print(sorted_users_last_name_asc)
 ```
 
 
