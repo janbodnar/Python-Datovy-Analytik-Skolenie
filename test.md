@@ -125,49 +125,6 @@ with open(filename, 'r') as file:
 ```
 
 
-## Riesenia
-
-```python
-print(len(users))
-
-users_2 = [user for user in users if user.id in [2, 6, 8, 10, 15, 20]]
-print(users_2)
-
-users_3 = [user for user in users if user.id not in [2, 6, 8, 10, 15, 20]]
-print(users_3)
-
-print(users[:5])  # First 5 users
-print(users[-5:])  # Last 5 users
-
-import random
-random_user = random.choice(users)
-print(random_user)
-
-random_users = random.sample(users, 3)
-print(random_users)
-
-users_B_W = [user for user in users if user.last_name.startswith(('B', 'W'))]
-print(users_B_W)
-
-users_salary_gt_5000 = [user for user in users if user.salary > 5000]
-print(users_salary_gt_5000)
-
-users_drivers_teachers = [user for user in users if user.occupation in ('driver', 'teacher')]
-print(users_drivers_teachers)
-
-salaries = [user.salary for user in users]
-print(salaries)
-print(f"Min salary: {min(salaries)}")
-print(f"Max salary: {max(salaries)}") 
-print(f"Avg salary: {sum(salaries) / len(salaries)}")
-
-sorted_users_salary = sorted(users, key=lambda x: x.salary, reverse=True)
-print(sorted_users_salary)
-
-sorted_users_last_name = sorted(users, key=lambda x: x.last_name)
-print(sorted_users_last_name)
-```
-
 
 ```sql
 CREATE TABLE users(id serial PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), occupation VARCHAR(255), salary INT);
