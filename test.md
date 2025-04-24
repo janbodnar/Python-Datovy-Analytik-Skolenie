@@ -124,6 +124,52 @@ with open(filename, 'r') as file:
 # and repeat the above operations using SQL queries
 ```
 
+## Riesenia
+
+```python
+print(len(users))
+users2 = [user for user in users if user.id in (2, 6, 8, 10, 20)]
+print(users2)
+
+users3 = [user for user in users if user.id not in (2, 6, 8, 10, 20)]
+print(users3)
+
+users_first_5 = [user for user in users if user.id <= 5]
+print(users_first_5)
+
+users_first_5 = users[:5]
+print(users_first_5)
+
+users_last_5 = users[-5:]
+print(users_last_5)
+
+import random
+
+random_user = random.choice(users)
+print(random_user)
+
+random_3_users = random.choices(users, k=3)
+print(random_3_users)
+
+users_b_w = [user for user in users if user.last_name.startswith(('B', 'W')) ]
+print(users_b_w)
+
+users_salary_5000 = [user for user in users if user.salary > 5000 ]
+print(users_salary_5000)
+
+users_drivers_teachers = [user for user in users if user.occupation in ('driver', 'teacher')]
+print(users_drivers_teachers)
+```
+
+
+
+
+
+
+
+
+
+
 
 
 ```sql
