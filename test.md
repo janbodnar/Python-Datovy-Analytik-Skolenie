@@ -1,4 +1,31 @@
 
+## Correlation
+
+```python
+import statistics
+import csv 
+
+filename = 'data2.csv'
+
+ages = []
+salaries = []
+
+with open(filename, 'r') as fd:
+
+    reader = csv.DictReader(fd)
+
+
+    for user in reader:
+
+        ages.append(int(user['Age']))
+        salaries.append(int(user['Income($)']))
+
+cor = statistics.correlation(ages, salaries, method='ranked')
+print(cor)
+```
+
+
+
 ```python
 import pandas as pd
 
