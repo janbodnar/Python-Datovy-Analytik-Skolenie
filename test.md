@@ -1,5 +1,19 @@
 
 
+```python
+from datetime import datetime
+
+values = ['8-Nov-19', '21-Jun-16', '1-Nov-18', '7-Apr-19']
+values.sort(key=lambda date: datetime.strptime(date, "%d-%b-%y"))
+
+print(values)
+
+values2 = ['2019-11-08', '2016-06-21', '2018-11-01', '2019-04-07']
+values2.sort()
+print(values2)
+```
+
+
 ## generate 1mil users
 
 
