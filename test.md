@@ -5,6 +5,23 @@
 
 `CREATE TABLE users_large(id SERIAL PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), salary INT);`
 
+```python
+import pandas as pd
+
+df = pd.read_csv('users.csv')
+
+# print(df.head(10))
+
+min_salary = df['salary'].min()
+max_salary = df['salary'].max()
+avg_salary = df['salary'].mean()
+
+print(min_salary, max_salary, avg_salary)
+
+users_w = df[df['last_name'].str.startswith('W')]
+print(users_w)
+```
+
 
 
 ```python
