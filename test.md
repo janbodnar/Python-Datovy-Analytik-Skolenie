@@ -1,4 +1,19 @@
 
+## Opakovanie
+
+```python
+# create CSV file of 1mil users with id, first_name, last_name, salary
+# using faker
+# import the file into db and calculate min, max, avg of salary
+# find all users with last_name starting in 'W'
+
+# import the file into pandas and do the same
+```
+
+
+
+
+
 ## Correlation
 
 ```python
