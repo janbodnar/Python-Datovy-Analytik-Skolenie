@@ -1,4 +1,31 @@
 
+## Configure labels
+
+```python
+import streamlit as st
+import pandas as pd
+import altair as alt
+
+# Example data
+data = {
+    'Category': ['A', 'B', 'C', 'D'],
+    'Total Sales': [100, 150, 200, 250]
+}
+df = pd.DataFrame(data)
+
+# Create Altair chart with rotated labels
+chart = alt.Chart(df).mark_bar().encode(
+    x=alt.X('Category', axis=alt.Axis(labelAngle=0)),  # Rotate labels
+    y='Total Sales'
+)
+
+# Display the chart in Streamlit
+st.title('Bar Chart with Rotated X-axis Labels')
+st.altair_chart(chart, use_container_width=True)
+```
+
+
+
 
 ```python
 from datetime import datetime
