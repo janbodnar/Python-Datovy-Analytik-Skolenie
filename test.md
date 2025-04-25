@@ -1,4 +1,37 @@
 
+
+## generate 1mil users
+
+
+```python
+from faker import Faker
+
+faker = Faker()
+
+file_name = 'users.csv'
+
+with open(file_name, 'w') as fd:
+
+    for idx in range(1, 1000_001):
+
+        first_name = faker.first_name()
+        last_name = faker.last_name()
+        salary = faker.random_int(1000, 5500, 50)
+
+        row = f'{idx},{first_name},{last_name},{salary}\n'
+
+        fd.write(row)
+```
+
+
+
+
+
+
+
+
+
+
 ## Opakovanie
 
 ```python
