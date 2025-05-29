@@ -97,6 +97,15 @@ for _ in range(7):
 print()
 
 print(msg * 7)
+
+
+vals = [1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10]
+
+vals_u = tuple(set(vals))
+print(vals_u)
+
+vals_u2 = tuple(funcy.distinct(vals))
+print(vals_u2)
 ```
 
 
