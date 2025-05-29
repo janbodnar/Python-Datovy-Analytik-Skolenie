@@ -85,6 +85,20 @@ cities2 = [
 ]
 ```
 
+## Riesenia
+
+```python
+# find several way to print "hello there" on one line 7 times
+
+msg = 'hello there '
+for _ in range(7):
+    print(msg, end=' ')
+
+print()
+
+print(msg * 7)
+```
+
 
 
 ## Configure labels
