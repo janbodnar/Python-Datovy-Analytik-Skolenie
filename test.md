@@ -1,3 +1,54 @@
+# Priklady
+
+
+## Opakovanie
+
+```python
+
+
+# find several way to print "hello there" 7 times
+
+# create vals2 tuple of unique values 
+
+vals = [1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10]
+
+
+# print all emails from https://webcode.me/users.json
+
+# print first 5 cities
+# print last 5 cities
+# find city with max population
+# find city with min population
+# filter cities having population below 1mil
+
+cities = [
+    {"id": 1, "name": "Bratislava", "population": 432000},
+    {"id": 2, "name": "Budapest", "population": 1759000},
+    {"id": 3, "name": "Prague", "population": 1280000},
+    {"id": 4, "name": "Warsaw", "population": 1748000},
+    {"id": 5, "name": "Los Angeles", "population": 3971000},
+    {"id": 6, "name": "Edinburgh", "population": 464000},
+    {"id": 7, "name": "Berlin", "population": 3671000},
+    {"id": 8, "name": "Tokyo", "population": 14000000},
+    {"id": 9, "name": "New York", "population": 8419600},
+    {"id": 10, "name": "Sydney", "population": 5312163},
+    {"id": 11, "name": "Mumbai", "population": 20411000},
+    {"id": 12, "name": "Cairo", "population": 10220000},
+    {"id": 13, "name": "Seoul", "population": 9733509},
+    {"id": 14, "name": "London", "population": 8982000},
+    {"id": 15, "name": "Moscow", "population": 11920000},
+    {"id": 16, "name": "Bangkok", "population": 10539000},
+    {"id": 17, "name": "Toronto", "population": 2930000}
+]
+
+
+
+# filter words that contain 'r'
+words = ['word', 'sky', 'tomorrow', 'cat', 'dog', 'apple', 'orange', 'banana', 
+         'small', 'terrific', 'alternative', 'book', 'dictionary', 'word']
+```
+
+
 
 ## Configure labels
 
