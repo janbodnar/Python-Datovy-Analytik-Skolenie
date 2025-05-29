@@ -268,3 +268,22 @@ print(ds)
 ```
 
 We load the rows fromt he `users.csv` file into the dataset.
+
+
+## Load from Excel
+
+```python
+import tablib
+
+ds = tablib.Dataset()
+
+fname = 'users.xlsx'
+with open(fname, 'rb') as f:
+
+    ds.load(f, 'xlsx')
+
+print(ds)
+```
+
+
+
