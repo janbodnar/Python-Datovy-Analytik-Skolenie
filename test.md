@@ -1,5 +1,21 @@
 # Priklady
 
+## Read Excel file
+
+```python
+import tablib
+
+ds = tablib.Dataset()
+
+fname = 'users.xlsx'
+with open(fname, 'rb') as f:
+
+    ds.load(f, 'xlsx')
+
+print(ds)
+```
+
+
 
 ## Opakovanie
 
