@@ -1,5 +1,23 @@
 # Priklady
 
+## mean vs median
+
+```python
+import statistics
+
+salaries = [1000, 1120, 1230, 2100, 1280, 1300, 2000, 990, 8000, 9500]
+
+print('mean:', statistics.mean(salaries))
+print('median:', statistics.median(salaries))
+
+print(sum(salaries)/len(salaries))
+
+salaries.sort()
+print(salaries)
+```
+
+
+
 ## calculate min/max/mean/median/stdev
 
 ```python
