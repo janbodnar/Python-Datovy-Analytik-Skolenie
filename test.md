@@ -106,6 +106,20 @@ print(vals_u)
 
 vals_u2 = tuple(funcy.distinct(vals))
 print(vals_u2)
+
+
+
+# filter words that contain 'r'
+words = ['word', 'sky', 'tomorrow', 'cat', 'dog', 'apple', 'orange', 'banana', 
+         'small', 'terrific', 'alternative', 'book', 'dictionary', 'word']
+
+words_r = ...
+
+words_r = list(filter(lambda word: 'r' in word, words))
+print(words_r)
+
+words_r = [word for word in words if 'r' in word]
+print(words_r)
 ```
 
 
