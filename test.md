@@ -4,7 +4,7 @@
 ## Opakovanie
 
 ```python
-# find several way to print "hello there" 7 times
+# find several ways to print "hello there" 7 times
 
 # ----------------------------
 
