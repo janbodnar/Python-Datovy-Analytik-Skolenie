@@ -1,5 +1,31 @@
 # Priklady
 
+## Generate CSV data
+
+```python
+from faker import Faker
+
+faker = Faker()
+
+file_name = 'users.csv'
+
+with open(file_name, 'w') as f:
+
+    f.write('id,first_name,last_name,email,salary\n')
+
+    for idx in range(1, 1001):
+        first_name = faker.first_name()
+        last_name = faker.last_name()
+        email = faker.email()
+        salary = faker.random_int(800, 5500, 100)
+
+        row = f'{idx},{first_name},{last_name},{email},{salary}\n'
+        f.write(row)
+```
+
+
+
+
 ## Read Excel file
 
 ```python
