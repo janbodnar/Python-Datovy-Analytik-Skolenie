@@ -1,5 +1,32 @@
 # Priklady
 
+## calculate min/max/mean/median/stdev
+
+```python
+# 1000 riadkov CSV users.csv
+# id, first_name, last_name, email, salary
+# min, max, mean, median, stdev
+
+import tablib
+import statistics
+
+ds = tablib.Dataset()
+
+fname = 'users.csv'
+with open(fname, 'r') as f:
+
+    ds.load(f)
+
+    salaries_s = ds['salary']
+    salaries = [int(e) for e in salaries_s]
+    print(f'min salary', min(salaries))
+    print(f'max salary', max(salaries))
+    print(f'mean: ', statistics.mean(salaries))
+    print(f'median: ', statistics.median(salaries))
+    print(f'stdev: ', statistics.stdev(salaries))
+```
+
+
 ## Generate CSV data
 
 ```python
