@@ -120,6 +120,23 @@ print(words_r)
 
 words_r = [word for word in words if 'r' in word]
 print(words_r)
+
+
+# ----------------------------
+
+# requests, resp.json
+# print all emails from https://webcode.me/users.json
+
+import requests
+
+url = "https://webcode.me/users.json"
+
+response = requests.get(url)
+data = response.json()
+
+# Extract emails
+emails = [user["email"] for user in data["users"]]
+print(emails)
 ```
 
 
