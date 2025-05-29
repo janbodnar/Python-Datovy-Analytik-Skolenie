@@ -177,6 +177,43 @@ print(min(city['population'] for city in cities))
 
 cities_below_1mil = [city for city in cities if city['population'] < 1_000_000]
 print(cities_below_1mil)
+
+from dataclasses import dataclass
+
+@dataclass
+class City:
+    id: int
+    name: str
+    population: int
+
+cities2 = [
+    City(id=1, name="Bratislava", population=432000),
+    City(id=2, name="Budapest", population=1759000),
+    City(id=3, name="Prague", population=1280000),
+    City(id=4, name="Warsaw", population=1748000),
+    City(id=5, name="Los Angeles", population=3971000),
+    City(id=6, name="Edinburgh", population=464000),
+    City(id=7, name="Berlin", population=3671000),
+    City(id=8, name="Tokyo", population=14000000),
+    City(id=9, name="New York", population=8419600),
+    City(id=10, name="Sydney", population=5312163),
+    City(id=11, name="Mumbai", population=20411000),
+    City(id=12, name="Cairo", population=10220000),
+    City(id=13, name="Seoul", population=9733509),
+    City(id=14, name="London", population=8982000),
+    City(id=15, name="Moscow", population=11920000),
+    City(id=16, name="Bangkok", population=10539000),
+    City(id=17, name="Toronto", population=2930000)
+]
+
+print(cities2[:5])
+print(cities2[-5:])
+
+print(max(city.population for city in cities2))
+print(min(city.population for city in cities2))
+
+cities_below_1mil = [city for city in cities2 if city.population < 1_000_000]
+print(cities_below_1mil)
 ```
 
 
