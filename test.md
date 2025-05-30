@@ -1,7 +1,14 @@
 # Priklady
 
 
-
+```SQL
+WITH total_count AS (
+    SELECT COUNT(*) AS cnt FROM users
+)
+SELECT * FROM users 
+ORDER BY id DESC 
+LIMIT 5 OFFSET (SELECT GREATEST(0, cnt - 5) FROM total_count);
+```
 
 
 
