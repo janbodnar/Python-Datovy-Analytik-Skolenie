@@ -1,6 +1,27 @@
 # Priklady
 
 
+## Read HTML tables
+
+```python
+import pandas as pd
+
+# URL of the HTML page containing the table
+url = "https://en.wikipedia.org/wiki/List_of_highest-grossing_films"
+
+# Read the HTML table into a DataFrame
+df_list = pd.read_html(url)
+
+
+df2 = df_list[1]
+print(df2)
+```
+
+
+
+
+
+
 ```SQL
 WITH total_count AS (
     SELECT COUNT(*) AS cnt FROM users
