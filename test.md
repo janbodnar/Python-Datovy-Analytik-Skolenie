@@ -1,5 +1,28 @@
 # Priklady
 
+## Read config from ENV variable
+
+```python
+import pandas as pd
+import os
+
+
+# pip install python-decouple
+
+# Load the connection string from the .env file
+cs = os.environ.get('DATABASE_URL')
+print(cs)
+
+# Execute a query to fetch data from the 'users' table
+query = "SELECT * FROM users"
+df = pd.read_sql_query(query, cs)
+
+# Display the first 15 rows of the DataFrame
+print(df.head(15).to_string(index=False))
+```
+
+
+
 
 ## Read HTML tables
 
