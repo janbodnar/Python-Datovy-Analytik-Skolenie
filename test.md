@@ -197,6 +197,40 @@ print(sorted_users2)
 ```
 
 
+### SQL: 
+
+
+```sql
+CREATE TABLE users(id serial PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), occupation VARCHAR(255), salary INT);
+```
+
+```sql
+select COUNT(*) from users;
+select * from users WHERE id IN (2, 6, 8, 10, 15, 20);
+select * from users WHERE id NOT IN (2, 6, 8, 10, 15, 20);
+select * from users LIMIT 5;
+select * from users ORDER BY id DESC LIMIT 5;
+```
+
+```sql
+SELECT * FROM users
+ORDER BY random()
+LIMIT 1;
+
+SELECT * FROM users
+ORDER BY random()
+LIMIT 3;
+```
+
+```sql
+SELECT * FROM users WHERE last_name ~ '^[WB]';
+SELECT * FROM users WHERE salary > 5000;
+SELECT MIN(salary), MAX(salary), AVG(salary) FROM users;
+SELECT * FROM users ORDER BY salary DESC;
+SELECT * FROM users ORDER BY last_name ASC;
+```
+
+
 
 
 
