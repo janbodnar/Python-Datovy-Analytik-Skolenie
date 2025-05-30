@@ -126,6 +126,69 @@ with open(filename, 'r') as file:
 
 
 
+## Riesenia
+
+```python
+import csv
+from collections import namedtuple
+
+User = namedtuple('User', 'id first_name last_name occupation salary')
+
+users = []
+
+filename = 'data.csv'
+with open(filename, 'r') as file:
+    reader = csv.reader(file)
+    headers = next(reader)  # Skip the header row
+    for row in reader:
+        user = User(int(row[0]), row[1], row[2], row[3], int(row[4]))
+        users.append(user)
+
+
+print(users)        
+print(len(users))
+
+users2 = [user for user in users if user.id in (2, 6, 8, 10, 15, 20)]
+print(users2)
+
+users3 = [user for user in users if user.id not in (2, 6, 8, 10, 15, 20)]
+print(users3)
+
+print(users[:5])
+print(users[-5:])
+
+import random
+
+r_user = random.choice(users)
+print(r_user)
+
+r_3_users = random.choices(users, k=3)
+print(r_3_users)
+
+user_with_b_or_w = [user for user in users if user.last_name.startswith(('W', 'B'))]
+print(user_with_b_or_w)
+
+users_sal_gt_5000 = [user for user in users if user.salary > 5000]
+print(users_sal_gt_5000)
+
+users_drivers_teachers = [user for user in users if user.occupation in ('driver', 'teacher')]
+print(users_drivers_teachers)
+
+import statistics
+
+salaries = [user.salary for user in users] 
+print(min(salaries))
+print(max(salaries))
+print(statistics.mean(salaries))
+
+sorted_users1 = sorted(users, key=lambda user: user.salary, reverse=True)
+print(sorted_users1)
+
+
+sorted_users2 = sorted(users, key=lambda user: user.last_name)
+print(sorted_users2)
+```
+
 
 
 
