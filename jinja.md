@@ -395,6 +395,144 @@ $ ./sum_filter.py
 The sum of car prices is 105900
 ```
 
+## Emails
+
+```python
+from jinja2 import Template
+
+# Define the email template
+email_template = """\
+Subject: {{ subject }}
+
+Dear {{ name }},
+
+{{ body }}
+
+Best regards,
+{{ sender_name }}
+"""
+
+# List of recipients with their details
+recipients = [
+    {"name": "Alice", "subject": "Welcome!", "body": "Thank you for joining our platform.", "sender_name": "Support Team"},
+    {"name": "Bob", "subject": "Your Subscription", "body": "Your subscription has been renewed successfully.", "sender_name": "Billing Team"},
+    {"name": "Charlie", "subject": "Event Invitation", "body": "You're invited to our annual meetup.", "sender_name": "Events Team"},
+]
+
+# Create a Jinja2 template object
+template = Template(email_template)
+
+# Generate emails
+for recipient in recipients:
+    email_content = template.render(recipient)
+    print(email_content)
+    print("="*40)  # Separator for clarity
+```
+
+
+```python
+from jinja2 import Template
+
+# Define a richer email template with conditional logic and formatting
+email_template = """\
+Subject: {{ subject }}
+
+Dear {{ name }},
+
+We are thrilled to invite you to our {{ event.type }} event: **{{ event.name }}**!
+
+{% if vip %}
+As a valued VIP member, you'll enjoy exclusive perks like priority seating and a special meet-and-greet with our guest speaker, {{ event.speaker }}.
+{% else %}
+Join us for an unforgettable experience with inspiring talks, networking, and more!
+{% endif %}
+
+**Event Details:**
+- **Date**: {{ event.date }}
+- **Time**: {{ event.time }}
+- **Location**: {{ event.location }}
+- **RSVP By**: {{ event.rsvp_date }}
+
+{{ event.description }}
+
+{% if plus_one %}
+Bring a friend along for free with our Plus-One offer! Just let us know their name when you RSVP.
+{% endif %}
+
+We can't wait to see you there!
+
+Best regards,
+{{ sender_name }}
+"""
+
+# List of recipients with varied details
+recipients = [
+    {
+        "name": "Alice Johnson",
+        "subject": "You're Invited to TechFest 2025!",
+        "event": {
+            "type": "Tech Conference",
+            "name": "TechFest 2025",
+            "speaker": "Dr. Emma Carter",
+            "date": "June 15, 2025",
+            "time": "9:00 AM - 5:00 PM",
+            "location": "Innovation Hub, San Francisco",
+            "rsvp_date": "June 1, 2025",
+            "description": "Join industry leaders to explore the latest in AI and cloud computing."
+        },
+        "sender_name": "TechFest Organizing Committee",
+        "vip": True,
+        "plus_one": False
+    },
+    {
+        "name": "Bob Smith",
+        "subject": "CodeJam Hackathon Awaits!",
+        "event": {
+            "type": "Hackathon",
+            "name": "CodeJam 2025",
+            "speaker": "None",
+            "date": "July 10, 2025",
+            "time": "10:00 AM - 8:00 PM",
+            "location": "TechSpace, New York",
+            "rsvp_date": "June 25, 2025",
+            "description": "Compete in teams to build innovative apps and win exciting prizes!"
+        },
+        "sender_name": "CodeJam Crew",
+        "vip": False,
+        "plus_one": True
+    },
+    {
+        "name": "Charlie Lee",
+        "subject": "Gala Night Invitation",
+        "event": {
+            "type": "Charity Gala",
+            "name": "Starlight Gala",
+            "speaker": "Sophia Nguyen",
+            "date": "August 5, 2025",
+            "time": "6:00 PM - 11:00 PM",
+            "location": "Grand Ballroom, Chicago",
+            "rsvp_date": "July 20, 2025",
+            "description": "An evening of elegance to support education for underprivileged children."
+        },
+        "sender_name": "Starlight Foundation",
+        "vip": True,
+        "plus_one": True
+    }
+]
+
+# Create a Jinja2 template object
+template = Template(email_template)
+
+# Generate and print emails
+for recipient in recipients:
+    email_content = template.render(recipient)
+    print(email_content)
+    print("="*50)  # Separator for clarity
+```
+
+
+
+
 ## Template inheritance
 
 Template inheritance is a powerful feature that reduces code duplication and improves  
