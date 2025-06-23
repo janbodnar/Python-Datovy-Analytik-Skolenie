@@ -68,9 +68,9 @@ ALTER TABLE countries ADD capital_city VARCHAR(255);
 ## UPDATE statement
 
 ```SQL
-UPDATE countries SET capital_city = 'Beijing' WHERE name = 'China';
-UPDATE countries SET capital_city = 'New Delhi' WHERE name = 'India';
-UPDATE countries SET capital_city = 'Washington' WHERE name = 'USA';
+UPDATE countries SET capital_city = 'Beijing' WHERE country_name = 'China';
+UPDATE countries SET capital_city = 'New Delhi' WHERE country_name = 'India';
+UPDATE countries SET capital_city = 'Washington' WHERE country_name = 'USA';
 ```
 
 ## DROP TABLE
