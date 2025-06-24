@@ -1,0 +1,51 @@
+id,first_name,last_name,email,age,gender,city,join_date,salary,department
+1,John,Smith,john.smith@email.com,34,Male,New York,2020-01-15,75000,Engineering
+2,Jane,,jane.doe@email.com,,Female,Chicago,2020-03-22,82000,Marketing
+3,John,Smith,john.smith@email.com,34,Male,New York,2020-01-15,75000,Engineering
+4,Michael,Chen,mchen@email.com,45,Male,Los Angeles,2019-07-10,95000,Engineering
+5,,Rodriguez,ana.rod@email.com,28,Female,Miami,2021-05-05,68000,HR
+6,Sarah,Wilson,sarah.w@email.com,30,Female,Seattle,2020-11-01,88000,Design
+7,Tom,Harris,tharris@email.com,,Male,Houston,2018-09-12,72000,Sales
+8,Emily,,emily.j@email.com,27,Female,Boston,2022-02-28,65000,Engineering
+9,David,Lee,dlee@email.com,40,Male,Denver,2017-03-18,100000,Finance
+10,Lisa,Adams,lisa.a@email.com,32,Female,San Francisco,2020-06-30,78000,Marketing
+11,Chris,Brown,cbrown@email.com,36,Male,Atlanta,2019-12-05,85000,Engineering
+12,Mary,Clark,mclark@email.com,,Female,Phoenix,2021-08-10,70000,Customer Support
+13,Paul,Walker,pwalker@email.com,29,Male,Portland,2022-04-15,67000,Design
+14,Amy,Young,ayoung@email.com,33,Female,New York,2020-02-20,92000,Engineering
+15,Mark,Taylor,mtaylor@email.com,38,Male,Los Angeles,2018-05-25,88000,Marketing
+16,Jessica,Martinez,jmartinez@email.com,31,Female,Chicago,2021-03-12,74000,HR
+17,Steven,Allen,sallen@email.com,35,Male,Miami,2019-10-30,86000,Engineering
+18,Kelly,White,kwhite@email.com,28,Female,Seattle,2022-07-18,69000,Design
+19,Daniel,Gonzalez,dgonzalez@email.com,32,Male,Houston,2020-09-05,78000,Sales
+20,Laura,Hall,lhall@email.com,30,Female,Boston,2021-11-22,71000,Engineering
+21,Robert,Jones,rjones@email.com,37,Male,Denver,2016-04-10,96000,Finance
+22,Michelle,Carter,mcarter@email.com,29,Female,San Francisco,2020-01,15,82000,Marketing
+23,Daniel,Smith,dsmith@email.com,34,Male,New York,2020-01-15,75000,Engineering
+24,Angela,Lewis,alewis@email.com,31,Female,Chicago,2021-03,20,73000,HR
+25,Thomas,Green,tgreen@email.com,42,Male,Los Angeles,2017-04-10,91000,Engineering
+26,Sophia,King,sking@email.com,26,Female,New York,2022-06-15,67000,Design
+27,James,Moore,jmoore@email.com,39,Male,,2018-08-20,89000,Sales
+28,Linda,Brown,lbrown@email.com,,Female,Miami,2020-12-01,72000,Customer Support
+29,William,Adams,wadams@email.com,33,Male,Seattle,2019-02-25,85000,Engineering
+30,Emma,Wilson,ewilson@email.com,31,Female,Boston,2021-09-10,77000,Marketing
+31,John,Smith,john.smith@email.com,34,Male,New York,2020-01-15,75000,Engineering
+32,Olivia,Lee,olee@email.com,29,Female,Chicago,2022-03-18,69000,HR
+33,Matthew,Clark,mclark2@email.com,37,Male,Houston,2017-05-30,92000,Finance
+34,Ava,Young,ayoung2@email.com,30,Female,Los Angeles,2020-04-12,78000,Design
+35,Jacob,Harris,jharris@email.com,35,Male,Denver,2019-11-05,86000,Engineering
+36,Sophia,Martinez,smartinez@email.com,28,Female,Seattle,2021-07-22,71000,Marketing
+37,Ethan,White,ewhite@email.com,32,Male,Phoenix,2020-10-15,74000,Sales
+38,Isabella,Gonzalez,igonzalez@email.com,27,Female,Boston,2022-01-20,68000,HR
+39,Michael,Hall,mhall@email.com,40,Male,New York,2018-06-25,95000,Engineering
+40,Charlotte,Allen,callen@email.com,31,Female,Miami,2020-02-10,79000,Design
+41,Alexander,Walker,awalker@email.com,36,Male,Chicago,2019-03-15,87000,Finance
+42,Amelia,Lewis,alewis2@email.com,29,Female,Houston,2021-05-28,72000,Customer Support
+43,Daniel,King,dking@email.com,34,Male,Los Angeles,2020-08-10,83000,Engineering
+44,Mia,Moore,mmoore@email.com,30,Female,Seattle,2021-12-05,76000,Marketing
+45,Henry,Brown,hbrown@email.com,38,Male,New York,2017-07-20,91000,Sales
+46,Harper,Adams,hadams@email.com,27,Female,Denver,2022-02-15,69000,Design
+47,Lucas,Wilson,lwilson@email.com,35,Male,Boston,2019-04-10,88000,Engineering
+48,Evelyn,Lee,elee@email.com,32,Female,Chicago,2020-11-30,74000,HR
+49,Jack,Clark,jclark@email.com,39,Male,Miami,2018-09-05,92000,Finance
+50,Lily,Young,lyoung@email.com,28,Female,Seattle,2021-06-18,71000,Marketing
