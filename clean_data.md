@@ -17,23 +17,30 @@ The `employees2.csv` dataset:
 ## Steps to Fix the Dataset Using Data Wrangler in VS Code
 
 1. **Install and Set Up Data Wrangler**:
-   - Ensure the Data Wrangler extension is installed in VS Code (available from the Extensions Marketplace).
-   - Open the CSV file (`test_data_50rows.csv`) in VS Code. Data Wrangler should detect it and offer to open it in the Data Viewer.
+   - Ensure the Data Wrangler extension is installed in VS Code  
+     (available from the Extensions Marketplace).
+   - Open the CSV file (`test_data_50rows.csv`) in VS Code. Data Wrangler  
+     should detect it and offer to open it in the Data Viewer.
 
 2. **Remove Duplicate Rows**:
    - In Data Wrangler, use the "Remove Duplicates" operation.
-   - Select all columns (e.g., `id`, `first_name`, `last_name`, `email`, etc.) to identify exact duplicates (e.g., rows 1, 3, 31 are identical).
-   - Apply the operation to remove duplicates, keeping the first occurrence.
+   - Select all columns (e.g., `id`, `first_name`, `last_name`, `email`, etc.)  
+     to identify exact duplicates (e.g., rows 1, 3, 31 are identical).
+   - Apply the operation to remove duplicates, keeping the first occurrence. 
 
 3. **Handle Missing Values**:
    - **Missing `first_name` and `last_name`**:
-     - Filter rows with missing `first_name` (e.g., row 5) or `last_name` (e.g., row 2).
-     - Use "Fill Missing" to impute with a placeholder (e.g., "Unknown") or use a rule-based approach (e.g., derive from `email` if possible).
+     - Filter rows with missing `first_name` (e.g., row 5) or `last_name` (e.g., row 2).  
+     - Use "Fill Missing" to impute with a placeholder (e.g., "Unknown") or use a  
+       rule-based approach (e.g., derive from `email` if possible).
    - **Missing `age`**:
-     - For rows with missing `age` (e.g., rows 2, 7, 12, 28), impute with the mean or median age of the dataset.
-     - Use the "Group By" operation on `department` to calculate mean `age` per department for more context-aware imputation.
+     - For rows with missing `age` (e.g., rows 2, 7, 12, 28), impute with the mean or median  
+       age of the dataset.
+     - Use the "Group By" operation on `department` to calculate mean `age` per department  
+       for more context-aware imputation.
    - **Missing `city`**:
-     - For rows with missing `city` (e.g., row 27), impute with a default value (e.g., "Unknown") or mode based on `department`.
+     - For rows with missing `city` (e.g., row 27), impute with a default value (e.g., "Unknown")  
+       or mode based on `department`.
 
 4. **Fix Inconsistent Formatting**:
    - **Inconsistent `join_date`**:
@@ -43,19 +50,24 @@ The `employees2.csv` dataset:
      - Remove erroneous commas in emails (e.g., "male@email.com," in row 22).
      - Use the "Replace" operation to strip commas or other invalid characters.
    - **Inconsistent `department` casing**:
-     - Use the "Transform" operation to standardize `department` values to title case (e.g., "Customer Support" and "customer support" to "Customer Support").
+     - Use the "Transform" operation to standardize `department` values to title case  
+       (e.g., "Customer Support" and "customer support" to "Customer Support").
 
 5. **Handle Typographical Errors**:
-   - For emails with invalid formats (e.g., "male@email.com,"), use a regular expression in Data Wrangler to validate and clean email formats.
-   - For `department`, ensure consistency by mapping similar values (e.g., "CustomerSupport" to "Customer Support") using a replace or mapping operation.
+   - For emails with invalid formats (e.g., "male@email.com,"), use a regular expression  
+     in Data Wrangler to validate and clean email formats.  
+   - For `department`, ensure consistency by mapping similar values (e.g., "CustomerSupport"  
+     to "Customer Support") using a replace or mapping operation.
 
 6. **Validate and Correct Invalid Data**:
    - Check for invalid `age` values (e.g., negative or unrealistic ages, though none in this dataset).
-   - Validate `salary` for outliers (e.g., extremely low or high values) and decide whether to cap or flag them.
+   - Validate `salary` for outliers (e.g., extremely low or high values) and decide  
+     swhether to cap or flag them.
    - Ensure `id` is unique; if duplicates remain after step 2, flag or reassign IDs.
 
 7. **Export the Cleaned Data**:
-   - Once all operations are applied, export the cleaned dataset as a new CSV file using Data Wrangler’s "Export to CSV" option.
+   - Once all operations are applied, export the cleaned dataset as a new CSV file  
+     using Data Wrangler’s "Export to CSV" option.
    - Alternatively, export the generated Python code from Data Wrangler to automate the process.
 
 8. **Review and Iterate**:
