@@ -1,6 +1,6 @@
 # Filter operations
 
-*Filtering operations in Pandas refer to the process of selecting a subset of data  
+Filtering operations in Pandas refer to the process of selecting a subset of data  
 from a DataFrame based on specific criteria. This is a crucial step in data analysis  
 for cleaning, exploring, and transforming data. Here are some common functions and  
 methods used for filtering data in Pandas, along with brief descriptions:
