@@ -1,5 +1,70 @@
 # Priklady
 
+## SQLite
+
+```python
+import pandas as pd
+import sqlite3
+
+# Create connection to SQLite database
+conn = sqlite3.connect('testdb.db')
+
+# Create users table
+create_table_query = """
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    salary REAL NOT NULL
+);
+"""
+
+# Execute the create table query
+conn.execute(create_table_query)
+
+# Insert 20 rows of sample data
+insert_query = """
+INSERT INTO users (first_name, last_name, salary) VALUES
+('John', 'Doe', 65000.00),
+('Jane', 'Smith', 72000.00),
+('Michael', 'Johnson', 58000.00),
+('Emily', 'Davis', 69000.00),
+('David', 'Wilson', 75000.00),
+('Sarah', 'Brown', 61000.00),
+('James', 'Jones', 68000.00),
+('Jessica', 'Garcia', 73000.00),
+('Robert', 'Miller', 62000.00),
+('Ashley', 'Martinez', 67000.00),
+('Christopher', 'Anderson', 71000.00),
+('Amanda', 'Taylor', 64000.00),
+('Matthew', 'Thomas', 66000.00),
+('Jennifer', 'Hernandez', 70000.00),
+('Joshua', 'Moore', 59000.00),
+('Stephanie', 'Martin', 74000.00),
+('Daniel', 'Jackson', 63000.00),
+('Michelle', 'Thompson', 68500.00),
+('Andrew', 'White', 65500.00),
+('Lisa', 'Lopez', 72500.00);
+"""
+
+# Execute the insert query
+conn.execute(insert_query)
+
+# Commit the changes
+conn.commit()
+
+# Execute a query to fetch data from the 'users' table
+query = "SELECT * FROM users"
+df = pd.read_sql_query(query, conn)
+
+# Close the connection
+conn.close()
+
+print(df)
+```
+
+
+
 ## Read config from ENV variable
 
 ```python
