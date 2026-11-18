@@ -138,12 +138,20 @@ attribute. Indexing with `col[0]` still works for DB API compatibility.
 import pandas as pd
 from sqlalchemy import create_engine
 
+# Connection string format: dialect+driver://user:password@host/database
+#   postgresql - database dialect (PostgreSQL)
+#   psycopg    - DB-API driver used to talk to the database (psycopg 3)
+#   postgres   - username
+#   postgres   - password (after the colon)
+#   localhost  - database server host (default port 5432 is used)
+#   testdb     - name of the database to connect to
 engine = create_engine('postgresql+psycopg://postgres:postgres@localhost/testdb')
 
 df = pd.read_sql('SELECT * FROM cars', engine)
 
 pd.set_option('display.width', 120)
 print(df.to_string(index=False))
+
 ```
 
 
