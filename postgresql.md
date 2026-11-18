@@ -81,7 +81,7 @@ from rich.table import Table
 from rich import box
 from datetime import date
 
-with psycopg.connect(dbname='postgres', user='postgres',
+with psycopg.connect(dbname='testdb', user='postgres',
                      password='s$cret') as con:
 
     with con.cursor() as cur:
