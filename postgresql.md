@@ -130,3 +130,21 @@ col_names = [col.name for col in cur.description]
 In Psycopg 3, `cur.description` holds `Column` objects, so you can read the column name from the `name`  
 attribute. Indexing with `col[0]` still works for DB API compatibility.
 
+
+
+## Pandas example
+
+```python
+import pandas as pd
+from sqlalchemy import create_engine
+
+engine = create_engine('postgresql+psycopg://postgres:postgres@localhost/testdb')
+
+df = pd.read_sql('SELECT * FROM cars', engine)
+
+pd.set_option('display.width', 120)
+print(df.to_string(index=False))
+```
+
+
+
