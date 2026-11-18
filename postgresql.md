@@ -54,49 +54,79 @@ List of basic Python types and their PostgreSQL equivalents:
 
 
 
-## psycopg2 driver
+## Psycopg 3 driver
 
-Psycopg is the most popular PostgreSQL database adapter for the Python programming language. Its main features  
-are the complete implementation of the Python DB API 2.0 specification and the thread safety (several threads can  
-share the same connection). It was designed for heavily multi-threaded applications that create and destroy lots  
-of cursors and make a large number of concurrent `INSERT`s or `UPDATE`s.
+Psycopg 3 is the current version of Psycopg, the most popular PostgreSQL database adapter for Python. It is a  
+complete rewrite of psycopg2 that keeps the familiar Python DB API 2.0 interface and adds support for modern  
+Python and PostgreSQL features.  
 
-Psycopg 2 is mostly implemented in C as a libpq wrapper, resulting in being both efficient and secure. It features  
-client-side and server-side cursors, asynchronous communication and notifications, `COPY TO/COPY FROM` support.  
-Many Python types are supported out-of-the-box and adapted to matching PostgreSQL data types; adaptation can be  
-extended and customized thanks to a flexible objects adaptation system.
+Psycopg 3 can run as pure Python on top of the system `libpq` library. You can also install an optional C  
+extension for better performance. It supports both synchronous and `asyncio` code. It uses server-side  
+parameter binding, prepared statements and pipeline mode, and it has an improved `COPY` API. It also includes  
+static type hints and a separate connection pool package, `psycopg_pool`. Connections can be shared between  
+threads, but each cursor should be used by only one thread. Many Python types are adapted to matching  
+PostgreSQL types out of the box, and you can customize adaptation through its adapter system.  
+
+```
+$ pip install "psycopg[binary]"
+```
+
+The `binary` extra installs a precompiled C implementation together with its own copy of `libpq`. This is the
+simplest way to get started.
 
 ```python
-import psycopg2
+import psycopg
 from rich.console import Console
 from rich.table import Table
 from rich import box
 from datetime import date
 
-con = psycopg2.connect(database='postgres',  user='postgres',  password='s$cret')
+with psycopg.connect(dbname='postgres', user='postgres',
+                     password='s$cret') as con:
 
-with con:
+    with con.cursor() as cur:
 
-    cur = con.cursor()
-    cur.execute('SELECT * FROM cars')
-    rows = cur.fetchall()
+        cur.execute('SELECT * FROM cars')
+        rows = cur.fetchall()
 
-    col_names = [cn[0] for cn in cur.description]
+        col_names = [col.name for col in cur.description]
 
-    now = f'{date.today()}'
-    table = Table(title='Cars', box=box.MINIMAL, caption=now,
-                caption_justify='left')
+now = f'{date.today()}'
+table = Table(title='Cars', box=box.MINIMAL, caption=now,
+              caption_justify='left')
 
-    for col_name in col_names:
-        table.add_column(col_name)
+for col_name in col_names:
+    table.add_column(col_name)
 
-    for row in rows:
+for row in rows:
+    pars = [str(e) for e in row]
+    table.add_row(*pars)
 
-        # table.add_row(str(row[0]), row[1], str(row[2]))
-        # pars = [str(e) for e in (*row,)]
-        pars = [str(e) for e in row]
-        table.add_row(*pars)
-
-    console = Console()
-    console.print(table, justify='center')
+console = Console()
+console.print(table, justify='center')
 ```
+
+The example retrieves all rows from the `cars` table and displays them in a table made with the `rich` library. 
+
+```python
+with psycopg.connect(dbname='postgres', user='postgres',
+                     password='s$cret') as con:
+```
+
+The `connect` function creates a new database session. Psycopg 3 uses the standard libpq parameter name  
+`dbname`. When the `with` block ends, the transaction is committed, or rolled back if an exception occurred,  
+and the connection is **closed**. In psycopg2, the connection stayed open after the block.  
+
+```python
+with con.cursor() as cur:
+```
+
+The cursor is also a context manager and is closed automatically at the end of the block.
+
+```python
+col_names = [col.name for col in cur.description]
+```
+
+In Psycopg 3, `cur.description` holds `Column` objects, so you can read the column name from the `name`  
+attribute. Indexing with `col[0]` still works for DB API compatibility.
+
